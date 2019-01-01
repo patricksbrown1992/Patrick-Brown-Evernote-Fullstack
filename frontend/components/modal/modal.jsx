@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import NoteNewForm from '../notes/noteNewContainer';
 import NotebookNewForm from '../notebooks/notebookNewContainer';
 import NotebookEditForm from '../notebooks/notebookEditContainer';
-
+import TagNewContainer from '../tags/tagsNewContainer';
 function Modal({ modal, closeModal }) {
     // debugger
     if (!modal.type) {
@@ -22,6 +22,9 @@ function Modal({ modal, closeModal }) {
             break;
         case 'addNote':
             component = <NoteNewForm id={modal.entity.id}/>;
+            break;
+        case 'addTag':
+            component = <TagNewContainer id={modal.entity.id}/>;
             break;
         default:
             return null;
