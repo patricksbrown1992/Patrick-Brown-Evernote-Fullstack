@@ -12,4 +12,16 @@ const removeUser = () => ({
     type: REMOVE_USER
 });
 
-export const signup
+export const signup = (user) => dispatch => (
+    APIUtil.signup(user).then(dispatch(receiveUser(user)))
+);
+
+export const login = (user) => dispatch => (
+    APIUtil.login(user).then(dispatch(receiveUser(user)))
+);
+
+export const logout = () => dispatch => (
+    APIUtil.logout().then(dispatch(removeUser()))
+);
+
+
