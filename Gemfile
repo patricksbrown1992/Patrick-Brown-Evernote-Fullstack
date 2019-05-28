@@ -42,6 +42,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'annotate'
   gem 'jquery-rails'
+  gem 'validates_email_format_of'
 end
 
 group :development do
