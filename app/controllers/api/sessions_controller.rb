@@ -9,7 +9,7 @@ class Api::SessionsController < ApplicationController
       login!(@user)
       render "api/users/show"
     else
-      render json: ["Invalid email or password"]
+      render json: {message: "Invalid email or password"}
     end
   end
 
@@ -17,9 +17,9 @@ class Api::SessionsController < ApplicationController
     @user = current_user
     if @user
       logout!
-      render "api/users/show"
+      render json: {message: 'You have logged out of Evernote.'}
     else
-      render json: ["No one is signed in"]
+      render json: {message: "No one is signed in"}
     end
   end
 
