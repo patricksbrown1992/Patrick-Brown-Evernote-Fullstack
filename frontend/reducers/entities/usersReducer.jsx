@@ -1,4 +1,4 @@
-import {RECEIVE_USER, REMOVE_USER} from '../../actions/sessionActions';
+import {RECEIVE_USER} from '../../actions/sessionActions';
 import {merge} from 'lodash';
 const usersReducer = (state = {}, action) => {
     Object.freeze(state);
