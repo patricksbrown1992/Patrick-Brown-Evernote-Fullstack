@@ -1,6 +1,6 @@
 import React from 'react';
 
-const splashForm = () =(
+const splashForm = () => (
     <div></div>
 );
 

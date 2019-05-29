@@ -1,11 +1,15 @@
 import {connect } from 'react-redux';
 import splashForm from './splashForm';
-const msp = state => (
+import {login, signup} from '../../actions/sessionActions';
+const msp = ({session, entities: {users}}) => {
+    return {
+    user: users[session.id]
+    };
+};
 
-);
-
-const mdp = dispatch (
-
-);
+const mdp = dispatch ({
+    login: (user) => (dispatch(login(user))), 
+    signup: (user) => (dispatch(signup(user)))
+});
 
 export default connect(msp, mdp)(splashForm);
