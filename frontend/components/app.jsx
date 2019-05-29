@@ -5,10 +5,9 @@ import SplashForm from './splash/splashForm';
 import LogInForm from './logInForm';
 const App = () => (
     <div>
-        <header>
-            <h1 className = 'title'>NeverNote</h1>
+       
            
-        </header>
+
         
        
         <Switch>
