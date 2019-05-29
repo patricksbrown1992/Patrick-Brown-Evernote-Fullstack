@@ -168,6 +168,7 @@
  .redirect-to-login-signup a {
      color: limegreen;
      text-decoration: none;
+     margin-bottom: -200px;
  }
  .redirect-to-login-signup a:hover {
     color: forestgreen;
@@ -245,7 +246,7 @@
 }
 
 .sign-up-form img {
-    margin-bottom: 0px;
+    margin-top: -100px;
     width: 100px;
     height: 100px;
 }
