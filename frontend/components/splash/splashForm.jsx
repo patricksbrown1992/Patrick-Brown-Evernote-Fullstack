@@ -3,12 +3,15 @@ import {Link } from 'react-router-dom';
 
 
 const splashForm = () => (
-
     <div>
-        <button>Sign Up</button>
-        <button>Log In</button>
-        
-       
+        <div className = "login-button">
+            <Link to='/login'>Log in</Link>
+        </div>
+            
+        <div className = "signup-button">
+            <Link to='/signup'>Sign Up</Link>
+
+        </div>
     </div>
 );
 
