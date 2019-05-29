@@ -6,7 +6,8 @@ const logInForm = () => (
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Evernote_Icon.png/220px-Evernote_Icon.png" alt=""/>
         <h1 className = 'log-in-evernote'>NeverNote</h1>
         <h3>Remember everything important.</h3>
-        <textarea placeholder= 'enter email or username' name="submitter" cols="30" rows="1"></textarea>
+        <input placeholder= 'Email address or username' type="text" name="submitter" id=""/>
+        
         <div className='enter-username'>
 
             <Link to='/loginwithpassword'>Continue</Link>
