@@ -8,8 +8,8 @@ const SignUpForm = () => (
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Evernote_Icon.png/220px-Evernote_Icon.png" alt=""/>
             <h1 className='log-in-evernote'>NeverNote</h1>
             <h3>Remember everything important.</h3>
-            <input type="text" placeholder='email' name="user-name-submitter" id="" />
-            <input type="password" placeholder='password' name="password-submitter" id=""/>
+            <input className="sign-up-email" type="text" placeholder='email' name="user-name-submitter" id="" />
+            <input className = "sign-up-password" type="password" placeholder='password' name="password-submitter" id=""/>
             
             <div className='sign-up-continue'>
 

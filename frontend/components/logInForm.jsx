@@ -2,11 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const logInForm = () => (
+    
     <div className ='log-in-form'>
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Evernote_Icon.png/220px-Evernote_Icon.png" alt=""/>
         <h1 className = 'log-in-evernote'>NeverNote</h1>
         <h3>Remember everything important.</h3>
-        <input placeholder= 'Email address or username' type="text" name="submitter" id=""/>
+        <input className="log-in-email-input" placeholder= 'Email address or username' type="text" name="submitter" id=""/>
         
         <div className='enter-username'>
 

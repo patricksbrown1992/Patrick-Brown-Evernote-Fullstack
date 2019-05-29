@@ -16,8 +16,10 @@
 
 
 /* splash css */
-.splash-nav {
-    display: block;
+.splash-nav  {
+    display: flex;
+    justify-content: space-around;
+    
 }
 .splash-nav li{
     list-style-type: none;
@@ -31,13 +33,13 @@
 
  }
  .splash-nav img {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
  }
  .login-button a {
     color: #21a72c;
     text-decoration: none;
-    display: inline-block;
+    display: flex;
     border: 2px solid #00a82d;
     padding-right: 30px;
     padding-left: 30px;
@@ -46,27 +48,47 @@
     padding-top: 12px;
     padding-bottom: 12px;
     border-radius: 4px;
+    margin-left: 15px;
     font-family: Soleil,Helvetica,Arial,sans-serif;
  }
  .login-button a:hover {
     border: 2px solid limegreen;
     color: limegreen;
- }
- .signup-button {
-    margin-left: 0;
+    cursor: pointer;
  }
 
+ .splash-buttons {
+    display: flex;
+    margin-top: 50px;
+    justify-content: space-around;
+ }
+
+.splash-nav-left{
+    margin-top: 50px;
+    display: flex;
+    margin-left: -300px;
+}
+.splash-nav-left img {
+    margin-top: -15px;
+
+}
  .signup-button a {
-    
+    display: flex;
+    margin-top: 8px;
+    margin-right: 15px;
     text-decoration: none;
     font-family: Soleil,Helvetica,Arial,sans-serif;
     color: #21a72c;
-    display: block;
+   
     
+ }
+ .splash-buttons p {
+     margin-top: 8px;
  }
 
   .signup-button a:hover {
       color: limegreen;
+      cursor: pointer;
   }
  
 
@@ -74,15 +96,23 @@
     font-family: Soleil,Helvetica,Arial,sans-serif;
     font-size: 13px;
     line-height: 21px;
-    display: block;
-    margin-right: 0;
+    text-align: right;
+    margin-right: -300px;
  }
 /* login css */
+
 .log-in-form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     margin-top: 125px;
+    margin-bottom: 200px;
+    width: 515px;
+    border: 1px solid red;
+
+    height: 635px;
+
 }
 .log-in-evernote {
     font-weight: bold;
@@ -99,6 +129,7 @@
 .log-in-form img {
     width: 100px;
     height: 100px;
+    margin-top: -10px;
 }
  .log-in-form .enter-username a {
      text-decoration: none;
@@ -107,18 +138,32 @@
      padding: 20px 130px;
      line-height: 10px;
      color: honeydew;
+     
  }
  .log-in-form .enter-username {
     background-color: limegreen;
-    width: 320px;
+    width: 350px;
     line-height: 50px;
     border-radius: 12px;
     margin-top: 10px;
     margin-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
  }
   .log-in-form .enter-username:hover {
     background-color: forestgreen;
+    cursor: pointer;
   }
+  .log-in-email-input {
+    width: 350px;
+    height: 30px;
+    margin-bottom: 6px;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1p solid #e6e6e6;
+  }
+
 
  .redirect-to-login-signup a {
      color: limegreen;
@@ -126,6 +171,7 @@
  }
  .redirect-to-login-signup a:hover {
     color: forestgreen;
+    cursor: pointer;
  }
 
 
@@ -135,8 +181,16 @@
 .sign-up-form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     margin-top: 125px;
+  
+    margin-bottom: 200px;
+    width: 515px;
+    border: 1px solid red;
+
+    height: 635px;
+
 }
 .sign-up-form .sign-up-continue a {
     text-decoration: none;
@@ -148,12 +202,24 @@
  }
 .sign-up-form .sign-up-continue:hover {
     background-color: forestgreen;
+    cursor: pointer;
   }
 .sign-up-form h1 {
     margin-top: 2px;
     margin-bottom: 15px;
 }
-
+.sign-up-email {
+    width: 250px;
+    height: 30px;
+    margin-bottom: 6px;
+    border-radius: 10px;
+    /* round edges */
+}
+.sign-up-password {
+    width: 250px;
+    height: 30px;
+    border-radius: 10px;
+}
 .sign-up-form h3 {
     margin-bottom: 20px;
 }
