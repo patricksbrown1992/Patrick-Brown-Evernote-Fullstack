@@ -5,8 +5,8 @@ const SignUpForm = () => (
     <div className='sign-up-form'>
         <h1 className='log-in-evernote'>Evernote</h1>
         <h3>Remember everything important.</h3>
-        <textarea name="user-name-submitter" cols="30" rows="2"></textarea>
-        <textarea name="password-submitter" cols="30" rows="2"></textarea>
+        <textarea placeholder = 'email' name="user-name-submitter" cols="30" rows="2"></textarea>
+        <textarea placeholder= 'password' name="password-submitter" cols="30" rows="2"></textarea>
         <div className='sign-up-continue'>
 
             <Link to='/username'>Continue</Link>

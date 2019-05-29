@@ -88,4 +88,21 @@
     color: forestgreen;
  }
 
+.sign-up-form .sign-up-continue a {
+    text-decoration: none;
+     display:flex;
+     justify-content: center;
+     padding: 20px 130px;
+     line-height: 10px;
+     color: honeydew;
+ }
+.sign-up-form .sign-up-continue:hover {
+    background-color: forestgreen;
+  }
 
+.sign-up-form .sign-up-continue {
+    background-color: limegreen;
+    width: 320px;
+    line-height: 50px;
+    border-radius: 12px;
+}

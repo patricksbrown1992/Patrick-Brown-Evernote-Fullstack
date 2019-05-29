@@ -5,7 +5,7 @@ const logInForm = () => (
     <div className ='log-in-form'>
         <h1 className = 'log-in-evernote'>Evernote</h1>
         <h3>Remember everything important.</h3>
-        <textarea name="submitter" cols="30" rows="2"></textarea>
+        <textarea placeholder= 'enter email or username' name="submitter" cols="30" rows="2"></textarea>
         <div className='enter-username'>
 
             <Link to='/loginwithpassword'>Continue</Link>
