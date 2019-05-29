@@ -71,9 +71,21 @@
      color: honeydew;
  }
  .log-in-form .enter-username {
-    background-color: forestgreen;
+    background-color: limegreen;
     width: 320px;
     line-height: 50px;
+    border-radius: 12px;
+ }
+  .log-in-form .enter-username:hover {
+    background-color: forestgreen;
+  }
+
+ .redirect-to-login-signup a {
+     color: limegreen;
+     text-decoration: none;
+ }
+ .redirect-to-login-signup a:hover {
+    color: forestgreen;
  }
 
 

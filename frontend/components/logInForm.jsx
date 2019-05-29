@@ -12,7 +12,7 @@ const logInForm = () => (
         </div>
         <h3>Remember me for 30 days</h3>
         <h3>Don't have an account?</h3>
-        <div className='redirect-to-signup'>
+        <div className='redirect-to-login-signup'>
             <Link to='/signup'>Create account</Link>
         </div>
     </div>
