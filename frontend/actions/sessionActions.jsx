@@ -13,10 +13,13 @@ const removeUser = () => ({
     type: REMOVE_USER,
    
 });
-const receiveErrors = errors => ({
+const receiveErrors = errors => {
+  
+    return {
     type: RECEIVE_ERRORS,
     errors
-});
+    };
+};
 
 export const signup = (user) => dispatch => (
     APIUtil.signup(user).then(user => (dispatch(receiveUser(user))
@@ -27,12 +30,13 @@ export const signup = (user) => dispatch => (
 export const login = (user) => dispatch => (
     APIUtil.login(user).then(user => {
        
-        return dispatch(receiveUser(user))
+        return dispatch(receiveUser(user));
         
-    }
-    ), (err => (dispatch(receiveErrors(err.responseJSON))
-    ))
-);
+    }, err => {
+     
+       return  dispatch(receiveErrors(err.responseJSON));
+    }));
+
 
 export const logout = () => dispatch => (
     APIUtil.logout().then(user => dispatch(removeUser())
