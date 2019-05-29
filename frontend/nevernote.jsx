@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
-import * as APIUtil from './util/sessionAPIUtil';
+
+import {login, logout, signup} from './actions/sessionActions';
 import configureStore from './store/store';
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
-    window.login = APIUtil.login;
-    window.signup = APIUtil.signup;
-    window.logout = APIUtil.logout;
+    window.login = login;
+    window.signup = signup;
+    window.logout = logout;
     const store = configureStore();
     window.getState = store.getState;
     window.dispatch = store.dispatch;
