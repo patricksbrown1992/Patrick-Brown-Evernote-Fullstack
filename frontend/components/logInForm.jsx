@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 
 const logInForm = () => (
     <div className ='log-in-form'>
-        <h1 className = 'log-in-evernote'>Evernote</h1>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Evernote_Icon.png/220px-Evernote_Icon.png" alt=""/>
+        <h1 className = 'log-in-evernote'>NeverNote</h1>
         <h3>Remember everything important.</h3>
         <textarea placeholder= 'enter email or username' name="submitter" cols="30" rows="2"></textarea>
         <div className='enter-username'>

@@ -13,13 +13,16 @@
  *= require_tree .
  *= require_self
  */
-
+/* splash css */
  .title {
     color: #000000;
     font-size: 25px;
     font-weight: bold;
-    
 
+ }
+ .splash-nav img {
+    width: 45px;
+    height: 45 px;
  }
  .login-button a {
     color: #21a72c;
@@ -61,7 +64,18 @@
     margin-inline-end: 0px;
     padding-inline-start: 40px;
  }
+/* login css */
+.log-in-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 125px;
+}
 
+.log-in-form img {
+    width: 60px;
+    height: 60px;
+}
  .log-in-form .enter-username a {
      text-decoration: none;
      display:flex;
@@ -88,6 +102,15 @@
     color: forestgreen;
  }
 
+
+ /* sign up css */
+
+.sign-up-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 125px;
+}
 .sign-up-form .sign-up-continue a {
     text-decoration: none;
      display:flex;
@@ -106,3 +129,10 @@
     line-height: 50px;
     border-radius: 12px;
 }
+
+.sign-up-form img {
+    width: 60px;
+    height: 60px;
+}
+
+
