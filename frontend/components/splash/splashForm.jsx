@@ -2,12 +2,12 @@ import React from 'react';
 import {Link } from 'react-router-dom';
 
 
-const splashForm = ({user, login, signup}) => (
+const splashForm = () => (
 
     <div>
+        <button>Sign Up</button>
+        <button>Log In</button>
         
-        <Link to='/Registration.action'>Sign up</Link>
-        <Link to='/Login.action'>Log in</Link>
        
     </div>
 );

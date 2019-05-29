@@ -7,7 +7,7 @@ const msp = ({session, entities: {users}}) => {
     };
 };
 
-const mdp = dispatch ({
+const mdp = dispatch => ({
     login: (user) => (dispatch(login(user))), 
     signup: (user) => (dispatch(signup(user)))
 });
