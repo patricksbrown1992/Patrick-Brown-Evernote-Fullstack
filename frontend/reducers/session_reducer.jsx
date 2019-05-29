@@ -1,7 +1,7 @@
 import {
     RECEIVE_USER,
     REMOVE_USER
-} from '../../actions/sessionActions';
+} from '../actions/sessionActions';
 import {merge} from 'lodash';
 
 const _nullUser = Object.freeze({
