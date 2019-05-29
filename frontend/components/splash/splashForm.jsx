@@ -4,22 +4,24 @@ import {Link } from 'react-router-dom';
 
 const splashForm = () => (
     <div className='splash-nav'>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Evernote_Icon.png/220px-Evernote_Icon.png" alt=""/>
-        <h1 className='title'>NeverNote</h1>
+        <ul >
+            <li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Evernote_Icon.png/220px-Evernote_Icon.png" alt="" /></li>
+            <li><h1 className='title'>NeverNote</h1></li>
 
-        <div className ='splash-buttons'>
-            
-            <nav className="signup-button">
-                <Link to='/signup'>Sign up</Link>
-            </nav>
-            <nav className = "login-button">
-                <Link to='/login'>Log in</Link>
-            </nav>
+            <li><div className='splash-buttons'>
                 
-            
+                <nav className="signup-button">
+                    <li><Link to='/signup'>Sign up</Link></li>
+                </nav>
+                <nav className = "login-button">
+                    <li><Link to='/login'>Log in</Link></li>
+                </nav>
+                    
+                
 
-        
-        </div>
+            
+            </div></li>
+        </ul>
     </div>
 );
 

@@ -4,13 +4,14 @@ import { Route, Redirect, Switch, Link, HashRouter} from 'react-router-dom';
 import SplashForm from './splash/splashForm';
 import LogInForm from './logInForm';
 import SignUpForm from './signUpForm';
+import { Authorized, ProtectedRoute } from '../util/routeUtil';
 const App = () => (
     <div>
 
         <Switch>
-            <Route exact path='/login' component={LogInForm} />
+            <Authorized exact path='/login' component={LogInForm} />
             <Route exact path='/' component={SplashForm} />
-            <Route exact path='/signup' component={SignUpForm} />
+            <Authorized exact path='/signup' component={SignUpForm} />
         </Switch>
    
     </div>
