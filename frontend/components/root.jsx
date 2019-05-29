@@ -1,6 +1,11 @@
 import React from 'react';
-
-const Root = () => (
-    <h1>Welcome to NeverNote</h1>
+import { Provider } from 'react-redux';
+import {HashRouter} from 'react-router-dom';
+const Root = ({store}) => (
+    <Provider store={store}>
+        <HashRouter >
+            <h1>Welcome to NeverNote</h1>
+        </HashRouter>
+    </Provider>
 )
 export default Root;
