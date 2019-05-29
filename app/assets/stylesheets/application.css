@@ -16,8 +16,12 @@
 
 
 /* splash css */
+.splash-nav {
+    display: block;
+}
 .splash-nav li{
     list-style-type: none;
+    display: flex;
 }
  .title {
     color: #000000;
@@ -44,18 +48,26 @@
     border-radius: 4px;
     font-family: Soleil,Helvetica,Arial,sans-serif;
  }
+ .login-button a:hover {
+    border: 2px solid limegreen;
+    color: limegreen;
+ }
  .signup-button {
     margin-left: 0;
  }
 
  .signup-button a {
-    width: 50px;
+    
     text-decoration: none;
     font-family: Soleil,Helvetica,Arial,sans-serif;
     color: #21a72c;
-    display: flex;
-    margin: 0 5px;
+    display: block;
+    
  }
+
+  .signup-button a:hover {
+      color: limegreen;
+  }
  
 
  .splash-buttons {
@@ -63,12 +75,7 @@
     font-size: 13px;
     line-height: 21px;
     display: block;
-    list-style-type: disc;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 40px;
+    margin-right: 0;
  }
 /* login css */
 .log-in-form {
