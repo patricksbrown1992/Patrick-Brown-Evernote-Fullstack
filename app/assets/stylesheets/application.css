@@ -71,10 +71,21 @@
     align-items: center;
     margin-top: 125px;
 }
+.log-in-evernote {
+    font-weight: bold;
+    font-size: 40px;
+}
+.log-in-form h1 {
+    margin-top: 2px;
+    margin-bottom: 15px;
+}
+.log-in-form h3 {
+    margin-bottom: 20px;
+}
 
 .log-in-form img {
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    height: 100px;
 }
  .log-in-form .enter-username a {
      text-decoration: none;
@@ -89,6 +100,8 @@
     width: 320px;
     line-height: 50px;
     border-radius: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
  }
   .log-in-form .enter-username:hover {
     background-color: forestgreen;
@@ -101,6 +114,7 @@
  .redirect-to-login-signup a:hover {
     color: forestgreen;
  }
+
 
 
  /* sign up css */
@@ -122,7 +136,18 @@
 .sign-up-form .sign-up-continue:hover {
     background-color: forestgreen;
   }
+.sign-up-form h1 {
+    margin-top: 2px;
+    margin-bottom: 15px;
+}
 
+.sign-up-form h3 {
+    margin-bottom: 20px;
+}
+.sign-up-continue {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 .sign-up-form .sign-up-continue {
     background-color: limegreen;
     width: 320px;
@@ -131,8 +156,9 @@
 }
 
 .sign-up-form img {
-    width: 60px;
-    height: 60px;
+    margin-bottom: 0px;
+    width: 100px;
+    height: 100px;
 }
 
 
