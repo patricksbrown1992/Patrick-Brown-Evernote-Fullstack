@@ -177,7 +177,10 @@
 
 
  /* sign up css */
-
+.outerdiv {
+    display:flex;
+    justify-content: center;
+}
 .sign-up-form {
     display: flex;
     flex-direction: column;
@@ -191,6 +194,12 @@
 
     height: 635px;
 
+}
+.sign-up-form p {
+    width: 260px;
+    font-size: 12px;
+    text-align: center;
+    
 }
 .sign-up-form .sign-up-continue a {
     text-decoration: none;
@@ -208,6 +217,7 @@
     margin-top: 2px;
     margin-bottom: 15px;
 }
+
 .sign-up-email {
     width: 250px;
     height: 30px;
