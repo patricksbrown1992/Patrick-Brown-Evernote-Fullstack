@@ -1,7 +1,7 @@
 import {
     RECEIVE_ERRORS,
     RECEIVE_USER,
-} from '../actions/session_actions';
+} from '../../actions/sessionActions';
 
 const sessionErrorsReducer = (state = [], action) => {
     Object.freeze(state);

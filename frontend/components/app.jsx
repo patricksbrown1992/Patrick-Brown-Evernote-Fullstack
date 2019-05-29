@@ -4,7 +4,7 @@ import { Route, Redirect, Switch, Link, HashRouter} from 'react-router-dom';
 
 const App = () => (
     <>
-        <h1>Welcome to NeverNote</h1>
+        <h1>NeverNote</h1>
     </>
 )
 
