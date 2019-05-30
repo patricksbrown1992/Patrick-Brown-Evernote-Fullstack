@@ -3,7 +3,7 @@ const usernameForm = () => (
     <div className = "username-form">
         <div className="left-nav">
             <ul>
-                <li class="user-email">Email</li>
+                <li className="user-email">Email</li>
                 <input placeholder="Search all notes..."type="text"></input>
                 <li className="new-note">New Note</li>
                 <li>Shortcuts</li>
@@ -16,7 +16,7 @@ const usernameForm = () => (
         </div>
         <div className="center-nav">
             <ul>
-                <li>First Note</li>
+                <li className="notebook-title">Notebook Title</li>
 
                 
             </ul>

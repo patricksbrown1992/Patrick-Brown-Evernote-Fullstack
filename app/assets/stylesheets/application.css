@@ -260,7 +260,7 @@
     background-color: #1a1a1a;
     height: 900px;
     width: 240px;
-    position: absolute;
+    z-index: 2;
    
 }
 .left-nav li {
@@ -274,6 +274,7 @@
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 10px;
+    color: white;
 }
 .new-note {
     margin-bottom: 25px;
@@ -283,5 +284,13 @@
 }
 .center-nav {
     display: flex;
-    position: relative;
+    z-index: 1;
+    flex-direction: column;
+    margin-left: 250px;
+    margin-top: 50px;
+    width: 350px;
+}
+.notebook-title {
+    font-size: 20px;
+    
 }
