@@ -4,10 +4,10 @@ class Api::UsersController < ApplicationController
         @user = User.find_by(email: params[:email]);
     
         if @user 
-            debugger
+            
             render json: {verified: true}, status: 200
         else
-            debugger
+         
             render json: {verified: false}, status: 422
         end
     end

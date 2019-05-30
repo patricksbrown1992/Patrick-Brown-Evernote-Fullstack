@@ -3,8 +3,7 @@ import LogInForm from './logInForm';
 import { login, checkEmail } from '../../actions/sessionActions';
 
 const msp = (state) => {
-    debugger 
-    state.ui = {verified: false};
+    
     return {
         errors: state.errors,
         verified: state.ui.verified
