@@ -1,11 +1,12 @@
 class Api::UsersController < ApplicationController
 
     def verify
-        @user = User.find_by(email);
+        @user = User.find_by(email: params[:email]);
+    
         if @user 
             return true
         else
-            render json: @user.errors.full_messages, status: 404
+            
         end
     end
 

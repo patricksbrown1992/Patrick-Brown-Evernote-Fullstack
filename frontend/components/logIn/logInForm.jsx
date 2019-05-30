@@ -19,12 +19,8 @@ class LogInForm extends React.Component {
     }
 
     handleSubmit(e) {
-        // debugger
-        debugger
-        const email = this.state.email;
-        const password = this.state.password;
-        const person = { email, password };
-        if (this.state.show === false && this.props.checkEmail(person)){
+  
+        if (this.state.show === false && this.props.checkEmail(this.state.email)){
             e.preventDefault();
             this.setState({ show: true });
         } else {
@@ -32,7 +28,7 @@ class LogInForm extends React.Component {
             const email = this.state.email;
             const password = this.state.password;
             const person = {email, password};
-            debugger
+         
             this.props.login(person);
             this.setState({ email: '', password: '', show: false });
         }
