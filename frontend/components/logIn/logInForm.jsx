@@ -25,10 +25,8 @@ class LogInForm extends React.Component {
             this.props.checkEmail(this.state.email);
         } else {
 
-            const email = this.state.email;
-            const password = this.state.password;
-            const person = {email, password};
-            this.props.login(person);
+           
+            this.props.login(this.state);
         }
         //     if(this.props.verified === true){
         //         debugger
