@@ -31,7 +31,13 @@ class LogInForm extends React.Component {
     render(){
         let passwordClass;
         let buttonText;
-        
+        let errors;
+        if (this.props.errors.length > 0) {
+
+            errors = this.props.errors.map((error, idx) => {
+                return <li key={idx}>{error}</li>
+            });
+        } 
         if (this.props.verified === false) {
             passwordClass = 'log-in-password-hide';
             buttonText = 'Continue';
@@ -40,6 +46,7 @@ class LogInForm extends React.Component {
             buttonText = 'Sign in';
         }
         
+       
         return (
             <form onSubmit={this.handleSubmit}>
                 <div className='outerdiv'>
@@ -52,6 +59,7 @@ class LogInForm extends React.Component {
                         </div>
                         <input className="log-in-email-input" placeholder='Email address or username' type="text" value={this.state.email} onChange={this.handleChange('email')}/>
                         <input className={passwordClass} type="password" placeholder='password' value={this.state.password} onChange={this.handleChange('password')} />
+                        {errors}
                         <div className='enter-username'>
 
                             <button type='submit'>{buttonText}</button>

@@ -10,7 +10,7 @@ export const signup = (user) => {
 };
 
 export const checkEmail = (email) => {
-    debugger
+    // debugger
     return $.ajax({
         method: 'GET',
         url: 'api/users/verify',

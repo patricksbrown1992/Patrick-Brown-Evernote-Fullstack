@@ -20,7 +20,7 @@ const removeUser = () => ({
    
 });
 const receiveErrors = errors => {
-
+    debugger
     return {
     type: RECEIVE_ERRORS,
     errors
@@ -28,8 +28,10 @@ const receiveErrors = errors => {
 };
 
 export const checkEmail = email => dispatch => (
-    APIUtil.checkEmail(email).then((email) => dispatch(checkUser(email))),
-    (err) => (dispatch(receiveErrors(err.responseJSON)))
+  
+    APIUtil.checkEmail(email).then((email) => (dispatch(checkUser(email))), 
+    (err) => (dispatch(receiveErrors(err.responseJSON))
+))
 );
 
 export const signup = (user) => dispatch => (
@@ -38,15 +40,13 @@ export const signup = (user) => dispatch => (
     ))
 );
 
+
+
 export const login = (user) => dispatch => (
-    APIUtil.login(user).then(user => {
-       
-        return dispatch(receiveUser(user));
-        
-    }, err => {
-     
-       return  dispatch(receiveErrors(err.responseJSON));
-    }));
+    APIUtil.login(user).then(user => (dispatch(receiveUser(user))
+    ), err => (dispatch(receiveErrors(err.responseJSON))
+    ))
+);
 
 
 export const logout = () => dispatch => (

@@ -24,6 +24,15 @@ class SignUpForm extends React.Component {
     }
  
     render(){
+    
+        let errors;
+        if (this.props.errors.length > 0) {
+          
+            errors = this.props.errors.map((error, idx) => {
+                return <li key={idx}>{error}</li>
+            });
+        } 
+      
         return (
             <form onSubmit={this.handleSubmit}>
                 <div className = 'outerdiv'>
@@ -36,7 +45,9 @@ class SignUpForm extends React.Component {
                         
                             <input className="sign-up-email" type="text" value={this.state.email} placeholder='email' onChange={this.handleChange('email')} />
                             <input className = "sign-up-password" type="password" placeholder='password' value={this.state.password} onChange={this.handleChange('password')}/>
-                            
+                            <ul>
+                                {errors}
+                            </ul>
                             <div className='sign-up-continue'>
 
                                 <button type='submit'>Continue</button>
