@@ -14,7 +14,7 @@ const removeUser = () => ({
    
 });
 const receiveErrors = errors => {
-  
+
     return {
     type: RECEIVE_ERRORS,
     errors

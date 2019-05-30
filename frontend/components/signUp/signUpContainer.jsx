@@ -3,6 +3,7 @@ import SignUpForm from './signUpForm';
 import { signup } from '../../actions/sessionActions';
 
 const msp = (state) => ({
+    user: state.user,
     errors: state.errors
 });
  
