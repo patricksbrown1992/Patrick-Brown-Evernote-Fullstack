@@ -10,7 +10,7 @@ const App = () => (
     <div>
 
         <Switch>
-            <Route exact path='/username' component={UsernameForm} />
+            <ProtectedRoute exact path='/username' component={UsernameForm} />
             <Authorized exact path='/login' component={LogInForm} />
             <Route exact path='/' component={SplashForm} />
             <Authorized exact path='/signup' component={SignUpForm} />

@@ -22,7 +22,9 @@ const splashForm = () => (
 
         
         </div>
-     
+        <div className="photos">
+            
+        </div>
     </div>
 );
 
