@@ -9,12 +9,13 @@ export const signup = (user) => {
     });
 };
 
-export const checkEmail = (user) => {
+export const checkEmail = (email) => {
+    debugger
     return $.ajax({
-        method: 'POST',
-        url: 'api/users',
+        method: 'GET',
+        url: 'api/users/verify',
         data: {
-            user
+            email
         }
     });
 };

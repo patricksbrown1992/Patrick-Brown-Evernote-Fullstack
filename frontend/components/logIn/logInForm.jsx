@@ -19,8 +19,12 @@ class LogInForm extends React.Component {
     }
 
     handleSubmit(e) {
-        
-        if (this.state.show === false){
+        // debugger
+        debugger
+        const email = this.state.email;
+        const password = this.state.password;
+        const person = { email, password };
+        if (this.state.show === false && this.props.checkEmail(person)){
             e.preventDefault();
             this.setState({ show: true });
         } else {

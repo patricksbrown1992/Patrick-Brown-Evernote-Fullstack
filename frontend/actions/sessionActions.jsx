@@ -29,9 +29,8 @@ const receiveErrors = errors => {
     };
 };
 
-export const checkEmail = user => dispatch => (
-    APIUtil.checkEmail(user).then(user => dispatch(checkUser(user.email)))
-);
+export const checkEmail = email => dispatch => (
+    APIUtil.checkEmail(email).then(email => dispatch(checkUser(email))));
 
 export const signup = (user) => dispatch => (
     APIUtil.signup(user).then(user => (dispatch(receiveUser(user))
