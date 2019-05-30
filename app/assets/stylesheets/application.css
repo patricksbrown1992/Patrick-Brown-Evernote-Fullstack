@@ -170,6 +170,16 @@
     display: none;
 }
 
+.log-in-password-show {
+    width: 350px;
+    height: 30px;
+    margin-bottom: 6px;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1p solid #e6e6e6;
+}
+
 
 
  /* sign up css */

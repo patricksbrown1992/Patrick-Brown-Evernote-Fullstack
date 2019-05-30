@@ -3,10 +3,18 @@ import * as APIUtil from '../util/sessionAPIUtil';
 export const RECEIVE_USER = 'RECEIVE_USER';
 export const REMOVE_USER = 'REMOVE_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+export const CHECK_EMAIL = 'CHECK_EMAIL';
 
 const receiveUser = (user) => ({
     type: RECEIVE_USER,
     user
+});
+
+
+
+const checkUser = (email) => ({
+    type: CHECK_EMAIL,
+    email
 });
 
 const removeUser = () => ({
@@ -20,6 +28,10 @@ const receiveErrors = errors => {
     errors
     };
 };
+
+export const checkEmail = user => dispatch => (
+    APIUtil.checkEmail(user).then(user => dispatch(checkUser(user.email)))
+);
 
 export const signup = (user) => dispatch => (
     APIUtil.signup(user).then(user => (dispatch(receiveUser(user))

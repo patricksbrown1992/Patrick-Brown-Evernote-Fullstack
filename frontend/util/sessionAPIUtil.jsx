@@ -6,7 +6,17 @@ export const signup = (user) => {
         data: {
             user
         }
-    })
+    });
+};
+
+export const checkEmail = (user) => {
+    return $.ajax({
+        method: 'POST',
+        url: 'api/users',
+        data: {
+            user
+        }
+    });
 };
 
 export const login = (user) => (
