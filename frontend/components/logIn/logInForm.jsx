@@ -24,28 +24,33 @@ class LogInForm extends React.Component {
         this.setState({ email: '', password: '' });
     }
 
-    render()(
-        <div class='outerdiv'>
-            <div className ='log-in-form'>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Evernote_Icon.png/220px-Evernote_Icon.png" alt=""/>
-                <h1 className = 'log-in-evernote'>NeverNote</h1>
-                <h3>Remember everything important.</h3>
-                <input className="log-in-email-input" placeholder= 'Email address or username' type="text" name="submitter" id=""/>
-                
-                <div className='enter-username'>
+    render(){
 
-                    <Link to='/loginwithpassword'>Continue</Link>
-                </div>
-                <h3>Remember me for 30 days</h3>
-                <h3>Don't have an account?</h3>
-                <div className='redirect-to-login-signup'>
-                    <Link to='/signup'>Create account</Link>
-                </div>
-            </div>
+        return (
+            <form onSubmit={this.handleSubmit}>
+                <div className='outerdiv'>
+                    <div className ='log-in-form'>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Evernote_Icon.png/220px-Evernote_Icon.png" alt=""/>
+                        <h1 className = 'log-in-evernote'>NeverNote</h1>
+                        <h3>Remember everything important.</h3>
+                        <input className="log-in-email-input" placeholder= 'Email address or username' type="text" name="submitter" id=""/>
+                        <input className="log-in-password-input" type="password" placeholder='password' value={this.state.password} onChange={this.handleChange('password')} />
+                        <div className='enter-username'>
 
-        </div>
+                            <button type='submit'>Continue</button>
+                        </div>
+                        <h3>Remember me for 30 days</h3>
+                        <h3>Don't have an account?</h3>
+                        <div className='redirect-to-login-signup'>
+                            <Link to='/signup'>Create account</Link>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        )
         
-    )
+    }
 };
 
-export default logInForm;
+export default LogInForm;
