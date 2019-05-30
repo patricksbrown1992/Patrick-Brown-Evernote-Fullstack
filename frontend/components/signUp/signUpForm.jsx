@@ -12,6 +12,12 @@ class SignUpForm extends React.Component {
             this.setState({[field]: e.target.value});
         };
     }
+
+    handleSubmit(e){
+        e.preventDefault();
+        this.props.signup(this.state);
+        this.setState({email: '', passwoord: ''});
+    }
  
     render(){
         <div className = 'outerdiv'>
