@@ -10,8 +10,6 @@ const receiveUser = (user) => ({
     user
 });
 
-
-
 const checkUser = (email) => ({
     type: CHECK_EMAIL,
     email
@@ -30,7 +28,9 @@ const receiveErrors = errors => {
 };
 
 export const checkEmail = email => dispatch => (
-    APIUtil.checkEmail(email).then(email => dispatch(checkUser(email))));
+    APIUtil.checkEmail(email).then((email) => dispatch(checkUser(email))),
+    (err) => (dispatch(receiveErrors(err.responseJSON)))
+);
 
 export const signup = (user) => dispatch => (
     APIUtil.signup(user).then(user => (dispatch(receiveUser(user))

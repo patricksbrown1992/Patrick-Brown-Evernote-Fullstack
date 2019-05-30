@@ -6,7 +6,7 @@ class LogInForm extends React.Component {
     constructor(props){
         super(props);
         
-        this.state = {email: '', password: '', show: false};
+        this.state = {email: '', password: ''};
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -19,32 +19,33 @@ class LogInForm extends React.Component {
     }
 
     handleSubmit(e) {
-  
-        if (this.state.show === false && this.props.checkEmail(this.state.email)){
-            e.preventDefault();
-            this.setState({ show: true });
+      
+        e.preventDefault();
+        if (this.props.verified === false){
+            this.props.checkEmail(this.state.email);
         } else {
-            e.preventDefault();
+
             const email = this.state.email;
             const password = this.state.password;
             const person = {email, password};
-         
             this.props.login(person);
-            this.setState({ email: '', password: '', show: false });
         }
-            
-       
+        //     if(this.props.verified === true){
+        //         debugger
+        //         this.setState({show: true});
+           
 
         
-        
-        this.setState({ email: '', password: '' });
+        //     this.setState({ email: '', password: '', show: false });
+    
+        // this.setState({ email: '', password: '' });
+
     }
-
     render(){
         let passwordClass;
         let buttonText;
         
-        if (this.state.show === false) {
+        if (this.props.verified === false) {
             passwordClass = 'log-in-password-hide';
             buttonText = 'Continue';
         } else {

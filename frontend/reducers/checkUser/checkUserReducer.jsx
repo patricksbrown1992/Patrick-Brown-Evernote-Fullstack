@@ -3,6 +3,7 @@ import { merge } from 'lodash';
 
 const checkUsersReducer = (state ={}, action) => {
     Object.freeze(state);
+    debugger
     switch(action.type){
         case CHECK_EMAIL:
             return action.email;
@@ -12,3 +13,4 @@ const checkUsersReducer = (state ={}, action) => {
 
     }
 };
+export default checkUsersReducer;
