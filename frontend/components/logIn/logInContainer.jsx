@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import LogInForm from './signUpForm';
+import LogInForm from './logInForm';
 import { login } from '../../actions/sessionActions';
 
 const msp = (state) => ({
@@ -7,7 +7,7 @@ const msp = (state) => ({
 });
 
 const mdp = (dispatch) => ({
-    signup: (user) => dispatch(login(user))
+    login: (user) => dispatch(login(user))
 });
 
 

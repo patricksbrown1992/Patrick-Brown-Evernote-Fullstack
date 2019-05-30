@@ -166,6 +166,9 @@
     color: forestgreen;
     cursor: pointer;
  }
+.log-in-password-hide {
+    display: none;
+}
 
 
 
