@@ -1,8 +1,19 @@
 class Api::UsersController < ApplicationController
 
-
+    def verify
+        @user = User.find_by(email: params[:email]);
+    
+        if @user 
+            debugger
+            render json: {verified: true}, status: 200
+        else
+            debugger
+            render json: {verified: false}, status: 422
+        end
+    end
 
     def create
+    
         @user = User.new(user_params)
         if @user.save
             login!(@user)
@@ -16,6 +27,7 @@ class Api::UsersController < ApplicationController
     private 
 
     def user_params
+      
         params.require(:user).permit(:email, :password)
     end
 

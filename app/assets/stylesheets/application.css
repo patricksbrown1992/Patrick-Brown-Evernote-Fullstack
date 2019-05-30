@@ -131,29 +131,21 @@
     height: 100px;
     margin-top: -10px;
 }
- .log-in-form .enter-username a {
-     text-decoration: none;
-     display:flex;
-     justify-content: center;
-     padding: 20px 130px;
-     line-height: 10px;
-     color: honeydew;
-     
- }
- .log-in-form .enter-username {
+
+ 
+  .log-in-form .enter-username button:hover {
+    color: honeydew;
+    cursor: pointer;
+    background-color: forestgreen;
+  }
+.enter-username button {
     background-color: limegreen;
     width: 350px;
     line-height: 50px;
     border-radius: 12px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
- }
-  .log-in-form .enter-username:hover {
-    background-color: forestgreen;
-    cursor: pointer;
-  }
+    color: honeydew;
+}
+
   .log-in-email-input {
     width: 350px;
     height: 30px;
@@ -174,6 +166,19 @@
     color: forestgreen;
     cursor: pointer;
  }
+.log-in-password-hide {
+    display: none;
+}
+
+.log-in-password-show {
+    width: 350px;
+    height: 30px;
+    margin-bottom: 6px;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1p solid #e6e6e6;
+}
 
 
 
@@ -202,17 +207,11 @@
     text-align: center;
     
 }
-.sign-up-form .sign-up-continue a {
-    text-decoration: none;
-     display:flex;
-     justify-content: center;
-     padding: 20px 130px;
-     line-height: 10px;
-     color: honeydew;
- }
-.sign-up-form .sign-up-continue:hover {
-    background-color: forestgreen;
+
+.sign-up-form .sign-up-continue button:hover {
+    color: honeydew;
     cursor: pointer;
+    background-color: forestgreen;
   }
 .sign-up-form h1 {
     margin-top: 2px;
@@ -238,11 +237,14 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.sign-up-form .sign-up-continue {
+
+
+.sign-up-form .sign-up-continue button {
     background-color: limegreen;
     width: 320px;
     line-height: 50px;
     border-radius: 12px;
+    color: honeydew;
 }
 
 .sign-up-form img {
@@ -250,5 +252,36 @@
     width: 100px;
     height: 100px;
 }
+/* username form */
 
-
+.left-nav {
+    display: block;
+    flex-direction: column;
+    background-color: #1a1a1a;
+    height: 900px;
+    width: 240px;
+    position: absolute;
+   
+}
+.left-nav li {
+    color: #c8c8c8;
+    margin-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.left-nav input {
+    background-color: darkslategray;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+.new-note {
+    margin-bottom: 25px;
+}
+.left-nav li:hover {
+    background-color: darkgrey;
+}
+.center-nav {
+    display: flex;
+    position: relative;
+}
