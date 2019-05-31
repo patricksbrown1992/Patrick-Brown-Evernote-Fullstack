@@ -6,10 +6,12 @@ import LogInForm from './logIn/logInContainer';
 import SignUpForm from './signUp/signUpContainer';
 import { Authorized, ProtectedRoute } from '../util/routeUtil';
 import UsernameForm from './username/usernameContainer';
+import FeaturesForm from './features/featuresForm';
 const App = () => (
     <div className= 'app-div'>
 
         <Switch>
+            <Route exact path ='/features' component={FeaturesForm}/>
             <ProtectedRoute exact path='/username' component={UsernameForm} />
             <Authorized exact path='/login' component={LogInForm} />
             <Route exact path='/' component={SplashForm} />

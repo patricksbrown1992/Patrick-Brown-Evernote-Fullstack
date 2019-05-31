@@ -68,7 +68,9 @@ class SignUpForm extends React.Component {
                                 <input className="sign-up-email" type="text" value={this.state.email} placeholder='Email' onChange={this.handleChange('email')} />
                                 <input className = "sign-up-password" type="password" placeholder='Password' value={this.state.password} onChange={this.handleChange('password')}/>
                                 <ul>
+                                    <br/>
                                     {errors}
+                                    <br/>
                                 </ul>
                             <form onSubmit={this.handleSubmit}>
                                     <div className='sign-up-continue'>

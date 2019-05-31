@@ -26,6 +26,18 @@
 .splash-left h1, h2 {
     color: white;
 }
+.featuresForm h1{
+    font-size: 200px;
+}
+
+.features-div a{
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 0 15px;
+    font-family: sans-serif;
+}
 .splash-left a {
     background-color: white;
     text-decoration: none;
@@ -139,7 +151,7 @@
     padding-top: 12px;
     border-radius: 4px;
     margin-left: 15px;
-    border: 1px solid #00a82d;
+    border: 2px solid #00a82d;
     padding-right: 30px;
     padding-left: 30px;
     line-height: 10px;

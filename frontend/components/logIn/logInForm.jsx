@@ -67,7 +67,10 @@ class LogInForm extends React.Component {
 
                         <input className="log-in-email-input" placeholder='Email address' type="text" value={this.state.email} onChange={this.handleChange('email')}/>
                         <input className={passwordClass} type="password" placeholder='Password' value={this.state.password} onChange={this.handleChange('password')} />
+                        <br/>
+                       
                         {errors}
+                        <br />
                         <form onSubmit={this.handleSubmit}>
                             <div className='enter-username'>
 
