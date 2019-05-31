@@ -14,7 +14,10 @@ const splashHeader = () => (
             <nav className="signup-button">
                 <Link to='/signup'>Sign up</Link>
             </nav>
-            <p>or</p>
+            <span>
+                <p className="or">or</p>
+            </span>
+            
             <nav className = "login-button">
                 <Link to='/login'>Log in</Link>
             </nav>
