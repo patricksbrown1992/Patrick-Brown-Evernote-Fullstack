@@ -38,7 +38,7 @@ class LogInForm extends React.Component {
                 return <li key={idx}>{error}</li>
             });
         } 
-        if (this.props.verified === false) {
+        if (this.props.verified != true) {
             passwordClass = 'log-in-password-hide';
             buttonText = 'Continue';
         } else {

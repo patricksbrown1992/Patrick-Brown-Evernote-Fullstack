@@ -7,7 +7,7 @@ import SignUpForm from './signUp/signUpContainer';
 import { Authorized, ProtectedRoute } from '../util/routeUtil';
 import UsernameForm from './username/usernameForm';
 const App = () => (
-    <div>
+    <div className= 'app-div'>
 
         <Switch>
             <ProtectedRoute exact path='/username' component={UsernameForm} />

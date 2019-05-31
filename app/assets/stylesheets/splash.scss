@@ -1,0 +1,94 @@
+.splash-nav  {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 130px;
+ 
+    padding-left: 140px;
+    padding-right: 140px;
+    background-color: white;
+    
+}
+.splash-body {
+    background-image: image-url('background-green.png');
+    background-color: #00a82d;
+    width: 100%;
+    height: 100%;
+}
+.splash-nav li{
+    list-style-type: none;
+    display: flex;
+}
+ .title {
+    color: #000000;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+
+
+ }
+ .splash-nav img {
+    width: 80px;
+    height: 80px;
+ }
+ .login-button a {
+    color: #21a72c;
+    text-decoration: none;
+    display: flex;
+    border: 2px solid #00a82d;
+    padding-right: 30px;
+    padding-left: 30px;
+    width: 50px;
+    line-height: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 4px;
+    margin-left: 15px;
+    font-family: Soleil,Helvetica,Arial,sans-serif;
+ }
+ .login-button a:hover {
+    border: 2px solid limegreen;
+    color: limegreen;
+    cursor: pointer;
+ }
+
+ .splash-buttons {
+    display: flex;
+    margin-top: 50px;
+    justify-content: space-around;
+ }
+
+.splash-nav-left{
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+}
+.splash-nav-left img {
+    margin-top: -15px;
+
+}
+ .signup-button a {
+    display: flex;
+    margin-top: 8px;
+    margin-right: 15px;
+    text-decoration: none;
+    font-family: Soleil,Helvetica,Arial,sans-serif;
+    color: #21a72c;
+   
+    
+ }
+ 
+
+  .signup-button a:hover {
+      color: limegreen;
+      cursor: pointer;
+  }
+ 
+
+ .splash-buttons {
+    padding: 5%;
+    font-family: 'PT Sans', sans-serif;
+ }
+ .splash-buttons p, a {
+     margin: 6px;
+ }

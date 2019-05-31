@@ -1,0 +1,85 @@
+.app-div {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.log-in-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 125px;
+    margin-bottom: 200px;
+    width: 515px;
+    border: 1px solid red;
+
+    height: 635px;
+
+}
+.log-in-evernote {
+    font-weight: bold;
+    font-size: 40px;
+}
+.log-in-form h1 {
+    margin-top: 2px;
+    margin-bottom: 15px;
+}
+.log-in-form h3 {
+    margin-bottom: 20px;
+}
+
+.log-in-form img {
+    width: 100px;
+    height: 100px;
+    margin-top: -10px;
+}
+
+ 
+  .log-in-form .enter-username button:hover {
+    color: honeydew;
+    cursor: pointer;
+    background-color: forestgreen;
+  }
+.enter-username button {
+    background-color: limegreen;
+    width: 350px;
+    line-height: 50px;
+    border-radius: 12px;
+    color: honeydew;
+}
+
+  .log-in-email-input {
+    width: 350px;
+    height: 30px;
+    margin-bottom: 6px;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1p solid #e6e6e6;
+  }
+
+
+ .redirect-to-login-signup a {
+     color: limegreen;
+     text-decoration: none;
+     margin-bottom: -200px;
+ }
+ .redirect-to-login-signup a:hover {
+    color: forestgreen;
+    cursor: pointer;
+ }
+.log-in-password-hide {
+    display: none;
+}
+
+.log-in-password-show {
+    width: 350px;
+    height: 30px;
+    margin-bottom: 6px;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1p solid #e6e6e6;
+}

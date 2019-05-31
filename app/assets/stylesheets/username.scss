@@ -1,0 +1,40 @@
+.left-nav {
+    display: block;
+    flex-direction: column;
+    background-color: #1a1a1a;
+    height: 900px;
+    width: 240px;
+    z-index: 2;
+   
+}
+.left-nav li {
+    color: #c8c8c8;
+    margin-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.left-nav input {
+    background-color: darkslategray;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    color: white;
+}
+.new-note {
+    margin-bottom: 25px;
+}
+.left-nav li:hover {
+    background-color: darkgrey;
+}
+.center-nav {
+    display: flex;
+    z-index: 1;
+    flex-direction: column;
+    margin-left: 250px;
+    margin-top: 50px;
+    width: 350px;
+}
+.notebook-title {
+    font-size: 20px;
+    
+}

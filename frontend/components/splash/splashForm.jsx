@@ -1,29 +1,17 @@
 import React from 'react';
-import {Link } from 'react-router-dom';
-// import splash_main from '../../../app/assets/images/splash_main';
+import SplashHeader from './splashHeader';
 
 const splashForm = () => (
-    <div className='splash-nav'>
-        <div className ='splash-nav-left'>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Evernote_Icon.png/220px-Evernote_Icon.png" alt="" />
-            <h1 className='title'>NeverNote</h1>
-        </div>
-        <div className='splash-buttons'>
-            
-            <nav className="signup-button">
-                <Link to='/signup'>Sign up</Link>
-            </nav>
-            <p>or</p>
-            <nav className = "login-button">
-                <Link to='/login'>Log in</Link>
-            </nav>
+    <div className = "splash-form">
+        <SplashHeader />
+        <div className = "splash-body">
+            <div className = "splash-left">
+                <h1>Feel organized without the effort</h1>
+                <h2>Endeavornote helps you capture and prioritize ideas, projects, and to-do lists, so nothing falls through the cracks.</h2>
+            </div>
+            <div className = 'splash-right'>
                 
-            
-
-        
-        </div>
-        <div className="photos">
-            
+            </div>
         </div>
     </div>
 );
