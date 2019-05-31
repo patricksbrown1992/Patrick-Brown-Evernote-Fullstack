@@ -5,7 +5,7 @@ import SplashForm from './splash/splashForm';
 import LogInForm from './logIn/logInContainer';
 import SignUpForm from './signUp/signUpContainer';
 import { Authorized, ProtectedRoute } from '../util/routeUtil';
-import UsernameForm from './username/usernameForm';
+import UsernameForm from './username/usernameContainer';
 const App = () => (
     <div className= 'app-div'>
 
