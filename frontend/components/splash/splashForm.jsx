@@ -1,5 +1,6 @@
 import React from 'react';
 import SplashHeader from './splashHeader';
+import {Link} from 'react-router-dom';
 
 const splashForm = () => (
     <div className = "splash-form">

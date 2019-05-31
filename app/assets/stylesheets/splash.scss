@@ -26,8 +26,17 @@
 .splash-left h1, h2 {
     color: white;
 }
+.splash-left button {
+    background-color: white;
+    text-decoration: none;
+    color: #00a82d;
+    padding: 25px 40px;
+    font-size: 16px;
+    font-weight: bold;
+
+}
 .splash-left h1 {
-    font-size: 60px;
+    font-size: 45px;
     font-weight: bold;
     margin-top: 130px;
     line-height: 72px;

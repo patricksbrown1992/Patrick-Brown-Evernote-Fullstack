@@ -1,4 +1,4 @@
-export const getNotebooks = (notebooks) => {
+export const getNotebooks = () => {
     return $.ajax({
         method: 'GET',
         url: 'api/session/notebooks',
