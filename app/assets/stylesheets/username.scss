@@ -1,10 +1,10 @@
 .left-nav {
-    display: block;
+    display: flex;
     flex-direction: column;
     background-color: #1a1a1a;
-    height: 900px;
+    height: 100%;
     width: 240px;
-    z-index: 2;
+   
    
 }
 .left-nav li {
@@ -14,7 +14,7 @@
     padding-bottom: 10px;
 }
 .left-nav input {
-    background-color: darkslategray;
+    background-color: rgb(8, 8, 8);
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 10px;
@@ -28,9 +28,10 @@
 }
 .center-nav {
     display: flex;
-    z-index: 1;
+    
     flex-direction: column;
     margin-left: 250px;
+    height: 100%;
     margin-top: 50px;
     width: 350px;
 }

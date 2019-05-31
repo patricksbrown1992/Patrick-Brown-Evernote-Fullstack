@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import LogInForm from './logInForm';
-import { login, checkEmail } from '../../actions/sessionActions';
+import { login, checkEmail, clearErrors } from '../../actions/sessionActions';
 
 const msp = (state) => {
     // debugger
@@ -13,7 +13,8 @@ const msp = (state) => {
 
 const mdp = (dispatch) => ({
     login: (user) => dispatch(login(user)),
-    checkEmail: (email) => dispatch(checkEmail(email))
+    checkEmail: (email) => dispatch(checkEmail(email)),
+    clearErrors: () => dispatch(clearErrors()),
 });
 
 

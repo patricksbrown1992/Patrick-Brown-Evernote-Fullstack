@@ -21,6 +21,7 @@ class SignUpForm extends React.Component {
    
         this.props.signup(this.state);
         this.setState({email: '', password: ''});
+        this.props.clearErrors();
     }
  
     render(){

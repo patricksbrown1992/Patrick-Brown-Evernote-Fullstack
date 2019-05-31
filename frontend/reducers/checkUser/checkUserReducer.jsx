@@ -3,14 +3,14 @@ import { merge } from 'lodash';
 
 const checkUsersReducer = (state ={verified: false}, action) => {
     Object.freeze(state);
-    debugger
+    // debugger
     switch(action.type){
         case CHECK_EMAIL:
-            debugger
+            // debugger
             return action.email;
         case RECEIVE_ERRORS:
-            debugger
-            return {};
+            // debugger
+            return state;
         default:
             return state;
 

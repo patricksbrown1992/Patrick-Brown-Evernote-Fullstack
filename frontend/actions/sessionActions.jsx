@@ -4,11 +4,16 @@ export const RECEIVE_USER = 'RECEIVE_USER';
 export const REMOVE_USER = 'REMOVE_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 export const CHECK_EMAIL = 'CHECK_EMAIL';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 const receiveUser = (user) => ({
     type: RECEIVE_USER,
     user
 });
+export const clearErrors = () => ({
+    type: CLEAR_ERRORS
+});
+   
 
 const checkUser = (email) => ({
     type: CHECK_EMAIL,
@@ -20,7 +25,7 @@ const removeUser = () => ({
    
 });
 const receiveErrors = errors => {
-    debugger
+    // debugger
     return {
     type: RECEIVE_ERRORS,
     errors
