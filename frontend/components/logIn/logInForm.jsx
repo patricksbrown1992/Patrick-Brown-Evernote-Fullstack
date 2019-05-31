@@ -53,37 +53,40 @@ class LogInForm extends React.Component {
         
        
         return (
-            <form onSubmit={this.handleSubmit}>
-                <div className='outerdiv'>
-                    <div className = 'log-in-form'>
-                        <div className= "log-in-top">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Evernote_Icon.png/220px-Evernote_Icon.png" alt="" />
-                            <h1 className='log-in-evernote'>NeverNote</h1>
-                            <h3>Remember everything important.</h3>
-                        </div>
+            
+            <div className='outerdiv'>
+                <div className = 'log-in-form'>
+                    <div className= "log-in-top">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Evernote_Icon.png/220px-Evernote_Icon.png" alt="" />
+                        <h1 className='log-in-evernote'>NeverNote</h1>
+                        <h3>Remember everything important.</h3>
+                    </div>
+                    
+                    <div className ="log-in-middle">
                         
-                        <div className ="log-in-middle">
 
-                            <input className="log-in-email-input" placeholder='Email address' type="text" value={this.state.email} onChange={this.handleChange('email')}/>
-                            <input className={passwordClass} type="password" placeholder='Password' value={this.state.password} onChange={this.handleChange('password')} />
-                            {errors}
+                        <input className="log-in-email-input" placeholder='Email address' type="text" value={this.state.email} onChange={this.handleChange('email')}/>
+                        <input className={passwordClass} type="password" placeholder='Password' value={this.state.password} onChange={this.handleChange('password')} />
+                        {errors}
+                        <form onSubmit={this.handleSubmit}>
                             <div className='enter-username'>
 
                                 <button type='submit'>{buttonText}</button>
                             </div>
-                        </div>
-                        <div className ="log-in-bottom">
+                        </form>
+                    </div>
+                    <div className ="log-in-bottom">
 
-                            <h3>Remember me for 30 days</h3>
-                            <h3>Don't have an account?</h3>
-                            <div className='redirect-to-login-signup'>
-                                <Link to='/signup'>Create account</Link>
-                            </div>
+                        <h3>Remember me for 30 days</h3>
+                        <h3>Don't have an account?</h3>
+                        <div className='redirect-to-login-signup'>
+                            <Link to='/signup'>Create account</Link>
                         </div>
                     </div>
-
                 </div>
-            </form>
+
+            </div>
+          
         )
         
     }

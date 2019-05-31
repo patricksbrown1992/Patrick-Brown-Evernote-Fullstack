@@ -8,7 +8,6 @@
     z-index: 1;
 
 }
-
 .sign-up-form {
     z-index: 3;
     display: flex;
@@ -83,6 +82,7 @@
     margin-bottom: 6px;
     border-radius: 10px;
     font-size: 16px;
+    outline: none;
     border: 1px solid #e6e6e6;
    
 }
@@ -90,6 +90,7 @@
     width: 315px;
     height: 40px;
     border-radius: 10px;
+    outline: none;
     border: 1px solid #e6e6e6;
     font-size: 16px;
 }
@@ -99,8 +100,17 @@
     margin-bottom: 10px;
 }
 
-
-.sign-up-form .sign-up-continue button {
+.demo-button button{
+    width: 320px;
+    line-height: 45px;
+    border-radius: 12px;
+    color: black;
+    border: 1px solid black;
+    outline: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+ .sign-up-continue button {
     background-color: limegreen;
     width: 320px;
     line-height: 45px;

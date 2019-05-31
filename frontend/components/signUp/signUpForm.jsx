@@ -18,10 +18,22 @@ class SignUpForm extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-   
-        this.props.signup(this.state);
-        this.setState({email: '', password: ''});
-        this.props.clearErrors();
+        debugger
+        if(e.currentTarget.children[0].classList.value === "sign-up-continue"){
+
+            this.props.signup(this.state);
+            this.setState({ email: '', password: '' });
+            this.props.clearErrors();
+            
+        } else {
+            const email = 'buzz@lightyear.com';
+            const password = '123456';
+            const person = { email, password };
+            this.props.login(person);
+            this.setState({ email: '', password: '' });
+            this.props.clearErrors();
+        }
+        
     }
  
     render(){
@@ -35,7 +47,7 @@ class SignUpForm extends React.Component {
         } 
       
         return (
-            <form onSubmit={this.handleSubmit}>
+            
                 <div className = 'outerdiv'>
                     <div className='sign-up-form'>
                     
@@ -47,15 +59,23 @@ class SignUpForm extends React.Component {
                             </div>
                             
                             <div className="sign-up-middle">
+                                 <form onSubmit={this.handleSubmit}>
+                                    <div className="demo-button">
+                                        <button type='submit'>Demo for Free</button>
+                                    </div>
+                                 </form>
+                                <br/>
                                 <input className="sign-up-email" type="text" value={this.state.email} placeholder='Email' onChange={this.handleChange('email')} />
                                 <input className = "sign-up-password" type="password" placeholder='Password' value={this.state.password} onChange={this.handleChange('password')}/>
                                 <ul>
                                     {errors}
                                 </ul>
-                                <div className='sign-up-continue'>
+                            <form onSubmit={this.handleSubmit}>
+                                    <div className='sign-up-continue'>
 
-                                    <button type='submit'>Continue</button>
-                                </div>
+                                        <button type='submit'>Continue</button>
+                                    </div>
+                            </form>
                             </div>  
                             <div className="sign-up-bottom">
                                 <p>By creating an account, you are agreeing to our Terms of Service and Privacy Policy.</p>
@@ -67,7 +87,7 @@ class SignUpForm extends React.Component {
                     
                     </div>
                 </div>
-            </form>
+            
         );
     };
 };
