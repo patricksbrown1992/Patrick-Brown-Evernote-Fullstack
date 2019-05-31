@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     get 'users/verify', to: 'users#verify'
     resources :users, only: [:create] 
     resources :notesbooks, only: [:show, :index, :create, :destroy, :update]
-    resource :session, only: [:create, :destroy]
+    resource :session, only: [:destroy]
+    resource :session, only: [:create] do 
+      resources :notesbooks, only: [:show, :index, :create, :destroy, :update]
+    end
   end
 end
