@@ -1,6 +1,12 @@
-.app-div {
-    width: 100%;
-    height: 100%;
+.outerdiv {
+    display:flex;
+    justify-content: center;
+    background-image: image-url('background-for-login-signup.png');
+    
+    background-color: mintcream;
+    background-size: 200px 200px;
+    z-index: 1;
+
 }
 
 
@@ -14,10 +20,26 @@
     margin-bottom: 200px;
     width: 515px;
     border: 1px solid red;
-
+    background-color: white;
     height: 635px;
-
+    z-index: 2;
 }
+
+.log-in-form-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 160px;
+    width: 515px;
+    border: 1px solid red;
+    background-color: white;
+    height: 710px;
+    z-index: 2;
+}
+
+
 .log-in-evernote {
     font-weight: bold;
     font-size: 40px;
