@@ -4,6 +4,11 @@ class NotebooksController < ApplicationController
 
     def show
         @notebook = Notebooks.find(params[:id])
+        if @notebook
+            json 'api/notebooks/show'
+        else
+            render json: @notebook.errors.full_messages, status: 404
+        end
     end
 
     def index
