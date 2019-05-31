@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     get 'users/verify', to: 'users#verify'
     resources :users, only: [:create] 
+    resources :notesbooks, only: [:show, :index, :create, :destroy, :update]
     resource :session, only: [:create, :destroy]
   end
 end
