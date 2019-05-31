@@ -1,25 +1,59 @@
 .outerdiv {
     display:flex;
     justify-content: center;
-    background-image: image-url('background-green.png');
-    height: 100%;
-    width: 100%;
+    background-image: image-url('background-for-login-signup');
+  
+    background-color: mintcream;
     background-size: 200px 200px;
+    z-index: 1;
+
 }
+
 .sign-up-form {
+    z-index: 3;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     margin-top: 125px;
-  
+    background-color: white;
     margin-bottom: 200px;
     width: 515px;
+    height: 670px;
     border: 1px solid red;
 
     height: 635px;
 
 }
+
+.sign-up-middle li {
+    color: red;
+}
+.sign-up-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 100px;
+  
+}
+.sign-up-top img {
+    margin-left: 60px;
+}
+.sign-up-top h1 {
+    margin-left: 10px;
+}
+
+.sign-up-middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sign-up-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .sign-up-form p {
     width: 260px;
     font-size: 12px;
@@ -38,16 +72,20 @@
 }
 
 .sign-up-email {
-    width: 250px;
-    height: 30px;
+    width: 315px;
+    height: 40px;
     margin-bottom: 6px;
     border-radius: 10px;
-    /* round edges */
+    font-size: 16px;
+    border: 1px solid #e6e6e6;
+   
 }
 .sign-up-password {
-    width: 250px;
-    height: 30px;
+    width: 315px;
+    height: 40px;
     border-radius: 10px;
+    border: 1px solid #e6e6e6;
+    font-size: 16px;
 }
 .sign-up-form h3 {
     margin-bottom: 20px;
@@ -61,13 +99,19 @@
 .sign-up-form .sign-up-continue button {
     background-color: limegreen;
     width: 320px;
-    line-height: 50px;
+    line-height: 45px;
     border-radius: 12px;
     color: honeydew;
+    font-size: 16px;
+    
 }
 
 .sign-up-form img {
     margin-top: -100px;
     width: 100px;
     height: 100px;
+}
+
+.sign-up-bottom a {
+    margin-bottom: -130px;
 }
