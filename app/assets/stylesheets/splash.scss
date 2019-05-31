@@ -2,8 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 130px;
- 
+    height: 15%;
+    width: 100%;
     padding-left: 140px;
     padding-right: 140px;
     background-color: white;
@@ -14,14 +14,14 @@
     background-image: image-url('background-green.png');
     background-color: #00a82d;
     width: 100%;
-    height: 615px;
+    height: 100%;
     display: flex;
     z-index: 1;
 }
 .splash-left{
-    width: 530px;
-    height: 260px;
-    margin-left: 330px;
+    width: 28%;
+    height: 100%;
+    margin-left: 17%;
 }
 .splash-left h1, h2 {
     color: white;
@@ -29,20 +29,24 @@
 .featuresForm h1{
     font-size: 200px;
 }
-
+.features-div {
+    
+    width: 23%;
+}
 .features-div a{
     list-style: none;
     text-decoration: none;
     color: black;
     font-weight: bold;
-    padding: 0 15px;
+    
+    padding: 0 .7%;
     font-family: sans-serif;
 }
 .splash-left a {
     background-color: white;
     text-decoration: none;
     color: #00a82d;
-    padding: 25px 40px;
+    padding: 3.5% 6.5%;
     font-size: 16px;
     font-weight: bold;
 
@@ -165,7 +169,7 @@
     background-image: image-url('homepage-hero-desktop.png');
     z-index: 2;
     height: 395px;
-    width: 665px;
+    width: 35%;
     margin-top: 120px;
     margin-left: 50px;
  }
