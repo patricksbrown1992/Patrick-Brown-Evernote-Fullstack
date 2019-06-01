@@ -12,10 +12,10 @@ const receiveNotebooks = notebooks => ({
     notebooks
 });
 
-export const getNotebooks = () => dispatch (
+export const getNotebooks = () => dispatch => (
     APIUtil.getNotebooks().then(notebooks => (dispatch(receiveNotebooks(notebooks))))
 );
 
-export const getNotebook = (notebook) => dispatch (
+export const getNotebook = (notebook) => dispatch => (
     APIUtil.getNotebook(notebook).then(notebook => (dispatch(receiveNotebook(notebook))))
 );

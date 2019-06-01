@@ -1,4 +1,4 @@
-class NotebooksController < ApplicationController
+class Api::NotebooksController < ApplicationController
     before_action :require_logged_in
 
 
@@ -12,7 +12,8 @@ class NotebooksController < ApplicationController
     end
 
     def index
-        @notebooks = Notebook.all
+        @notebooks = current_user.notebooks
+        render 'api/notebooks/index'
     end
 
 

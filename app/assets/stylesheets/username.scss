@@ -1,11 +1,29 @@
+// html{
+//     height: 100%;
+//     width: 100%;
+// }
+body {
+    width: 100%;
+    height: 100%;
+}
+main {
+    width: 100%;
+    height: 100%;
+}
+.username-form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+
 .left-nav {
     display: flex;
     flex-direction: column;
     background-color: #1a1a1a;
     height: 100%;
-    width: 240px;
-   
-   
+    width: 12.5%;
 }
 .left-nav li {
     color: #c8c8c8;
@@ -28,14 +46,27 @@
 }
 .center-nav {
     display: flex;
-    
-    flex-direction: column;
-    margin-left: 250px;
     height: 100%;
-    margin-top: 50px;
-    width: 350px;
+//    border: 1px solid orange;
+    background-color: whitesmoke;
+    width: 18%;
+    flex-direction: column;
+}
+
+
+.right-nav {
+    display: flex;
+    flex-direction: column;
+    width: 69.5%;
+    height: 100%;
+}
+.right-nav h1 {
+    margin-top: 9%;
+    margin-left: 3%;
 }
 .notebook-title {
+    margin-top: 14%;
     font-size: 20px;
+    margin-left: 6%;
     
 }

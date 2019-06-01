@@ -1,7 +1,7 @@
 export const getNotebooks = () => {
     return $.ajax({
         method: 'GET',
-        url: 'api/session/notebooks',
+        url: 'api/notebooks',
         data: {
             notebooks
         }
@@ -11,7 +11,7 @@ export const getNotebooks = () => {
 export const getNotebook = notebook => {
     return $.ajax({
         method: 'GET',
-        url: `api/session/notebooks/${notebook.id}`,
+        url: `api/notebooks/${notebook.id}`,
         data: {
             notebook
         }
