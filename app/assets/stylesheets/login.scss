@@ -101,14 +101,17 @@
 }
 
  .log-in-form li {
-     list-style: none;
-     color: red;
-     font-family: sans-serif;
+    list-style: none;
+    color: red;
+    font-family: sans-serif;
  }
+
+
   .log-in-form .enter-username button:hover {
     color: honeydew;
     cursor: pointer;
     background-color: forestgreen;
+    outline: none;
   }
 .enter-username button {
     background-color: limegreen;
@@ -116,6 +119,7 @@
     line-height: 50px;
     border-radius: 12px;
     color: honeydew;
+    outline: none;
 }
 
   .log-in-email-input {
@@ -144,11 +148,16 @@
     cursor: pointer;
  }
 .log-in-password-hide {
-    display: none;
+    
+    height: 0;
+    opacity: 0;
+    transition: height 1s ease;
 }
 
 .log-in-password-show {
-    
+    transition: height 1s, opacity 1s;
+    opacity: 100;
+
     margin-bottom: 6px;
     border-radius: 10px;
     padding-left: 20px;
