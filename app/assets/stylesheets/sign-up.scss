@@ -4,7 +4,7 @@
     background-image: image-url('background-for-login-signup.png');
     
     background-color: mintcream;
-    background-size: 200px 200px;
+    background-size: 20% 20%;
     z-index: 1;
 
 }
@@ -14,10 +14,10 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    margin-top: 145px;
+    margin-top: 6.5%;
     background-color: white;
-    margin-bottom: 200px;
-    width: 515px;
+    margin-bottom: 10.5%;
+    width: 27%;
     height: 670px;
    
   
@@ -33,16 +33,21 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 100px;
+    padding-top: 20%;
     // height: 180px;
     // border: 1px solid orange;
 }
 .sign-up-top img {
-    margin-left: 60px;
+    margin-left: 21%;
+    margin-top: -50%;
+    width: 60%;
+    height: 60%;
     
 }
 .sign-up-top h1 {
-    margin-left: 10px;
+    margin-left: 6%;
+   
+    margin-bottom: 1%;
 }
 
 .sign-up-middle {
@@ -56,12 +61,12 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 160px;
+    height: 18.5%;
     // border: 1px solid green;
 }
 
 .sign-up-form p {
-    width: 260px;
+    width: 57%;
     font-size: 12px;
     text-align: center;
     
@@ -73,15 +78,12 @@
     background-color: forestgreen;
     outline: none;
   }
-.sign-up-form h1 {
-    margin-top: 2px;
-    margin-bottom: 15px;
-}
+
 
 .sign-up-email {
-    width: 315px;
+    width: 95%;
     height: 40px;
-    margin-bottom: 6px;
+    margin-bottom: 1.5%;
     border-radius: 10px;
     font-size: 16px;
     outline: none;
@@ -89,7 +91,7 @@
    
 }
 .sign-up-password {
-    width: 315px;
+    width: 95%;
     height: 40px;
     border-radius: 10px;
     outline: none;
@@ -98,8 +100,8 @@
 }
 
 .sign-up-continue {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 2%;
+    margin-bottom: 2px;
 }
 
 .demo-button button{
@@ -124,14 +126,9 @@
     
 }
 
-.sign-up-form img {
-    margin-top: -100px;
-    width: 100px;
-    height: 100px;
-}
 
 .redirect-to-login-signup {
     display: flex;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 5%; 
+    margin-bottom: 5%;
 }
