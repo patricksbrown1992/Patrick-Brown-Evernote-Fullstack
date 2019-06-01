@@ -12,8 +12,9 @@ class Api::NotebooksController < ApplicationController
     end
 
     def index
-        @notebooks = current_user.notebooks
-        render 'api/notebooks/index'
+        @notebooks = Notebook.all
+        debugger
+        render 'api/notebooks/index', status: 200
     end
 
 

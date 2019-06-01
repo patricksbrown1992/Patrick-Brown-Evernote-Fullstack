@@ -7,9 +7,11 @@ import SignUpForm from './signUp/signUpContainer';
 import { Authorized, ProtectedRoute } from '../util/routeUtil';
 import UsernameForm from './username/usernameContainer';
 import FeaturesForm from './features/featuresForm';
+
 const App = () => (
    
     <>
+
         <Switch>
             <Route exact path ='/features' component={FeaturesForm}/>
             <Route exact path='/username' component={UsernameForm} />

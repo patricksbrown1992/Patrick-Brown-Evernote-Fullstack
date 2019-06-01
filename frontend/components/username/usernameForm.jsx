@@ -47,7 +47,7 @@ class usernameForm extends React.Component{
                 <div className="center-nav">
                     <ul>
                         <li className="notebook-title">Notebook Title</li>
-                        {/* <li>{notebooks}</li> */}
+                        <li>{notebooks}</li>
 
                     </ul>
                 </div>

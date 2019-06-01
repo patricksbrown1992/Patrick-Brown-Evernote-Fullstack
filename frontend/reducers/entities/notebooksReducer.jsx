@@ -1,7 +1,7 @@
 import { RECEIVE_NOTEBOOKS, RECEIVE_NOTEBOOK} from '../../actions/notebookActions';
 import { merge } from 'lodash';
 
-const usersReducer = (state = {}, action) => {
+const notebooksReducer = (state = {}, action) => {
     Object.freeze(state);
     switch(action.type){
         case RECEIVE_NOTEBOOKS:
@@ -13,4 +13,4 @@ const usersReducer = (state = {}, action) => {
 
     }   
 };
-export default usersReducer;
+export default notebooksReducer;

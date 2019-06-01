@@ -1,11 +1,9 @@
 export const getNotebooks = () => {
+    debugger
     return $.ajax({
         method: 'GET',
-        url: 'api/notebooks',
-        data: {
-            notebooks
-        }
-    });
+        url: 'api/notebooks'
+    });      
 };
 
 export const getNotebook = notebook => {
