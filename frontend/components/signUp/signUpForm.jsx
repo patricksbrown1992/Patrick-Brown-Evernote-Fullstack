@@ -26,7 +26,7 @@ class SignUpForm extends React.Component {
             this.props.clearErrors();
             
         } else {
-            const email = 'buzz@lightyear.com';
+            const email = 'admit@admin.com';
             const password = '123456';
             const person = { email, password };
             this.props.login(person);
