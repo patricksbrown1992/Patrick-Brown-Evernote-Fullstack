@@ -29,6 +29,7 @@ html {
     width: 28%;
     height: 100%;
     margin-left: 17%;
+
 }
 .splash-left h1, h2 {
     color: white;
@@ -57,6 +58,7 @@ html {
     color: #00a82d;
     padding: 3.5% 6.5%;
     font-size: 16px;
+    // font-size: 25%;
     font-weight: bold;
 }
 
@@ -64,7 +66,8 @@ html {
     font-size: 390%;
     font-weight: bold;
     margin-top: 23%;
-    line-height: 72px;
+    // line-height: 72px;
+    line-height: 115%;
     margin-bottom: 4.5%;
     font-family: Soleil_Medium,Helvetica,Arial,sans-serif;
 }
@@ -72,8 +75,9 @@ html {
 .splash-left h2 {
     font-family: Soleil_Light,Helvetica,Arial,sans-serif;
     font-size: 135%;
-    line-height: 40px;
-    margin-bottom: 35px;
+    // line-height: 40px;
+    line-height: 190%;
+    margin-bottom: 8%;
     font-weight: 100;
 }
 
@@ -122,12 +126,16 @@ html {
 .signup-button {
     display: flex;
     align-items: center;
+    margin-right: -5%;
 }
 
  .signup-button a {
     display: flex;
-    margin-top: -48%;
-    margin-right: 15px;
+    margin-top: -70%;
+    // border: 1px solid orange;
+    // margin-right: 15px;
+
+
     align-items: center;
     text-decoration: none;
     font-family: Soleil,Helvetica,Arial,sans-serif;
@@ -145,7 +153,7 @@ html {
     padding-right: 16%;
     width: 11%;
     font-family: 'PT Sans', sans-serif;
-    border: 1px solid red;
+    // border: 1px solid red;
     height: 80%;
     display:flex;
     justify-content: space-around;
@@ -164,7 +172,8 @@ html {
     text-decoration: none;
     padding-bottom: 20%;
     display: flex;
-    width: 50px;
+    // width: 50px;
+    width: 100%;
     padding-top: 20%;
     border-radius: 4px;
   
@@ -178,14 +187,15 @@ html {
     font-family: Soleil,Helvetica,Arial,sans-serif;
  }
  .login-button {
-    margin-top: 25px;
+    margin-top: 11%;
     margin-left: 6%;
  }
  .splash-right{
     background-image: image-url('homepage-hero-desktop.png');
     z-index: 2;
-    height: 395px;
+    // height: 395px;
+    height: 42.8%;
     width: 34.62%;
-    margin-top: 6%;
+    margin-top: 5.5%;
     margin-left: 2.6%;
  }

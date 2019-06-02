@@ -14,7 +14,7 @@ const receiveNote = note => ({
     note
 });
 
-const deleteNote = () => ({
+const destroyNote = () => ({
     type: DELETE_NOTE
 });
 
@@ -35,6 +35,6 @@ export const updateNote = (notebook, id) => dispatch => (
 );
 
 export const deleteNote = (notebook, note) => dispatch => (
-    APIUtil.deleteNote(notebook, note).then( () => dispatch(deleteNote(note)))
+    APIUtil.deleteNote(notebook, note).then( () => dispatch(destroyNote(note)))
 );
 
