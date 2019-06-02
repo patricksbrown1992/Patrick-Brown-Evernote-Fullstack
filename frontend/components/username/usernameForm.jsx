@@ -4,10 +4,12 @@ class usernameForm extends React.Component{
     constructor(props){
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.state = {loaded: false};
     }
     
     componentDidMount(){
         this.props.getNotebooks(this.props.user);
+        this.setState({loaded: true});
     }
 
    
@@ -19,7 +21,13 @@ class usernameForm extends React.Component{
 
     render(){
         debugger
-        let notebooks = this.props.notebooks.length > 0 || [];
+        let notebooks;
+        if (this.state.loaded) {
+            notebooks = this.props.notebooks.map(notebook => (
+                <li key={notebook.id}>{notebook.name}</li>
+
+            ))
+        }
         return (
         <div className="username-form">
             
@@ -47,7 +55,7 @@ class usernameForm extends React.Component{
                 <div className="center-nav">
                     <ul>
                         <li className="notebook-title">Notebook Title</li>
-                        <li>{notebooks}</li>
+                        {notebooks}
 
                     </ul>
                 </div>

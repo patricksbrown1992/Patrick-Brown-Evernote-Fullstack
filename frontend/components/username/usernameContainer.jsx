@@ -3,15 +3,10 @@ import { connect } from 'react-redux';
 import {logout} from '../../actions/sessionActions';
 import {getNotebooks} from '../../actions/notebookActions';
 
-const msp = state => {
-    const id = state.session.id;
-
-    return {
-
-        user: state.entities.user[id],
-        notebooks: state.entities.notebooks
-    };
-};
+const msp = state => ({
+    user: state.entities.user[state.session.id],
+    notebooks: Object.values(state.entities.notebooks)
+});
 
 const mdp = dispatch => ({
     logout: () => dispatch(logout()),
