@@ -3,14 +3,19 @@ import { connect } from 'react-redux';
 import {logout} from '../../actions/sessionActions';
 import {getNotebooks} from '../../actions/notebookActions';
 
-const msp = state => ({
-    user: state.entities.user,
-    notebooks: state.entities.notebooks
-});
+const msp = state => {
+    const id = state.session.id;
+
+    return {
+
+        user: state.entities.user[id],
+        notebooks: state.entities.notebooks
+    };
+};
 
 const mdp = dispatch => ({
     logout: () => dispatch(logout()),
-    getNotebooks: () => dispatch(getNotebooks())
+    getNotebooks: (user) => dispatch(getNotebooks(user))
 });
 
 export default connect(msp, mdp)(usernameForm);

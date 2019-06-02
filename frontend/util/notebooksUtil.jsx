@@ -1,8 +1,11 @@
-export const getNotebooks = () => {
+export const getNotebooks = (user) => {
     debugger
     return $.ajax({
         method: 'GET',
-        url: 'api/notebooks'
+        url: 'api/notebooks',
+        data: {
+            user_id: user.id
+        }
     });      
 };
 

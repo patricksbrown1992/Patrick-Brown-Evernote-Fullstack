@@ -7,7 +7,7 @@ class usernameForm extends React.Component{
     }
     
     componentDidMount(){
-        this.props.getNotebooks();
+        this.props.getNotebooks(this.props.user);
     }
 
    
@@ -19,7 +19,7 @@ class usernameForm extends React.Component{
 
     render(){
         debugger
-        let notebooks = this.props.notebooks.length > 0 || <h1>empty</h1>;
+        let notebooks = this.props.notebooks.length > 0 || [];
         return (
         <div className="username-form">
             

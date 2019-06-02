@@ -4,7 +4,7 @@ export const RECEIVE_NOTEBOOK = 'RECEIVE_NOTEBOOK';
 export const RECEIVE_NOTEBOOKS = "RECEIVE_NOTEBOOKS";
 
 const receiveNotebook = notebook => {
-    debugger
+   
     return ({
 
     
@@ -12,13 +12,19 @@ const receiveNotebook = notebook => {
     notebook
     });
 };
-const receiveNotebooks = notebooks => ({
-    type: RECEIVE_NOTEBOOKS,
-    notebooks
-});
+const receiveNotebooks = notebooks => {
+    debugger
 
-export const getNotebooks = () => dispatch => (
-    APIUtil.getNotebooks().then(notebooks => (dispatch(receiveNotebooks(notebooks))))
+
+    return ({
+
+        type: RECEIVE_NOTEBOOKS,
+        notebooks
+    });
+};
+
+export const getNotebooks = (user) => dispatch => (
+    APIUtil.getNotebooks(user).then(notebooks => (dispatch(receiveNotebooks(notebooks))))
 );
 
 export const getNotebook = (notebook) => dispatch => (
