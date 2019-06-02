@@ -12,5 +12,6 @@
 
 class Note < ApplicationRecord
     validates :notebook_id, :title, :body, presence: true
+    validates :title, uniqueness: true
     belongs_to :notebook
 end
