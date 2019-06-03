@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import LeftNav from './usernameFormLeft';
+import LeftNav from './usernameLeftContainer';
 import NotesIndexFormContainer from '../notes/notesIndexContainer';
+import UsernameFormRight from './usernameFormRight';
+
 class usernameForm extends React.Component {
     constructor(props){
         super(props);
@@ -18,6 +20,7 @@ class usernameForm extends React.Component {
 
                 <LeftNav />
                 <NotesIndexFormContainer />
+                <UsernameFormRight />
             </div>
 
         );

@@ -13,9 +13,9 @@ const App = () => (
    
     <>
         <Switch>
-            <Route exact path ='/notebooks' component={NotebooksIndexForm} />
+            <ProtectedRoute exact path ='/notebooks' component={NotebooksIndexForm} />
             <Route exact path ='/features' component={FeaturesForm}/>
-            <Route exact path='/username' component={UsernameForm} />
+            <ProtectedRoute exact path='/username' component={UsernameForm} />
             <Authorized exact path='/login' component={LogInForm} />
             <Route exact path='/' component={SplashForm} />
             <Authorized exact path='/signup' component={SignUpForm} />

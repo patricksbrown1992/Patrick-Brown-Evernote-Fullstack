@@ -1,5 +1,5 @@
 import React from 'react';
-import UsernameFormLeft from '../username/usernameFormLeft';
+import UsernameFormLeft from '../username/usernameLeftContainer';
 
 const notebooksIndexForm = () => (
     <div className='notebooks-index'>

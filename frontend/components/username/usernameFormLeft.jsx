@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 class usernameFormLeft extends React.Component{
     constructor(props){
         super(props);
@@ -43,12 +44,7 @@ class usernameFormLeft extends React.Component{
             </div>
             
 
-            {/* <div className="right-nav">
-                <h1>First Note</h1>
-                <h3>This is the first note</h3>
-                <h3>Really the first note</h3>
-
-            </div> */}
+          
             </>
         )
     }
