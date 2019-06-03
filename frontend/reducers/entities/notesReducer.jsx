@@ -11,7 +11,7 @@ const notesReducer = (state = {}, action) => {
             action.notes.forEach((note) => {
                 notes[note.id] = note;
             });
-            debugger
+            // debugger
             return merge({}, state, notes);  
         case RECEIVE_NOTE:
             return merge({}, state, {[action.note.id]: action.note});

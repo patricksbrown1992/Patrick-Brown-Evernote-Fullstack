@@ -11,7 +11,7 @@ const msp = state => ({
 
 const mdp = dispatch => ({
     logout: () => dispatch(logout()),
-    // getNotebooks: (user) => dispatch(getNotebooks(user))
+    getNotebooks: (user) => dispatch(getNotebooks(user))
 });
 
 export default connect(msp, mdp)(usernameForm);

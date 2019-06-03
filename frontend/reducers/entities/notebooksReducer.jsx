@@ -4,14 +4,14 @@ import { merge } from 'lodash';
 
 const notebooksReducer = (state = {}, action) => {
     Object.freeze(state);
-    debugger
+    // debugger
     switch(action.type){
         case RECEIVE_NOTEBOOKS:
             const notebooks = {};
             action.notebooks.forEach((notebooks) => {
                 notebooks[notebook.id] = notebook;
             });
-            debugger
+            // debugger
             return merge({}, state, notebooks);
         case RECEIVE_NOTEBOOK:
             return merge({}, state, {[action.notebook.id]: action.notebook});

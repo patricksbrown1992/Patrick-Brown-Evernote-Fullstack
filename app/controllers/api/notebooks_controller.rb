@@ -13,9 +13,9 @@ class Api::NotebooksController < ApplicationController
 
     def index
         @user = User.find(params[:user_id])
-        debugger
+        # debugger
         @notebooks = @user.notebooks
-        debugger
+        # debugger
         render json: @notebooks, status: 200
     end
 

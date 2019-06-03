@@ -31,11 +31,11 @@ class usernameFormLeft extends React.Component{
                             <button type='submit'>Log Out</button>
                         </div>
                     </form>
-                    <li className="user-email">Email</li>
+                    <li className="user-email">{this.props.user.email}</li>
                     <input placeholder="Search all notes..." type="text"></input>
                     <li className="new-note">New Note</li>
                     <li>Shortcuts</li>
-                    <li>All Notes</li>
+                    <li><Link to='/username'>All Notes</Link></li>
                     <li><Link to='/notebooks'>Notebooks</Link></li>
                     <li>Shared with Me</li>
                     <li>Tags</li>

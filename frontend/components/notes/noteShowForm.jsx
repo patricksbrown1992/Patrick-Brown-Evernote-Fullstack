@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-class UsernameFormRight extends React.Component {
+class NoteShowForm extends React.Component {
     constructor(props){
         super(props);
     }
@@ -19,4 +19,4 @@ class UsernameFormRight extends React.Component {
 }
 
 
-export default UsernameFormRight;
+export default NoteShowForm;
