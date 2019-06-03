@@ -1,16 +1,17 @@
 import notesIndexForm from './notesIndexForm';
 import {connect} from 'react-redux';
 import {getNotebooks} from '../../actions/notebookActions';
+import {getNotes} from '../../actions/noteAction';
 
-const msp = state => ({
+const msp = (state, ownProps) => ({
     user: state.entities.user[state.session.id],
-    notebooks: Object.values(state.entities.notebooks),
-    notes: Object.values(state.entities.notes)
+    // notebook: ownProps.notebook,
+    // notes: ownProps.notebook.notes
 });
 
 const mdp = dispatch => ({
-    logout: () => dispatch(logout()),
-    getNotebooks: (user) => dispatch(getNotebooks(user))
+    
+    getNotes: notebook => dispatch(getNotes(notebook))
 });
 
 export default connect(msp, mdp)(notesIndexForm);

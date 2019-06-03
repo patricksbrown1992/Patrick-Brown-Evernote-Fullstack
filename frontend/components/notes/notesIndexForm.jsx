@@ -1,31 +1,39 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class notesIndexForm extends React.Component {
+class NotesIndexForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = { loaded: false };
     }
-    // componentDidMount() {
-    //     this.props.getNotebooks(this.props.user);
-    //     this.setState({ loaded: true });
-    // }
+    componentDidMount() {
+
+        this.props.getNotes(this.props.notebook);
+        debugger
+        this.setState({ loaded: true });
+
+    }
     
 
     render() {
-        // let notes;
-        // if (this.state.loaded) {
-        //     notes = this.props.notes.map(note => (
-        //         <li key={note.id}>{note.name}</li>
-
-        //     ))
+      debugger
+        
+        let notes;
+        if(this.state.loaded){
+            notes = this.props.notes.map(note =>(
+                <li key={note.id}>{note.title}</li>
+            ));
+        }
+        // if (!this.props.notes) {
+        //     return null;
         // }
+        // debugger
         return (
 
         <div className="center-nav">
             <ul>
-                <li className="notebook-title">Notebook Title</li>
-                {/* {notes} */}
+                {/* <li className="notebook-title">Notebook Title</li> */}
+                <h3>{notes}</h3>
 
             </ul>
         </div>
@@ -33,5 +41,5 @@ class notesIndexForm extends React.Component {
     }
 }
 
-export default notesIndexForm;
+export default NotesIndexForm;
 

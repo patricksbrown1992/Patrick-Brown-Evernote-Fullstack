@@ -1,7 +1,8 @@
 import usernameForm from './usernameForm';
 import { connect } from 'react-redux';
 import {logout} from '../../actions/sessionActions';
-import {getNotebooks} from '../../actions/notebookActions';
+import {getNotebooks, getNotebook} from '../../actions/notebookActions';
+import {getNotes} from '../../actions/noteAction';
 
 const msp = state => ({
     user: state.entities.user[state.session.id],
@@ -11,7 +12,9 @@ const msp = state => ({
 
 const mdp = dispatch => ({
     logout: () => dispatch(logout()),
-    getNotebooks: (user) => dispatch(getNotebooks(user))
+    getNotebooks: (user) => dispatch(getNotebooks(user)),
+    getNotebook: notebook => dispatch(getNotebook(notebook)),
+    getNotes: notebook => dispatch(getNotes(notebook))
 });
 
 export default connect(msp, mdp)(usernameForm);
