@@ -4,11 +4,11 @@ import { merge } from 'lodash';
 
 const notebooksReducer = (state = {}, action) => {
     Object.freeze(state);
-    // debugger
+    debugger
     switch(action.type){
         case RECEIVE_NOTEBOOKS:
             const notebooks = {};
-            action.notebooks.forEach((notebooks) => {
+            action.notebooks.forEach((notebook) => {
                 notebooks[notebook.id] = notebook;
             });
             // debugger

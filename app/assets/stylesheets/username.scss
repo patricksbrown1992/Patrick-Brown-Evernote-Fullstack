@@ -26,6 +26,9 @@ main {
     height: 100%;
     width: 12.5%;
 }
+.left-nav ul {
+    width: 100%;
+}
 .left-nav li {
     color: #c8c8c8;
     margin-left: 20px;
@@ -48,7 +51,7 @@ main {
 }
 .left-nav li:hover {
     background-color: darkgrey;
-    width: 100%;
+    width: 80%;
 }
 .center-nav {
     display: flex;

@@ -6,26 +6,26 @@ class notesIndexForm extends React.Component {
         super(props);
         this.state = { loaded: false };
     }
-    componentDidMount() {
-        // this.props.getNotebooks(this.props.user);
-        this.setState({ loaded: true });
-    }
+    // componentDidMount() {
+    //     this.props.getNotebooks(this.props.user);
+    //     this.setState({ loaded: true });
+    // }
     
 
     render() {
-        let notes;
-        if (this.state.loaded) {
-            notes = this.props.notes.map(note => (
-                <li key={note.id}>{note.name}</li>
+        // let notes;
+        // if (this.state.loaded) {
+        //     notes = this.props.notes.map(note => (
+        //         <li key={note.id}>{note.name}</li>
 
-            ))
-        }
+        //     ))
+        // }
         return (
 
         <div className="center-nav">
             <ul>
                 <li className="notebook-title">Notebook Title</li>
-                {notes}
+                {/* {notes} */}
 
             </ul>
         </div>

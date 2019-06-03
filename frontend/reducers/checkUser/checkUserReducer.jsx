@@ -1,4 +1,4 @@
-import { CHECK_EMAIL, RECEIVE_ERRORS } from '../../actions/sessionActions';
+import { CHECK_EMAIL, RECEIVE_ERRORS, REMOVE_USER } from '../../actions/sessionActions';
 import { merge } from 'lodash';
 
 const checkUsersReducer = (state ={verified: false}, action) => {
@@ -11,6 +11,8 @@ const checkUsersReducer = (state ={verified: false}, action) => {
         case RECEIVE_ERRORS:
             // debugger
             return state;
+        case REMOVE_USER:
+            return {verified: false};
         default:
             return state;
 

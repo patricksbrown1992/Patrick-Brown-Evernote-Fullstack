@@ -23,7 +23,7 @@ class usernameFormLeft extends React.Component{
         // debugger
        
         return (
-            <>
+            
             <div className="left-nav">
                 <ul>
                     <form onSubmit={this.handleSubmit}>
@@ -45,7 +45,7 @@ class usernameFormLeft extends React.Component{
             
 
           
-            </>
+        
         )
     }
 }

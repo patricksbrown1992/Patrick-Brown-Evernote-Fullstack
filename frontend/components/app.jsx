@@ -5,7 +5,7 @@ import SplashForm from './splash/splashForm';
 import LogInForm from './logIn/logInContainer';
 import SignUpForm from './signUp/signUpContainer';
 import { Authorized, ProtectedRoute } from '../util/routeUtil';
-import NotebooksIndexForm from './notebooks/notebooksIndexForm';
+import NotebooksIndexForm from './notebooks/notebooksIndexContainer';
 import UsernameForm from './username/usernameContainer';
 import FeaturesForm from './features/featuresForm';
 

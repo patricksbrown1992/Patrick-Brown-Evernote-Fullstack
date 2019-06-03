@@ -18,6 +18,7 @@ const destroyNotebook = () => {
 };
 
 const receiveNotebooks = notebooks => {
+    debugger
     return ({
 
         type: RECEIVE_NOTEBOOKS,
