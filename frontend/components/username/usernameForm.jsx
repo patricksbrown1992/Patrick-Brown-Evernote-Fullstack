@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class usernameForm extends React.Component{
     constructor(props){
@@ -46,7 +47,7 @@ class usernameForm extends React.Component{
                         <li className="new-note">New Note</li>
                         <li>Shortcuts</li>
                         <li>All Notes</li>
-                        <li>Notebooks</li>
+                        <li><Link to='/notebooks'>Notebooks</Link></li>
                         <li>Shared with Me</li>
                         <li>Tags</li>
                         <li>Trash</li>

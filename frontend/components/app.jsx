@@ -5,6 +5,7 @@ import SplashForm from './splash/splashForm';
 import LogInForm from './logIn/logInContainer';
 import SignUpForm from './signUp/signUpContainer';
 import { Authorized, ProtectedRoute } from '../util/routeUtil';
+import NotebooksIndexForm from './notebooks/notebooksIndexForm';
 import UsernameForm from './username/usernameContainer';
 import FeaturesForm from './features/featuresForm';
 
@@ -13,6 +14,7 @@ const App = () => (
     <>
 
         <Switch>
+            <ProtectedRoute exact path ='/notebooks' component={NotebooksIndexForm} />
             <Route exact path ='/features' component={FeaturesForm}/>
             <Route exact path='/username' component={UsernameForm} />
             <Authorized exact path='/login' component={LogInForm} />
