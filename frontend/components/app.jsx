@@ -12,9 +12,8 @@ import FeaturesForm from './features/featuresForm';
 const App = () => (
    
     <>
-
         <Switch>
-            <ProtectedRoute exact path ='/notebooks' component={NotebooksIndexForm} />
+            <Route exact path ='/notebooks' component={NotebooksIndexForm} />
             <Route exact path ='/features' component={FeaturesForm}/>
             <Route exact path='/username' component={UsernameForm} />
             <Authorized exact path='/login' component={LogInForm} />
