@@ -9,10 +9,18 @@ class NotebooksIndexForm extends React.Component {
         super(props);
         this.state = {loaded: false, selected: 3};
         this.updateSelected = this.updateSelected.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
         this.props.getNotebooks(this.props.user);
+    }
+
+    handleSubmit(e) {
+          debugger
+        e.preventDefault();
+        this.props.openModal();
+        
     }
 
     
@@ -53,7 +61,10 @@ class NotebooksIndexForm extends React.Component {
                 <div className='notebooks-index-right'>
                     <h1>Notebooks</h1>
                     <h3>My notebook list</h3>
-                    <button type='submit'>New Notebook</button>
+                    <form onSubmit={this.handleSubmit}>
+
+                        <button type='submit'>New Notebook</button>
+                    </form>
                 
 
                     <ul className='notebooks-index-list'>{notebooks}</ul>

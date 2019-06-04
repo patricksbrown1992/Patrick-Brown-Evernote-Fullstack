@@ -8,10 +8,12 @@ import { Authorized, ProtectedRoute } from '../util/routeUtil';
 import NotebooksIndexForm from './notebooks/notebooksIndexContainer';
 import UsernameForm from './username/usernameContainer';
 import FeaturesForm from './features/featuresForm';
+import Modal from './modal/modal'
 
 const App = () => (
    
     <>
+    <Modal />
         <Switch>
             <ProtectedRoute exact path ='/notebooks' component={NotebooksIndexForm} />
             <Route exact path ='/features' component={FeaturesForm}/>

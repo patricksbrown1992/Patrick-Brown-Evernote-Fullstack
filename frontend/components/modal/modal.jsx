@@ -1,21 +1,21 @@
 import React from 'react';
-import { closeModal } from '../../actions/modal_actions';
+import { openModal, closeModal } from '../../actions/modalActions';
 import { connect } from 'react-redux';
-import NotebookNewContainer from '../notebooks/notebooksNewContainer';
-import NotebookIndexContainer from '../notebooks/notebooksIndexContainer';
+import NotebookNewForm from '../notebooks/notebookNewForm';
+
 
 function Modal({ modal, closeModal }) {
+    debugger
     if (!modal) {
         return null;
     }
     let component;
     switch (modal) {
         case 'add':
-            component = <NotebookNewContainer />;
+            debugger
+            component = <NotebookNewForm />;
             break;
-        case 'index':
-            component = <NotebookIndexContainer />;
-            break;
+       
         default:
             return null;
     }
