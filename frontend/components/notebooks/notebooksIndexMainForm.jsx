@@ -23,7 +23,11 @@ class NotebooksIndexForm extends React.Component {
     render() {
         let notebooks;
         if (this.props.notebooks.length < 1) {
-            return null;
+            return (
+                <div className='notebooks-index-main'>
+                    
+                </div>
+            );
         } else {
             notebooks = this.props.notebooks.map(notebook => (
                 <li key={notebook.id} onClick={this.updateSelected(notebook.id)}>{notebook.name}</li>
