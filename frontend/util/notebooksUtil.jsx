@@ -39,6 +39,7 @@ export const updateNotebook = id => {
 };
 
 export const deleteNotebook = id => {
+    debugger
     return $.ajax({
         method: 'DELETE',
         url: `api/notebooks/${id}`,

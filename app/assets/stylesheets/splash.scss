@@ -156,6 +156,7 @@ html {
     // border: 1px solid red;
     height: 80%;
     display:flex;
+    align-items: center;
     justify-content: space-around;
  }
 
@@ -187,7 +188,7 @@ html {
     font-family: Soleil,Helvetica,Arial,sans-serif;
  }
  .login-button {
-    margin-top: 11%;
+    // margin-top: 11%;
     margin-left: 6%;
  }
  .splash-right{

@@ -12,6 +12,7 @@ const receiveNotebook = notebook => {
 };
 
 const destroyNotebook = () => {
+    debugger
     return ({
         type: DESTROY_NOTEBOOK
     });
@@ -42,6 +43,11 @@ export const updateNotebook = (id) => dispatch => (
     APIUtil.updateNotebook(id).then(notebook => (dispatch(receiveNotebook(notebook))))
 );
 
-export const deleteNotebook = (id) => dispatch => (
-    APIUtil.deleteNotebook(id).then(notebook => (() => (dispatch(destroyNotebook(notebook))))
-));
+export const deleteNotebook = (id) => dispatch => {
+    debugger
+    return APIUtil.deleteNotebook(id).then(notebook => {
+        debugger
+       return (payload) => (dispatch(destroyNotebook()));}
+    );
+};
+    
