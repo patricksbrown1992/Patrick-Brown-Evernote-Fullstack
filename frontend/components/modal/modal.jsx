@@ -1,8 +1,8 @@
 import React from 'react';
 import { openModal, closeModal } from '../../actions/modalActions';
 import { connect } from 'react-redux';
-import NotebookNewForm from '../notebooks/notebookNewForm';
-
+import NotebookNewForm from '../notebooks/notebookNewContainer';
+import NotebookEditForm from '../notebooks/notebookEditContainer';
 
 function Modal({ modal, closeModal }) {
     debugger
@@ -15,7 +15,10 @@ function Modal({ modal, closeModal }) {
             debugger
             component = <NotebookNewForm />;
             break;
-       
+        case 'edit':
+            debugger
+            component = <NotebookEditForm />; 
+            break;
         default:
             return null;
     }

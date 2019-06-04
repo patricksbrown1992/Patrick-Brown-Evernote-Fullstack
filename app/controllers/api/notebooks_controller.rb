@@ -41,7 +41,11 @@ class Api::NotebooksController < ApplicationController
 
     def update
         @notebook = Notebook.find(params[:id])
-    
+        if @notebook.update(notebook_params)
+            render json: @notebook, status: 200
+        else
+            render json: @notebook.errors.full_messages, status: 422
+        end
     end
 
     private

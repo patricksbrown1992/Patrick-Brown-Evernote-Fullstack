@@ -10,8 +10,10 @@ const msp = state => ({
 
 const mdp = dispatch => ({
     getNotebooks: (user) => dispatch(getNotebooks(user)),
-    openModal: () => dispatch(openModal('add')),
-    closeModal: () => dispatch(closeModal())
+    editModal: () => dispatch(openModal('edit')),
+    addModal: () => dispatch(openModal('add')),
+    closeModal: () => dispatch(closeModal()),
+    
 });
 
 export default connect(msp, mdp)(notebooksIndexForm);

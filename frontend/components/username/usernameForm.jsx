@@ -15,7 +15,9 @@ class usernameForm extends React.Component {
 
 
             return (
+
                 <div className='username-form'>
+                   
                     <LeftNav />
                     <NotebooksIndexMainContainer/>
                     <NoteShowForm />

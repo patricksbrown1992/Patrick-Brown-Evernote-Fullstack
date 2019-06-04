@@ -19,6 +19,7 @@ export const getNotebook = id => {
 };
 
 export const createNotebook = notebook => {
+    debugger
     return $.ajax({
         method: 'POST',
         url: `api/notebooks`,
@@ -28,10 +29,10 @@ export const createNotebook = notebook => {
     });
 };
 
-export const updateNotebook = id => {
+export const updateNotebook = notebook => {
     return $.ajax({
         method: 'PATCH',
-        url: `api/notebooks/${id}`,
+        url: `api/notebooks/${notebook.id}`,
         data: {
             notebook
         }

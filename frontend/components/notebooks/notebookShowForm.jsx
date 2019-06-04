@@ -31,7 +31,7 @@ class NotebookShowForm extends React.Component {
         });
         debugger
         
-        // debugger
+        debugger
         if (!theNotebook){
             // debugger
             return null;

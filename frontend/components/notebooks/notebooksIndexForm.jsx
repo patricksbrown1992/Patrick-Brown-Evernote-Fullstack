@@ -19,13 +19,17 @@ class NotebooksIndexForm extends React.Component {
     handleSubmit(e) {
           debugger
         e.preventDefault();
-        this.props.openModal();
+        if (e.currentTarget.children[0].classList.value === "index-of-notebooks"){
+            this.props.editModal('edit');
+        } else {
+            this.props.addModal('add');
+        }
         
     }
 
     
     updateSelected(id) {
-        debugger
+        // debugger
         return () => {
             this.setState({ selected: id });
         };
@@ -49,7 +53,9 @@ class NotebooksIndexForm extends React.Component {
         } else {
              notebooks = this.props.notebooks.map(notebook => (
             // <li key={notebook.id} onClick={this.updateSelected(notebook.id)}>{notebook.name}</li> 
-                 <li key={notebook.id}><Link to="/username" selected={this.props.selected}>{notebook.name}</Link> </li>
+                 <li key={notebook.id}><Link to={`/username/${notebook.id}`} selected={this.props.selected}>{notebook.name}</Link> 
+                 <br/>
+                 <button type='submit'>Rename Notebook</button></li>
             ));
 
         return (
@@ -66,8 +72,12 @@ class NotebooksIndexForm extends React.Component {
                         <button type='submit'>New Notebook</button>
                     </form>
                 
+                    <form onSubmit={this.handleSubmit}>
+                        <div className = 'index-of-notebooks'>
 
-                    <ul className='notebooks-index-list'>{notebooks}</ul>
+                            <ul className='notebooks-index-list'>{notebooks}</ul>
+                        </div>
+                    </form>
                  
                 </div>
             </div>
