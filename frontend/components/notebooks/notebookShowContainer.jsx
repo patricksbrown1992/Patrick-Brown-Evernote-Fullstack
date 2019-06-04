@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { getNotebook } from '../../actions/notebookActions';
 
 const msp = (state, ownProps) => ({
-    notebook: ownProps.notebooks,
+    notebooks: Object.values(state.entities.notebooks)
 
 });
 

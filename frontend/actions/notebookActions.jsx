@@ -18,7 +18,7 @@ const destroyNotebook = () => {
 };
 
 const receiveNotebooks = notebooks => {
-    debugger
+    // debugger
     return ({
 
         type: RECEIVE_NOTEBOOKS,
@@ -30,8 +30,8 @@ export const getNotebooks = (user) => dispatch => (
     APIUtil.getNotebooks(user).then(notebooks => (dispatch(receiveNotebooks(notebooks))))
 );
 
-export const getNotebook = (notebook) => dispatch => (
-    APIUtil.getNotebook(notebook).then(notebook => (dispatch(receiveNotebook(notebook))))
+export const getNotebook = (id) => dispatch => (
+    APIUtil.getNotebook(id).then(notebook => (dispatch(receiveNotebook(notebook))))
 );
 
 export const createNotebook = (notebook) => dispatch => (

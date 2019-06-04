@@ -18,8 +18,8 @@ const destroyNote = () => ({
     type: DELETE_NOTE
 });
 
-export const getNotes = (notebook) => dispatch => (
-    APIUtil.getNotes(notebook).then(notes => dispatch(receiveNotes(notes)))
+export const getNotes = (id) => dispatch => (
+    APIUtil.getNotes(id).then(notes => dispatch(receiveNotes(notes)))
 );
 
 export const getNote = (notebook, note) => dispatch => (

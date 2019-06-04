@@ -4,40 +4,47 @@ import { Link } from 'react-router-dom';
 class NotesIndexForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { loaded: false };
+       
     }
     componentDidMount() {
 
-        this.props.getNotes(this.props.notebook);
-        debugger
-        this.setState({ loaded: true });
+        this.props.getNotes(this.props.notebook.id);
+        // debugger
+    
 
     }
     
 
     render() {
-      debugger
+    //   debugger
         
         let notes;
-        if(this.state.loaded){
+        if(!this.props.notes){
+            return null;
+        } else {
+
+        
+        
             notes = this.props.notes.map(note =>(
-                <li key={note.id}>{note.title}</li>
+                <div className = "note-index-item">
+
+                    <li className = "note-index-title" key={note.id}>{note.title}</li>
+                    <li className = 'note-index-body'>{note.body}</li>
+                </div>
             ));
-        }
-        // if (!this.props.notes) {
-        //     return null;
-        // }
-        // debugger
+        
+       
         return (
 
         <div className="center-nav">
-            <ul>
-                {/* <li className="notebook-title">Notebook Title</li> */}
-                <h3>{notes}</h3>
+            <ul >
+               
+                {notes}
 
             </ul>
         </div>
         )
+        }
     }
 }
 

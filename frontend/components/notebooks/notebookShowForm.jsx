@@ -1,33 +1,45 @@
 import React from 'react';
-import NoteIndexContainer from '../notes/notesIndexForm';
+import NoteIndexContainer from '../notes/notesIndexContainer';
 class NotebookShowForm extends React.Component {
     constructor(props){
         super(props);
        
     }
 
-    componentDidMount(){
+    // componentDidMount(){
 
-        debugger
-        this.props.getNotebook(this.props.notebooks[this.props.id]);
+       
+    //     this.props.getNotebook(this.props.id);
+    //     debugger
         
-    }
+    // }
 
     render (){
-        let notebook;
-        debugger
+        let theNotebook; 
+        this.props.notebooks.forEach(notebook =>{
+            if(notebook.id === this.props.id){
+                theNotebook = notebook;
+            }
+        });
+        // debugger
         
         // debugger
-        if (!this.props.notebook) {
+        if (!theNotebook){
+            // debugger
             return null;
         } else {
-            notebook = this.props.notebooks[id];
+            // debugger
+            
             return (
-                <>
-    
-                    {notebook.title}
-                    {/* <NoteIndexContainer notebook={notebook} /> */}
-                </>
+                <div className="notebook-show">
+
+                    <div className ='notebook-show-title'>
+                    <h1>{theNotebook.name}</h1>
+                    
+                    </div>
+                    <NoteIndexContainer notebook={theNotebook} />
+                </div>
+                
                 
             )
         }

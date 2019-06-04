@@ -12,53 +12,38 @@ class NotebooksIndexForm extends React.Component {
 
     componentDidMount() {
         this.props.getNotebooks(this.props.user);
-        debugger
-        this.setState({ loaded: true });
     }
 
     
     updateSelected(id) {
         return () => {
-            
             this.setState({ selected: id });
         };
     }
 
     render(){
         let notebooks;
-
-        if (!this.props.notebooks){
-
+        if (this.props.notebooks.length < 1){
             return null;
         } else {
-
-        
-            notebooks = this.props.notebooks.map(notebook => (
-                
-                <li key={notebook.id} onClick={this.updateSelected(notebook.id)}>{notebook.name}</li> 
-
+             notebooks = this.props.notebooks.map(notebook => (
+            <li key={notebook.id} onClick={this.updateSelected(notebook.id)}>{notebook.name}</li> 
             ));
 
-        
-    
-        debugger
         return (
 
             <div className='notebooks-index'>
 
                 <UsernameFormLeft />
                 
-                <div className='notebooks-right'>
+                <div className='notebooks-index-right'>
                     <h1>Notebooks</h1>
                     <h3>My notebook list</h3>
                 
 
-                    <ul className='notebooks-list'>{notebooks}</ul>
+                    <ul className='notebooks-index-list'>{notebooks}</ul>
                  
                 </div>
-
-                <NotebookShowForm id={this.state.selected}/>
-                
             </div>
         );
         }

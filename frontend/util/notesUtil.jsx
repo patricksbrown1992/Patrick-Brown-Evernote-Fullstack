@@ -1,10 +1,8 @@
-export const getNotes = (notebook) => {
+export const getNotes = (id) => {
     return $.ajax({
         method: 'GET',
-        url: `api/notebooks/${notebook.id}/notes`,
-        data: {
-            notebook_id: notebook.id
-        }
+        url: `api/notebooks/${id}/notes`,
+        
     }); 
 };
 

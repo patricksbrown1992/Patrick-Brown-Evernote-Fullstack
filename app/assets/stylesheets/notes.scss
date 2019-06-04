@@ -1,0 +1,26 @@
+.note-index-item{
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-bottom: 1px solid #e6e6e6;
+    display: block;
+}
+.note-index-title{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #333;
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 2px;
+    font-weight: 500;
+    font-family: sans-serif;
+}
+
+.note-index-body{
+    font-size: 13px;
+    list-style: none;
+    color: #4d4d4d;
+    cursor: pointer;
+    height: 40px;
+    margin-bottom: 5px;
+    font-family: sans-serif;
+}

@@ -1,5 +1,5 @@
 export const getNotebooks = (user) => {
-    debugger
+    // debugger
     return $.ajax({
         method: 'GET',
         url: '/api/notebooks',
@@ -9,13 +9,12 @@ export const getNotebooks = (user) => {
     });      
 };
 
-export const getNotebook = notebook => {
+export const getNotebook = id => {
+    // debugger
     return $.ajax({
         method: 'GET',
-        url: `api/notebooks/${notebook.id}`,
-        data: {
-            notebook
-        }
+        url: `api/notebooks/${id}`,
+        
     });
 };
 
