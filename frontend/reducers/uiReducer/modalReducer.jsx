@@ -3,14 +3,14 @@ import { CLOSE_MODAL, OPEN_MODAL } from '../../actions/modalActions';
 
 
 const modalReducer = (state = {}, action) => {
-    // debugger
+    debugger
     Object.freeze(state);
 
     switch(action.type){
         case CLOSE_MODAL:
             return {};
         case OPEN_MODAL:
-            const newState = merge({}, state, {type: action.modal, id: action.id});
+            const newState = merge({}, state, { type: action.modal, entity: action.entity});
             return newState;
         default: 
         return state;

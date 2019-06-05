@@ -30,7 +30,7 @@ class Api::NotesController < ApplicationController
     end
 
     def destroy
-        @notebook = Notebook.find(params[:notebook_id])
+      
         @note = Note.find(params[:id])
       
         if @note.destroy
@@ -42,7 +42,15 @@ class Api::NotesController < ApplicationController
     end
 
     def update
-
+        
+        @note = Note.find(params[:id])
+        # debugger
+        if @note.update(note_params)
+            # debugger
+            render json: @note, status: 200
+        else
+            render json: @note.errors.full_messages, status: 422
+        end
     end
 
     private

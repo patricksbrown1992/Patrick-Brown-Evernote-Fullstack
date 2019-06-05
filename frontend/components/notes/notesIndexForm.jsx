@@ -5,7 +5,8 @@ class NotesIndexForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = { loaded: false };
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleSubmitEdit = this.handleSubmitEdit.bind(this);
+        this.handleSubmitDelete = this.handleSubmitDelete.bind(this);
     }
     componentDidMount() {
 
@@ -13,10 +14,18 @@ class NotesIndexForm extends React.Component {
         // debugger
     }
 
-    handleSubmit(note){
+    handleSubmitDelete(note){
         return(e) => {
             e.preventDefault();
             this.props.deleteNote(note);
+        };
+    }
+    handleSubmitEdit(note) {
+
+        debugger
+        return (e) => {
+            e.preventDefault();
+            this.props.openEditNoteModal(note);
         };
     }
     
@@ -37,7 +46,10 @@ class NotesIndexForm extends React.Component {
                     <br/> 
                     {note.body}
                     </li>
-                    <button onClick={this.handleSubmit(note)} type="submit">Delete Note</button>
+                    <br/>
+                    <button onClick={this.handleSubmitDelete(note)} type="submit">Delete Note</button>
+                    <br/>
+                    <button onClick={this.handleSubmitEdit(note)} type="submit">Edit Note</button>
                 </div>
                 
             ));

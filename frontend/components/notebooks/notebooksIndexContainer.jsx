@@ -10,7 +10,7 @@ const msp = state => ({
 
 const mdp = dispatch => ({
     getNotebooks: (user) => dispatch(getNotebooks(user)),
-    editModal: (id) => dispatch(openEditModal(id)),
+    editModal: (entity) => dispatch(openEditModal(entity)),
     addModal: () => dispatch(openModal('add')),
     closeModal: () => dispatch(closeModal()),
     

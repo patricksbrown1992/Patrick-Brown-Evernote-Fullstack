@@ -35,10 +35,10 @@ class NotebooksIndexForm extends React.Component {
         this.props.addModal();
     }
 
-    handleSubmitEdit(id){
+    handleSubmitEdit(entity){
         return (e) => {
             e.preventDefault();
-            this.props.editModal(id);
+            this.props.editModal(entity);
         };
     }
 
@@ -70,7 +70,7 @@ class NotebooksIndexForm extends React.Component {
              notebooks = this.props.notebooks.map(notebook => (
                  <li key={notebook.id} > <Link to={`/username/${notebook.id}`} >{notebook.name}</Link> 
                 <br/>
-                <button onClick={this.handleSubmitEdit(notebook.id)} type='submit'>Rename Notebook</button></li>
+                <button onClick={this.handleSubmitEdit(notebook)} type='submit'>Rename Notebook</button></li>
             ));
 
         return (

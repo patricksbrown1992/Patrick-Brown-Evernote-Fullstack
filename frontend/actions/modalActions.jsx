@@ -10,19 +10,28 @@ export const openModal = modal => {
     };
 };
 
-export const openEditModal = id => {
+export const openEditModal = entity => {
     debugger
     return {
         type: OPEN_MODAL,
-        id,
+        entity,
         modal: 'edit'
     };
 };
-export const openAddNoteModal = id => {
+
+export const openEditNoteModal = (entity) => {
     debugger
     return {
         type: OPEN_MODAL,
-        id,
+        entity,
+        modal: 'editNote'
+    };
+};
+export const openAddNoteModal = entity => {
+    debugger
+    return {
+        type: OPEN_MODAL,
+        entity,
         modal: 'addNote'
     };
 };

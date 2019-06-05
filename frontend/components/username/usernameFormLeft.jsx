@@ -15,11 +15,11 @@ class usernameFormLeft extends React.Component{
         this.props.logout();
     }
 
-    handleSubmitNewNote(id){
+    handleSubmitNewNote(entity){
         debugger
         return (e) => {
             e.preventDefault();
-            this.props.addNote(id);
+            this.props.addNote(entity);
         };
     }
 
@@ -38,7 +38,7 @@ class usernameFormLeft extends React.Component{
                     </form>
                     <li className="user-email">{this.props.user.email}</li>
                     <input placeholder="Search all notes..." type="text"></input>
-                    <li className="new-note"> <button onClick={this.handleSubmitNewNote(this.props.notebook.id)} type='submit'>New Note</button></li>
+                    <li className="new-note"> <button onClick={this.handleSubmitNewNote(this.props.notebook)} type='submit'>New Note</button></li>
                     <li>Shortcuts</li>
                     <li><Link to='/username2'>All Notes</Link></li>
                     <li><Link to='/notebooks'>Notebooks</Link></li>

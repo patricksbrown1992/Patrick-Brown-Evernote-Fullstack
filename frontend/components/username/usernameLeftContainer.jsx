@@ -10,7 +10,7 @@ const msp = state => ({
 
 const mdp = dispatch => ({
     logout: () => dispatch(logout()),
-    addNote: id => dispatch(openAddNoteModal(id))
+    addNote: entity => dispatch(openAddNoteModal(entity))
    
 });
 
