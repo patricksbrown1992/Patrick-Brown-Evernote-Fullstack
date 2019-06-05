@@ -2,7 +2,7 @@ import React from 'react';
 import UsernameFormLeft from '../username/usernameLeftContainer';
 // import { Link } from 'react-router-dom';
 import { Route, Link} from 'react-router-dom';
-import NotebookShowForm from './notebookShowContainer';
+// import NotebookShowForm from './notebookShowContainer2';
 
 class NotebooksIndexForm extends React.Component {
     constructor(props){

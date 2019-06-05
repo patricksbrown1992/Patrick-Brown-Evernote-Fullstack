@@ -22,7 +22,7 @@ class Api::NotesController < ApplicationController
     
     def create
         @note = Note.new(note_params)
-        if @note
+        if @note.save
             render json: @note, status: 200
         else
             render json: @note.errors.full_messages, status: 422
@@ -32,8 +32,10 @@ class Api::NotesController < ApplicationController
     def destroy
         @notebook = Notebook.find(params[:notebook_id])
         @note = Note.find(params[:id])
+      
         if @note.destroy
-            render json: ['you destroyed the note'], status: 200
+          
+            render json: @note, status: 200
         else
             render json: @note.errors.full_messages, status: 422
         end

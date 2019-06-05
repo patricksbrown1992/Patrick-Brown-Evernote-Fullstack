@@ -12,14 +12,18 @@ export const clearNotes = () =>({
     type: CLEAR_NOTES
 });
 
-const receiveNote = note => ({
+const receiveNote = note => {
+    debugger
+    return {
 
-    type: RECEIVE_NOTE,
+        type: RECEIVE_NOTE,
+        note
+    };
+};
+
+const destroyNote = (note) => ({
+    type: DELETE_NOTE,
     note
-});
-
-const destroyNote = () => ({
-    type: DELETE_NOTE
 });
 
 export const getNotes = (id) => dispatch => (
@@ -30,15 +34,16 @@ export const getNote = (notebook, note) => dispatch => (
     APIUtil.getNote(notebook, note).then(note => dispatch(receiveNote(note)))
 );
 
-export const createNote = (id, note) => dispatch => (
-    APIUtil.createNote(id, note).then(note => dispatch(receiveNote(note)))
-);
+export const createNote = ({id, note}) => dispatch => {
+    debugger
+    return APIUtil.createNote(id, note).then(note => dispatch(receiveNote(note)));
+}
 
 export const updateNote = (notebook, id) => dispatch => (
     APIUtil.updateNote(notebook, id).then(note => dispatch(receiveNote(note)))
 );
 
-export const deleteNote = (notebook, note) => dispatch => (
-    APIUtil.deleteNote(notebook, note).then( () => dispatch(destroyNote(note)))
+export const deleteNote = (note) => dispatch => (
+    APIUtil.deleteNote(note).then( (note) => dispatch(destroyNote(note)))
 );
 

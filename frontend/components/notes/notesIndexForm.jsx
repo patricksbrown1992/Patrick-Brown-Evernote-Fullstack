@@ -5,13 +5,21 @@ class NotesIndexForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = { loaded: false };
-       
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
     componentDidMount() {
 
         this.props.getNotes(this.props.notebook.id).then(() => this.setState({ loaded: true }));
         // debugger
     }
+
+    handleSubmit(note){
+        return(e) => {
+            e.preventDefault();
+            this.props.deleteNote(note);
+        };
+    }
+    
     
 
     render() {
@@ -22,14 +30,16 @@ class NotesIndexForm extends React.Component {
             return null;
         } else {
             notes = this.props.notes.map(note =>(
-                <div className = "note-index-item">
+                
+                <div className="note-index-item" key={note.id}>
                     
-                    <li className = "note-index-title" key={note.id}>{note.title}
+                    <li className = "note-index-title" >{note.title}
                     <br/> 
                     {note.body}
                     </li>
-                    
+                    <button onClick={this.handleSubmit(note)} type="submit">Delete Note</button>
                 </div>
+                
             ));
         
        
