@@ -2,10 +2,14 @@ import * as APIUtil from '../util/notesUtil';
 export const RECEIVE_NOTE = 'RECEIVE_NOTE';
 export const RECEIVE_NOTES = 'RECEIVE_NOTES';
 export const DELETE_NOTE = 'DELETE_NOTE';
+export const CLEAR_NOTES = 'CLEAR_NOTES';
 
 const receiveNotes = notes => ({
     type: RECEIVE_NOTES,
     notes
+});
+export const clearNotes = () =>({
+    type: CLEAR_NOTES
 });
 
 const receiveNote = note => ({

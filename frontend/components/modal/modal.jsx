@@ -5,19 +5,19 @@ import NotebookNewForm from '../notebooks/notebookNewContainer';
 import NotebookEditForm from '../notebooks/notebookEditContainer';
 
 function Modal({ modal, closeModal }) {
-    debugger
-    if (!modal) {
+    // debugger
+    if (!modal.type) {
         return null;
     }
     let component;
-    switch (modal) {
+    switch (modal.type) {
         case 'add':
-            debugger
+            // debugger
             component = <NotebookNewForm />;
             break;
         case 'edit':
-            debugger
-            component = <NotebookEditForm />; 
+            // debugger
+            component = <NotebookEditForm id={modal.notebookId}/>; 
             break;
         default:
             return null;

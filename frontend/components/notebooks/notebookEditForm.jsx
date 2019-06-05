@@ -18,8 +18,9 @@ class NotebookEditForm extends React.Component {
         const name = this.state.name;
         const user_id = Object.values(this.props.user)[0].id;
         // get an id and pass that in
-        debugger
-        this.props.updateNotebook({ name, user_id });
+        // debugger
+        const id = this.props.id;
+        this.props.updateNotebook({ name, user_id, id });
     }
 
     render (){

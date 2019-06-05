@@ -15,7 +15,7 @@ class NotebookShowForm extends React.Component {
     // }
 
     handleSubmit(e) {
-          debugger
+        //   debugger
         e.preventDefault();
         
         this.props.deleteNotebook(1);
@@ -29,14 +29,14 @@ class NotebookShowForm extends React.Component {
                 theNotebook = notebook;
             }
         });
-        debugger
+        // debugger
         
-        debugger
+        
         if (!theNotebook){
             // debugger
             return null;
         } else {
-            debugger
+            // debugger
             
             return (
                 <div className="notebook-show">

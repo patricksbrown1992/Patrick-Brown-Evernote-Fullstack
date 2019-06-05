@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import LeftNav from './usernameLeftContainer';
 import NotebookShowContainer2 from '../notebooks/notebookShowContainer2';
-import NoteShowForm from '../notes/noteShowForm';
+// import NoteShowForm from '../notes/noteShowForm';
 
 class usernameForm2 extends React.Component {
     constructor(props) {
@@ -27,21 +27,21 @@ class usernameForm2 extends React.Component {
         } else {
             if(this.props.notebooks.length < 1){
                 debugger
-                return null;
+                return (
+                    <LeftNav />
+                )
             } else {
 
             
             debugger
+
             const notebook = this.props.notebooks[0];
             const id = notebook.id;
             return (
 
-                <div className='username-form'>
-                    <NotebookShowContainer2 id={id} />
-                    {/* <LeftNav />
-                    <NotebookShowContainer id={id} />
-                    <NoteShowForm /> */}
-                </div>
+                
+                <NotebookShowContainer2 id={id} />
+                
                 )
             }
         }

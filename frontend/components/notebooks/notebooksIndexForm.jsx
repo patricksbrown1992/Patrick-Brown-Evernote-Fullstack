@@ -9,33 +9,49 @@ class NotebooksIndexForm extends React.Component {
         super(props);
         this.state = {loaded: false, selected: null};
         this.updateSelected = this.updateSelected.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleSubmitAdd = this.handleSubmitAdd.bind(this);
+        this.handleSubmitEdit = this.handleSubmitEdit.bind(this);
     }
 
     componentDidMount() {
         this.props.getNotebooks(this.props.user);
     }
 
-    handleSubmit(e) {
-          debugger
-        e.preventDefault();
-        if (e.currentTarget.children[0].classList.value === "index-of-notebooks"){
-            this.props.editModal('edit');
-        } else {
-            this.props.addModal('add');
-        }
+    // handleSubmit(e) {
+    //       debugger
+    //     e.preventDefault();
+    //     if (e.currentTarget.children[0].classList.value === "index-of-notebooks"){
+    //         debugger
+    //         this.props.editModal();
+    //     } else {
+    //         this.props.addModal('add');
+    //     }
         
+    // }
+
+    handleSubmitAdd(e){
+        e.preventDefault();
+
+        this.props.addModal();
+    }
+
+    handleSubmitEdit(id){
+        return (e) => {
+            e.preventDefault();
+            this.props.editModal(id);
+        };
     }
 
     
     updateSelected(id) {
-        // debugger
+        debugger
         return () => {
             this.setState({ selected: id });
         };
     }
 
     render(){
+        debugger
         let notebooks;
         if (this.props.notebooks.length < 1){
             return (
@@ -52,10 +68,9 @@ class NotebooksIndexForm extends React.Component {
             );
         } else {
              notebooks = this.props.notebooks.map(notebook => (
-            // <li key={notebook.id} onClick={this.updateSelected(notebook.id)}>{notebook.name}</li> 
-                 <li key={notebook.id}><Link to={`/username/${notebook.id}`} selected={this.props.selected}>{notebook.name}</Link> 
-                 <br/>
-                 <button type='submit'>Rename Notebook</button></li>
+                 <li key={notebook.id} > <Link to={`/username/${notebook.id}`} >{notebook.name}</Link> 
+                <br/>
+                <button onClick={this.handleSubmitEdit(notebook.id)} type='submit'>Rename Notebook</button></li>
             ));
 
         return (
@@ -67,17 +82,17 @@ class NotebooksIndexForm extends React.Component {
                 <div className='notebooks-index-right'>
                     <h1>Notebooks</h1>
                     <h3>My notebook list</h3>
-                    <form onSubmit={this.handleSubmit}>
+                    <form onSubmit={this.handleSubmitAdd}>
 
                         <button type='submit'>New Notebook</button>
                     </form>
                 
-                    <form onSubmit={this.handleSubmit}>
-                        <div className = 'index-of-notebooks'>
+                    
+                    <div className = 'index-of-notebooks'>
 
-                            <ul className='notebooks-index-list'>{notebooks}</ul>
-                        </div>
-                    </form>
+                        <ul className='notebooks-index-list'>{notebooks}</ul>
+                    </div>
+        
                  
                 </div>
             </div>

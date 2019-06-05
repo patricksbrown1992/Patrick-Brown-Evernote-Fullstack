@@ -2,7 +2,7 @@ import notebooksIndexForm from './notebooksIndexForm';
 import {connect} from 'react-redux';
 import {getNotebooks} from '../../actions/notebookActions';
 import React from 'react';
-import { openModal, closeModal  } from "../../actions/modalActions";
+import { openModal, closeModal, openEditModal  } from "../../actions/modalActions";
 const msp = state => ({
     user: state.entities.user[state.session.id],
     notebooks: Object.values(state.entities.notebooks),
@@ -10,7 +10,7 @@ const msp = state => ({
 
 const mdp = dispatch => ({
     getNotebooks: (user) => dispatch(getNotebooks(user)),
-    editModal: () => dispatch(openModal('edit')),
+    editModal: (id) => dispatch(openEditModal(id)),
     addModal: () => dispatch(openModal('add')),
     closeModal: () => dispatch(closeModal()),
     

@@ -14,10 +14,10 @@ const notebooksReducer = (state = {}, action) => {
             // debugger
             return merge({}, state, notebooks);
         case RECEIVE_NOTEBOOK:
-            debugger
+            // debugger
             return merge({}, state, {[action.notebook.id]: action.notebook});
         case DESTROY_NOTEBOOK:
-            debugger
+            // debugger
             const newState = merge({}, state);
             delete newState[action.notebook.id];
             return newState;

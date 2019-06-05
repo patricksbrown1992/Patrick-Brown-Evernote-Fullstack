@@ -1,5 +1,5 @@
 export const getNotebooks = (user) => {
-    debugger
+    // debugger
     return $.ajax({
         method: 'GET',
         url: '/api/notebooks',
@@ -19,7 +19,7 @@ export const getNotebook = id => {
 };
 
 export const createNotebook = notebook => {
-    debugger
+    // debugger
     return $.ajax({
         method: 'POST',
         url: `api/notebooks`,
@@ -40,7 +40,7 @@ export const updateNotebook = notebook => {
 };
 
 export const deleteNotebook = id => {
-    debugger
+    // debugger
     return $.ajax({
         method: 'DELETE',
         url: `api/notebooks/${id}`,
