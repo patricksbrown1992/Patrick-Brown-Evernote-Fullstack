@@ -1,45 +1,20 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import LeftNav from './usernameLeftContainer';
-import NotebooksIndexMainContainer from '../notebooks/notebookIndexMainContainer';
-import NoteShowForm from '../notes/noteShowForm';
+import { connect } from 'react-redux';
+import UsernameForm2 from './usernameForm2';
+import { logout } from '../../actions/sessionActions';
+import { getNotebooks, getNotebook } from '../../actions/notebookActions';
+import { getNotes } from '../../actions/noteAction';
 
-class usernameForm2 extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {loaded: false};
-    }
+const msp = state => ({
+    user: state.entities.user[state.session.id],
+    notebooks: Object.values(state.entities.notebooks),
+    notes: Object.values(state.entities.notes)
+});
 
-    componentDidMount(){
-        this.props.getNotebooks(this.props.user);
+const mdp = dispatch => ({
+    logout: () => dispatch(logout()),
+    getNotebooks: (user) => dispatch(getNotebooks(user)),
+    getNotebook: notebook => dispatch(getNotebook(notebook)),
+    getNotes: notebook => dispatch(getNotes(notebook))
+});
 
-    }
-
-    render(){
-        if(!this.state){
-            return null;
-        } else {
-
-            if(Object.values(this.props.notebooks).length < 1){
-    
-            } else {
-
-                return (
-        
-                    <div className='username-form'>
-        
-                        <LeftNav />
-                        <NotebooksIndexMainContainer />
-                        <NoteShowForm />
-                    </div>
-                )
-            }
-
-        }    
-
-    }
-
-
-}
-
-export default usernameForm2;
+export default connect(msp, mdp)(UsernameForm2);

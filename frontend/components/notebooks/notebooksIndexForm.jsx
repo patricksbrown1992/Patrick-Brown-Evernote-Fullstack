@@ -7,7 +7,7 @@ import NotebookShowForm from './notebookShowContainer';
 class NotebooksIndexForm extends React.Component {
     constructor(props){
         super(props);
-        this.state = {loaded: false, selected: 3};
+        this.state = {loaded: false, selected: null};
         this.updateSelected = this.updateSelected.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }

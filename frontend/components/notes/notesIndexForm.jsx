@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom';
 class NotesIndexForm extends React.Component {
     constructor(props) {
         super(props);
+        this.state = { loaded: false };
        
     }
     componentDidMount() {
 
-        this.props.getNotes(this.props.notebook.id);
+        this.props.getNotes(this.props.notebook.id).then(() => this.setState({ loaded: true }));
         // debugger
     
 
@@ -19,7 +20,7 @@ class NotesIndexForm extends React.Component {
     //   debugger
         
         let notes;
-        if(!this.props.notes){
+        if(!this.state.loaded){
             return null;
         } else {
 
@@ -28,8 +29,11 @@ class NotesIndexForm extends React.Component {
             notes = this.props.notes.map(note =>(
                 <div className = "note-index-item">
 
-                    <li className = "note-index-title" key={note.id}>{note.title}</li>
-                    <li className = 'note-index-body'>{note.body}</li>
+                    <li className = "note-index-title" key={note.id}>{note.title}
+                    <br/> 
+                    {note.body}
+                    </li>
+                    
                 </div>
             ));
         
