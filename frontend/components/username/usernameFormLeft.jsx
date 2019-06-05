@@ -5,17 +5,22 @@ import { Link } from 'react-router-dom';
 class usernameFormLeft extends React.Component{
     constructor(props){
         super(props);
-        this.handleSubmit = this.handleSubmit.bind(this); 
+        this.handleSubmitLogOut = this.handleSubmitLogOut.bind(this); 
         this.state = { loaded: false };
         
     }
     
- 
-
-   
-    handleSubmit(e) {
+    handleSubmitLogOut(e) {
         e.preventDefault();
         this.props.logout();
+    }
+
+    handleSubmitNewNote(id){
+        debugger
+        return (e) => {
+            e.preventDefault();
+            this.props.addNote(id);
+        };
     }
 
 
@@ -26,14 +31,14 @@ class usernameFormLeft extends React.Component{
             
             <div className="left-nav">
                 <ul>
-                    <form onSubmit={this.handleSubmit}>
+                    <form onSubmit={this.handleSubmitLogOut}>
                         <div className='log-out-button'>
                             <button type='submit'>Log Out</button>
                         </div>
                     </form>
                     <li className="user-email">{this.props.user.email}</li>
                     <input placeholder="Search all notes..." type="text"></input>
-                    <li className="new-note">New Note</li>
+                    <li className="new-note"> <button onClick={this.handleSubmitNewNote(this.props.notebook.id)} type='submit'>New Note</button></li>
                     <li>Shortcuts</li>
                     <li><Link to='/username2'>All Notes</Link></li>
                     <li><Link to='/notebooks'>Notebooks</Link></li>

@@ -57,7 +57,7 @@ class NotebookShowForm extends React.Component {
                 <>
                     <div className ='username-form'>
 
-                        <LeftNav />
+                        <LeftNav notebook={theNotebook}/>
                         <div className="notebooks-index-main">
                             <div className="notebook-show">
                                 <div className='notebook-show-title'>

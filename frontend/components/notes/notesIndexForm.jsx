@@ -11,8 +11,6 @@ class NotesIndexForm extends React.Component {
 
         this.props.getNotes(this.props.notebook.id).then(() => this.setState({ loaded: true }));
         // debugger
-    
-
     }
     
 
@@ -23,12 +21,9 @@ class NotesIndexForm extends React.Component {
         if(!this.state.loaded){
             return null;
         } else {
-
-        
-        
             notes = this.props.notes.map(note =>(
                 <div className = "note-index-item">
-
+                    
                     <li className = "note-index-title" key={note.id}>{note.title}
                     <br/> 
                     {note.body}

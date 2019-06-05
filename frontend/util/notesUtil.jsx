@@ -16,10 +16,10 @@ export const getNote = (notebook, note) => {
     });
 };
 
-export const createNote = (notebook, note) => {
+export const createNote = (id, note) => {
     return $.ajax({
         method: 'POST',
-        url: `api/notebooks/${notebook.id}/notes`,
+        url: `api/notebooks/${id}/notes`,
         data: {
             note
         }

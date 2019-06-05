@@ -11,10 +11,19 @@ export const openModal = modal => {
 };
 
 export const openEditModal = id => {
+    debugger
     return {
         type: OPEN_MODAL,
         id,
         modal: 'edit'
+    };
+};
+export const openAddNoteModal = id => {
+    debugger
+    return {
+        type: OPEN_MODAL,
+        id,
+        modal: 'addNote'
     };
 };
 

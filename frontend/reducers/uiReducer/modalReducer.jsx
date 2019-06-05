@@ -10,7 +10,7 @@ const modalReducer = (state = {}, action) => {
         case CLOSE_MODAL:
             return {};
         case OPEN_MODAL:
-            const newState = merge({}, state, {type: action.modal, notebookId: action.id});
+            const newState = merge({}, state, {type: action.modal, id: action.id});
             return newState;
         default: 
         return state;

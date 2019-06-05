@@ -1,6 +1,7 @@
 import UsernameFormLeft from './usernameFormLeft';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/sessionActions';
+import {openAddNoteModal} from '../../actions/modalActions';
 
 
 const msp = state => ({
@@ -9,6 +10,7 @@ const msp = state => ({
 
 const mdp = dispatch => ({
     logout: () => dispatch(logout()),
+    addNote: id => dispatch(openAddNoteModal(id))
    
 });
 

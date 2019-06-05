@@ -30,8 +30,8 @@ export const getNote = (notebook, note) => dispatch => (
     APIUtil.getNote(notebook, note).then(note => dispatch(receiveNote(note)))
 );
 
-export const createNote = (notebook, note) => dispatch => (
-    APIUtil.createNote(notebook, note).then(note => dispatch(receiveNote(note)))
+export const createNote = (id, note) => dispatch => (
+    APIUtil.createNote(id, note).then(note => dispatch(receiveNote(note)))
 );
 
 export const updateNote = (notebook, id) => dispatch => (
