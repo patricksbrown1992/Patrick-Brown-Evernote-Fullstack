@@ -8,13 +8,13 @@ class NotebookShowForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    // componentDidMount(){
+    componentDidMount(){
 
+        debugger
+        this.props.clearNotes();
+        debugger
 
-    //     this.props.getNotebook(this.props.id);
-    //     debugger
-
-    // }
+    }
 
     handleSubmit(e) {
         debugger
