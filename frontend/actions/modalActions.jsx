@@ -19,14 +19,7 @@ export const openEditModal = entity => {
     };
 };
 
-export const openEditNoteModal = (entity) => {
-   
-    return {
-        type: OPEN_MODAL,
-        entity,
-        modal: 'editNote'
-    };
-};
+
 export const openAddNoteModal = entity => {
     
     return {

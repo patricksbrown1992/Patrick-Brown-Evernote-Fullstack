@@ -13,8 +13,7 @@ const mdp = dispatch => ({
     
     getNotes: id => dispatch(getNotes(id)),
     deleteNote: note => dispatch(deleteNote(note)),
-    openEditNoteModal: (note) => dispatch(openEditNoteModal(note)),
-    closeModal: () => dispatch(closeModal())
+    
 });
 
 export default connect(msp, mdp)(notesIndexForm);
