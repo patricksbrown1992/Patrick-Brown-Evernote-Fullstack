@@ -20,10 +20,11 @@ class NoteNewForm extends React.Component {
         e.preventDefault();
         const title = this.state.title;
         const notebook_id = this.props.id;
+        const id = this.props.id;
         const body = this.state.body;
-        const note = {title, body};
+        const note = {title, body, notebook_id};
         debugger
-        this.props.createNote({notebook_id, note});
+        this.props.createNote({id, note});
     }
 
 
@@ -37,7 +38,11 @@ class NoteNewForm extends React.Component {
             <input type="text" value={this.state.title} onChange={this.handleChange('title')} placeholder='Note Title' />
             <h5>Body</h5>
             <input type="text" value={this.state.body} onChange={this.handleChange('body')} placeholder='Note Body' />
-            <button onSubmit={this.handleSubmit} type='submit'>Continue</button>
+            <br/>
+            <form onSubmit={this.handleSubmit}>
+                <button  type='submit'>Continue</button>
+
+            </form>
 
         </div>
         )
