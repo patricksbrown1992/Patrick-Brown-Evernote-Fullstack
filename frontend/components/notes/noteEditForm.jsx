@@ -8,7 +8,7 @@ class NoteEditForm extends React.Component {
     }
 
     handleChange(field) {
-        debugger
+    
         return (e) => {
             this.setState({ [field]: e.target.value });
         };
@@ -21,7 +21,7 @@ class NoteEditForm extends React.Component {
         const id = this.props.id;
         const body = this.state.body;
         const note = { title, body, notebook_id, id };
-        debugger
+   
         this.props.updateNote({ id, note });
     }
 

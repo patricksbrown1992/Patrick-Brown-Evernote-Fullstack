@@ -7,7 +7,7 @@ import NotebookEditForm from '../notebooks/notebookEditContainer';
 import NoteEditForm from '../notes/noteEditContainer';
 
 function Modal({ modal, closeModal }) {
-    debugger
+    // debugger
     if (!modal.type) {
         return null;
     }

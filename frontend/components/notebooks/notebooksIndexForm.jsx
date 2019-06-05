@@ -3,6 +3,7 @@ import UsernameFormLeft from '../username/usernameLeftContainer';
 // import { Link } from 'react-router-dom';
 import { Route, Link} from 'react-router-dom';
 // import NotebookShowForm from './notebookShowContainer2';
+import NoteShowForm from '../notes/noteShowForm';
 
 class NotebooksIndexForm extends React.Component {
     constructor(props){
@@ -18,10 +19,10 @@ class NotebooksIndexForm extends React.Component {
     }
 
     // handleSubmit(e) {
-    //       debugger
+    //     
     //     e.preventDefault();
     //     if (e.currentTarget.children[0].classList.value === "index-of-notebooks"){
-    //         debugger
+    //        
     //         this.props.editModal();
     //     } else {
     //         this.props.addModal('add');
@@ -44,14 +45,14 @@ class NotebooksIndexForm extends React.Component {
 
     
     updateSelected(id) {
-        debugger
+    
         return () => {
             this.setState({ selected: id });
         };
     }
 
     render(){
-        debugger
+       
         let notebooks;
         if (this.props.notebooks.length < 1){
             return (
@@ -74,7 +75,7 @@ class NotebooksIndexForm extends React.Component {
             ));
 
         return (
-
+            
             <div className='notebooks-index'>
 
                 <UsernameFormLeft />

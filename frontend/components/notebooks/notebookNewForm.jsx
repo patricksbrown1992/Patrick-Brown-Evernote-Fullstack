@@ -11,7 +11,7 @@ class NotebookNewForm extends React.Component {
     }
 
     handleChange() {
-        // debugger
+        
         return (e) => {
             this.setState({ name: e.target.value });
         };
@@ -21,13 +21,13 @@ class NotebookNewForm extends React.Component {
         e.preventDefault();
         const name = this.state.name;
         const user_id = Object.values(this.props.user)[0].id;
-        // debugger
+       
         this.props.createNotebook({name, user_id});
     }
     
 
     render (){
-        // debugger
+        
         return(
         <div className='new-notebook-modal'>
             <h1>Create new notebook</h1>

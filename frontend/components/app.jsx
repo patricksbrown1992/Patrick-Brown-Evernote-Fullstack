@@ -7,8 +7,9 @@ import SignUpForm from './signUp/signUpContainer';
 import { Authorized, ProtectedRoute } from '../util/routeUtil';
 import NotebooksIndexForm from './notebooks/notebooksIndexContainer';
 import UsernameForm2 from './username/usernameForm2Container';
+import NotebookShowForm3 from './notebooks/notebookShowContainer3';
 import FeaturesForm from './features/featuresForm';
-import NotebookShowContainer2 from './notebooks/notebookShowContainer2';
+// import NotebookShowContainer2 from './notebooks/notebookShowContainer2';
 import Modal from './modal/modal'
 
 const App = () => (
@@ -18,8 +19,9 @@ const App = () => (
         <Switch>
             <ProtectedRoute exact path ='/notebooks' component={NotebooksIndexForm} />
             <Route exact path ='/features' component={FeaturesForm}/>
-            <ProtectedRoute exact path='/username2' component={UsernameForm2} />
-            <ProtectedRoute path='/username/:notebook_id' component={NotebookShowContainer2}/>
+            {/* <ProtectedRoute exact path='/username2' component={UsernameForm2} /> */}
+            <ProtectedRoute exact path='/username' component={NotebookShowForm3} />
+            <ProtectedRoute path='/username/:notebook_id' component={NotebookShowForm3}/>
             <Authorized exact path='/login' component={LogInForm} />
             <Route exact path='/' component={SplashForm} />
             <Authorized exact path='/signup' component={SignUpForm} />

@@ -1,5 +1,5 @@
 export const getNotebooks = (user) => {
-    // debugger
+    debugger
     return $.ajax({
         method: 'GET',
         url: '/api/notebooks',
@@ -10,7 +10,7 @@ export const getNotebooks = (user) => {
 };
 
 export const getNotebook = id => {
-    // debugger
+   
     return $.ajax({
         method: 'GET',
         url: `api/notebooks/${id}`,
@@ -19,7 +19,7 @@ export const getNotebook = id => {
 };
 
 export const createNotebook = notebook => {
-    // debugger
+ 
     return $.ajax({
         method: 'POST',
         url: `api/notebooks`,
@@ -39,11 +39,14 @@ export const updateNotebook = notebook => {
     });
 };
 
-export const deleteNotebook = id => {
-    // debugger
+export const deleteNotebook = notebook => {
+    
     return $.ajax({
         method: 'DELETE',
-        url: `api/notebooks/${id}`,
+        url: `api/notebooks/${notebook.id}`,
+        data: {
+            notebook
+        }
         
     });
 };

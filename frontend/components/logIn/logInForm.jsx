@@ -19,7 +19,7 @@ class LogInForm extends React.Component {
     }
 
     handleSubmit(e) {
-    //   debugger
+   
         e.preventDefault();
         if (this.props.verified === false){
             this.props.checkEmail(this.state.email);

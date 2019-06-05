@@ -13,9 +13,9 @@ class Api::NotebooksController < ApplicationController
 
     def index
         @user = User.find(params[:user_id])
-        # debugger
+    
         @notebooks = @user.notebooks
-        # debugger
+     
         render json: @notebooks, status: 200
     end
 
@@ -24,7 +24,7 @@ class Api::NotebooksController < ApplicationController
        
         @notebook = Notebook.find(params[:id])
         if @notebook.destroy
-            render json: ['You deleted this notebook'], status: 200
+            render json: @notebook, status: 200
         else
             render json: @notebook.errors.full_messages, status: 422
         end

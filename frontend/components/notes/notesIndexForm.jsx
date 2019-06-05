@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import NoteShowForm from '../notes/noteShowContainer';
 
 class NotesIndexForm extends React.Component {
     constructor(props) {
@@ -11,7 +12,7 @@ class NotesIndexForm extends React.Component {
     componentDidMount() {
 
         this.props.getNotes(this.props.notebook.id).then(() => this.setState({ loaded: true }));
-        // debugger
+       
     }
 
     handleSubmitDelete(note){
@@ -22,17 +23,17 @@ class NotesIndexForm extends React.Component {
     }
     handleSubmitEdit(note) {
 
-        debugger
+       
         return (e) => {
             e.preventDefault();
-            this.props.openEditNoteModal(note);
+            this.props.openEditNoteModal(note).then();
         };
     }
     
     
 
     render() {
-    //   debugger
+    
         
         let notes;
         if(!this.state.loaded){
@@ -56,14 +57,16 @@ class NotesIndexForm extends React.Component {
         
        
         return (
+        <>
+            <div className="center-nav">
+                <ul >
+                
+                    {notes}
 
-        <div className="center-nav">
-            <ul >
-               
-                {notes}
-
-            </ul>
-        </div>
+                </ul>
+            </div>
+            <NoteShowForm notebook={this.props.notebook}/>
+        </>
         )
         }
     }

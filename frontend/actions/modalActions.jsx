@@ -2,7 +2,7 @@ export const OPEN_MODAL = 'OPEN_MODAL';
 export const CLOSE_MODAL = 'CLOSE_MODAL';
 
 export const openModal = modal => {
-    // debugger
+    
     return {
 
         type: OPEN_MODAL,
@@ -11,7 +11,7 @@ export const openModal = modal => {
 };
 
 export const openEditModal = entity => {
-    debugger
+
     return {
         type: OPEN_MODAL,
         entity,
@@ -20,7 +20,7 @@ export const openEditModal = entity => {
 };
 
 export const openEditNoteModal = (entity) => {
-    debugger
+   
     return {
         type: OPEN_MODAL,
         entity,
@@ -28,7 +28,7 @@ export const openEditNoteModal = (entity) => {
     };
 };
 export const openAddNoteModal = entity => {
-    debugger
+    
     return {
         type: OPEN_MODAL,
         entity,

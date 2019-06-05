@@ -5,22 +5,23 @@ export const RECEIVE_NOTEBOOKS = "RECEIVE_NOTEBOOKS";
 export const DESTROY_NOTEBOOK = 'DESTROY_NOTEBOOK';
 
 const receiveNotebook = notebook => {
-    // debugger
+    
     return ({
     type: RECEIVE_NOTEBOOK,
     notebook
     });
 };
 
-const destroyNotebook = () => {
-    // debugger
+const destroyNotebook = (notebook) => {
+   
     return ({
-        type: DESTROY_NOTEBOOK
+        type: DESTROY_NOTEBOOK,
+        notebook
     });
 };
 
 const receiveNotebooks = notebooks => {
-    // debugger
+    
     return ({
 
         type: RECEIVE_NOTEBOOKS,
@@ -37,7 +38,7 @@ export const getNotebook = (id) => dispatch => (
 );
 
 export const createNotebook = (notebook) => dispatch => {
-    // debugger
+    
     return APIUtil.createNotebook(notebook).then(notebook => dispatch(receiveNotebook(notebook)));
 
 };
@@ -46,8 +47,8 @@ export const updateNotebook = (notebook) => dispatch => (
     APIUtil.updateNotebook(notebook).then(notebook => (dispatch(receiveNotebook(notebook))))
 );
 
-export const deleteNotebook = (id) => dispatch => {
-    // debugger
-    return APIUtil.deleteNotebook(id).then(notebook => (dispatch(destroyNotebook())));
+export const deleteNotebook = (notebook) => dispatch => {
+    debugger
+    return APIUtil.deleteNotebook(notebook).then(notebook => (dispatch(destroyNotebook(notebook))));
 };
     

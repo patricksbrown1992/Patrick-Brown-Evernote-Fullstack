@@ -11,29 +11,29 @@ class usernameForm2 extends React.Component {
     }
 
     componentDidMount() {
-        debugger
+      
         this.props.getNotebooks(this.props.user).then(() => this.setState({ loaded: true }));
        
 
     }
 
     render() {
-        // let second_load;
-        debugger
+        
+       
         if (!this.state.loaded) {
-            debugger
+       
             
             return null;
         } else {
             if(this.props.notebooks.length < 1){
-                debugger
+              
                 return (
                     <LeftNav />
+                    
                 )
             } else {
 
-            
-            debugger
+    
 
             const notebook = this.props.notebooks[0];
             const id = notebook.id;

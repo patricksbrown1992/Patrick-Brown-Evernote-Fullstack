@@ -7,7 +7,7 @@ class NotebookEditForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     handleChange() {
-        debugger
+   
         return (e) => {
             this.setState({ name: e.target.value });
         };
@@ -17,15 +17,13 @@ class NotebookEditForm extends React.Component {
         e.preventDefault();
         const name = this.state.name;
         const user_id = Object.values(this.props.user)[0].id;
-        // get an id and pass that in
-        // debugger
+       
         const id = this.props.id;
         this.props.updateNotebook({ name, user_id, id });
     }
 
     render (){
-        debugger
-        // console.log({this.state.name});
+       
         return(
             <div>
                 <h1>Rename notebook</h1>
