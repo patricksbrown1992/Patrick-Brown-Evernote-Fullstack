@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactQuill from 'react-quill';
 
 
 class NoteShowForm extends React.Component {
@@ -9,11 +10,8 @@ class NoteShowForm extends React.Component {
         // this.state = {selected: 1};
         // this.updateSelected = this.updateSelected.bind(this);
     }
-    handleChange() {
-       
-        return (e) => {
-            this.setState({ body: e.target.value });
-        };
+    handleChange(value) {
+        this.setState({ body: value });
     }
 
     // updateSelected(id) {
@@ -23,7 +21,7 @@ class NoteShowForm extends React.Component {
     // }
 
     handleSubmit() {
-     
+        
         return (e) => {
             e.preventDefault();
             let title = this.props.note.title;
@@ -31,7 +29,7 @@ class NoteShowForm extends React.Component {
             let notebook_id = this.props.note.notebook_id;
             let id = this.props.note.id;
             let note = { title, body, notebook_id, id };
-            this.props.updateNote({ id, note });
+            this.props.updateNote({ id, note }).then(() => this.setState({body: ''}));
         };
     }
 
@@ -43,14 +41,14 @@ class NoteShowForm extends React.Component {
         // } else {
    
         let note = this.props.note;
-
+        debugger
         return (
             <div className="right-nav">
 
                 <h1>{note.title}</h1>
-                <input type="text" placeholder={note.body} value={this.state.body} onChange={this.handleChange()} />
-                <br />
                 <button onClick={this.handleSubmit()} type='submit'>Edit Body</button>
+                <ReactQuill  value={this.state.body} onChange={this.handleChange} />
+                <br />
             </div>
         );
         // }
