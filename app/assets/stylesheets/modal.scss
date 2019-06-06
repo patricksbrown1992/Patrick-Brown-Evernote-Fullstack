@@ -13,13 +13,16 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 30%;
-  width: 20%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .new-note-modal{
-  height: 100%;
-  width: 100%;
+  height: 34%;
+  width: 28.5%;
   background-color: white;
   border: 1px solid black;
 }
@@ -39,14 +42,20 @@
 
 
 .new-notebook-modal{
-  height: 100%;
-  width: 100%;
+  height: 34%;
+  width: 28.5%;
   background-color: white;
   border: 1px solid black;
 }
-.new-notebook-modal h1, h5, input, form, span{
+.new-notebook-modal h1, h5, input, span{
   display: flex;
   justify-content: center;
+}
+
+.new-notebook-modal button {
+  color: white;
+  background-color: forestgreen;
+  height: 10%;
 }
 
 
@@ -65,8 +74,8 @@
 
 
 .notebook-edit-modal{
-  height: 100%;
-  width: 100%;
+  height: 34%;
+  width: 28.5%;
   background-color: white;
   border: 1px solid black;
 }
@@ -88,3 +97,10 @@
 .notebook-edit-modal span {
   margin-bottom: 2%;
 }
+
+.notebook-edit-modal button {
+  color: white;
+  background-color: forestgreen;
+  height: 10%;
+}
+

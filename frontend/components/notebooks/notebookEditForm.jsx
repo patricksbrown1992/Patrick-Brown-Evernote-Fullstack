@@ -26,6 +26,7 @@ class NotebookEditForm extends React.Component {
        
         return(
             <div className="notebook-edit-modal">
+                <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
                 <h1>Rename notebook</h1>
                 <h3>Name</h3>
                 <span>

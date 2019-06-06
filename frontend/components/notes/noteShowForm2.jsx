@@ -46,7 +46,10 @@ class NoteShowForm extends React.Component {
             <div className="right-nav">
 
                 <h1>{note.title}</h1>
+                <br/>
                 <button onClick={this.handleSubmit()} type='submit'>Edit Body</button>
+                <br/>
+                <br/>
                 <ReactQuill  value={this.state.body} onChange={this.handleChange} />
                 <br />
             </div>

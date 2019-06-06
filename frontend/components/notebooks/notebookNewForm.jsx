@@ -30,6 +30,7 @@ class NotebookNewForm extends React.Component {
         
         return(
         <div className='new-notebook-modal'>
+                <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
             <h1>Create new notebook</h1>
                 <h3>Notebooks are useful for grouping notes around a common topic. They can be private or shared.</h3>
                 <h5>Name</h5>
@@ -37,6 +38,8 @@ class NotebookNewForm extends React.Component {
 
                     <input type="text" value={this.state.name} onChange={this.handleChange()} placeholder='Notebook name'/>
                 </span>
+                <br/>
+                <br/>
                 <form onSubmit={this.handleSubmit}>
                     <button type='submit'>Continue</button>
                 </form>

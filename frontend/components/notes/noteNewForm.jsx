@@ -33,6 +33,7 @@ class NoteNewForm extends React.Component {
     render(){
     return (
         <div className='new-note-modal'>
+            <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
             <h1>Create new Note</h1>
            
             <h5>Title</h5>

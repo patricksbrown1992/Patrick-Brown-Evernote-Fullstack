@@ -47,7 +47,19 @@ main {
     color: white;
 }
 .new-note {
-    margin-bottom: 25px;
+    // margin-bottom: 25px;
+    justify-content: start;
+    cursor: pointer;
+    height: 20%;
+    display: flex;
+    align-items: center;
+}
+.new-note button{
+    border: none;
+    color: white;
+    height: 100%;
+    font-size: 85%;
+    background-color: #1a1a1a;
 }
 .left-nav li:hover {
     background-color: darkgrey;
@@ -62,13 +74,16 @@ main {
     flex-direction: row;
 }
 
-
+.quill{
+    height: 50%;
+}
 .right-nav {
     display: flex;
+    grid-area: 1 / 2/ 3/ 3;
     flex-direction: column;
-    width: 69.5%;
-    height: 60%;
-    margin-left: 18%;
+    // width: 69.5%;
+    height: 100%;
+    margin-left: 3%;
 }
 
 
@@ -77,7 +92,7 @@ main {
 }
 .right-nav h1 {
     margin-top: 9%;
-    margin-left: 3%;
+    // margin-left: 3%;
 }
 .notebook-title {
     margin-top: 14%;
