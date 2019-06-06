@@ -77,7 +77,7 @@ class NotebooksIndexForm extends React.Component {
                 <br/>
                 <Link to={`/username/${notebook.id}`} >{notebook.name}</Link> 
                 <br/>
-                User: 
+                User:
                 <br/>
                 {this.props.user.email}
                 <br/>

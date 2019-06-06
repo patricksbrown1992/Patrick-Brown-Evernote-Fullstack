@@ -7,14 +7,18 @@
 .note-index-title{
     white-space: nowrap;
     text-overflow: ellipsis;
-    color: #333;
+    background-color: whitesmoke;
     line-height: 24px;
     font-size: 14px;
+    border-bottom: 1px solid lightgray;
     margin-bottom: 2px;
     font-weight: 500;
     font-family: sans-serif;
 }
-
+.note-index-title a {
+    color: black;
+    text-decoration: none;
+}
 .note-index-body{
     font-size: 13px;
     list-style: none;

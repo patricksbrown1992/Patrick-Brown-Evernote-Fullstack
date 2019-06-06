@@ -43,7 +43,7 @@ class NotesIndexForm extends React.Component {
                     <br />
                     <button onClick={this.handleSubmitDelete(note)} type="submit">Delete Note</button>
                     <br />
-                    <p>-------------------</p>
+                    
                 </li>
             ));
            
