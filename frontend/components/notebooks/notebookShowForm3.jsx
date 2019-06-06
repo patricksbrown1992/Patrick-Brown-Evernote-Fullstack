@@ -67,7 +67,7 @@ class NotebookShowForm extends React.Component {
                     <div className='username-form'>
 
                         <LeftNav notebook={theNotebook} />
-                        <div className="notebooks-index-main">
+                        
                             <div className="notebook-show">
                                 <div className='notebook-show-title'>
                                     <h1>{theNotebook.name}</h1>
@@ -75,11 +75,11 @@ class NotebookShowForm extends React.Component {
                                         <button type='submit'>Delete Notebook</button>
                                     </form>
                                 </div>
-
                                 <NoteIndexContainer notebook={theNotebook} />
                             </div>
-                        </div>
-                        {/* <NoteShowForm /> */}
+                           
+                      
+                        
                     </div>
                 </>
 

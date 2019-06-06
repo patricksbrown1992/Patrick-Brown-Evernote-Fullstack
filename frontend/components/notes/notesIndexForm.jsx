@@ -33,31 +33,32 @@ class NotesIndexForm extends React.Component {
         } else {
             notes = this.props.notes.map(note =>(
                 
-                <div className="note-index-item" key={note.id}>
+               
                     
-                    <li className = "note-index-title" >{note.title}
-                    <br/> 
-                    {note.body}
+                    <li key={note.id} className="note-index-title" ><Link to={`/username/${this.props.notebook.id}/notes/${note.id}`} >{note.title}</Link> 
+                        <br/> 
+                        {note.body}
+                        <br/>
+                        <button onClick={this.handleSubmitDelete(note)} type="submit">Delete Note</button>
+                        <br/>
+                        <p>-------------------</p>
                     </li>
-                    <br/>
-                    <button onClick={this.handleSubmitDelete(note)} type="submit">Delete Note</button>
-                    <br/>
                     
-                </div>
+              
                 
             ));
         
        
         return (
         <>
-            <div className="center-nav">
+            {/* <div className="center-nav"> */}
                 <ul >
                 
                     {notes}
 
                 </ul>
-            </div>
-            <NoteShowForm notebook={this.props.notebook}/>
+                <NoteShowForm notebook={this.props.notebook}/>
+            {/* </div> */}
         </>
         )
         }

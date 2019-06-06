@@ -40,7 +40,7 @@ class usernameFormLeft extends React.Component{
                     <input placeholder="Search all notes..." type="text"></input>
                     <li className="new-note"> <button onClick={this.handleSubmitNewNote(this.props.notebook)} type='submit'>New Note</button></li>
                     <li>Shortcuts</li>
-                    <li><Link to='/username2'>All Notes</Link></li>
+                    <li><Link to='/username'>All Notes</Link></li>
                     <li><Link to='/notebooks'>Notebooks</Link></li>
                     <li>Shared with Me</li>
                     <li>Tags</li>
