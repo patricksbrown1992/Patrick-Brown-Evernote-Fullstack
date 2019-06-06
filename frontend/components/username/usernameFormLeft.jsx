@@ -37,7 +37,7 @@ class usernameFormLeft extends React.Component{
                     </form>
                     <li className="user-email">{this.props.user.email}</li>
                     <input placeholder="Search all notes..." type="text"></input>
-                    <span onClick={this.handleSubmitNewNote(this.props.notebook)} className="new-note"><i class="fas fa-plus-circle fa-2x"></i><button  type='submit'>New Note</button></span>
+                    <span onClick={this.handleSubmitNewNote(this.props.notebook)} className="new-note"><i className="fas fa-plus-circle fa-2x"></i><button  type='submit'>New Note</button></span>
                     <li>Shortcuts</li>
                     <li><Link to='/username'>All Notes</Link></li>
                     <li><Link to='/notebooks'>Notebooks</Link></li>

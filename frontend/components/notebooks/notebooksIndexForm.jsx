@@ -65,7 +65,7 @@ class NotebooksIndexForm extends React.Component {
                         <h3>My notebook list</h3>
                         <form onSubmit={this.handleSubmitAdd}>
 
-                            <button type='submit'>New Notebook</button>
+                            <button type='submit'><i className="fas fa-book-medical"></i>New Notebook</button>
                         </form>
                     </div>
                 </div>
@@ -83,11 +83,11 @@ class NotebooksIndexForm extends React.Component {
                 <br/>
                  Created At:
                  <br/>
-                {notebook.created_at.split('.')[0]}
+                     {notebook.created_at.split('.')[0].split('T').join(' ')}
                  <br/> 
                  Updated At:
                  <br/>
-                 {  notebook.updated_at.split('.')[0]} 
+                {notebook.updated_at.split('.')[0].split('T').join(' ')} 
                  <br/>
                 <br/>
                 <button onClick={this.handleSubmitEdit(notebook)} type='submit'>Rename Notebook</button>
@@ -106,7 +106,7 @@ class NotebooksIndexForm extends React.Component {
                     <h3>My notebook list</h3>
                     <form onSubmit={this.handleSubmitAdd}>
 
-                        <button type='submit'>New Notebook</button>
+                        <button className='new-notebook-button' type='submit'><i className="fas fa-book-medical"></i>New Notebook</button>
                     </form>
                     <br/>
                     <br/>

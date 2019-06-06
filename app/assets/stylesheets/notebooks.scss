@@ -17,6 +17,10 @@
     width:100%;
     height: 100%;
 }
+.notebook-show h1 {
+    font-weight: 400;
+    font-family: sans-serif;
+}
 .notebook-show ul {
     // width: 18%;
     // height: 100%;
@@ -82,6 +86,19 @@ button {
     font-weight: 500;
     padding-bottom: 1%;
     border-bottom: 3px solid #333;
+}
+
+.new-notebook-button {
+    font-weight: 500;
+    line-height: 24px;
+    font-size: 14px;
+    color: #00a82d;
+    padding: 0;
+    vertical-align: middle;
+  
+    cursor: pointer;
+    outline: none;
+    border: none
 }
 
 

@@ -27,8 +27,8 @@ class NotesIndexForm extends React.Component {
 
 
     render() {
-
-
+       
+        debugger
         let notes;
         
         if (!this.state.loaded) {
@@ -40,7 +40,12 @@ class NotesIndexForm extends React.Component {
                 <li key={note.id} className="note-index-title" ><Link to={`/username/${this.props.notebook.id}/notes/${note.id}`} > <h1>{note.title}</h1> </Link>
                     <br />
                     <h3>{note.body}</h3>
+                    <br/>
+                    Last updated:
+                    <br/>
+                    {note.updated_at.split('.')[0].split('T').join(' ')}
                     <br />
+                    
                     <button onClick={this.handleSubmitDelete(note)} type="submit">Delete Note</button>
                     <br />
                     
