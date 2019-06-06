@@ -45,6 +45,7 @@ main {
     margin-bottom: 20px;
     margin-left: 10px;
     color: white;
+    outline: none;
 }
 .new-note {
     // margin-bottom: 25px;
@@ -60,6 +61,7 @@ main {
     height: 100%;
     font-size: 85%;
     background-color: #1a1a1a;
+     outline: none;
 }
 .left-nav li:hover {
     background-color: darkgrey;
@@ -89,6 +91,7 @@ main {
 
 .right-nav button{
     width: 10%;
+    outline: none;
 }
 .right-nav h1 {
     margin-top: 9%;

@@ -46,6 +46,7 @@
 
 button {
     cursor: pointer;
+     outline: none;
 }
 .notebooks-index-list li:hover{
     background-color: lightgray;
@@ -88,18 +89,29 @@ button {
     border-bottom: 3px solid #333;
 }
 
-.new-notebook-button {
-    font-weight: 500;
+ .new-notebook-button{
+   font-weight: 500;
     line-height: 24px;
     font-size: 14px;
     color: #00a82d;
     padding: 0;
     vertical-align: middle;
-  
     cursor: pointer;
     outline: none;
-    border: none
+    border: none;
 }
+
+// .new-notebook-button {
+//     font-weight: 500;
+//     line-height: 24px;
+//     font-size: 14px;
+//     color: #00a82d;
+//     padding: 0;
+//     vertical-align: middle;
+//     cursor: pointer;
+//     outline: none;
+//     border: none;
+// }
 
 
 
