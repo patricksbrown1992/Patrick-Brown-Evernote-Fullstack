@@ -22,7 +22,7 @@ class NotebookNewForm extends React.Component {
         const name = this.state.name;
         const user_id = Object.values(this.props.user)[0].id;
        
-        this.props.createNotebook({name, user_id});
+        this.props.createNotebook({name, user_id}).then( () => this.props.closeModal());
     }
     
 
@@ -33,7 +33,10 @@ class NotebookNewForm extends React.Component {
             <h1>Create new notebook</h1>
                 <h3>Notebooks are useful for grouping notes around a common topic. They can be private or shared.</h3>
                 <h5>Name</h5>
-                <input type="text" value={this.state.name} onChange={this.handleChange()} placeholder='Notebook name'/>
+                <span>
+
+                    <input type="text" value={this.state.name} onChange={this.handleChange()} placeholder='Notebook name'/>
+                </span>
                 <form onSubmit={this.handleSubmit}>
                     <button type='submit'>Continue</button>
                 </form>

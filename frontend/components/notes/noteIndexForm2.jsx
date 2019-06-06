@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import NoteShowForm from '../notes/noteShowContainer';
+import { Link, Route, withRouter } from 'react-router-dom';
+import NoteShowForm from '../notes/noteShowContainer2';
 
 class NotesIndexForm extends React.Component {
     constructor(props) {
@@ -10,9 +10,11 @@ class NotesIndexForm extends React.Component {
         this.handleSubmitDelete = this.handleSubmitDelete.bind(this);
     }
     componentDidMount() {
-
-        this.props.getNotes(this.props.notebook.id)
-
+        this.props.getNotes(this.props.notebook.id).then( () => this.setState({loaded: true}));
+    }
+    componentDidUpdate(prevProps){
+        
+        debugger
     }
 
     handleSubmitDelete(note) {
@@ -29,7 +31,7 @@ class NotesIndexForm extends React.Component {
 
         let notes;
         debugger
-        if (this.props.notes.length < 1) {
+        if (!this.state.loaded) {
             debugger
             return null;
         } else {
@@ -44,21 +46,15 @@ class NotesIndexForm extends React.Component {
                     <p>-------------------</p>
                 </li>
             ));
-            if (!notes) {
-                debugger
-                return null;
-            }
-            let note;
-            this.props.notes.forEach(note => {
-                debugger
-                if (note.id === parseInt(this.props.match.params.note_id)){
-                    note = note;
-                }
-            })
-            if(!note){
-                return null;
-            }
-
+           
+            // let theNote;
+            // this.props.notes.forEach(note => {
+            //     debugger
+            //     if (note.id === parseInt(this.props.match.params.note_id)){
+            //         theNote = note;
+            //     }
+            // })
+            debugger
             return (
                 <>
                     {/* <div className="center-nav"> */}
@@ -67,7 +63,8 @@ class NotesIndexForm extends React.Component {
                         {notes}
 
                     </ul>
-                    <NoteShowForm note={note} />
+                    {/* <NoteShowForm note={theNote} /> */}
+                    <Route path={`${this.props.match.url}/notes/:note_id`} component={NoteShowForm} />
                     {/* </div> */}
                 </>
             )
@@ -75,5 +72,5 @@ class NotesIndexForm extends React.Component {
     }
 }
 
-export default NotesIndexForm;
+export default withRouter(NotesIndexForm);
 

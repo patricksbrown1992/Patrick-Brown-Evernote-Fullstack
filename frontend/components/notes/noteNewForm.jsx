@@ -24,7 +24,7 @@ class NoteNewForm extends React.Component {
         const body = this.state.body;
         const note = {title, body, notebook_id};
        
-        this.props.createNote({id, note});
+        this.props.createNote({id, note}).then( () => this.props.closeModal());
     }
 
 
@@ -35,9 +35,13 @@ class NoteNewForm extends React.Component {
             <h1>Create new Note</h1>
            
             <h5>Title</h5>
-            <input type="text" value={this.state.title} onChange={this.handleChange('title')} placeholder='Note Title' />
+            <span>
+                <input type="text" value={this.state.title} onChange={this.handleChange('title')} placeholder='Note Title' />
+            </span>
             <h5>Body</h5>
-            <input type="text" value={this.state.body} onChange={this.handleChange('body')} placeholder='Note Body' />
+            <span>
+                <input type="text" value={this.state.body} onChange={this.handleChange('body')} placeholder='Note Body' />
+            </span>
             <br/>
             <form onSubmit={this.handleSubmit}>
                 <button  type='submit'>Continue</button>

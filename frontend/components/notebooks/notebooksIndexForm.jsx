@@ -69,9 +69,26 @@ class NotebooksIndexForm extends React.Component {
             );
         } else {
              notebooks = this.props.notebooks.map(notebook => (
-                 <li key={notebook.id} > <Link to={`/username/${notebook.id}`} >{notebook.name}</Link> 
+                <li key={notebook.id} > 
                 <br/>
-                <button onClick={this.handleSubmitEdit(notebook)} type='submit'>Rename Notebook</button></li>
+                <Link to={`/username/${notebook.id}`} >{notebook.name}</Link> 
+                <br/>
+                User: 
+                <br/>
+                {this.props.user.email}
+                <br/>
+                 Created At:
+                 <br/>
+                {notebook.created_at.split('.')[0]}
+                 <br/> 
+                 Updated At:
+                 <br/>
+                 {  notebook.updated_at.split('.')[0]} 
+                 <br/>
+                <br/>
+                <button onClick={this.handleSubmitEdit(notebook)} type='submit'>Rename Notebook</button>
+                <br/>
+                </li>
             ));
 
         return (
@@ -87,7 +104,8 @@ class NotebooksIndexForm extends React.Component {
 
                         <button type='submit'>New Notebook</button>
                     </form>
-                
+                    <br/>
+                    <br/>
                     
                     <div className = 'index-of-notebooks'>
 

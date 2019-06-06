@@ -13,4 +13,78 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  height: 30%;
+  width: 20%;
+}
+
+.new-note-modal{
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  border: 1px solid black;
+}
+.new-note-modal h1, h5, input, form, span{
+  display: flex;
+  justify-content: center;
+}
+
+.new-note-modal h1 {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.new-note-modal h5 {
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
+
+
+.new-notebook-modal{
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  border: 1px solid black;
+}
+.new-notebook-modal h1, h5, input, form, span{
+  display: flex;
+  justify-content: center;
+}
+
+
+.new-notebook-modal h1 {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.new-notebook-modal h5 {
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
+
+.new-notebook-modal span {
+  margin-bottom: 2%;
+}
+
+
+.notebook-edit-modal{
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  border: 1px solid black;
+}
+.notebook-edit-modal h1, h5, h3, input, form, span{
+  display: flex;
+  justify-content: center;
+}
+
+
+.notebook-edit-modal h1 {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.notebook-edit-modal h5 {
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
+
+.notebook-edit-modal span {
+  margin-bottom: 2%;
 }

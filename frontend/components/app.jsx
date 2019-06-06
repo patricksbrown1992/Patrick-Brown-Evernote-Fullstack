@@ -19,9 +19,9 @@ const App = () => (
         <Switch>
             <ProtectedRoute exact path ='/notebooks' component={NotebooksIndexForm} />
             <Route exact path ='/features' component={FeaturesForm}/>
-            <ProtectedRoute path='/username/:notebook_id/notes/:note_id' component={NotebookShowForm2} />
+            {/* <ProtectedRoute path='/username/:notebook_id/notes/:note_id' component={NotebookShowForm2} /> */}
             <ProtectedRoute exact path='/username' component={NotebookShowForm3} />
-            <ProtectedRoute path='/username/:notebook_id' component={NotebookShowForm3}/>
+            <ProtectedRoute path='/username/:notebook_id' component={NotebookShowForm2}/>
             <Authorized exact path='/login' component={LogInForm} />
             <Route exact path='/' component={SplashForm} />
             <Authorized exact path='/signup' component={SignUpForm} />

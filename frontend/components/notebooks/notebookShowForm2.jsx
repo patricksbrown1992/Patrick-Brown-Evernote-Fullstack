@@ -11,8 +11,8 @@ class NotebookShowForm extends React.Component {
 
     componentDidMount() {
 
-        this.props.getNotebooks(this.props.user).then(() => this.setState({ loaded: true })).then(() => this.props.clearNotes());
-
+        // this.props.getNotebooks(this.props.user).then(() => this.setState({ loaded: true })).then(() => this.props.clearNotes());
+        this.setState({ loaded: true });
 
     }
 
@@ -38,28 +38,17 @@ class NotebookShowForm extends React.Component {
     render() {
         let theNotebook;
         this.props.notebooks.forEach(notebook => {
-
-            debugger
             if (notebook.id === parseInt(this.props.match.params.notebook_id)) {
                 theNotebook = notebook;
             }
     
         });
-
-    
-        debugger
-
         if (!this.state.loaded) {
-            debugger
             return null;
         } else {
-            debugger
             if (!theNotebook) {
-                debugger
                 return null;
             }
-            debugger
-            
             return (
                 <>
                     <div className='username-form'>

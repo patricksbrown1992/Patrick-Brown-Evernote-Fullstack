@@ -19,18 +19,21 @@ class NotebookEditForm extends React.Component {
         const user_id = Object.values(this.props.user)[0].id;
        
         const id = this.props.id;
-        this.props.updateNotebook({ name, user_id, id });
+        this.props.updateNotebook({ name, user_id, id }).then(() => this.props.closeModal());
     }
 
     render (){
        
         return(
-            <div>
+            <div className="notebook-edit-modal">
                 <h1>Rename notebook</h1>
                 <h3>Name</h3>
-                <input type="text" value={this.state.name} onChange={this.handleChange()}
-                //  placeholder='Notebook name'  GET THE ORIGINAL NAME
-                 />
+                <span>
+
+                    <input type="text" value={this.state.name} onChange={this.handleChange()}
+                    //  placeholder='Notebook name'  GET THE ORIGINAL NAME
+                    />
+                </span>
 
                 <form onSubmit={this.handleSubmit}>
                     <button type='submit'>Continue</button>

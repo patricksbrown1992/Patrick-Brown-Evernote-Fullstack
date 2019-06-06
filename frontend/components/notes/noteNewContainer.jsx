@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import noteNewForm from './noteNewForm';
 import { createNote} from '../../actions/noteAction';
+import {closeModal } from "../../actions/modalActions";
 
 
 const msp = state => ({
@@ -10,7 +11,8 @@ const msp = state => ({
 });
 
 const mdp = dispatch => ({
-    createNote: (id, note) => dispatch(createNote(id, note))
+    createNote: (id, note) => dispatch(createNote(id, note)),
+    closeModal: () => dispatch(closeModal()),
 });
 
 
