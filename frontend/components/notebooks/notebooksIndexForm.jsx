@@ -63,6 +63,10 @@ class NotebooksIndexForm extends React.Component {
                     <div className='notebooks-index-right'>
                         <h1>Notebooks</h1>
                         <h3>My notebook list</h3>
+                        <form onSubmit={this.handleSubmitAdd}>
+
+                            <button type='submit'>New Notebook</button>
+                        </form>
                     </div>
                 </div>
 

@@ -14,7 +14,7 @@ class NotesIndexForm extends React.Component {
     }
     componentDidUpdate(prevProps){
         
-        debugger
+       
     }
 
     handleSubmitDelete(note) {
@@ -30,9 +30,9 @@ class NotesIndexForm extends React.Component {
 
 
         let notes;
-        debugger
+        
         if (!this.state.loaded) {
-            debugger
+           
             return null;
         } else {
             
@@ -54,7 +54,7 @@ class NotesIndexForm extends React.Component {
             //         theNote = note;
             //     }
             // })
-            debugger
+          
             return (
                 <>
                     {/* <div className="center-nav"> */}

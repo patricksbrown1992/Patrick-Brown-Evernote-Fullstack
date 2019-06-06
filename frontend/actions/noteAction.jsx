@@ -8,9 +8,13 @@ const receiveNotes = notes => ({
     type: RECEIVE_NOTES,
     notes
 });
-export const clearNotes = () =>({
-    type: CLEAR_NOTES
-});
+export const clearNotes = () =>{
+    debugger
+    return {
+
+        type: CLEAR_NOTES
+    };
+};
 
 const receiveNote = note => {
     debugger
@@ -37,7 +41,7 @@ export const getNote = (notebook, note) => dispatch => (
 export const createNote = ({id, note}) => dispatch => {
     debugger
     return APIUtil.createNote(id, note).then(note => dispatch(receiveNote(note)));
-}
+};
 
 export const updateNote = ({id, note}) => dispatch => (
     APIUtil.updateNote(id, note).then(note => dispatch(receiveNote(note)))

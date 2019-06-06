@@ -17,7 +17,7 @@ export const getNote = (notebook, note) => {
 };
 
 export const createNote = (id, note) => {
-  
+    debugger
     return $.ajax({
         method: 'POST',
         url: `api/notebooks/${id}/notes`,

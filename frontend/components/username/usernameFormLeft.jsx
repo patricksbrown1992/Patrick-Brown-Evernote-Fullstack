@@ -16,7 +16,6 @@ class usernameFormLeft extends React.Component{
     }
 
     handleSubmitNewNote(entity){
-       
         return (e) => {
             e.preventDefault();
             this.props.addNote(entity);
@@ -26,7 +25,7 @@ class usernameFormLeft extends React.Component{
 
     render(){
         
-       
+       debugger
         return (
             
             <div className="left-nav">

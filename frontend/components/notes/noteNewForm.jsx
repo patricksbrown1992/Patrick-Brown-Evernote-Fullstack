@@ -10,14 +10,15 @@ class NoteNewForm extends React.Component {
     }
 
     handleChange(field) {
-       
-        return (e) => {
+        debugger
+        return (e) => { 
             this.setState({ [field]: e.target.value });
         };
     }
 
     handleSubmit(e) {
         e.preventDefault();
+        debugger
         const title = this.state.title;
         const notebook_id = this.props.id;
         const id = this.props.id;

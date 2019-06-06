@@ -24,6 +24,7 @@ const notesReducer = (state = {}, action) => {
         case REMOVE_USER:
             return {};
         case CLEAR_NOTES:
+            debugger
             return {};
         default:
             return state;

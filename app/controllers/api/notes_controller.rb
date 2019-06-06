@@ -22,9 +22,12 @@ class Api::NotesController < ApplicationController
     
     def create
         @note = Note.new(note_params)
+    
         if @note.save
+          
             render json: @note, status: 200
         else
+        
             render json: @note.errors.full_messages, status: 422
         end
     end
@@ -37,6 +40,7 @@ class Api::NotesController < ApplicationController
           
             render json: @note, status: 200
         else
+
             render json: @note.errors.full_messages, status: 422
         end
     end
@@ -44,9 +48,7 @@ class Api::NotesController < ApplicationController
     def update
         
         @note = Note.find(params[:id])
-      
         if @note.update(note_params)
-         
             render json: @note, status: 200
         else
             render json: @note.errors.full_messages, status: 422

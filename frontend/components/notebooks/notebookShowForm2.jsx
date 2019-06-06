@@ -12,40 +12,25 @@ class NotebookShowForm extends React.Component {
     componentDidMount() {
 
         // this.props.getNotebooks(this.props.user).then(() => this.setState({ loaded: true })).then(() => this.props.clearNotes());
-        this.setState({ loaded: true });
+        this.props.clearNotes();
 
     }
 
     handleSubmit(e) {
-        debugger
+      
         e.preventDefault();
-        let notebook;
-       
-        this.props.notebooks.forEach(notebook => {
-            
-            if (notebook.id === parseInt(this.props.match.params.notebook_id)) {
-                notebook = notebook;
-            }
-        });
+        
 
         debugger
-        this.props.deleteNotebook(notebook).then(() => {
-            debugger
-            return this.props.history.push('/notebooks')
+        this.props.deleteNotebook(this.props.notebooks[this.props.match.params.notebook_id]).then(() => {
+        debugger
+            return this.props.history.push('/notebooks');
         });
     }
 
     render() {
         let theNotebook;
-        this.props.notebooks.forEach(notebook => {
-            if (notebook.id === parseInt(this.props.match.params.notebook_id)) {
-                theNotebook = notebook;
-            }
-    
-        });
-        if (!this.state.loaded) {
-            return null;
-        } else {
+        theNotebook = this.props.notebooks[this.props.match.params.notebook_id];
             if (!theNotebook) {
                 return null;
             }
@@ -74,6 +59,6 @@ class NotebookShowForm extends React.Component {
         }
     }
 
-}
+
 
 export default NotebookShowForm;
