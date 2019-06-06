@@ -41,7 +41,7 @@ class NoteShowForm extends React.Component {
         // } else {
    
         let note = this.props.note;
-        debugger
+        // debugger
         return (
             <div className="right-nav">
 

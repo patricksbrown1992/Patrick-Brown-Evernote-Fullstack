@@ -14,14 +14,14 @@ class NotebookShowForm extends React.Component {
 
     componentDidMount() {
 
-        debugger
+        // debugger
         this.props.getNotebooks(this.props.user).then( () => this.setState({loaded: true})).then(() => this.props.clearNotes());
-        debugger
+        // debugger
 
     }
 
     handleSubmit(e) {
-        debugger
+        // debugger
         e.preventDefault();
         let theNotebook;
         this.props.notebooks.forEach(notebook => {
@@ -34,9 +34,9 @@ class NotebookShowForm extends React.Component {
             }
         });
 
-        debugger
+        // debugger
         this.props.deleteNotebook(theNotebook).then(() => {
-            debugger
+            // debugger
             return this.props.history.push('/notebooks')});
     }
 
@@ -52,13 +52,13 @@ class NotebookShowForm extends React.Component {
             }
         });
         
-        debugger
+        // debugger
 
         if (!this.state.loaded) {
-            debugger
+            // debugger
             return null;
         } else {
-            debugger
+            // debugger
             if(!theNotebook){
                 return null;
             }

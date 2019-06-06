@@ -21,9 +21,9 @@ class NotebookShowForm extends React.Component {
         e.preventDefault();
         
 
-        debugger
+        // debugger
         this.props.deleteNotebook(this.props.notebooks[this.props.match.params.notebook_id]).then(() => {
-        debugger
+        // debugger
             return this.props.history.push('/notebooks');
         });
     }

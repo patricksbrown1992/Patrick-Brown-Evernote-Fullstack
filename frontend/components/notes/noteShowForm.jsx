@@ -10,7 +10,7 @@ class NoteShowForm extends React.Component {
         // this.updateSelected = this.updateSelected.bind(this);
     }
     handleChange() {
-        debugger
+        // debugger
         return (e) => {
             this.setState({ body: e.target.value });
         };
@@ -23,7 +23,7 @@ class NoteShowForm extends React.Component {
     // }
 
     handleSubmit(){
-        debugger
+        // debugger
         return(e) => {
             e.preventDefault();
             let title = this.props.notes[0].title;
@@ -41,7 +41,7 @@ class NoteShowForm extends React.Component {
         // if(!note){
         //     note = Object.values(this.props.notes)[0];
         // } else {
-            debugger
+            // debugger
             let note = this.props.notes[0];
 
             return (

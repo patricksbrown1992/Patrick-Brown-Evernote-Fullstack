@@ -28,7 +28,7 @@ class NotesIndexForm extends React.Component {
 
     render() {
        
-        debugger
+        // debugger
         let notes;
         
         if (!this.state.loaded) {
