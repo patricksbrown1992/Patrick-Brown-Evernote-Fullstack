@@ -75,7 +75,7 @@ class NotebooksIndexForm extends React.Component {
              notebooks = this.props.notebooks.map(notebook => (
                 <li key={notebook.id} className > 
                 {/* <br/> */}
-                <Link to={`/username/${notebook.id}`} >{notebook.name}</Link> 
+                <Link to={`/username/${notebook.id}`} ><i class="fas fa-book"></i>{notebook.name}</Link> 
                 {/* <br/> */}
                 {/* User: */}
                 {/* <br/> */}

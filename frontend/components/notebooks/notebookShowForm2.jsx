@@ -46,6 +46,7 @@ class NotebookShowForm extends React.Component {
                                 <form onSubmit={this.handleSubmit}>
                                     <button type='submit'>Delete Notebook</button>
                                 </form>
+                                <i class="fas fa-tag"></i>
                             </div>
                             <NoteIndexContainer notebook={theNotebook} />
                         </div>
