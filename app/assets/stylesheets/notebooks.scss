@@ -43,7 +43,7 @@
 //     justify-content: space-around;
 // }
 .notebooks-index-list li {
-    background-color: whitesmoke;
+    // background-color: whitesmoke;
     display: flex;
     justify-content: space-around;
 }
@@ -59,9 +59,23 @@ button {
     cursor: pointer;
      outline: none;
 }
-.notebooks-index-list li:hover{
+.notebooks-index-list li:nth-child(even):hover{
     background-color: lightgray;
 }
+.notebooks-index-list li:nth-child(odd):hover{
+    background-color: lightgray;
+}
+
+.notebooks-index-list li:nth-child(even) {
+    background-color: white;
+}
+.notebooks-index-list li:nth-child(even) {
+    background-color: whitesmoke;
+}
+
+
+
+.notebooks
 .notebook-show-title{
     border-right: 1px solid lightgrey;
     border-bottom: 1px solid lightgrey;
