@@ -7,38 +7,15 @@ class NoteShowForm extends React.Component {
         super(props);
         this.state = { body: '' };
         this.handleChange = this.handleChange.bind(this);
-        // this.state = {selected: 1};
-        // this.updateSelected = this.updateSelected.bind(this);
+       
     }
 
-    // componentDidMount(){
-    //     // debugger
-    //     this.setState({ body: this.props.note.body });
-    // }
-    // componentWillUnmount(){
-    //     debugger
-    //     this.setState({ body: ''});
-    // }
-    // componentDidUpdate(prevProps){
-    //     debugger
-    //     this.setState({body: this.props.note.body});
-    // }
-
-    // componentWillUpdate(){
-    //     debugger
-    //     this.setState({ body: '' });
-    // }
-
+   
     handleChange(value) {
         this.setState({ body: value });
     }
 
-    // updateSelected(id) {
-    //     return () => {
-    //         this.setState({ selected: id });
-    //     };
-    // }
-
+  
     handleSubmit() {
         
         return (e) => {
@@ -53,15 +30,9 @@ class NoteShowForm extends React.Component {
     }
 
     render() {
-        // let note;
-        // debugger
-        // if(!note){
-        //     note = Object.values(this.props.notes)[0];
-        // } else {
-   
+       
         let note = this.props.note;
 
-        // debugger
         return (
             <div className="right-nav">
 
@@ -74,7 +45,7 @@ class NoteShowForm extends React.Component {
                 <br />
             </div>
         );
-        // }
+     
     }
 
 }
