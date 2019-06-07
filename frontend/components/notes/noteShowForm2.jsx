@@ -10,6 +10,25 @@ class NoteShowForm extends React.Component {
         // this.state = {selected: 1};
         // this.updateSelected = this.updateSelected.bind(this);
     }
+
+    // componentDidMount(){
+    //     // debugger
+    //     this.setState({ body: this.props.note.body });
+    // }
+    // componentWillUnmount(){
+    //     debugger
+    //     this.setState({ body: ''});
+    // }
+    // componentDidUpdate(prevProps){
+    //     debugger
+    //     this.setState({body: this.props.note.body});
+    // }
+
+    // componentWillUpdate(){
+    //     debugger
+    //     this.setState({ body: '' });
+    // }
+
     handleChange(value) {
         this.setState({ body: value });
     }
@@ -41,6 +60,7 @@ class NoteShowForm extends React.Component {
         // } else {
    
         let note = this.props.note;
+
         // debugger
         return (
             <div className="right-nav">
