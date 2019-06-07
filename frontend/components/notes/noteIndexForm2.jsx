@@ -38,16 +38,16 @@ class NotesIndexForm extends React.Component {
             
             notes = this.props.notes.map(note => (
                 <li key={note.id} className="note-index-title" ><Link to={`/username/${this.props.notebook.id}/notes/${note.id}`} > <h1>{note.title}</h1> </Link>
-                    <br />
+                  
                     <h3>{note.body}</h3>
-                    <br/>
+                  
                     Last updated:
                     <br/>
                     {note.updated_at.split('.')[0].split('T').join(' ')}
-                    <br />
+                    <br/>
                     
                     <button onClick={this.handleSubmitDelete(note)} type="submit">Delete Note</button>
-                    <br />
+             
                     
                 </li>
             ));

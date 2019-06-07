@@ -65,7 +65,7 @@ class NotebooksIndexForm extends React.Component {
                         <h3>My notebook list</h3>
                         <form onSubmit={this.handleSubmitAdd}>
 
-                            <button type='submit'><i className="fas fa-book-medical"></i>New Notebook</button>
+                            <button type='submit' className='new-notebook-button'><i className="fas fa-book-medical"></i>New Notebook</button>
                         </form>
                     </div>
                 </div>
