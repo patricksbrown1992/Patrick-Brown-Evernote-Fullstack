@@ -43,10 +43,10 @@ class NotebookShowForm extends React.Component {
                         <div className="notebook-show">
                             <div className='notebook-show-title'>
                                 <h1>{theNotebook.name}</h1>
+                                
                                 <form onSubmit={this.handleSubmit}>
                                     <button type='submit'>Delete Notebook</button>
                                 </form>
-                                <i class="fas fa-tag"></i>
                             </div>
                             <NoteIndexContainer notebook={theNotebook} />
                         </div>
