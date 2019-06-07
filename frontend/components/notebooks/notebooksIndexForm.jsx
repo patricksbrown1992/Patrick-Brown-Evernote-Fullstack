@@ -73,25 +73,25 @@ class NotebooksIndexForm extends React.Component {
             );
         } else {
              notebooks = this.props.notebooks.map(notebook => (
-                <li key={notebook.id} > 
-                <br/>
+                <li key={notebook.id} className > 
+                {/* <br/> */}
                 <Link to={`/username/${notebook.id}`} >{notebook.name}</Link> 
-                <br/>
-                User:
-                <br/>
+                {/* <br/> */}
+                {/* User: */}
+                {/* <br/> */}
                 {this.props.user.email}
-                <br/>
-                 Created At:
-                 <br/>
-                     {notebook.created_at.split('.')[0].split('T').join(' ')}
-                 <br/> 
-                 Updated At:
-                 <br/>
-                {notebook.updated_at.split('.')[0].split('T').join(' ')} 
-                 <br/>
-                <br/>
+                {/* <br/> */}
+                {/* Created By: */}
+                {/* <br/> */}
+                {/* {notebook.created_at.split('.')[0].split('T').join(' ')} */}
+                {/* <br/>  */}
+                {/* Updated At: */}
+                {/* <br/> */}
+                <h5>{notebook.updated_at.split('.')[0].split('T').join(' ')}</h5> 
+                {/* <br/> */}
+                {/* <br/> */}
                 <button onClick={this.handleSubmitEdit(notebook)} type='submit'>Rename Notebook</button>
-                <br/>
+                {/* <br/> */}
                 </li>
             ));
 
@@ -112,7 +112,12 @@ class NotebooksIndexForm extends React.Component {
                     <br/>
                     
                     <div className = 'index-of-notebooks'>
-
+                        <div className='notebook-table-labs'>
+                            <h3>Title</h3>
+                            <h3>Create By</h3>
+                            <h3>Updated</h3>
+                            <h3>Rename</h3>
+                        </div>
                         <ul className='notebooks-index-list'>{notebooks}</ul>
                     </div>
         

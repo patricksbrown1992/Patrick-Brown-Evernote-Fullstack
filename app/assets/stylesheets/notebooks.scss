@@ -38,8 +38,14 @@
     // justify-content: left;
     padding-top: 13%;
 }
+// .notebooks-index-list {
+//     display: flex;
+//     justify-content: space-around;
+// }
 .notebooks-index-list li {
     background-color: whitesmoke;
+    display: flex;
+    justify-content: space-around;
 }
 .notebooks-index-list li a {
     color: black;
@@ -124,4 +130,10 @@ button {
     cursor: pointer;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+.notebook-table-labs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
