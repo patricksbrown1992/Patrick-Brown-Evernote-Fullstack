@@ -3,7 +3,7 @@ import UsernameFormLeft from '../username/usernameLeftContainer';
 // import { Link } from 'react-router-dom';
 import { Route, Link} from 'react-router-dom';
 // import NotebookShowForm from './notebookShowContainer2';
-import NoteShowForm from '../notes/noteShowForm';
+
 import styleDate from '../../util/styleDate';
 
 class NotebooksIndexForm extends React.Component {
