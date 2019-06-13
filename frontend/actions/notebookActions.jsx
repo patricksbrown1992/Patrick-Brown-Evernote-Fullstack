@@ -3,6 +3,7 @@ import * as APIUtil from '../util/notebooksUtil';
 export const RECEIVE_NOTEBOOK = 'RECEIVE_NOTEBOOK';
 export const RECEIVE_NOTEBOOKS = "RECEIVE_NOTEBOOKS";
 export const DESTROY_NOTEBOOK = 'DESTROY_NOTEBOOK';
+export const CLEAR_NOTEBOOKS = 'CLEAR_NOTEBOOKS';
 
 const receiveNotebook = notebook => {
     
@@ -28,6 +29,12 @@ const receiveNotebooks = notebooks => {
         notebooks
     });
 };
+
+export const clearNotebooks = () => {
+    return {
+        type: CLEAR_NOTEBOOKS
+    }
+}
 
 export const getNotebooks = (user) => dispatch => (
     APIUtil.getNotebooks(user).then(notebooks => (dispatch(receiveNotebooks(notebooks))))
