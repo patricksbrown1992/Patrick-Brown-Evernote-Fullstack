@@ -13,4 +13,8 @@
 class Note < ApplicationRecord
     validates :notebook_id, :title, :body, presence: true
     belongs_to :notebook
+    has_many :taggings
+    has_many :tags,
+        through: :taggings,
+        source: :tag
 end
