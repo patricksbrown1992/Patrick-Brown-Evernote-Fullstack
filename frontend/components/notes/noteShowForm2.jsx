@@ -11,7 +11,7 @@ class NoteShowForm extends React.Component {
     }
 
     componentWillReceiveProps(newProps) {
-        debugger
+        // debugger
         if (newProps.note == undefined){
             return this.props.history.push('/notebooks');
         } 
@@ -51,7 +51,7 @@ class NoteShowForm extends React.Component {
     render() {
 
         let note = this.props.note;
-        debugger
+        // debugger
         return (
             <div className="right-nav">
 
