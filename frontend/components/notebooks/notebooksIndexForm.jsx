@@ -76,20 +76,13 @@ class NotebooksIndexForm extends React.Component {
             );
         } else {
              notebooks = this.props.notebooks.map(notebook => (
-                // <li key={notebook.id}  > 
-                // <Link to={`/username/${notebook.id}`} ><i className="fas fa-book"></i>{notebook.name}</Link> 
-                // {this.props.user.email}
-                // <h5>{notebook.updated_at.split('.')[0].split('T').join(' ')}</h5> 
-                // <button onClick={this.handleSubmitEdit(notebook)} type='submit'>Rename Notebook</button>
-                // </li>
-
+              
                 <li key={notebook.id} className="notebook-index-table" > 
                     <div className="notebook-index-table-title"><Link to={`/username/${notebook.id}`} ><i className="fas fa-book"></i>{notebook.name}</Link></div>
                     <div className="notebook-index-table-email"><h4>{this.props.user.email}</h4></div> 
-                    {/* <div className="notebook-index-table-time"><h5>{notebook.updated_at.split('.')[0].split('T').join(' ')}</h5></div>   */}
                     <div className="notebook-index-table-time"><h4>{styleDate(notebook.updated_at)}</h4></div>  
-
-                    <div className="notebook-index-table-button"><button onClick={this.handleSubmitEdit(notebook)} type='submit'>Rename Notebook</button></div>
+                    <div className="notebook-index-table-button"><button onClick={this.handleSubmitEdit(notebook)} type='submit'><i className="fas fa-ellipsis-h"></i>Rename Notebook</button></div>
+                    
                 </li>
             ));
 
