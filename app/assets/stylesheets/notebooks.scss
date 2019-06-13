@@ -59,6 +59,7 @@
     display: flex;
     height: 40px;
     width: 100%;
+    align-items: center;
 }
 
 .notebook-index-table-title {
@@ -195,6 +196,7 @@ button {
 .notebook-table-labs {
     display: flex;
     background-color: #f8f8f8;
+    align-items: center;
     height: 40%;
 }
 
@@ -211,6 +213,10 @@ button {
     color: #b3b3b3;
     // overflow: hidden;
 }
+.notebook-table-label-title:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
 
 .notebook-table-label-email{
     display: inline-block;
@@ -222,6 +228,11 @@ button {
     display: inline-block;
     margin-left: 7%;
     color: #b3b3b3;
+}
+
+.notebook-table-label-time:hover{
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .notebook-table-label-actions{
