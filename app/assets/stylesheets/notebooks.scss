@@ -73,17 +73,17 @@
 
 
 .index-of-notebooks li:nth-child(even):hover{
-    background-color: lightgray;
+    background-color: whitesmoke;
 }
 .index-of-notebooks  li:nth-child(odd):hover{
-    background-color: lightgray;
+    background-color: whitesmoke;
 }
 
 .index-of-notebooks li:nth-child(odd) {
     background-color: white;
 }
 .index-of-notebooks li:nth-child(even) {
-    background-color: whitesmoke;
+    background-color: #f8f8f8;
 }
 
 
@@ -106,10 +106,10 @@ button {
      outline: none;
 }
 .notebooks-index-list li:nth-child(even):hover{
-    background-color: lightgray;
+    background-color: whitesmoke;
 }
 .notebooks-index-list li:nth-child(odd):hover{
-    background-color: lightgray;
+    background-color: whitesmoke;
 }
 
 .notebooks-index-list li:nth-child(even) {
@@ -194,12 +194,12 @@ button {
 
 .notebook-table-labs {
     display: flex;
-    background-color: whitesmoke;
+    background-color: #f8f8f8;
     height: 40%;
 }
 
 .notebook-table-labs:hover {
-    background-color: lightgray;
+    background-color: whitesmoke;
 }
 
 
@@ -208,19 +208,23 @@ button {
     display: inline-block;
     margin-left: 4.55%;
     width: 2.5%;
+    color: #b3b3b3;
     // overflow: hidden;
 }
 
 .notebook-table-label-email{
     display: inline-block;
     margin-left: 38%;
+    color: #b3b3b3;
 }
 
 .notebook-table-label-time{
     display: inline-block;
     margin-left: 7%;
+    color: #b3b3b3;
 }
 
 .notebook-table-label-actions{
     margin-left: 35%;
+    color: #b3b3b3;
 }
