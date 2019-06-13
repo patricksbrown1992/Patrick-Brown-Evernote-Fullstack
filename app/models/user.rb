@@ -20,6 +20,7 @@ class User < ApplicationRecord
     attr_reader :password
     after_initialize :ensure_session_token
     has_many :notebooks
+    has_many :tags
     has_many :notes,
         through: :notebooks,
         source: :notes
