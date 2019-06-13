@@ -9,6 +9,8 @@
 node_modules/
 bundle.js
 bundle.js.map
+bundle.js 2.map
+bundle.js 3.map
 .byebug_history
 .DS_Store
 npm-debug.log
