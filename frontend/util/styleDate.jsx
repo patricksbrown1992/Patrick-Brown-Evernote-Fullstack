@@ -11,7 +11,7 @@ const styleDate = (date) => {
         if (difference2 < 1) {
             changedTime = "one hour ago"
         } else {
-            changedTime = timeDifference + " hour(s) ago"
+            changedTime = difference2 + " hours ago"
         }
     } else {
         const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
