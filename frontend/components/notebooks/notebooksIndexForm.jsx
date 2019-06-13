@@ -63,11 +63,13 @@ class NotebooksIndexForm extends React.Component {
 
                     <div className='notebooks-index-right'>
                         <h1>Notebooks</h1>
-                        <h3>My notebook list</h3>
-                        <form onSubmit={this.handleSubmitAdd}>
+                        <div className="notebook-index-header2">
+                            <h3>My notebook list</h3>
+                            <form onSubmit={this.handleSubmitAdd}>
 
-                            <button type='submit' className='new-notebook-button'><i className="fas fa-book-medical"></i>New Notebook</button>
-                        </form>
+                                <button type='submit' className='new-notebook-button'><i className="fas fa-book-medical"></i>New Notebook</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
 
@@ -83,8 +85,10 @@ class NotebooksIndexForm extends React.Component {
 
                 <li key={notebook.id} className="notebook-index-table" > 
                     <div className="notebook-index-table-title"><Link to={`/username/${notebook.id}`} ><i className="fas fa-book"></i>{notebook.name}</Link></div>
-                    <div className="notebook-index-table-email">{this.props.user.email}</div> 
-                    <div className="notebook-index-table-time"><h5>{notebook.updated_at.split('.')[0].split('T').join(' ')}</h5></div>  
+                    <div className="notebook-index-table-email"><h4>{this.props.user.email}</h4></div> 
+                    {/* <div className="notebook-index-table-time"><h5>{notebook.updated_at.split('.')[0].split('T').join(' ')}</h5></div>   */}
+                    <div className="notebook-index-table-time"><h4>{styleDate(notebook.updated_at)}</h4></div>  
+
                     <div className="notebook-index-table-button"><button onClick={this.handleSubmitEdit(notebook)} type='submit'>Rename Notebook</button></div>
                 </li>
             ));
@@ -97,14 +101,13 @@ class NotebooksIndexForm extends React.Component {
                 
                 <div className='notebooks-index-right'>
                     <h1>Notebooks</h1>
-                    <h3>My notebook list</h3>
-                    <form onSubmit={this.handleSubmitAdd}>
+                    <div className="notebook-index-header2">
+                        <h3>My notebook list</h3>
+                        <form onSubmit={this.handleSubmitAdd}>
 
-                        <button className='new-notebook-button' type='submit'><i className="fas fa-book-medical"></i>New Notebook</button>
-                    </form>
-                    <br/>
-                    <br/>
-                    
+                            <button className='new-notebook-button' type='submit'><i className="fas fa-book-medical"></i>New Notebook</button>
+                        </form>
+                    </div>
                     <div className = 'index-of-notebooks'>
                         <div className='notebook-table-labs'>
                             <h6 className="notebook-table-label-title">Title</h6>
