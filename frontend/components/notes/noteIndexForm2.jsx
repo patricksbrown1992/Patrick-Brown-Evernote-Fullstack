@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Route, withRouter } from 'react-router-dom';
 import NoteShowForm from '../notes/noteShowContainer2';
+import styleDate from '../../util/styleDate';
 
 class NotesIndexForm extends React.Component {
     constructor(props) {
@@ -43,7 +44,7 @@ class NotesIndexForm extends React.Component {
                   
                     Last updated:
                     <br/>
-                    {note.updated_at.split('.')[0].split('T').join(' ')}
+                    {styleDate(note.updated_at)}
                     <br/>
                     
                     <button onClick={this.handleSubmitDelete(note)} type="submit">Delete Note</button>
