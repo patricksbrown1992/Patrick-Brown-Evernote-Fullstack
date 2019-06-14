@@ -19,22 +19,14 @@ class NotebooksIndexForm extends React.Component {
         this.props.getNotebooks(this.props.user);
     }
 
-    // handleSubmit(e) {
-    //     
-    //     e.preventDefault();
-    //     if (e.currentTarget.children[0].classList.value === "index-of-notebooks"){
-    //        
-    //         this.props.editModal();
-    //     } else {
-    //         this.props.addModal('add');
-    //     }
-        
-    // }
-
     handleSubmitAdd(e){
         e.preventDefault();
 
         this.props.addModal();
+    }
+
+    activateDropDown(){
+
     }
 
     handleSubmitEdit(entity){
@@ -68,6 +60,7 @@ class NotebooksIndexForm extends React.Component {
                             <form onSubmit={this.handleSubmitAdd}>
 
                                 <button type='submit' className='new-notebook-button'><i className="fas fa-book-medical"></i>New Notebook</button>
+                                
                             </form>
                         </div>
                     </div>
@@ -78,10 +71,12 @@ class NotebooksIndexForm extends React.Component {
              notebooks = this.props.notebooks.map(notebook => (
               
                 <li key={notebook.id} className="notebook-index-table" > 
-                    <div className="notebook-index-table-title"><Link to={`/username/${notebook.id}`} ><i className="fas fa-book"></i>{notebook.name}</Link></div>
+                    <div className="notebook-index-table-title"><i className="fas fa-caret-right"></i><Link to={`/username/${notebook.id}`} ><i className="fas fa-book"></i>{notebook.name}</Link></div>
                     <div className="notebook-index-table-email"><h4>{this.props.user.email}</h4></div> 
                     <div className="notebook-index-table-time"><h4>{styleDate(notebook.updated_at)}</h4></div>  
-                    <div className="notebook-index-table-button"><button onClick={this.handleSubmitEdit(notebook)} type='submit'><i className="fas fa-ellipsis-h"></i>Rename Notebook</button></div>
+                    {/* <div className="notebook-index-table-button"><button onClick={this.handleSubmitEdit(notebook)} type='submit'><i className="fas fa-ellipsis-h"></i>Rename Notebook</button></div> */}
+                    <div className="notebook-index-table-button"><i className="fas fa-ellipsis-h"></i></div>
+                    {/* <i class="fas fa-caret-down"></i> */}
                     
                 </li>
             ));
