@@ -20,5 +20,5 @@ class Tag < ApplicationRecord
 
     has_many :notes,
         through: :taggings,
-        source: note
+        source: :note
 end

@@ -1,8 +1,12 @@
-class TagsController < ApplicationController
+class Api::TagsController < ApplicationController
     before_action :require_logged_in
 
     def index
-       
+       @user = User.find(params[:user_id])
+       @tags = @user.tags
+    #    debugger
+       render json: @tags, status: 200
+
     end
 
     def show
@@ -19,7 +23,7 @@ class TagsController < ApplicationController
         if @tag.update(tag_params)
             render json: @tag, status: 200
         else
-            render json: @tag.errors.full_messages, status; 422 
+            render json: @tag.errors.full_messages, status: 422 
         end
     end
 
