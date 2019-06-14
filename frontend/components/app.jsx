@@ -9,6 +9,7 @@ import NotebooksIndexForm from './notebooks/notebooksIndexContainer';
 import NotebookShowForm2 from './notebooks/notebookShowContainer2';
 import FeaturesForm from './features/featuresForm';
 import AllNotesContainer from '../components/notes/allNotesContainer';
+import TagIndexContainer from '../components/tags/tagsIndexContainer'
 
 import Modal from './modal/modal'
 
@@ -24,6 +25,7 @@ const App = () => (
             <ProtectedRoute path='/username/:notebook_id' component={NotebookShowForm2}/>
             <Authorized exact path='/login' component={LogInForm} />
             <Route exact path='/' component={SplashForm} />
+            <ProtectedRoute exact path='/tags' component={TagIndexContainer}/>
             <Authorized exact path='/signup' component={SignUpForm} />
         </Switch>
    </>
