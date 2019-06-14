@@ -7,7 +7,7 @@ class TagIndexForm extends React.Component {
     }
 
     componentDidMount(){
-        debugger
+      
         this.props.getTags(this.props.user);
     }
 
@@ -15,7 +15,7 @@ class TagIndexForm extends React.Component {
         let tags
 
         if (this.props.tags.length < 1){
-            debugger
+   
             return (
                 <div className="tag-index">
                     <UsernameFormLeft />
@@ -28,16 +28,24 @@ class TagIndexForm extends React.Component {
             )
         } else {
             tags = this.props.tags.map(tag => (
-                <li key={tag.id}>{tag.name}</li>
+                <li key={tag.id}>
+                <div className="tag-index-intial">{tag.name[0].toUpperCase()}</div>
+                
+                {tag.name}
+                </li>
             )) 
-                debugger
+            
             return (
             <div className="tag-index">
                 <UsernameFormLeft />
-                <div className="tag-index-header">
-                    <h1>Tags</h1>
+                <div className="tag-index-right">
+
+               
+                    <div className="tag-index-header">
+                        <h1>Tags</h1>
+                        
                     
-                   
+                    </div>
                     <div className="tag-index-list">
                         <ul>{tags}</ul>
                     </div>

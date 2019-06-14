@@ -7,7 +7,7 @@ const msp = state => ({
 });
 
 const mdp = dispatch => ({
-getTags: user => dispatch(getTags(user))
+    getTags: user => dispatch(getTags(user))
 });
 
 export default connect(msp, mdp)(TagsIndexForm);
