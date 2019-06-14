@@ -1,5 +1,6 @@
 class TagsController < ApplicationController
     before_action :require_logged_in
+
     def index
        
     end
@@ -7,7 +8,7 @@ class TagsController < ApplicationController
     def show
         @tag = Tag.find(params[:id])
         if @tag
-            render json: @note, status: 200
+            render json: @tag, status: 200
         else
             render json: @tag.errors.full_messages, status: 422
         end
@@ -18,7 +19,7 @@ class TagsController < ApplicationController
         if @tag.update(tag_params)
             render json: @tag, status: 200
         else
-            render json: @note.errors.full_messages, status; 422 
+            render json: @tag.errors.full_messages, status; 422 
         end
     end
 
@@ -43,7 +44,7 @@ class TagsController < ApplicationController
     private
 
     def tag_params
-        params.require(:tag).permit(:note_id, :name)
+        params.require(:tag).permit(:user_id, :name)
     end
 
 end
