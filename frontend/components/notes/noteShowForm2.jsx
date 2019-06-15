@@ -12,9 +12,9 @@ class NoteShowForm extends React.Component {
 
     componentWillReceiveProps(newProps) {
         // debugger
-        if (newProps.note == undefined){
+        if (newProps.note == undefined) {
             return this.props.history.push('/notebooks');
-        } 
+        }
         if (newProps.note.id !== this.props.note.id) {
             this.setState({
                 id: newProps.note.id,

@@ -11,11 +11,11 @@ class NotesIndexForm extends React.Component {
         this.handleSubmitDelete = this.handleSubmitDelete.bind(this);
     }
     componentDidMount() {
-        this.props.getNotes(this.props.notebook.id).then( () => this.setState({loaded: true}));
+        this.props.getNotes(this.props.notebook.id).then(() => this.setState({ loaded: true }));
     }
-    componentDidUpdate(prevProps){
-        
-       
+    componentDidUpdate(prevProps) {
+
+
     }
 
     handleSubmitDelete(note) {
@@ -28,31 +28,31 @@ class NotesIndexForm extends React.Component {
 
 
     render() {
-       
+
         // debugger
         let notes;
-        
+
         if (!this.state.loaded) {
-           
+
             return null;
         } else {
-            
+
             notes = this.props.notes.map(note => (
                 <li key={note.id} className="note-index-title" ><Link to={`/username/${this.props.notebook.id}/notes/${note.id}`} > <h1>{note.title}</h1> </Link>
-                  
+
                     <h3>{note.body}</h3>
-                  
+
                     Last updated:
-                    <br/>
+                    <br />
                     {styleDate(note.updated_at)}
-                    <br/>
-                    
+                    <br />
+
                     <button onClick={this.handleSubmitDelete(note)} type="submit">Delete Note</button>
-             
-                    
+
+
                 </li>
             ));
-           
+
             // let theNote;
             // this.props.notes.forEach(note => {
             //     debugger
@@ -60,7 +60,7 @@ class NotesIndexForm extends React.Component {
             //         theNote = note;
             //     }
             // })
-          
+
             return (
                 <>
                     {/* <div className="center-nav"> */}
@@ -77,6 +77,4 @@ class NotesIndexForm extends React.Component {
         }
     }
 }
-
 export default withRouter(NotesIndexForm);
-

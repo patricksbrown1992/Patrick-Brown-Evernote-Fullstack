@@ -11,7 +11,7 @@
 
 class Tag < ApplicationRecord
 
-    belongs_to :user
+     belongs_to :user
 
     has_many :taggings,
         primary_key: :id,
@@ -20,5 +20,5 @@ class Tag < ApplicationRecord
 
     has_many :notes,
         through: :taggings,
-        source: note
+        source: :note
 end
