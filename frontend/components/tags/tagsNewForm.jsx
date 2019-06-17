@@ -27,6 +27,7 @@ class TagNewForm extends React.Component {
 
         return (
             <div className='new-tag-modal'>
+                <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
                 <h1>Create New Tag</h1>
                 <h3>Name</h3>
                 <span>
