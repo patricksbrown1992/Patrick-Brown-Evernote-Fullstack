@@ -32,6 +32,10 @@ class NoteShowForm extends React.Component {
         this.setState({ body: value });
     }
 
+    handleAddTag(){
+        
+    }
+
 
 
     handleSubmit() {
@@ -62,6 +66,8 @@ class NoteShowForm extends React.Component {
                 <br />
                 <ReactQuill value={this.state.body} onChange={this.handleChange} />
                 <br />
+
+                <button onClick={this.handleAddTag()}>Add Study Tag</button>
             </div>
         );
 
