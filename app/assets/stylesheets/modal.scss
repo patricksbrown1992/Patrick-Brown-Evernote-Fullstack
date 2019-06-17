@@ -82,6 +82,24 @@
   outline: none;
 }
 
+.tag-delete-modal {
+  height: 34%;
+  width: 28.5%;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.tag-delete-modal button {
+  color: white;
+  background-color: tomato;
+  height: 10%;
+  outline: none;
+}
+
+.tag-delete-modal h5, h3, input, form, span{
+  display: flex;
+  justify-content: center;
+}
 
 .new-notebook-modal{
   height: 35%;
