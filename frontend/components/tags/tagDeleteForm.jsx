@@ -7,7 +7,6 @@ class TagDeleteForm extends React.Component{
     }
 
     handleSubmit(e) {
-        debugger
         e.preventDefault();
         this.props.deleteTag(this.props.tag).then(() => this.props.closeModal());
 

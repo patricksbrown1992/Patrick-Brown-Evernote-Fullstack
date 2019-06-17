@@ -50,7 +50,7 @@ class TagIndexForm extends React.Component {
                 </div>
             )
         } else {
-            debugger
+            // debugger
             tags = this.props.tags.map(tag => (
                 <li key={tag.id}>
                     <div className="tag-index-intial">{tag.name[0]}</div>
