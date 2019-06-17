@@ -5,6 +5,7 @@ import NoteNewForm from '../notes/noteNewContainer';
 import NotebookNewForm from '../notebooks/notebookNewContainer';
 import NotebookEditForm from '../notebooks/notebookEditContainer';
 import TagNewContainer from '../tags/tagsNewContainer';
+import TagEditContainer from '../tags/tagEditContainer';
 function Modal({ modal, closeModal }) {
     // debugger
     if (!modal.type) {
@@ -25,6 +26,9 @@ function Modal({ modal, closeModal }) {
             break;
         case 'addTag':
             component = <TagNewContainer id={modal.entity.id} />;
+            break;
+        case 'editTag':
+            component = <TagEditContainer id={modal.entity.id}/>;
             break;
         default:
             return null;

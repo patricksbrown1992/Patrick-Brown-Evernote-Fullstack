@@ -32,6 +32,10 @@ export const createTag = tag => dispatch => {
     return APIUtil.createTag(tag).then(tag => dispatch(receiveTag(tag)));
 };
 
+export const updateTag = tag => dispatch => (
+    APIUtil.updateTag(tag).then(tag => dispatch(receiveTag(tag)))
+);
+
 export const deleteTag = tag => dispatch => (
     APIUtil.deleteTag(tag).then( (tag) => dispatch(destroyTag(tag)))
 );

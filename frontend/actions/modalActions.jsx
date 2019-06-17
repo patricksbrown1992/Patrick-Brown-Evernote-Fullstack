@@ -27,6 +27,14 @@ export const openAddTagModal = entity => {
     }
 }
 
+export const editTagModal = entity => {
+    return {
+        type: OPEN_MODAL,
+        entity,
+        modal: 'editTag'
+    }
+}
+
 
 export const openAddNoteModal = entity => {
 

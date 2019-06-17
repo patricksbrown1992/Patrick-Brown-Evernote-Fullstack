@@ -19,6 +19,13 @@ class TagIndexForm extends React.Component {
         };
     }
 
+    handSubmitEditTag(entity){
+        return (e) => {
+            e.preventDefault();
+            this.props.editTagModal(entity);
+        };
+    }
+
     handleSubmitDeleteTag(entity){
         return (e) => {
             e.preventDefault();
@@ -48,7 +55,8 @@ class TagIndexForm extends React.Component {
                     <div className="tag-index-intial">{tag.name[0]}</div>
 
                     {tag.name}
-                    <button onClick={this.handleSubmitDeleteTag(tag)}>Delete Tag</button>
+                    <button onClick={this.handleSubmitDeleteTag(tag)}>Delete tag...</button>
+                    <button onClick={this.handSubmitEditTag(tag)}>Rename tag...</button>
                 </li>
             ))
 
