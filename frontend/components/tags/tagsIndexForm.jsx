@@ -3,7 +3,9 @@ import UsernameFormLeft from '../username/usernameLeftContainer';
 
 class TagIndexForm extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
+        this.handleSubmitDeleteTag = this.handleSubmitDeleteTag.bind(this);
+        this.handleSubmitNewTag = this.handleSubmitNewTag.bind(this);
     }
 
     componentDidMount() {
@@ -14,6 +16,13 @@ class TagIndexForm extends React.Component {
         return (e) => {
             e.preventDefault();
             this.props.addTag(entity);
+        };
+    }
+
+    handleSubmitDeleteTag(entity){
+        return (e) => {
+            e.preventDefault();
+            this.props.deleteTag(entity);
         };
     }
 
@@ -39,7 +48,7 @@ class TagIndexForm extends React.Component {
                     <div className="tag-index-intial">{tag.name[0]}</div>
 
                     {tag.name}
-                    <button onClick={this.props.deleteTag(tag)}>Delete Tag</button>
+                    <button onClick={this.handleSubmitDeleteTag(tag)}>Delete Tag</button>
                 </li>
             ))
 
