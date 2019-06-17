@@ -3,6 +3,9 @@
     height: 100%;
     display: flex;
 }
+.new-tag{
+    width: 120px;
+}
 .tag-index-right{
     display: flex;
     flex-direction: column;
@@ -45,4 +48,8 @@
 .new-tag button{
     color: forestgreen;
     border: none;
+    display: flex;
+    width: 100%;
+    font-size: 14px;
+    min-height: 27px;
 }

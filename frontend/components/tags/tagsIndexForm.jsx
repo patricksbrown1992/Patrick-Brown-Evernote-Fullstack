@@ -27,17 +27,19 @@ class TagIndexForm extends React.Component {
                     <UsernameFormLeft />
                     <div className="tag-index-header">
                         <h1>Tags</h1>
-                        <span onClick={this.handleSubmitNewTag(this.props.user)} className="new-tag"><i className="fas fa-plus-circle fa-2x"></i><button type='submit'>New Note</button></span>
-
+                        <span onClick={this.handleSubmitNewTag(this.props.user)} className="new-tag"><i className="fas fa-plus-circle"></i><button type='submit'><p>New Note</p></button></span>
+                        
                     </div>
                 </div>
             )
         } else {
+            debugger
             tags = this.props.tags.map(tag => (
                 <li key={tag.id}>
                     <div className="tag-index-intial">{tag.name[0]}</div>
 
                     {tag.name}
+                    <button onClick={this.props.deleteTag(tag)}>Delete Tag</button>
                 </li>
             ))
 
@@ -49,8 +51,7 @@ class TagIndexForm extends React.Component {
 
                         <div className="tag-index-header">
                             <h1>Tags</h1>
-                            <span onClick={this.handleSubmitNewTag(this.props.user)} className="new-tag"><button type='submit'><i className="fas fa-plus-circle fa-2x"></i>New Note</button></span>
-
+                            <span onClick={this.handleSubmitNewTag(this.props.user)} className="new-tag"><button type='submit'><i className="fas fa-plus-circle"></i><p>New Note</p></button></span>
                         </div>
                         <div className="tag-index-list">
                             <ul>{tags}</ul>

@@ -1,6 +1,6 @@
 import TagsIndexForm from './tagsIndexForm';
 import { connect } from 'react-redux';
-import { getTags } from '../../actions/tagActions';
+import { getTags, deleteTag } from '../../actions/tagActions';
 import { openAddTagModal } from '../../actions/modalActions';
 
 
@@ -11,7 +11,8 @@ const msp = state => ({
 
 const mdp = dispatch => ({
     getTags: user => dispatch(getTags(user)),
-    addTag: (entity) => dispatch(openAddTagModal(entity))
+    addTag: (entity) => dispatch(openAddTagModal(entity)),
+    deleteTag: tag => dispatch(deleteTag(tag))
 });
 
 export default connect(msp, mdp)(TagsIndexForm);

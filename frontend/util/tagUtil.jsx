@@ -1,5 +1,5 @@
 export const getTags = (user) => {
-    debugger
+    // debugger
     return $.ajax({
         method: 'GET',
         url: '/api/tags',
@@ -19,3 +19,10 @@ export const createTag = tag => {
         }
     });
 };
+
+export const deleteTag = tag => {
+    return $.ajax({
+        method: 'DELETE',
+        url: `api/tags/${tag.id}`
+    })
+}

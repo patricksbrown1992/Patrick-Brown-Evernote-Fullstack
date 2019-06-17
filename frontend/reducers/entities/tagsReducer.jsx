@@ -1,4 +1,4 @@
-import { RECEIVE_TAGS, RECEIVE_TAG } from '../../actions/tagActions';
+import { RECEIVE_TAGS, RECEIVE_TAG, DELETE_TAG } from '../../actions/tagActions';
 import { merge } from 'lodash';
 const tagsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -9,6 +9,10 @@ const tagsReducer = (state = {}, action) => {
                 tags[tag.id] = tag;
             });
             return merge({}, state, tags);
+        case DELETE_TAG:
+            const newState = merge({}, state);
+            delete newState[action.tag.id];
+            return newState;
         case RECEIVE_TAG:
             return merge({}, state, { [action.tag.id]: action.tag });
         default:
