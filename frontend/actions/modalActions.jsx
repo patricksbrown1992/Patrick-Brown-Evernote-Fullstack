@@ -35,6 +35,14 @@ export const editTagModal = entity => {
     }
 }
 
+export const deleteTagModal = entity => {
+    return {
+        type: OPEN_MODAL,
+        entity,
+        modal: 'deleteTag'
+    }
+}
+
 
 export const openAddNoteModal = entity => {
 

@@ -29,9 +29,10 @@ class TagIndexForm extends React.Component {
     handleSubmitDeleteTag(entity){
         return (e) => {
             e.preventDefault();
-            this.props.deleteTag(entity);
+            this.props.deleteTagModal(entity);
         };
     }
+
 
     render() {
         let tags
