@@ -13,9 +13,10 @@ class Api::NotebooksController < ApplicationController
 
     def index
         @user = User.find(params[:user_id])
-    
+        # notebooks = @user.notebooks.where(user_id: @user.id)
+        # debugger
+        # notebooks = data[filter] ? @notebooks.where(name.include?(data[filter])) : @notebooks
         @notebooks = @user.notebooks
-     
         render json: @notebooks, status: 200
     end
 

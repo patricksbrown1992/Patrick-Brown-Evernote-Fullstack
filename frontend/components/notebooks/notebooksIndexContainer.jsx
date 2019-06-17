@@ -9,7 +9,7 @@ const msp = state => ({
 });
 
 const mdp = dispatch => ({
-    getNotebooks: (user) => dispatch(getNotebooks(user)),
+    getNotebooks: (user, filter) => dispatch(getNotebooks(user, filter)),
     editModal: (entity) => dispatch(openEditModal(entity)),
     addModal: () => dispatch(openModal('add')),
     closeModal: () => dispatch(closeModal()),

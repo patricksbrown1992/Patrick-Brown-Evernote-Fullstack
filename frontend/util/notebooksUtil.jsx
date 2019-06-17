@@ -4,7 +4,8 @@ export const getNotebooks = (user) => {
         method: 'GET',
         url: '/api/notebooks',
         data: {
-            user_id: user.id
+            user_id: user.id,
+         
         }
     });      
 };

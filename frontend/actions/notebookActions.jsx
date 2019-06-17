@@ -36,8 +36,8 @@ export const clearNotebooks = () => {
     }
 }
 
-export const getNotebooks = (user) => dispatch => (
-    APIUtil.getNotebooks(user).then(notebooks => (dispatch(receiveNotebooks(notebooks))))
+export const getNotebooks = (user, filter) => dispatch => (
+    APIUtil.getNotebooks(user, filter).then(notebooks => (dispatch(receiveNotebooks(notebooks))))
 );
 
 export const getNotebook = (id) => dispatch => (

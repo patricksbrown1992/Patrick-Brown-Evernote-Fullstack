@@ -30,8 +30,8 @@ const destroyNote = (note) => ({
     note
 });
 
-export const getNotes = (id) => dispatch => (
-    APIUtil.getNotes(id).then(notes => dispatch(receiveNotes(notes)))
+export const getNotes = (id, filters) => dispatch => (
+    APIUtil.getNotes(id, filters).then(notes => dispatch(receiveNotes(notes)))
 );
 
 export const getNote = (notebook, note) => dispatch => (

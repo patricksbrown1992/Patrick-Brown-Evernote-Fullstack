@@ -1,8 +1,8 @@
-export const getNotes = (id) => {
+export const getNotes = (id, data) => {
     return $.ajax({
         method: 'GET',
         url: `api/notebooks/${id}/notes`,
-        
+        data
     }); 
 };
 

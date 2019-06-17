@@ -9,10 +9,11 @@ import styleDate from '../../util/styleDate';
 class NotebooksIndexForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { loaded: false, selected: null };
+        this.state = { loaded: false, selected: null, body: ''};
         this.updateSelected = this.updateSelected.bind(this);
         this.handleSubmitAdd = this.handleSubmitAdd.bind(this);
         this.handleSubmitEdit = this.handleSubmitEdit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     componentDidMount() {
@@ -27,6 +28,19 @@ class NotebooksIndexForm extends React.Component {
 
     activateDropDown() {
 
+    }
+
+    handleSearch(e){
+        debugger
+        e.preventDefault();
+        this.props.getNotebooks(this.props.user, this.state.body);
+    }
+
+    handleChange() {
+        debugger
+        return (e) => {
+            this.setState({ body: e.target.value });
+        };
     }
 
     handleSubmitEdit(entity) {
@@ -57,6 +71,7 @@ class NotebooksIndexForm extends React.Component {
                         <h1>Notebooks</h1>
                         <div className="notebook-index-header2">
                             <h3>My notebook list</h3>
+                            
                             <form onSubmit={this.handleSubmitAdd}>
 
                                 <button type='submit' className='new-notebook-button'><i className="fas fa-book-medical"></i>New Notebook</button>
@@ -90,6 +105,9 @@ class NotebooksIndexForm extends React.Component {
                     <div className='notebooks-index-right'>
                         <h1>Notebooks</h1>
                         <div className="notebook-index-header2">
+                            <form onSubmit={this.handleSearch}>
+                                <input placeholder='Find Notebooks...' type="text" onChange={this.handleChange()}/>
+                            </form>
                             <h3>My notebook list</h3>
                             <form onSubmit={this.handleSubmitAdd}>
 

@@ -6,8 +6,15 @@ class usernameFormLeft extends React.Component {
     constructor(props) {
         super(props);
         this.handleSubmitLogOut = this.handleSubmitLogOut.bind(this);
-        this.state = { loaded: false };
+        this.handleChange = this.handleChange.bind(this);
+        this.state = { loaded: false, body: '' };
 
+    }
+
+    handleChange(){
+        return (e) => {
+            this.setState({body: e.target.value})
+        }
     }
 
     handleSubmitLogOut(e) {
@@ -20,6 +27,13 @@ class usernameFormLeft extends React.Component {
             e.preventDefault();
             this.props.addNote(entity);
         };
+    }
+
+    handleNoteSearch(){
+        return (e) => {
+            e.preventDefault();
+            this.props.noteSearch(this.state.body)
+        }
     }
 
 
@@ -36,7 +50,9 @@ class usernameFormLeft extends React.Component {
                         </div>
                     </form>
                     <li className="user-email">{this.props.user.email}</li>
-                    <input placeholder="Search all notes..." type="text"></input>
+                    <form onSubmit={this.handleNoteSearch}>
+                        <input placeholder="Search all notes..." type="text"></input>
+                    </form>
                     <span onClick={this.handleSubmitNewNote(this.props.notebook)} className="new-note"><i className="fas fa-plus-circle fa-2x"></i><button type='submit'>New Note</button></span>
                     <li><i className="fas fa-caret-right"></i><i className="fas fa-star"></i>Shortcuts</li>
                     <li><Link to='/allnotes'><i className="fas fa-sticky-note"></i>All Notes</Link></li>
