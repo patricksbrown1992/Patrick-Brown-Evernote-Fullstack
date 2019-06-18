@@ -16,7 +16,7 @@ class Api::NotesController < ApplicationController
     def index
         
         @notebook = Notebook.find(params[:notebook_id])
-        @notes = data ? @notebook.notes.where(title.include?(data) : @notebook.notes
+        @notes = @notebook.notes
         render json: @notes, status: 200
     end
     

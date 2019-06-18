@@ -34,12 +34,12 @@ class NotebooksIndexForm extends React.Component {
 
     handleChange() {
       
-
         return (e) => {
             this.setState({ body: e.target.value }, () => this.props.notebooks.filter(notebook => {
                 notebook.name.includes(this.state.body)     
             })) 
         }
+       
     }
 
     handleSubmitEdit(entity) {
@@ -105,7 +105,7 @@ class NotebooksIndexForm extends React.Component {
                         <h1>Notebooks</h1>
                         <div className="notebook-index-header2">
                            
-                            <input placeholder='Find Notebooks...' type="text" onChange={this.handleChange()}/>
+                            <input placeholder='Find Notebooks...' type="text" onChange={this.handleChange}/>
                            
                             <h3>My notebook list</h3>
                             <form onSubmit={this.handleSubmitAdd}>
