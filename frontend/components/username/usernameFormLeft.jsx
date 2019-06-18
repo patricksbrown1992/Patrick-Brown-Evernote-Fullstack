@@ -13,12 +13,20 @@ class usernameFormLeft extends React.Component {
     }
 
 
+    // updateSelected() {
+        
+    //     this.setState({ selected: true });
+        
+    // }
+
     updateSelected() {
-        
-        this.setState({ selected: true });
-        
+        debugger
+       
+           this.props.getNotebooks(this.props.user).then(() => this.setState({selected: true}));
+
     }
 
+    
 
     handleChange(){
         return (e) => {
