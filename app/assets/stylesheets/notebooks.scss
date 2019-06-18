@@ -72,6 +72,10 @@
     height: 40px;
 }
 
+.fa-sticky-note{
+    color: lightgray;
+}
+
 
 .selectedNotebook {
     display: flex;
@@ -246,7 +250,9 @@ button {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    cursor: pointer;
 }
+
 
 .notebook-index-note-email {
     display: inline-block;
