@@ -1,5 +1,4 @@
 export const getNotebooks = (user) => {
-    debugger
     return $.ajax({
         method: 'GET',
         url: '/api/notebooks',

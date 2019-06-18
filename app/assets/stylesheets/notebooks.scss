@@ -61,6 +61,14 @@
     width: 100%;
     align-items: center;
 }
+
+
+.selectedNotebook {
+    display: flex;
+    height: 900px;
+    width: 100%;
+    align-items: center;
+}
 .notebook-index-table h4 {
     color: #777;
 }
@@ -223,7 +231,7 @@ button {
     display: flex;
     background-color: #f8f8f8;
     align-items: center;
-    height: 40%;
+    height: 40px;
 }
 
 .notebook-table-labs:hover {
