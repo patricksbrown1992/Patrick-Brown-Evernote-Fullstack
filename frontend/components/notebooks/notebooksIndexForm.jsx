@@ -87,45 +87,45 @@ class NotebooksIndexForm extends React.Component {
 
             );
         } else {
-            let notes;
-            if(this.props.notes.length > 0){
-                notes = this.props.notes.map(note => (
-
-                    <li key={note.id}  >
-                        <div>{note.title}</div>
-                        <div><h4>{this.props.user.email}</h4></div>
-                        <div><h4>{styleDate(note.updated_at)}</h4></div>
-                        {/* <div className="notebook-index-table-button"><button onClick={this.handleSubmitEdit(notebook)} type='submit'><i className="fas fa-ellipsis-h"></i>Rename Notebook</button></div> */}
-                        <div><i className="fas fa-ellipsis-h"></i></div>
-                        {/* <i class="fas fa-caret-down"></i> */}
-                       
-
-                    </li>
-                ));
-
-            }
-            
             notebooks = this.props.notebooks.map(notebook => {
                 let selectedNotebook;
+                let notes;
                 if(notebook.id === this.state.selected){
-                    selectedNotebook = 'selectedNotebook'
+                    selectedNotebook = 'selectedNotebook';
+                    notes = this.props.notes.map(note => (
+
+                        <li key={note.id} className="notebook-note-index-item">
+                            <div className="notebook-index-note-title"><i className="fas fa-sticky-note"></i>{note.title}</div>
+                            <div className="notebook-index-note-email"><h4>{this.props.user.email}</h4></div>
+                            <div className="notebook-index-note-time"><h4>{styleDate(note.updated_at)}</h4></div>
+                            {/* <div className="notebook-index-table-button"><button onClick={this.handleSubmitEdit(notebook)} type='submit'><i className="fas fa-ellipsis-h"></i>Rename Notebook</button></div> */}
+                            <div className="notebook-index-note-button"><i className="fas fa-ellipsis-h"></i></div>
+                            {/* <i class="fas fa-caret-down"></i> */}
+
+
+                        </li>
+                    ));
                 } else {
-                    selectedNotebook = 'notebook-index-table'
+                    selectedNotebook = 'notebook-index-table';
+                    notes = '';
                 }
                 return (
-                    <li key={notebook.id} className={selectedNotebook} >
-                    <div className="notebook-index-table-title"> <i onClick={this.updateSelected(notebook.id)}className="fas fa-caret-right"></i> <Link to={`/username/${notebook.id}`} ><i className="fas fa-book"></i>{notebook.name}</Link></div>
-                    <div className="notebook-index-table-email"><h4>{this.props.user.email}</h4></div>
-                    <div className="notebook-index-table-time"><h4>{styleDate(notebook.updated_at)}</h4></div>
-                    {/* <div className="notebook-index-table-button"><button onClick={this.handleSubmitEdit(notebook)} type='submit'><i className="fas fa-ellipsis-h"></i>Rename Notebook</button></div> */}
-                    <div className="notebook-index-table-button"><i className="fas fa-ellipsis-h"></i></div>
-                    {/* <i class="fas fa-caret-down"></i> */}
-                    <ul>
+                   <div>
+                        <li key={notebook.id} className={selectedNotebook} >
+                            <div className="notebook-index-table-title"> <i onClick={this.updateSelected(notebook.id)}className="fas fa-caret-right"></i> <Link to={`/username/${notebook.id}`} ><i className="fas fa-book"></i>{notebook.name}</Link></div>
+                            <div className="notebook-index-table-email"><h4>{this.props.user.email}</h4></div>
+                            <div className="notebook-index-table-time"><h4>{styleDate(notebook.updated_at)}</h4></div>
+                            {/* <div className="notebook-index-table-button"><button onClick={this.handleSubmitEdit(notebook)} type='submit'><i className="fas fa-ellipsis-h"></i>Rename Notebook</button></div> */}
+                            <div className="notebook-index-table-button"><i className="fas fa-ellipsis-h"></i></div>
+                            {/* <i class="fas fa-caret-down"></i> */}
+                        
+                        </li>
+                        <ul className="notebook-note-index">
 
-                        {notes}
-                    </ul>
+                            {notes}
+                        </ul>
 
-                </li>
+                   </div>
             )})
 
             return (

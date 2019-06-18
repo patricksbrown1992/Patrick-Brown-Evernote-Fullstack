@@ -62,10 +62,20 @@
     align-items: center;
 }
 
+.notebook-note-index{
+    display:flex;
+    flex-direction: column;
+}
+.notebook-note-index-item{
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
 
 .selectedNotebook {
     display: flex;
-    height: 900px;
+    height: 40px;
     width: 100%;
     align-items: center;
 }
@@ -76,12 +86,9 @@
 .notebook-index-table-title {
     display: inline-block;
     margin-left: 4.55%;
-    // width: 9.6%;
     width: 150px;
-    // background-color: red;
-    text-overflow: ellipsis;
 
-  /* Required for text-overflow to do anything */
+    text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
 }
@@ -113,9 +120,8 @@
 .notebook-index-table-time {
     display: inline-block;
     margin-left: 1%;
-    // width: 30%;
     width: 150px;
-    // background-color: blue;
+
 }
 .fa-caret-right{
     cursor: pointer;
@@ -232,6 +238,30 @@ button {
     background-color: #f8f8f8;
     align-items: center;
     height: 40px;
+}
+.notebook-index-note-title {
+    display: inline-block;
+    margin-left: 7.5%;
+    width: 150px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.notebook-index-note-email {
+    display: inline-block;
+    margin-left: 27.5%;
+}
+
+.notebook-index-note-time{
+    display: inline-block;
+    margin-left: 1%;
+    width: 150px;
+}
+
+.notebook-index-note-button{
+    margin-left: 30%;
+    cursor: pointer;
 }
 
 .notebook-table-labs:hover {
