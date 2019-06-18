@@ -55,7 +55,7 @@ class usernameFormLeft extends React.Component {
             caret = "fas fa-caret-down";
             notebooks = this.props.notebooks.map(notebook => (
                 <li key={notebook.id}>
-                    <div className="username-left-notebook-index"><i className="fas fa-book"></i>{notebook.name}</div>
+                    <div className="username-left-notebook-index"><i className="fas fa-book"></i><Link to={`/username/${notebook.id}`}>{notebook.name}</Link></div>
                 </li>
             ))
         } else {
