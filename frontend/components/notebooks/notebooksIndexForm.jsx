@@ -53,17 +53,13 @@ class NotebooksIndexForm extends React.Component {
     updateSelected(id) {
         debugger
         return () => {
+            this.props.clearNotes();
             this.setState({ selected: id }, () => this.props.getNotes(this.state.selected));
         };
     }
 
     render() {
-        let dropdownCheck;
-        if(!this.state.dropdown){
-            dropdownCheck = 'falseDropdown';
-        } else {
-            dropdownCheck = 'trueDropdown';
-        }
+        
         let notebooks;
         if (this.props.notebooks.length < 1) {
             return (
