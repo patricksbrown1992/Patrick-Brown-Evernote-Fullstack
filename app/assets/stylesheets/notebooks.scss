@@ -252,7 +252,12 @@ button {
     overflow: hidden;
     cursor: pointer;
 }
-
+.notebook-index-note-title a{
+    color: black;
+}
+.notebook-index-note-title a:hover{
+    text-decoration: underline;
+}
 
 .notebook-index-note-email {
     display: inline-block;
