@@ -8,8 +8,7 @@ class usernameFormLeft extends React.Component {
         this.handleSubmitLogOut = this.handleSubmitLogOut.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.state = { body: '', selected: false };
-        this.updateSelected = this.updateSelected.bind(this)
-
+        this.updateSelected = this.updateSelected.bind(this);
     }
 
 
@@ -20,7 +19,7 @@ class usernameFormLeft extends React.Component {
     // }
 
     updateSelected() {
-        debugger
+        // debugger
        
            this.props.getNotebooks(this.props.user).then(() => this.setState({selected: !this.state.selected}));
 
@@ -30,7 +29,7 @@ class usernameFormLeft extends React.Component {
 
     handleChange(){
         return (e) => {
-            this.setState({body: e.target.value})
+            this.setState({body: e.target.value});
         }
     }
 
@@ -49,7 +48,7 @@ class usernameFormLeft extends React.Component {
     handleNoteSearch(){
         return (e) => {
             e.preventDefault();
-            this.props.noteSearch(this.state.body)
+            this.props.noteSearch(this.state.body);
         }
     }
 
@@ -57,9 +56,9 @@ class usernameFormLeft extends React.Component {
     render() {
         let notebooks;
         let caret;
-        debugger
+
         if(this.state.selected){
-            debugger
+   
             caret = "fas fa-caret-down";
             notebooks = this.props.notebooks.map(notebook => (
                 <li key={notebook.id}>
@@ -67,7 +66,7 @@ class usernameFormLeft extends React.Component {
                 </li>
             ))
         } else {
-            debugger
+         
             notebooks = '';
             caret = "fas fa-caret-right";
         }
