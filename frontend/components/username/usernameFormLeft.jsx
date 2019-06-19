@@ -22,7 +22,7 @@ class usernameFormLeft extends React.Component {
     updateSelected() {
         debugger
        
-           this.props.getNotebooks(this.props.user).then(() => this.setState({selected: true}));
+           this.props.getNotebooks(this.props.user).then(() => this.setState({selected: !this.state.selected}));
 
     }
 
