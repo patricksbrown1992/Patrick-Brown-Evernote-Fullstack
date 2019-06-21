@@ -12,7 +12,7 @@ class NotebooksIndexForm extends React.Component {
         this.state = { loaded: false, selected: null, body: ''};
         this.updateSelected = this.updateSelected.bind(this);
         this.handleSubmitAdd = this.handleSubmitAdd.bind(this);
-        this.handleSubmitEdit = this.handleSubmitEdit.bind(this);
+        this.handleSubmitDropDown = this.handleSubmitDropDown.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
 
@@ -42,10 +42,10 @@ class NotebooksIndexForm extends React.Component {
        
     }
 
-    handleSubmitEdit(entity) {
+    handleSubmitDropDown(entity) {
         return (e) => {
             e.preventDefault();
-            this.props.editModal(entity);
+            this.props.notebookDropDown(entity)
         };
     }
 
@@ -98,7 +98,7 @@ class NotebooksIndexForm extends React.Component {
                             <div className="notebook-index-note-email"><h4>{this.props.user.email}</h4></div>
                             <div className="notebook-index-note-time"><h4>{styleDate(note.updated_at)}</h4></div>
                             {/* <div className="notebook-index-table-button"><button onClick={this.handleSubmitEdit(notebook)} type='submit'><i className="fas fa-ellipsis-h"></i>Rename Notebook</button></div> */}
-                            <div className="notebook-index-note-button"><i className="fas fa-ellipsis-h"></i></div>
+                            <div className="notebook-index-note-button"><i onClick={this.props.notebookDropDown(notebook)}className="fas fa-ellipsis-h"></i></div>
                             {/* <i class="fas fa-caret-down"></i> */}
 
 
@@ -108,11 +108,12 @@ class NotebooksIndexForm extends React.Component {
                     selectedNotebook = 'notebook-index-table';
                     notes = '';
                     caret = "fas fa-caret-right";
+                    // debugger
                 }
                 return (
                    <div>
                         <li key={notebook.id} className={selectedNotebook} >
-                            <div className="notebook-index-table-title"> <i onClick={this.updateSelected(notebook.id)}className={caret}></i> <Link to={`/username/${notebook.id}`} ><i className="fas fa-book"></i>{notebook.name}</Link></div>
+                            <div className="notebook-index-table-title"> <i onClick={this.updateSelected(notebook.id)} className={caret}></i> <Link to={`/username/${notebook.id}`} ><i className="fas fa-book"></i>{notebook.name}</Link></div>
                             <div className="notebook-index-table-email"><h4>{this.props.user.email}</h4></div>
                             <div className="notebook-index-table-time"><h4>{styleDate(notebook.updated_at)}</h4></div>
                             {/* <div className="notebook-index-table-button"><button onClick={this.handleSubmitEdit(notebook)} type='submit'><i className="fas fa-ellipsis-h"></i>Rename Notebook</button></div> */}

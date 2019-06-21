@@ -11,10 +11,11 @@ class NoteShowForm extends React.Component {
     }
 
     componentWillReceiveProps(newProps) {
-        // debugger
+        debugger
         if (newProps.note == undefined) {
-            return this.props.history.push('/notebooks');
+            return this.props.history.push(`/username/${this.state.notebook_id}`);
         }
+        debugger
         if (newProps.note.id !== this.props.note.id) {
             this.setState({
                 id: newProps.note.id,
@@ -55,7 +56,7 @@ class NoteShowForm extends React.Component {
     render() {
 
         let note = this.props.note;
-        // debugger
+        debugger
         return (
             <div className="right-nav">
 

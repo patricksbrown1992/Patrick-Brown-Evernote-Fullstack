@@ -56,3 +56,19 @@ export const openAddNoteModal = entity => {
 export const closeModal = () => ({
     type: CLOSE_MODAL
 });
+
+export const notebookDropDown = entity => {
+    return {
+        type: OPEN_MODAL,
+        entity,
+        modal: 'notebookDropDown'
+    };
+};
+
+export const notebookDelete = entity => {
+    return {
+        type: OPEN_MODAL,
+        entity,
+        modal: 'notebookDelete'
+    };
+};

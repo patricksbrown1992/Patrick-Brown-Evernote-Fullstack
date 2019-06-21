@@ -1,7 +1,7 @@
 import notebooksIndexForm from './notebooksIndexForm';
 import { connect } from 'react-redux';
 import { getNotebooks } from '../../actions/notebookActions';
-import { openModal, closeModal, openEditModal } from "../../actions/modalActions";
+import { openModal, closeModal, openEditModal, notebookDropDown } from "../../actions/modalActions";
 import { getNotes, deleteNote, clearNotes } from '../../actions/noteAction';
 
 const msp = state => ({
@@ -17,7 +17,9 @@ const mdp = dispatch => ({
     closeModal: () => dispatch(closeModal()),
     getNotes: id => dispatch(getNotes(id)),
     deleteNote: note => dispatch(deleteNote(note)),
-    clearNotes: () => dispatch(clearNotes())
+    clearNotes: () => dispatch(clearNotes()),
+    notebookDropDown: notebook => dispatch(notebookDropDown(notebook))
+
 
 });
 
