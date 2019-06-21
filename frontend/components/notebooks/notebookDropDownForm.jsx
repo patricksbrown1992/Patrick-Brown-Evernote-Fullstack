@@ -26,6 +26,9 @@ class NotebookDropDownForm extends React.Component {
         return (
             <div className='notebook-drop-down-modal'>
                 <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
+                <br/>
+                <p>{this.props.notebook.name}</p>
+                <br/>
                 <span onClick={this.handleSubmitDelete(this.props.notebook)}>
                     <button type='submit'>Delete Notebook</button>
                 </span>

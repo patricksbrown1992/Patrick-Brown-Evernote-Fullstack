@@ -225,3 +225,14 @@
   justify-content: center;
 }
 
+.notebook-drop-down-modal{
+  height: 15%;
+  width: 12%;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.notebook-drop-down-modal p, span {
+  display: flex;
+  justify-content: center;
+}
