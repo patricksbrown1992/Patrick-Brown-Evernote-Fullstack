@@ -236,3 +236,34 @@
   display: flex;
   justify-content: center;
 }
+
+.note-drop-down-modal{
+  height: 15%;
+  width: 12%;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.note-drop-down-modal p, span {
+  display: flex;
+  justify-content: center;
+}
+
+.note-delete-modal {
+   height: 34%;
+  width: 28.5%;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.note-delete-modal button{
+  color: white;
+  background-color: tomato;
+  height: 10%;
+  outline: none;
+}
+
+.note-delete-modal h5, h3, input, form, span{
+  display: flex;
+  justify-content: center;
+}

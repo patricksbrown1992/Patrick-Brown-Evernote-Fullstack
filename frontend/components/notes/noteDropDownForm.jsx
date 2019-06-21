@@ -30,7 +30,7 @@ class NoteDropDownForm extends React.Component {
             <div className='note-drop-down-modal'>
                 <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
                 <br />
-                <p>{this.props.note.name}</p>
+                <p>{this.props.note.title}</p>
                 <br />
                 <span onClick={this.handleSubmitDelete(this.props.note)}>
                     <button type='submit'>Delete Note</button>
