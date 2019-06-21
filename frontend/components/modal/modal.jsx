@@ -8,7 +8,6 @@ import TagNewContainer from '../tags/tagsNewContainer';
 import TagEditContainer from '../tags/tagEditContainer';
 import TagDeleteContainer from '../tags/tagDeleteContainer';
 import NotebookDropDown from '../notebooks/notebookDropDownContainer';
-import DeleteNotebookContainer from '../notebooks/notebookDeleteContainer';
 import NotebookDeleteContainer from '../notebooks/notebookDeleteContainer';
 function Modal({ modal, closeModal }) {
     // debugger
@@ -32,10 +31,10 @@ function Modal({ modal, closeModal }) {
             component = <TagNewContainer id={modal.entity.id} />;
             break;
         case 'notebookDropDown':
-            component = <NotebookDropDown id={modal.entity.id} />;
+            component = <NotebookDropDown notebook={modal.entity} />;
             break;
         case 'notebookDelete':
-            component = <NotebookDeleteContainer id={modal.entity.id} />;
+            component = <NotebookDeleteContainer notebook={modal.entity} />;
             break;
         case 'editTag':
             component = <TagEditContainer id={modal.entity.id}/>;

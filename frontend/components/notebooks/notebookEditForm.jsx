@@ -18,7 +18,7 @@ class NotebookEditForm extends React.Component {
         const name = this.state.name;
         const user_id = Object.values(this.props.user)[0].id;
        
-        const id = this.props.id;
+        const id = this.props.notebook;
         this.props.updateNotebook({ name, user_id, id }).then(() => this.props.closeModal());
     }
 

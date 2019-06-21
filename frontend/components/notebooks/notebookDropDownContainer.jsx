@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import NotebookDropDown from './notebookDropDownForm';
-import { openModal, closeModal, openEditModal } from "../../actions/modalActions";
+import { openModal, closeModal, openEditModal, notebookDelete } from "../../actions/modalActions";
 
 const msp = state => ({
     user: state.entities.user[state.session.id],
@@ -10,7 +10,7 @@ const msp = state => ({
 const mdp = dispatch => ({
     closeModal: () => dispatch(closeModal()),
     editModal: (entity) => dispatch(openEditModal(entity)),
-    // deleteNotebook: notebook => dispatch(deleteNotebook(notebook)),
+    notebookDelete: notebook => dispatch(notebookDelete(notebook)),
 });
 
 export default connect(msp, mdp)(NotebookDropDown);

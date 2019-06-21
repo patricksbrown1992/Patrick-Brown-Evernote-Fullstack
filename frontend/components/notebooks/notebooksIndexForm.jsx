@@ -98,7 +98,7 @@ class NotebooksIndexForm extends React.Component {
                             <div className="notebook-index-note-email"><h4>{this.props.user.email}</h4></div>
                             <div className="notebook-index-note-time"><h4>{styleDate(note.updated_at)}</h4></div>
                             {/* <div className="notebook-index-table-button"><button onClick={this.handleSubmitEdit(notebook)} type='submit'><i className="fas fa-ellipsis-h"></i>Rename Notebook</button></div> */}
-                            <div className="notebook-index-note-button"><i onClick={this.props.notebookDropDown(notebook)}className="fas fa-ellipsis-h"></i></div>
+                            <div className="notebook-index-note-button"><i className="fas fa-ellipsis-h"></i></div>
                             {/* <i class="fas fa-caret-down"></i> */}
 
 
@@ -117,7 +117,7 @@ class NotebooksIndexForm extends React.Component {
                             <div className="notebook-index-table-email"><h4>{this.props.user.email}</h4></div>
                             <div className="notebook-index-table-time"><h4>{styleDate(notebook.updated_at)}</h4></div>
                             {/* <div className="notebook-index-table-button"><button onClick={this.handleSubmitEdit(notebook)} type='submit'><i className="fas fa-ellipsis-h"></i>Rename Notebook</button></div> */}
-                            <div className="notebook-index-table-button"><i className="fas fa-ellipsis-h"></i></div>
+                            <div className="notebook-index-table-button"><i onClick={this.handleSubmitDropDown(notebook)} className="fas fa-ellipsis-h"></i></div>
                             {/* <i class="fas fa-caret-down"></i> */}
                         
                         </li>
