@@ -25,6 +25,7 @@ class NoteDropDownForm extends React.Component {
     }
 
     render() {
+
         return (
             <div className='note-drop-down-modal'>
                 <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
