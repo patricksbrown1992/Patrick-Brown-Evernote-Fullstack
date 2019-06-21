@@ -3,7 +3,7 @@ import NotebookEditForm from './notebookEditForm';
 import { updateNotebook } from '../../actions/notebookActions';
 import { closeModal } from "../../actions/modalActions";
 const msp = state => ({
-    user: state.entities.user,
+    user: state.entities.user[state.session.id],
 });
 
 const mdp = dispatch => ({
