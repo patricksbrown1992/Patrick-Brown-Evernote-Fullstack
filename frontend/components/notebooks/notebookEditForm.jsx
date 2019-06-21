@@ -17,10 +17,7 @@ class NotebookEditForm extends React.Component {
         e.preventDefault();
         const name = this.state.name;
         const user_id = this.props.user.id
-        debugger
-       
         const id = this.props.id;
-        debugger
         this.props.updateNotebook({ name, user_id, id }).then(() => this.props.closeModal());
     }
 

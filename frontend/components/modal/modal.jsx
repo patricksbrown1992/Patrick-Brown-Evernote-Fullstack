@@ -11,6 +11,7 @@ import NotebookDropDown from '../notebooks/notebookDropDownContainer';
 import NotebookDeleteContainer from '../notebooks/notebookDeleteContainer';
 import NoteDeleteContainer from '../notes/noteDeleteContainer';
 import NoteEditContainer from '../notes/noteEditContainer';
+import NoteDropDownContainer from '../notes/noteDropDownContainer';
 function Modal({ modal, closeModal }) {
     // debugger
     if (!modal.type) {
@@ -45,10 +46,14 @@ function Modal({ modal, closeModal }) {
             component = <TagDeleteContainer tag={modal.entity} />;
             break;
         case 'noteEdit':
-            component = <NoteEditContainer note={modal.entity.note} id={modal.entity.id}/>;
+            component = <NoteEditContainer note={modal.entity}/>;
             break;
         case 'noteDelete':
             component = <NoteDeleteContainer note={modal.entity}/>;
+            break;
+
+        case 'noteDropDown':
+            component = <NoteDropDownContainer note={modal.entity} />;
             break;
         default:
             return null;

@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
-import noteShowForm from './noteShowForm2';
+import noteEditForm from './noteEditForm';
 import { updateNote} from '../../actions/noteAction';
 import { closeModal } from "../../actions/modalActions";
 
 
-const msp = (state, ownProps) => {
+const msp = (state) => {
     return {
 
         user: state.entities.user[state.session.id],
@@ -17,4 +17,4 @@ const mdp = dispatch => ({
     closeModal: () => dispatch(closeModal())
 });
 
-export default connect(msp, mdp)(noteShowForm);
+export default connect(msp, mdp)(noteEditForm);

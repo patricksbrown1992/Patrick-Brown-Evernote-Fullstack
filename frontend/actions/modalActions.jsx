@@ -77,13 +77,21 @@ export const noteDelete = entity => {
         type: OPEN_MODAL,
         entity,
         modal: 'noteDelete'
-    }
-}
+    };
+};
 
 export const noteEdit = entity => {
     return {
         type: OPEN_MODAL,
         entity, 
         modal: 'noteEdit'
-    }
-}
+    };
+};
+
+export const noteDropDown = entity => {
+    return {
+        type: OPEN_MODAL,
+        entity,
+        modal: 'noteDropDown'
+    };
+};

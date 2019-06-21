@@ -14,6 +14,7 @@ class NotebooksIndexForm extends React.Component {
         this.handleSubmitAdd = this.handleSubmitAdd.bind(this);
         this.handleSubmitDropDown = this.handleSubmitDropDown.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmitNoteDropDown = this.handleSubmitNoteDropDown.bind(this);
     }
 
     componentDidMount() {
@@ -46,6 +47,13 @@ class NotebooksIndexForm extends React.Component {
         return (e) => {
             e.preventDefault();
             this.props.notebookDropDown(entity)
+        };
+    }
+
+    handleSubmitNoteDropDown(entity){
+        return (e) => {
+            e.preventDefault();
+            this.props.noteDropDown(entity)
         };
     }
 
@@ -98,7 +106,7 @@ class NotebooksIndexForm extends React.Component {
                             <div className="notebook-index-note-email"><h4>{this.props.user.email}</h4></div>
                             <div className="notebook-index-note-time"><h4>{styleDate(note.updated_at)}</h4></div>
                             {/* <div className="notebook-index-table-button"><button onClick={this.handleSubmitEdit(notebook)} type='submit'><i className="fas fa-ellipsis-h"></i>Rename Notebook</button></div> */}
-                            <div className="notebook-index-note-button"><i className="fas fa-ellipsis-h"></i></div>
+                            <div className="notebook-index-note-button"><i onClick={this.handleSubmitNoteDropDown(note)} className="fas fa-ellipsis-h"></i></div>
                             {/* <i class="fas fa-caret-down"></i> */}
 
 

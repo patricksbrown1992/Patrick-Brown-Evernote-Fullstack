@@ -2,7 +2,6 @@ import notesIndexForm from './notesIndexForm';
 import {connect} from 'react-redux';
 // import {getNotebooks} from '../../actions/notebookActions';
 import {getNotes, deleteNote} from '../../actions/noteAction';
-import {openEditNoteModal, closeModal} from '../../actions/modalActions';
 
 const msp = (state) => ({
     notes: Object.values(state.entities.notes)
