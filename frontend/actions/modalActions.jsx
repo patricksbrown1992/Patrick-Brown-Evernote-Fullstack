@@ -71,3 +71,19 @@ export const notebookDelete = entity => {
         modal: 'notebookDelete'
     };
 };
+
+export const noteDelete = entity => {
+    return {
+        type: OPEN_MODAL,
+        entity,
+        modal: 'noteDelete'
+    }
+}
+
+export const noteEdit = entity => {
+    return {
+        type: OPEN_MODAL,
+        entity, 
+        modal: 'noteEdit'
+    }
+}
