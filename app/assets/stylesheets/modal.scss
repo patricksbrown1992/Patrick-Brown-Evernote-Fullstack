@@ -206,3 +206,22 @@
   outline: none;
 }
 
+.notebook-delete-modal{
+  height: 34%;
+  width: 28.5%;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.notebook-delete-modal button {
+  color: white;
+  background-color: tomato;
+  height: 10%;
+  outline: none;
+}
+
+.notebook-delete-modal h5, h3, input, form, span{
+  display: flex;
+  justify-content: center;
+}
+
