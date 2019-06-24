@@ -38,8 +38,8 @@ class NotesIndexForm extends React.Component {
                     <li key={note.id} className="note-index-title" >
                        
                     <Link to={`/username/${this.props.notebook.id}/notes/${note.id}`}><h1>{note.title}</h1></Link> 
-                      
-                    <h3>{note.body}</h3>
+                    <Link to={`/username/${this.props.notebook.id}/notes/${note.id}`}><h3>{note.body}</h3></Link>   
+                
                        
                     <button onClick={this.handleSubmitDelete(note)} type="submit">Delete Note</button>
                       
