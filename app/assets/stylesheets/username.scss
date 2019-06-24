@@ -79,6 +79,9 @@ main {
 }
 .username-left-notebook-index{
     margin-left: 10%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .center-nav {
