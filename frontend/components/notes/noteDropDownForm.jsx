@@ -9,7 +9,7 @@ class NoteDropDownForm extends React.Component {
 
 
     handleSubmitDelete(entity) {
-        debugger
+        // debugger
         return (e) => {
             e.preventDefault();
             this.props.noteDelete(entity);
@@ -17,7 +17,7 @@ class NoteDropDownForm extends React.Component {
     }
 
     handleSubmitEdit(entity) {
-        debugger
+        // debugger
         return (e) => {
             e.preventDefault();
             this.props.noteEdit(entity)

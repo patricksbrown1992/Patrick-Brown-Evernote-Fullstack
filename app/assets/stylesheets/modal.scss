@@ -232,13 +232,34 @@
   border: 1px solid black;
 }
 
-.notebook-drop-down-modal p, span {
+.notebook-drop-down-modal p{
   display: flex;
   justify-content: center;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
+
+.notebook-drop-down-modal span {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.notebook-drop-down-modal button {
+  outline: none;
+  border: none;
+  width: 100%;
+  font-weight: 700;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.notebook-drop-down-modal button:hover {
+  cursor: pointer;
+  background-color: whitesmoke;
+}
+
 
 .note-drop-down-modal{
   height: 15%;
@@ -247,12 +268,31 @@
   border: 1px solid black;
 }
 
-.note-drop-down-modal p, span {
+.note-drop-down-modal p {
   display: flex;
   justify-content: center;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+.note-drop-down-modal span {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.note-drop-down-modal button {
+  outline: none;
+  border: none;
+  width: 100%;
+  font-weight: 700;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.note-drop-down-modal button:hover {
+  cursor: pointer;
+  background-color: whitesmoke;
 }
 
 .note-delete-modal {

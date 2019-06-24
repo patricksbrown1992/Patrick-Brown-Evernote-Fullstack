@@ -7,7 +7,7 @@ class NoteEditForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     handleChange() {
-        debugger
+        // debugger
         return (e) => {
             this.setState({ name: e.target.value });
         };
@@ -15,7 +15,7 @@ class NoteEditForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger
+        // debugger
         let title = this.state.name;
         let body = this.props.note.body;
         let notebook_id = this.props.note.notebook_id;
@@ -26,7 +26,7 @@ class NoteEditForm extends React.Component {
     }
 
     render() {
-        debugger
+        // debugger
         return (
             <div className="notebook-edit-modal">
                 <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
