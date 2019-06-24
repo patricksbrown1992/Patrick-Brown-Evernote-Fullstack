@@ -1,7 +1,7 @@
 import AllNotesForm from './allNotesForm';
 import { connect } from 'react-redux';
 import { getNotebooks, clearNotebooks } from '../../actions/notebookActions';
-import { getNotes, clearNotes } from '../../actions/noteAction';
+import { getNotes, clearNotes, deleteNote } from '../../actions/noteAction';
 
 const msp = state => ({
     user: state.entities.user[state.session.id],
@@ -13,7 +13,8 @@ const mdp = dispatch => ({
     getNotebooks: user => dispatch(getNotebooks(user)),
     getNotes: id => dispatch(getNotes(id)),
     clearNotebooks: () => dispatch(clearNotebooks()),
-    clearNotes: () => dispatch(clearNotes())
+    clearNotes: () => dispatch(clearNotes()),
+    deleteNote: note => dispatch(deleteNote(note))
 
 });
 

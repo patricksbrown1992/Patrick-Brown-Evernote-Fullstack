@@ -6,6 +6,7 @@ class AllNoteForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = { loaded: false }
+        this.handleSubmitDelete = this.handleSubmitDelete.bind(this);
     }
 
     componentDidMount(){
@@ -15,6 +16,13 @@ class AllNoteForm extends React.Component {
             this.props.getNotes(notebook.id)
         }) );
         // .then( () => this.props.getNotes())
+    }
+
+    handleSubmitDelete(note) {
+        return (e) => {
+            e.preventDefault();
+            this.props.deleteNote(note);
+        };
     }
 
     render() {
@@ -29,7 +37,7 @@ class AllNoteForm extends React.Component {
                     {styleDate(note.updated_at)}
                     <br />
 
-                    {/* <button onClick={this.handleSubmitDelete(note)} type="submit">Delete Note</button> */}
+                    <button onClick={this.handleSubmitDelete(note)} type="submit">Delete Note</button>
 
 
                 </li>
@@ -42,6 +50,7 @@ class AllNoteForm extends React.Component {
                     <div className="all-note-right">
                         <div className ="all-note-title">
                             <h1>All Notes</h1>
+                            <h3>{this.props.notes.length} notes</h3>
                         </div>
                         <div className = "all-note-nav">
                             {notes}
@@ -52,10 +61,15 @@ class AllNoteForm extends React.Component {
             )
         } else {
             return (
-                <>
+                <div className="all-note-page">
                     <LeftNav />
-                    <h1>Test</h1>
-                </>
+                    <div className="all-note-right">
+                        <div className="all-note-title">
+                            <h1>No Notes</h1>
+                        </div>
+
+                    </div>
+                </div>
             )
         }
     }
