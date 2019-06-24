@@ -235,6 +235,9 @@
 .notebook-drop-down-modal p, span {
   display: flex;
   justify-content: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .note-drop-down-modal{
@@ -247,6 +250,9 @@
 .note-drop-down-modal p, span {
   display: flex;
   justify-content: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .note-delete-modal {

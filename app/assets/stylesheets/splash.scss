@@ -116,7 +116,7 @@ html {
     display: flex;
     margin-top: 2%;
     justify-content: space-around;
-    align-items: center;
+    // align-items: center;
   
     width: 18%;
  }
@@ -141,7 +141,8 @@ html {
 
  .signup-button a {
     display: flex;
-    margin-top: -70%;
+    // margin-top: -30px;
+    margin-bottom: 30px;
     // border: 1px solid orange;
     // margin-right: 15px;
 
@@ -164,7 +165,8 @@ html {
     width: 11%;
     font-family: 'PT Sans', sans-serif;
     // border: 1px solid red;
-    height: 80%;
+    // height: 95%;
+    height: 95%;
     display:flex;
     align-items: center;
     justify-content: space-around;
@@ -175,7 +177,7 @@ html {
 .splash-buttons span {
     display: flex;
     align-items: center;
-    padding-bottom: 21%;
+    padding-bottom: 30px;
 }
 
 .login-button a {
@@ -199,7 +201,7 @@ html {
  }
  .login-button {
     // margin-top: 11%;
-    padding-bottom: 21%;
+    padding-bottom: 30px;
     margin-left: 6%;
  
 
