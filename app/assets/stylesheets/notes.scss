@@ -44,3 +44,41 @@
     margin-bottom: 5px;
     font-family: sans-serif;
 }
+
+.all-note-page{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+.all-note-right{
+    height: 100%;
+    width: 18%;
+    border-right: 1px solid lightgray;
+    background-color: whitesmoke;
+}
+
+.all-note-title{
+    height: 110px;
+    width: 100%;
+    border-bottom: 1px solid lightgray;
+}
+.all-note-nav{
+    height: 100%;
+    width: 100%;
+    background-color: whitesmoke;
+}
+
+.all-note-nav li {
+    list-style: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background-color: whitesmoke;
+    line-height: 24px;
+    font-size: 14px;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 2px;
+    font-weight: 500;
+    font-family: sans-serif;
+    overflow: hidden;
+}
+
