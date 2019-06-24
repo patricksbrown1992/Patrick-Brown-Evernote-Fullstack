@@ -58,9 +58,15 @@
 }
 
 .all-note-title{
-    height: 110px;
+    height: 200px;
     width: 100%;
     border-bottom: 1px solid lightgray;
+}
+
+.all-note-title h1 {
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 50px;
 }
 .all-note-nav{
     height: 100%;
@@ -80,5 +86,11 @@
     font-weight: 500;
     font-family: sans-serif;
     overflow: hidden;
+}
+.all-note-nav li a {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 600;
 }
 

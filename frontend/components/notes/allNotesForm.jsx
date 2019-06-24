@@ -21,8 +21,7 @@ class AllNoteForm extends React.Component {
         let notes;
         if(this.props.notes.length > 0){
             notes = this.props.notes.map(note => (
-                // <li key={note.id} ><Link to={`/username/${this.props.notebook.id}/notes/${note.id}`} > <h1>{note.title}</h1> </Link>
-                <li key={note.id} className="all-note-title" ><h1>{note.title}</h1>
+                <li key={note.id} className="all-note-title"><Link to={`/username/${note.notebook_id}/notes/${note.id}`} > <h1>{note.title}</h1> </Link>
                     <h3>{note.body}</h3>
 
                     Last updated:
