@@ -10,13 +10,13 @@ const splashHeader = () => (
             <h1 className='title'>NeverNote</h1>
         </div>
         <div className="features-div">
-            <ul>
+            {/* <ul>
                 <Link to='/features'>PLANS</Link>
                 <Link to='/features'>FEATURES</Link>
                 <Link to='/features'>HELP & LEARNING</Link>
                 <Link to='/features'>ABOUT US</Link>
 
-            </ul>
+            </ul> */}
         </div>
         <div className='splash-buttons'>
             
