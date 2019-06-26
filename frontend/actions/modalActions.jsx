@@ -42,6 +42,13 @@ export const deleteTagModal = entity => {
     }
 }
 
+export const logOutModal = () => {
+    return {
+        type: OPEN_MODAL,
+        modal: 'logout'
+    };
+};
+
 
 export const openAddNoteModal = entity => {
 

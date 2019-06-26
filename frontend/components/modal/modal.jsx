@@ -12,6 +12,8 @@ import NotebookDeleteContainer from '../notebooks/notebookDeleteContainer';
 import NoteDeleteContainer from '../notes/noteDeleteContainer';
 import NoteEditContainer from '../notes/noteEditContainer';
 import NoteDropDownContainer from '../notes/noteDropDownContainer';
+import LogoutContainer from '../username/logoutContainer';
+
 function Modal({ modal, closeModal }) {
     // debugger
     if (!modal.type) {
@@ -51,7 +53,9 @@ function Modal({ modal, closeModal }) {
         case 'noteDelete':
             component = <NoteDeleteContainer note={modal.entity}/>;
             break;
-
+        case 'logout':
+            component = <LogoutContainer />;
+            break;
         case 'noteDropDown':
             component = <NoteDropDownContainer note={modal.entity} />;
             break;
