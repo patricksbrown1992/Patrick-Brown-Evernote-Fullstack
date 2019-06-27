@@ -68,7 +68,7 @@ class NoteShowForm extends React.Component {
                 <ReactQuill value={this.state.body} onChange={this.handleChange} />
                 <br />
 
-                <button onClick={this.handleAddTag()}>Add Study Tag</button>
+                {/* <button onClick={this.handleAddTag()}>Add Study Tag</button> */}
             </div>
         );
 
