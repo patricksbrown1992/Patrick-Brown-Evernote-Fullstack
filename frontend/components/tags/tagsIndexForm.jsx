@@ -6,6 +6,7 @@ class TagIndexForm extends React.Component {
         super(props);
         this.handleSubmitDeleteTag = this.handleSubmitDeleteTag.bind(this);
         this.handleSubmitNewTag = this.handleSubmitNewTag.bind(this);
+        this.handleSubmitDropDown = this.handleSubmitDropDown.bind(this);
     }
 
     componentDidMount() {
@@ -32,6 +33,12 @@ class TagIndexForm extends React.Component {
             this.props.deleteTagModal(entity);
         };
     }
+    handleSubmitDropDown(entity){
+        return(e) => {
+            e.preventDefault();
+            this.props.tagDropDown(entity);
+        }
+    }
 
 
     render() {
@@ -56,8 +63,9 @@ class TagIndexForm extends React.Component {
                     <div className="tag-index-intial">{tag.name[0]}</div>
 
                     {tag.name}
-                    <button onClick={this.handleSubmitDeleteTag(tag)}>Delete tag...</button>
-                    <button onClick={this.handSubmitEditTag(tag)}>Rename tag...</button>
+                    <button onClick={this.handleSubmitDropDown(tag)}><i class="fas fa-chevron-down"></i></button>
+                    {/* <button onClick={this.handleSubmitDeleteTag(tag)}>Delete tag...</button>
+                    <button onClick={this.handSubmitEditTag(tag)}>Rename tag...</button> */}
                 </li>
             ))
 

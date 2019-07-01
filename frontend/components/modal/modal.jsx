@@ -13,6 +13,7 @@ import NoteDeleteContainer from '../notes/noteDeleteContainer';
 import NoteEditContainer from '../notes/noteEditContainer';
 import NoteDropDownContainer from '../notes/noteDropDownContainer';
 import LogoutContainer from '../username/logoutContainer';
+import TagDropDownContainer from '../tags/tagDropDownContainer';
 
 function Modal({ modal, closeModal }) {
     // debugger
@@ -58,6 +59,9 @@ function Modal({ modal, closeModal }) {
             break;
         case 'noteDropDown':
             component = <NoteDropDownContainer note={modal.entity} />;
+            break;
+        case 'tagDropDown':
+            component = <TagDropDownContainer tag={modal.entity}/>;
             break;
         default:
             return null;

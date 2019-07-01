@@ -102,3 +102,11 @@ export const noteDropDown = entity => {
         modal: 'noteDropDown'
     };
 };
+
+export const tagDropDown = entity => {
+    return {
+        type: OPEN_MODAL,
+        entity,
+        modal: 'tagDropDown'
+    };
+};
