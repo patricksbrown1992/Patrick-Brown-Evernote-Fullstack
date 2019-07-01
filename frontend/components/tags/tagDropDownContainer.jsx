@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import TagDropDownForm from './tagDropDownForm';
-import {editTagModal, deleteTagModal} from '../../actions/modalActions';
+import {editTagModal, deleteTagModal, closeModal} from '../../actions/modalActions';
 
 const msp = state => ({
     user: state.entities.user[state.session.id],
@@ -8,6 +8,7 @@ const msp = state => ({
 });
 
 const mdp = dispatch => ({
+    closeModal: () => dispatch(closeModal()),
     deleteTagModal: entity => dispatch(deleteTagModal(entity)),
     editTagModal: entity => dispatch(editTagModal(entity))
 });

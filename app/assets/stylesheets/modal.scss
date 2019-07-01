@@ -296,7 +296,7 @@
 }
 
 .note-delete-modal {
-   height: 34%;
+  height: 34%;
   width: 28.5%;
   background-color: white;
   border: 1px solid black;
@@ -312,4 +312,38 @@
 .note-delete-modal h5, h3, input, form, span{
   display: flex;
   justify-content: center;
+}
+
+.tag-drop-down-modal{
+  height: 18%;
+  width: 17.5%;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.tag-drop-down-modal span{
+  height: 10%;
+  width: 100%;
+}
+
+.tag-drop-down-modal span:hover{
+  background-color: whitesmoke;
+}
+
+.tag-drop-down-buttons{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  
+}
+.tag-drop-down-buttons button{
+  outline: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+}
+.tag-drop-down-buttons button:hover{
+  background-color: whitesmoke;
 }

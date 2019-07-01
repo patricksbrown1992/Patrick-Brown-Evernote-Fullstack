@@ -63,7 +63,7 @@ class TagIndexForm extends React.Component {
                     <div className="tag-index-intial">{tag.name[0]}</div>
 
                     {tag.name}
-                    <button onClick={this.handleSubmitDropDown(tag)}><i class="fas fa-chevron-down"></i></button>
+                    <button onClick={this.handleSubmitDropDown(tag)} className='chevron-down-button'><i class="fas fa-chevron-down"></i></button>
                     {/* <button onClick={this.handleSubmitDeleteTag(tag)}>Delete tag...</button>
                     <button onClick={this.handSubmitEditTag(tag)}>Rename tag...</button> */}
                 </li>

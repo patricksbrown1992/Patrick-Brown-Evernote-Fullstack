@@ -9,7 +9,7 @@ class TagDropDownForm extends React.Component {
     }
 
     handleSubmitEditTag(entity){
-        debugger
+        // debugger
         return (e) => {
             e.preventDefault();
             this.props.editTagModal(entity);
@@ -18,7 +18,7 @@ class TagDropDownForm extends React.Component {
 
 
     handleSubmitDeleteTag(entity){
-        debugger
+        // debugger
         return (e) => {
             e.preventDefault();
             this.props.deleteTagModal(entity);
@@ -28,8 +28,18 @@ class TagDropDownForm extends React.Component {
     render(){
         return(
             <div className="tag-drop-down-modal">
-                <button onClick={this.handleSubmitDeleteTag(this.props.tag)}>Delete Tag...</button>
-                <button onClick={this.handleSubmitEditTag(this.props.tag)}>Rename Tag...</button>
+                <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
+                <div className = "tag-drop-down-buttons">
+                    <br/>
+                    <span onClick={this.handleSubmitDeleteTag(this.props.tag)}>
+                        <button type="submit">Delete Tag...</button>
+                    </span>
+                    <br/>
+                    <span onClick={this.handleSubmitEditTag(this.props.tag)}>
+                        <button >Rename Tag...</button>
+                    </span>
+
+                </div>
             </div>
         )
     }
