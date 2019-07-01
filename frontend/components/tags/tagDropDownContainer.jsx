@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import TagDropDownForm from './tagDropDownForm';
+import {editTagModal, deleteTagModal} from '../../actions/modalActions';
 
 const msp = state => ({
     user: state.entities.user[state.session.id],
