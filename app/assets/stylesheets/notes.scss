@@ -53,10 +53,12 @@
     display: flex;
     height: 100%;
     width: 100%;
+
 }
 .all-note-right{
     height: 100%;
     width: 18%;
+    // min-width: 350px;
     border-right: 1px solid lightgray;
     background-color: #f8f8f8;
 }

@@ -26,11 +26,13 @@
     // height: 100%;
     grid-area: 2 / 1 / 3 / 2;
     border-right: 1px solid lightgray;
+    // min-width: 350px;
 }
 .notebook-show-title {
     grid-area: 1 / 1/ 2/ 2;
     display: flex;
     // overflow: hidden
+    // min-width: 350px;
     flex-direction: column;
 }
 .notebook-show-title form {

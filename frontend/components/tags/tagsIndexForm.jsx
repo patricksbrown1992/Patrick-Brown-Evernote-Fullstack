@@ -4,7 +4,7 @@ import UsernameFormLeft from '../username/usernameLeftContainer';
 class TagIndexForm extends React.Component {
     constructor(props) {
         super(props);
-        this.handleSubmitDeleteTag = this.handleSubmitDeleteTag.bind(this);
+        // this.handleSubmitDeleteTag = this.handleSubmitDeleteTag.bind(this);
         this.handleSubmitNewTag = this.handleSubmitNewTag.bind(this);
         this.handleSubmitDropDown = this.handleSubmitDropDown.bind(this);
     }
@@ -20,19 +20,7 @@ class TagIndexForm extends React.Component {
         };
     }
 
-    handSubmitEditTag(entity){
-        return (e) => {
-            e.preventDefault();
-            this.props.editTagModal(entity);
-        };
-    }
 
-    handleSubmitDeleteTag(entity){
-        return (e) => {
-            e.preventDefault();
-            this.props.deleteTagModal(entity);
-        };
-    }
     handleSubmitDropDown(entity){
         return(e) => {
             e.preventDefault();
@@ -43,9 +31,7 @@ class TagIndexForm extends React.Component {
 
     render() {
         let tags
-
         if (this.props.tags.length < 1) {
-
             return (
                 <div className="tag-index">
                     <UsernameFormLeft />
@@ -57,15 +43,12 @@ class TagIndexForm extends React.Component {
                 </div>
             )
         } else {
+            tags = this.props.tags.sort();
             // debugger
-            tags = this.props.tags.map(tag => (
+            tags = tags.map(tag => (
                 <li key={tag.id}>
                     <div className="tag-index-intial">{tag.name[0]}</div>
-
-                    {tag.name}
-                    <button onClick={this.handleSubmitDropDown(tag)} className='chevron-down-button'><i class="fas fa-chevron-down"></i></button>
-                    {/* <button onClick={this.handleSubmitDeleteTag(tag)}>Delete tag...</button>
-                    <button onClick={this.handSubmitEditTag(tag)}>Rename tag...</button> */}
+                    <div className="tag-name">{tag.name}<button onClick={this.handleSubmitDropDown(tag)} className='chevron-down-button'><i class="fas fa-chevron-down"></i></button></div>
                 </li>
             ))
 
@@ -73,8 +56,6 @@ class TagIndexForm extends React.Component {
                 <div className="tag-index">
                     <UsernameFormLeft />
                     <div className="tag-index-right">
-
-
                         <div className="tag-index-header">
                             <h1>Tags</h1>
                             <span onClick={this.handleSubmitNewTag(this.props.user)} className="new-tag"><button type='submit'><i className="fas fa-plus-circle"></i><p>New Note</p></button></span>
