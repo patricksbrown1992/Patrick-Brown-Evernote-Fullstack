@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getNotebooks } from '../../actions/notebookActions';
 import { openModal, closeModal, openEditModal, notebookDropDown, noteDropDown } from "../../actions/modalActions";
 import { getNotes, deleteNote, clearNotes } from '../../actions/noteAction';
+import {withRouter} from 'react-router-dom';
 
 const msp = state => ({
     user: state.entities.user[state.session.id],
@@ -24,4 +25,4 @@ const mdp = dispatch => ({
 
 });
 
-export default connect(msp, mdp)(notebooksIndexForm);
+export default withRouter(connect(msp, mdp)(notebooksIndexForm));

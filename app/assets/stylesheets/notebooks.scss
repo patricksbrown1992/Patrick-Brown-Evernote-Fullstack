@@ -179,9 +179,10 @@ button {
 
 .notebook-index-header2{
     display: flex;
-    border-bottom: 3px solid #333;
+    
     justify-content: space-between;
-    align-items: end;
+    // align-items: end;
+    height: 50%;
 }
 .notebook-index-header2 input{
     outline: none;
@@ -190,23 +191,29 @@ button {
 .notebook-index-header2 form{
     margin-right: 4.5%
 }
+.notebook-index-header2 h3{
+    margin-top: 35px;
+    font-size: 15px;
+    // color: darkslategrey;
+    font-size: 500;
+}
 
 .notebooks-index-right h1 {
     margin-top: 1.5%;
-    margin-left: 1.5%;
+    // margin-left: 1.5%;
     font-size: 20px;
     font-weight: 400;
     font-family: sans-serif;
 }
 
 .notebooks-index-right h3 {
-    margin-top: 2.5%;
-    margin-bottom: 1%;
-    margin-left: 1.5%;
+    // margin-top: 2.5%;
+    // margin-bottom: 1%;
+    // margin-left: 1.5%;
     font-size: 15px;
     font-family: sans-serif;
     font-weight: 500;
-    padding-bottom: 1%;
+    // padding-bottom: 1%;
 }
 
  .new-notebook-button{
@@ -321,4 +328,24 @@ button {
 .notebook-table-label-actions{
     margin-left: 35%;
     color: #b3b3b3;
+}
+
+.notebook-index-top{
+    display: flex;
+    justify-content: space-between;
+    height: 50%;
+}
+
+.notebook-index-top input {
+    outline: none;
+    margin-right: 1.75%;
+    width: 180px;
+    height: 30px;
+    margin-top: 1.5%;
+}
+
+.notebook-index-top-div{
+    height: 130px;
+    border-bottom: 3px solid #333;
+    margin-left: 30px;
 }

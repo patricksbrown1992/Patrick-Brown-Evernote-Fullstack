@@ -144,16 +144,21 @@ class NotebooksIndexForm extends React.Component {
                     <UsernameFormLeft />
 
                     <div className='notebooks-index-right'>
-                        <h1>Notebooks</h1>
-                        <div className="notebook-index-header2">
-                           
-                            <input placeholder='Find Notebooks...' type="text" onChange={this.handleChange}/>
-                           
-                            <h3>My notebook list</h3>
-                            <form onSubmit={this.handleSubmitAdd}>
+                        <div className= "notebook-index-top-div">
+                            <div className="notebook-index-top">
+                                <h1>Notebooks</h1>
+                                <input placeholder='Find Notebooks...' type="text" onChange={this.handleChange}/>
+                            </div>
+                            <div className="notebook-index-header2">
+                            
+                            
+                                <h3>My notebook list</h3>
+                                <form onSubmit={this.handleSubmitAdd}>
 
-                                <button className='new-notebook-button' type='submit'><i className="fas fa-book-medical"></i>New Notebook</button>
-                            </form>
+                                    <button className='new-notebook-button' type='submit'><i className="fas fa-book-medical"></i>New Notebook</button>
+                                </form>
+                            </div>
+
                         </div>
                         <div className='index-of-notebooks'>
                             <div className='notebook-table-labs'>

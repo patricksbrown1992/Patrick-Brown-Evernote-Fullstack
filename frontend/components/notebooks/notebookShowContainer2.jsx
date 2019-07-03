@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getNotebooks, deleteNotebook } from '../../actions/notebookActions';
 import { clearNotes } from '../../actions/noteAction';
 import {getNotes} from '../../actions/noteAction';
+import { withRouter } from 'react-router-dom';
 
 const msp = (state) => ({
     user: state.entities.user[state.session.id],
@@ -18,4 +19,4 @@ const mdp = dispatch => ({
     clearNotes: () => dispatch(clearNotes())
 });
 
-export default connect(msp, mdp)(NotebookShowForm2);
+export default withRouter(connect(msp, mdp)(NotebookShowForm2));

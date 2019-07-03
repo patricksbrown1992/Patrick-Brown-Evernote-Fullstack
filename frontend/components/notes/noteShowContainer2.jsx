@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import noteShowForm from './noteShowForm2';
 import { updateNote, clearNotes } from '../../actions/noteAction';
+import { withRouter } from 'react-router-dom';
 
 
 const msp = (state, ownProps) => {
@@ -19,4 +20,4 @@ const mdp = dispatch => ({
     clearNotes: () => dispatch(clearNotes())
 });
 
-export default connect(msp, mdp)(noteShowForm);
+export default withRouter(connect(msp, mdp)(noteShowForm));
