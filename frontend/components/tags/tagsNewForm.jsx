@@ -24,24 +24,46 @@ class TagNewForm extends React.Component {
     }
 
     render() {
+        // debugger
+        if(this.state.name.length < 1){
+            return (
+                <div className='new-tag-modal'>
+                    <div className="tag-new-modal-top">
+                        <h1>Create New Tag</h1>
+                        <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
+                    </div>
+                    <h3>Name</h3>
+                    <span>
 
-        return (
-            <div className='new-tag-modal'>
-                <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
-                <h1>Create New Tag</h1>
-                <h3>Name</h3>
-                <span>
+                        <input type="text" value={this.state.name} onChange={this.handleChange()} placeholder='Tag name' />
+                    </span>
+                    <form >
+                        <button className="invalid" type='submit'>Done</button>
+                    </form>
 
-                    <input type="text" value={this.state.name} onChange={this.handleChange()} placeholder='Notebook name' />
-                </span>
-                <br />
-                <br />
-                <form onSubmit={this.handleSubmit}>
-                    <button type='submit'>Done</button>
-                </form>
+                </div>
+            )
+        } else {
+            return (
+                <div className='new-tag-modal'>
+                    <div className="tag-new-modal-top">
+                        <h1>Create New Tag</h1>
+                        <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
+                    </div>
+                    <h3>Name</h3>
+                    <span>
 
-            </div>
-        )
+                        <input type="text" value={this.state.name} onChange={this.handleChange()} placeholder='Notebook name' />
+                    </span>
+                    <form onSubmit={this.handleSubmit}>
+                        <button className="valid" type='submit'>Done</button>
+                    </form>
+
+                </div>
+            )
+        }
+
+        
     }
 }
 
