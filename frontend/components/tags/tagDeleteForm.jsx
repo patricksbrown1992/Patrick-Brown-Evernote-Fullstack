@@ -17,8 +17,10 @@ class TagDeleteForm extends React.Component{
 
         return (
             <div className="tag-delete-modal">
-                <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
-                <h1>Delete Tag?</h1>
+                <div className="tag-delete-modal-top">
+                    <h1>Delete Tag?</h1>
+                    <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
+                </div>
                 <h3>Are you sure you want to delete the "{this.props.tag.name}" tag? This tag will be removed from all notes.</h3>
              
                 <form onSubmit={this.handleSubmit}>

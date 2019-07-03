@@ -142,22 +142,56 @@
 }
 
 .tag-delete-modal {
-  height: 34%;
-  width: 28.5%;
+  height: 200px;
+  width: 550px;
   background-color: white;
   border: 1px solid black;
+}
+.tag-delete-modal-top{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.tag-delete-modal-top h1 {
+  font-size: 18px;
+  margin: 0;
+  word-wrap: break-word;
+  font-weight: 500;
+  font-family: sans-serif;
+  margin-left: 25px;
+}
+.tag-delete-modal-top i {
+  margin-right: 25px;
 }
 
 .tag-delete-modal button {
   color: white;
   background-color: tomato;
-  height: 10%;
   outline: none;
+  width: 75px;
+  height: 45px;
+  border-radius: 4px;
+  font-weight: 400;
+  margin-left: 450px; 
+  padding: 10px 15px 10px 15px;
+  font-size: 14px;
 }
 
-.tag-delete-modal h5, h3, input, form, span{
+.tag-delete-modal h3, input, form, span{
   display: flex;
   justify-content: center;
+}
+
+.tag-delete-modal h3 {
+  font-family: sans-serif;
+  word-wrap: break-word;
+  margin-bottom: 35px;
+  font-weight: 500;
+  margin-left: 25px;
+  margin-right: 25px;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .new-notebook-modal{
@@ -211,16 +245,16 @@
   font-weight: 500;
   margin-left: 25px;
 }
-.new-tag-modal input {
-    outline: none;
 
+.new-tag-modal input {
+  outline: none;
   width: 420px;
   margin-left: 25px;
   height: 40px;
   padding-left: 15px;
   padding-right: 15px;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 18px;
   font-family: sans-serif;
   font-weight: 500;
 }
@@ -305,7 +339,7 @@
 .notebook-delete-modal button {
   color: white;
   background-color: tomato;
-  height: 10%;
+ 
   outline: none;
 }
 
