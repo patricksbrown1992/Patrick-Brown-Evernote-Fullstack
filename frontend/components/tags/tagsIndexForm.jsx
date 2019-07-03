@@ -4,9 +4,11 @@ import UsernameFormLeft from '../username/usernameLeftContainer';
 class TagIndexForm extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {tag: ''};
         // this.handleSubmitDeleteTag = this.handleSubmitDeleteTag.bind(this);
         this.handleSubmitNewTag = this.handleSubmitNewTag.bind(this);
         this.handleSubmitDropDown = this.handleSubmitDropDown.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     componentDidMount() {
@@ -18,6 +20,14 @@ class TagIndexForm extends React.Component {
             e.preventDefault();
             this.props.addTag(entity);
         };
+    }
+
+    handleChange() {
+
+        return (e) => {
+            this.setState({ tag: e.target.value })
+        }
+
     }
 
 
@@ -56,10 +66,17 @@ class TagIndexForm extends React.Component {
                 <div className="tag-index">
                     <UsernameFormLeft />
                     <div className="tag-index-right">
-                        <div className="tag-index-header">
-                            <h1>Tags</h1>
-                            <span onClick={this.handleSubmitNewTag(this.props.user)} className="new-tag"><button type='submit'><i className="fas fa-plus-circle"></i><p>New Note</p></button></span>
+                        <div className="tag-index-upper">
+                            <div className="tag-index-header">
+                                <h1>Tags</h1>
+                                <input placeholder='Find Tags...' type="text" onChange={this.handleChange} />
+                            </div>
+                            <div className="tag-index-add">
+                                <span onClick={this.handleSubmitNewTag(this.props.user)} className="new-tag"><button type='submit'><i className="fas fa-plus-circle"></i><p>New Note</p></button></span>
+                            </div>
                         </div>
+                        
+                        
                         <div className="tag-index-list">
                             <ul>{tags}</ul>
                         </div>
