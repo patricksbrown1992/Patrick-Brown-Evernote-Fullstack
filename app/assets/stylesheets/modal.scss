@@ -347,3 +347,22 @@
 .tag-drop-down-buttons button:hover{
   background-color: whitesmoke;
 }
+
+.logout-modal{
+  height: 18%;
+  width: 17.5%;
+  background-color: white;
+  border: 1px solid black;
+  // display: flex;
+}
+.logout-modal button {
+  border: none;
+  width: 100%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  font-weight: 600;
+  font-size: 14px;
+}
+.logout-modal button:hover {
+  background-color: whitesmoke;
+}

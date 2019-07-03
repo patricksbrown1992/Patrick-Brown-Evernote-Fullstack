@@ -83,12 +83,8 @@ class usernameFormLeft extends React.Component {
 
             <div className="left-nav">
                 <ul>
-                    <form onSubmit={this.handleSubmitLogOut}>
-                        <div className='log-out-button'>
-                            <button type='submit'>Log Out</button>
-                        </div>
-                    </form>
-                    <li onClick={this.handleLogOut()}className="user-email">{this.props.user.email}</li>
+                    
+                    <li className = "user-email" onClick={this.handleLogOut()}className="user-email">{this.props.user.email}</li>
                     <form onSubmit={this.handleNoteSearch}>
                         <input placeholder="Search all notes..." type="text"></input>
                     </form>

@@ -25,7 +25,7 @@ class LogoutForm extends React.Component {
                 <br/>
 
 
-                <button onClick={this.handleSubmitLogOut} type='submit'>Log Out {this.props.user.email}</button>
+                <button onClick={this.handleSubmitLogOut} type='submit'>Sign Out {this.props.user.email}</button>
                 
              
             </div>
