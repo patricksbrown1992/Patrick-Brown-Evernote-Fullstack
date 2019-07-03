@@ -27,24 +27,47 @@ class NotebookNewForm extends React.Component {
     
 
     render (){
-        
-        return(
-        <div className='new-notebook-modal'>
-                <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
-            <h1>Create new notebook</h1>
-                <h3>Notebooks are useful for grouping notes around a common topic. They can be private or shared.</h3>
-                <h5>Name</h5>
-                <span>
+        if (this.state.name.length < 1){
+            return (
+                <div className='new-notebook-modal'>
+                    <div className='new-notebook-modal-top'>
+                        <h1>Create new notebook</h1>
+                        <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
+                    </div>
+                    <h3>Notebooks are useful for grouping notes around a common topic. They can be private or shared.</h3>
+                    <h5>Name</h5>
+                    <span>
+                        <input type="text" value={this.state.name} onChange={this.handleChange()} placeholder='Notebook name' />
+                    </span>
+                    <br />
+                    <br />
+                    <form >
+                        <button className="invalid" type='submit'>Done</button>
+                    </form>
+                </div>
+            )
+        } else {
+            return(
+                <div className='new-notebook-modal'>
+                    <div className='new-notebook-modal-top'>
+                        <h1>Create new notebook</h1>
+                        <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
+                    </div>
+                    <h3>Notebooks are useful for grouping notes around a common topic. They can be private or shared.</h3>
+                    <h5>Name</h5>
+                    <span>
+    
+                        <input type="text" value={this.state.name} onChange={this.handleChange()} placeholder='Notebook name'/>
+                    </span>
+                    <br/>
+                    <br/>
+                    <form onSubmit={this.handleSubmit}>
+                        <button className="valid"  type='submit'>Done</button>
+                    </form>
+                </div>
+            )
 
-                    <input type="text" value={this.state.name} onChange={this.handleChange()} placeholder='Notebook name'/>
-                </span>
-                <br/>
-                <br/>
-                <form onSubmit={this.handleSubmit}>
-                    <button type='submit'>Continue</button>
-                </form>
-        </div>
-        )
+        }
     }
 }
 

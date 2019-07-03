@@ -72,13 +72,17 @@ main {
     display: flex;
     align-items: center;
 }
+.left-nav span {
+    display:flex;
+    flex-direction: row;
+}
 .new-note button{
     border: none;
     color: white;
     height: 100%;
     font-size: 85%;
     background-color: #1a1a1a;
-     outline: none;
+    outline: none;
 }
 .left-nav li:hover {
     background-color: darkslategrey;

@@ -195,10 +195,31 @@
 }
 
 .new-notebook-modal{
-  height: 35%;
-  width: 28.5%;
+  height: 350px;
+  width: 550px;
   background-color: white;
   border: 1px solid black;
+}
+.new-notebook-modal-top{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.new-notebook-modal-top h1 {
+  font-size: 18px;
+  margin: 0;
+  word-wrap: break-word;
+  font-weight: 500;
+  font-family: sans-serif;
+  margin-left: 25px;
+}
+
+.new-notebook-modal-top i {
+  margin-right: 25px;
 }
 
 
@@ -259,18 +280,31 @@
   font-weight: 500;
 }
 
-.new-notebook-modal h5, input, span{
+.new-notebook-modal  h5, h3, input, span{
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 }
 .new-notebook-modal input {
   outline: none;
+  width: 460px;
+  margin-left: 25px;
+  height: 40px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-family: sans-serif;
+  font-weight: 500;
+  margin-bottom: 25px;
 }
 
-.new-notebook-modal button {
-  color: white;
-  background-color: forestgreen;
-  outline: none;
+.new-notebook-modal h3{
+  margin-left: 25px;
+  margin-bottom: 25px;
+}
+.new-notebook-modal h5 {
+  margin-left: 25px;
+  margin-bottom: 5px;
 }
 
 
@@ -283,14 +317,10 @@
   font-size: 100%;
 }
 .new-notebook-modal h5 {
-  margin-top: 3%;
-  margin-bottom: 1%;
+
   color: gray;
 }
 
-.new-notebook-modal span {
-  margin-bottom: 2%;
-}
 
 
 .notebook-edit-modal{
