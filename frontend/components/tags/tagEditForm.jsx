@@ -24,22 +24,45 @@ class TagEditForm extends React.Component{
     }
 
     render() {
+        // debugger
+        if(this.state.name.length < 1){
+            return (
+                <div className="tag-edit-modal">
+                    <div className="tag-edit-modal-top">
+                        <h1>Rename tag</h1>
+                        <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
+                    </div>
+                    <h3>Name</h3>
+                    <span>
 
-        return (
-            <div className="tag-edit-modal">
-                <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
-                <h1>Rename tag</h1>
-                <h3>Name</h3>
-                <span>
+                        <input type="text"  placeholder="Tag name" value={this.state.name} onChange={this.handleChange()} />
+                    </span>
 
-                    <input type="text" value={this.state.name} onChange={this.handleChange()} />
-                </span>
+                    <form >
+                        <button className='invalid' type='submit'>Done</button>
+                    </form>
+                </div>
+            )
+        } else{
 
-                <form onSubmit={this.handleSubmit}>
-                    <button type='submit'>Done</button>
-                </form>
-            </div>
-        )
+            return (
+                <div className="tag-edit-modal">
+                    <div className="tag-edit-modal-top">
+                        <h1>Rename tag</h1>
+                        <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
+                    </div>
+                    <h3>Name</h3>
+                    <span>
+    
+                        <input type="text" value={this.state.name} onChange={this.handleChange()} />
+                    </span>
+    
+                    <form onSubmit={this.handleSubmit}>
+                        <button className="valid" type='submit'>Done</button>
+                    </form>
+                </div>
+            )
+        }
     }
 }
 
