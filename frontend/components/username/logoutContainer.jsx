@@ -1,5 +1,6 @@
 import { logout } from '../../actions/sessionActions';
 import { connect } from 'react-redux';
+import {closeModal} from '../../actions/modalActions';
 import LogoutForm from './logoutForm';
 
 const msp = state => ({

@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class LogoutForm extends React.Component {
     constructor(props){
         super(props);
@@ -7,22 +8,28 @@ class LogoutForm extends React.Component {
     }
 
     handleSubmitLogOut(e) {
+        // debugger
         e.preventDefault();
         this.props.logout();
+        this.props.closeModal();
     }
 
 
     render(){
-        <div className="logout-modal">
-            <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
-            <br/>
-            <br/>
+        // debugger
+        return(
+
+            <div className="logout-modal">
+                <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
+                <br/>
+                <br/>
 
 
-            <form onSubmit={this.handleSubmitLogOut}>
-                <button type='submit'>Log Out {this.props.user.email}</button>
-            </form>
-        </div>
+                <button onClick={this.handleSubmitLogOut} type='submit'>Log Out {this.props.user.email}</button>
+                
+             
+            </div>
+        )
     }
 }
 

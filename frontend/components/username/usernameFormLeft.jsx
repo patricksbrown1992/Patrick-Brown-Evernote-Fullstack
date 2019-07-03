@@ -9,6 +9,7 @@ class usernameFormLeft extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.state = { body: '', selected: false };
         this.updateSelected = this.updateSelected.bind(this);
+        this.handleLogOut = this.handleLogOut.bind(this);
     }
 
 
@@ -51,6 +52,12 @@ class usernameFormLeft extends React.Component {
             this.props.noteSearch(this.state.body);
         }
     }
+    handleLogOut(){
+        return (e) => {
+            e.preventDefault();
+            this.props.logOutModal();
+        }
+    }
 
 
     render() {
@@ -81,7 +88,7 @@ class usernameFormLeft extends React.Component {
                             <button type='submit'>Log Out</button>
                         </div>
                     </form>
-                    <li className="user-email">{this.props.user.email}</li>
+                    <li onClick={this.handleLogOut()}className="user-email">{this.props.user.email}</li>
                     <form onSubmit={this.handleNoteSearch}>
                         <input placeholder="Search all notes..." type="text"></input>
                     </form>
