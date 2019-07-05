@@ -11,7 +11,7 @@ class NoteShowForm extends React.Component {
     }
 
     componentWillReceiveProps(newProps) {
-        // debugger
+        debugger
         if (newProps.note == undefined) {
             return this.props.history.push(`/username/${this.state.notebook_id}`);
         }

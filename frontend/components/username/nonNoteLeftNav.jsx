@@ -95,7 +95,7 @@ class usernameFormLeft extends React.Component {
                     <ul>
                         {notebooks}
                     </ul>
-                    <li><i className="fas fa-user-friends"></i>Shared with Me</li>
+                    {/* <li><i className="fas fa-user-friends"></i>Shared with Me</li> */}
                     <li><Link to='/tags'><i className="fas fa-tag"></i>Tags</Link></li>
                     {/* <li><i className="fas fa-trash"></i>Trash</li> */}
                     {/* <i class="fas fa-caret-down"></i> */}
