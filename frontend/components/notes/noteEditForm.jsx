@@ -26,22 +26,47 @@ class NoteEditForm extends React.Component {
     }
 
     render() {
-        // debugger
-        return (
-            <div className="notebook-edit-modal">
-                <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
-                <h1>Rename note</h1>
-                <h3>Title</h3>
-                <span>
+        if (this.state.name.length < 1){
+            return (
+                <div className="note-edit-modal">
+                    <div className="note-edit-modal-top">
+                        <h1>Rename note</h1>
+                        <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
+                        
+                    </div>
+                    <h3>Title</h3>
+                    <span>
 
-                    <input type="text" value={this.state.name} onChange={this.handleChange()} />
-                </span>
+                        <input type="text" value={this.state.name} onChange={this.handleChange()} />
+                    </span>
 
-                <form onSubmit={this.handleSubmit}>
-                    <button type='submit'>Continue</button>
-                </form>
-            </div>
-        )
+                    <form>
+                        <button className="invalid" type='submit'>Done</button>
+                    </form>
+                </div>
+            )
+        } else {
+            return (
+                <div className="note-edit-modal">
+                    <div className="note-edit-modal-top">
+                        <h1>Rename note</h1>
+                        <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
+
+                    </div>
+                    <h3>Title</h3>
+                    <span>
+    
+                        <input type="text" value={this.state.name} onChange={this.handleChange()} />
+                    </span>
+    
+                    <form onSubmit={this.handleSubmit}>
+                        <button className="valid" type='submit'>Done</button>
+                    </form>
+                </div>
+            )
+
+        }
+
     }
 }
 
