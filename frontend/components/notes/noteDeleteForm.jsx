@@ -17,8 +17,10 @@ class NoteDeleteForm extends React.Component {
     render(){
         return (
             <div className="note-delete-modal">
-                <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
-                <h1>Delete Note?</h1>
+                <div className = "note-delete-modal-top">
+                    <h1>Delete Note?</h1>
+                    <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
+                </div>
                 <h3>Are you sure you want to delete the "{this.props.note.title}" note?</h3>
 
                 <form onSubmit={this.handleSubmitDelete}>

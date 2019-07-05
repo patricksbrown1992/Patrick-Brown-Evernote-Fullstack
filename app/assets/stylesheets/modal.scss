@@ -139,6 +139,7 @@
   width: 65px;
   height: 45px;
   outline: none;
+  cursor: default;
   border-radius: 4px;
   font-size: 14px;
   font-weight: 400;
@@ -438,11 +439,7 @@
   justify-content: flex-end;
   margin-right: 25px;
 }
-.note-delete-modal button {
-  height: 35px;
-  width: 90px;
 
-}
 
 .notebook-drop-down-modal{
   height: 15%;
@@ -515,22 +512,55 @@
 }
 
 .note-delete-modal {
-  height: 34%;
-  width: 28.5%;
+  height: 200px;
+  width: 500px;
   background-color: white;
   border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.note-delete-modal-top{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.note-delete-modal-top h1{
+  font-size: 18px;
+  margin: 0;
+  word-wrap: break-word;
+  font-weight: 500;
+  font-family: sans-serif;
+  margin-left: 25px;
+}
+
+.note-delete-modal-top i {
+  margin-right: 25px;
 }
 
 .note-delete-modal button{
   color: white;
   background-color: tomato;
-  height: 10%;
   outline: none;
+  width: 70px;
+  height: 45px;
+  border-radius: 4px;
+  font-weight: 400;
+  margin-left: 400px; 
+  padding: 10px 15px 10px 15px;
+  font-size: 14px;
 }
 
-.note-delete-modal h5, h3, input, form, span{
+.note-delete-modal h3, input, form, span{
   display: flex;
   justify-content: center;
+}
+
+.note-delete-modal h3 {
+  margin-left: 25px;
 }
 
 .tag-drop-down-modal{
