@@ -116,22 +116,12 @@
   font-family: sans-serif;
   font-weight: 500;
 
-  // border-bottom: 1px solid black;
 }
-
-
-
-// .tag-edit-modal h5 {
-//   margin-top: 3%;
-//   margin-bottom: 1%;
-// }
 
 .tag-edit-modal span {
   margin-bottom: 65px;
 }
-// .tag-edit-modal form{
- 
-// }
+
 
 .invalid{
   color: white;
@@ -267,8 +257,6 @@
   margin-right: 25px;
 }
 
-
-
 .new-tag-modal h1, input, span{
   display: flex;
   flex-direction: column;
@@ -325,7 +313,6 @@
   margin-left: 25px;
   margin-bottom: 5px;
 }
-
 
 .new-notebook-modal h1 {
   margin-top: 3%;
@@ -442,8 +429,8 @@
 
 
 .notebook-drop-down-modal{
-  height: 15%;
-  width: 12%;
+  height: 140px;
+  width: 230px;
   background-color: white;
   border: 1px solid black;
 }
@@ -478,8 +465,8 @@
 
 
 .note-drop-down-modal{
-  height: 15%;
-  width: 12%;
+  height: 140px;
+  width: 230px;
   background-color: white;
   border: 1px solid black;
 }
@@ -564,8 +551,8 @@
 }
 
 .tag-drop-down-modal{
-  height: 18%;
-  width: 17.5%;
+  height: 165px;
+  width: 340px;
   background-color: white;
   border: 1px solid black;
 }
@@ -598,8 +585,8 @@
 }
 
 .logout-modal{
-  height: 18%;
-  width: 17.5%;
+  height: 160px;
+  width: 340px;
   background-color: white;
   border: 1px solid black;
   // display: flex;
