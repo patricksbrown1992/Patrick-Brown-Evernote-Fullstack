@@ -378,22 +378,53 @@
 }
 
 .notebook-delete-modal{
-  height: 34%;
-  width: 28.5%;
+  height: 200px;
+  width: 500px;
   background-color: white;
   border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+.noteboook-delete-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-bottom: 35px;
+}
+.noteboook-delete-top h1 {
+  margin-left: 25px;
+}
+
+.noteboook-delete-top i {
+  margin-right: 25px;
 }
 
 .notebook-delete-modal button {
   color: white;
   background-color: tomato;
- 
   outline: none;
+  height: 35px;
+  width: 90px;
+  margin-top: 30px;
 }
 
-.notebook-delete-modal h5, h3, input, form, span{
+.notebook-delete-modal h3{
   display: flex;
   justify-content: center;
+  margin-left: 25px;
+}
+
+.notebook-delete-modal form{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 25px;
+}
+.note-delete-modal button {
+  height: 35px;
+  width: 90px;
+
 }
 
 .notebook-drop-down-modal{
