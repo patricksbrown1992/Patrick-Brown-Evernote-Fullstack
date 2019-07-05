@@ -1,6 +1,6 @@
 import React from 'react';
 import styleDate from '../../util/styleDate';
-import LeftNav from '../username/usernameLeftContainer';
+import LeftNav from '../username/nonNoteLeftContainer';
 import { Link } from 'react-router-dom';
 class AllNoteForm extends React.Component {
     constructor(props) {
