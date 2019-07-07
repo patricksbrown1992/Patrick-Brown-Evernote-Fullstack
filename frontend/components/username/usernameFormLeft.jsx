@@ -7,26 +7,19 @@ class usernameFormLeft extends React.Component {
         super(props);
         this.handleSubmitLogOut = this.handleSubmitLogOut.bind(this);
         this.handleChange = this.handleChange.bind(this);
-        this.state = { body: '', selected: false };
+        this.state = { body: '', selected: false, shortCutChecker: false};
         this.updateSelected = this.updateSelected.bind(this);
         this.handleLogOut = this.handleLogOut.bind(this);
+        this.updateShortcuts = this.updateShortcuts.bind(this);
     }
-
-
-    // updateSelected() {
-        
-    //     this.setState({ selected: true });
-        
-    // }
 
     updateSelected() {
-        // debugger
-        
         this.props.getNotebooks(this.props.user).then(() => this.setState({selected: !this.state.selected}));
-
     }
 
-    
+    updateShortcuts(){
+        this.props.getNotebooks(this.props.user).then(() => this.setState({ shortCutChecker: !this.state.shortCutChecker }));
+    }
 
     handleChange(){
         return (e) => {
@@ -63,7 +56,7 @@ class usernameFormLeft extends React.Component {
     render() {
         let notebooks;
         let caret;
-
+        let shortCutCaret;
         if(this.state.selected){
    
             caret = "fas fa-caret-down";
@@ -78,6 +71,12 @@ class usernameFormLeft extends React.Component {
             caret = "fas fa-caret-right";
         }
 
+        if (this.state.shortCutChecker){
+            shortCutCaret = "fas fa-caret-down";
+        } else {
+            shortCutCaret = "fas fa-caret-right";
+        }
+
       
         return (
 
@@ -89,7 +88,7 @@ class usernameFormLeft extends React.Component {
                         <input placeholder="Search all notes..." type="text"></input>
                     </form>
                     <span onClick={this.handleSubmitNewNote(this.props.notebook)} className="new-note"><i className="fas fa-plus-circle fa-2x"></i><button type='submit'>New Note</button></span>
-                    <li><i className="fas fa-caret-right"></i><i className="fas fa-star"></i>Shortcuts</li>
+                    <li><i className={shortCutCaret} onClick={this.updateShortcuts}></i><i className="fas fa-star"></i>Shortcuts</li>
                     <li><Link to='/allnotes'><i className="fas fa-sticky-note"></i>All Notes</Link></li>
                     <li><i className={caret} onClick={this.updateSelected}></i><Link to='/notebooks'><i className="fas fa-book"></i>Notebooks</Link></li>
                     <ul>
