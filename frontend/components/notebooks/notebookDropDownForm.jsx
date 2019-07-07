@@ -5,6 +5,7 @@ class NotebookDropDownForm extends React.Component {
         super(props);
         this.handleSubmitDelete = this.handleSubmitDelete.bind(this);
         this.handleSubmitEdit = this.handleSubmitEdit.bind(this);
+        this.handleSubmitShortcut = this.handleSubmitShortcut.bind(this);
     }
   
 
@@ -14,15 +15,20 @@ class NotebookDropDownForm extends React.Component {
             e.preventDefault();
             this.props.notebookDelete(entity);
         };
-    }
-
+    };
     handleSubmitEdit(entity) {
         // debugger
         return (e) => {
             e.preventDefault();
-            this.props.editModal(entity)
+            this.props.editModal(entity);
         };
-    }
+    };
+    handleSubmitShortcut(entity){
+        return(e) => {
+            e.preventDefault();
+            this.props.addToShortcuts(entity);
+        };
+    };
 
     render() {
         return (
@@ -37,6 +43,9 @@ class NotebookDropDownForm extends React.Component {
                 <br/>
                 <span onClick={this.handleSubmitEdit(this.props.notebook)}>
                     <button type='submit'>Edit Notebook Name</button>
+                </span>
+                <span onClick={this.handleSubmitShortcut(this.props.notebook)}>
+                    <button type='submits'>Add to Shortcuts</button>
                 </span>
                 <br />
             </div>
