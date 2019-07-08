@@ -43,7 +43,7 @@ class NoteDropDownForm extends React.Component {
     }
 
     render() {
-        debugger
+        // debugger
         if(this.props.note.shortcut){
             return (
                 <div className='note-drop-down-modal'>

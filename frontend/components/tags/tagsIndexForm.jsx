@@ -84,9 +84,9 @@ class TagIndexForm extends React.Component {
                 </div>
             )
         } else {
-            debugger
+            // debugger
             tags = this.sortTags(this.props.tags);
-            debugger
+            // debugger
             tags = tags.map(tag => (
                 <li key={tag.id}>
                     <div className="tag-index-intial">{tag.name[0]}</div>
