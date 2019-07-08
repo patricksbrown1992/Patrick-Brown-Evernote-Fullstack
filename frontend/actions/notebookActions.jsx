@@ -4,6 +4,15 @@ export const RECEIVE_NOTEBOOK = 'RECEIVE_NOTEBOOK';
 export const RECEIVE_NOTEBOOKS = "RECEIVE_NOTEBOOKS";
 export const DESTROY_NOTEBOOK = 'DESTROY_NOTEBOOK';
 export const CLEAR_NOTEBOOKS = 'CLEAR_NOTEBOOKS';
+export const RECEIVE_SEARCHED_NOTEBOOKS = 'RECEIVE_SEARCHED_NOTEBOOKS';
+
+export const receiveSearchedNotebooks = ({notebooks, searches}) => {
+    return {
+        type: RECEIVE_SEARCHED_NOTEBOOKS,
+        notebooks,
+        searches
+    }
+}
 
 const receiveNotebook = notebook => {
     return ({
@@ -58,5 +67,8 @@ export const deleteNotebook = (notebook) => dispatch => {
     return APIUtil.deleteNotebook(notebook).then(notebook => (dispatch(destroyNotebook(notebook))));
 };
 
+export const searchNotebooks = string => dispatch => (
+    APIUtil.searchNotebooks(string).then( (notebook) => dispatch(receiveSearchedNotebooks(notebook)))
+)
 
     

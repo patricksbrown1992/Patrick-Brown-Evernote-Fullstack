@@ -1,5 +1,6 @@
 import React from 'react';
 import UsernameFormLeft from '../username/nonNoteLeftContainer';
+import { merge } from 'lodash';
 
 class TagIndexForm extends React.Component {
     constructor(props) {
@@ -8,6 +9,8 @@ class TagIndexForm extends React.Component {
         this.handleSubmitNewTag = this.handleSubmitNewTag.bind(this);
         this.handleSubmitDropDown = this.handleSubmitDropDown.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.sortTags = this.sortTags.bind(this);
+        this.duplicateArray = this.duplicateArray.bind(this);
     }
 
     componentDidMount() {
@@ -22,11 +25,36 @@ class TagIndexForm extends React.Component {
     }
 
     handleChange() {
-
         return (e) => {
             this.setState({ tag: e.target.value })
         }
+    }
 
+    sortTags(tags){
+        let newTags = this.duplicateArray(tags)
+        let sorted = false;
+        debugger
+        while(!sorted){
+            sorted = true;
+            for(let i = 0; i < newTags.length - 1; i++){
+                let current = newTags[i];
+                let next = newTags[i+1];
+                if (current.name > next.name){
+                    sorted = false;
+                    current, next = next, current
+                }
+            }
+        }
+        return newTags;
+    }
+
+    duplicateArray(array){
+        let ans = [];
+        for(let i = 0; i < array.length; i++){
+            let newObject = merge({}, array[i]);
+            ans.push(newObject);
+        }
+        return ans;
     }
 
 
@@ -53,7 +81,7 @@ class TagIndexForm extends React.Component {
             )
         } else {
             
-            tags = this.props.tags.sort();
+            tags = this.sortTags(this.props.tags);
             // debugger
             tags = tags.map(tag => (
                 <li key={tag.id}>

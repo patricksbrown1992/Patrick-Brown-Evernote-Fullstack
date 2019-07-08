@@ -49,3 +49,10 @@ export const deleteNotebook = notebook => {
         
     });
 };
+
+export const searchNotebooks = (string) => {
+    return $.ajax({
+        method: 'GET',
+        url: `api/searches/${string}`
+    })
+}
