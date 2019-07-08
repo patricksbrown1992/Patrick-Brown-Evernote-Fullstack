@@ -6,7 +6,7 @@ export const DESTROY_NOTEBOOK = 'DESTROY_NOTEBOOK';
 export const CLEAR_NOTEBOOKS = 'CLEAR_NOTEBOOKS';
 
 const receiveNotebook = notebook => {
-
+    debugger
     return ({
         type: RECEIVE_NOTEBOOK,
         notebook
@@ -58,4 +58,6 @@ export const deleteNotebook = (notebook) => dispatch => {
     // debugger
     return APIUtil.deleteNotebook(notebook).then(notebook => (dispatch(destroyNotebook(notebook))));
 };
+
+
     

@@ -5,7 +5,7 @@ export const DESTROY_SHORTCUT = 'DESTROY_SHORTCUT';
 export const CLEAR_SHORTCUTS = 'CLEAR_SHORTCUTS';
 
 export const receiveShortcut = shortcut => {
-    debugger
+    // debugger
     return ({
         type: RECEIVE_SHORTCUT,
         shortcut

@@ -1,19 +1,20 @@
 import { connect } from 'react-redux';
 import NotebookDropDown from './notebookDropDownForm';
 import { openModal, closeModal, openEditModal, notebookDelete } from "../../actions/modalActions";
-import { receiveShortcut} from '../../actions/shortcutActions';
+import {updateNotebook} from '../../actions/notebookActions';
 
 const msp = state => ({
     user: state.entities.user[state.session.id],
     notebooks: Object.values(state.entities.notebooks),
-    shortcuts: state.ui.shortcut
+    // shortcuts: state.ui.shortcut
 });
 
 const mdp = dispatch => ({
     closeModal: () => dispatch(closeModal()),
     editModal: (entity) => dispatch(openEditModal(entity)),
     notebookDelete: notebook => dispatch(notebookDelete(notebook)),
-    addToShortcuts: entity => dispatch(receiveShortcut(entity)),
+    updateNotebook: notebook => dispatch(updateNotebook(notebook))
+    
 });
 
 export default connect(msp, mdp)(NotebookDropDown);

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_13_202200) do
+ActiveRecord::Schema.define(version: 2019_07_07_234931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_06_13_202200) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "shortcut", default: false
     t.index ["user_id"], name: "index_notebooks_on_user_id"
   end
 
@@ -29,7 +30,15 @@ ActiveRecord::Schema.define(version: 2019_06_13_202200) do
     t.integer "notebook_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "shortcut", default: false
     t.index ["notebook_id"], name: "index_notes_on_notebook_id"
+  end
+
+  create_table "shortcuts", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "title", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "taggings", force: :cascade do |t|

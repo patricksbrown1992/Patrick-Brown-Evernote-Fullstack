@@ -51,6 +51,6 @@ class Api::NotebooksController < ApplicationController
     private
 
     def notebook_params
-        params.require(:notebook).permit(:user_id, :name)
+        params.require(:notebook).permit(:user_id, :name, :shortcut)
     end
 end
