@@ -9,7 +9,7 @@ import styleDate from '../../util/styleDate';
 class NotebooksIndexForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { loaded: false, selected: null, body: ''};
+        this.state = { loaded: false, selected: false, body: ''};
         this.updateSelected = this.updateSelected.bind(this);
         this.handleSubmitAdd = this.handleSubmitAdd.bind(this);
         this.handleSubmitDropDown = this.handleSubmitDropDown.bind(this);
@@ -26,11 +26,6 @@ class NotebooksIndexForm extends React.Component {
 
         this.props.addModal();
     }
-
-    activateDropDown() {
-
-    }
-
     
 
     handleChange() {
@@ -60,11 +55,19 @@ class NotebooksIndexForm extends React.Component {
 
     updateSelected(id) {
         // debugger
-        return () => {
-            this.props.clearNotes();
-            this.setState({ selected: id }, () => this.props.getNotes(this.state.selected));
-        };
-    }
+        if(this.state.selected){
+            return () => {
+                this.props.clearNotes();
+                this.setState({ selected: false })
+            };
+        } else {
+            return () => {
+                this.props.clearNotes();
+                this.setState({ selected: id }, () => this.props.getNotes(this.state.selected));
+            };
+        }
+
+        }
 
     render() {
         
