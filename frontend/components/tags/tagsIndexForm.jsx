@@ -1,11 +1,10 @@
 import React from 'react';
-import UsernameFormLeft from '../username/usernameLeftContainer';
+import UsernameFormLeft from '../username/nonNoteLeftContainer';
 
 class TagIndexForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {tag: ''};
-        // this.handleSubmitDeleteTag = this.handleSubmitDeleteTag.bind(this);
         this.handleSubmitNewTag = this.handleSubmitNewTag.bind(this);
         this.handleSubmitDropDown = this.handleSubmitDropDown.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -53,6 +52,7 @@ class TagIndexForm extends React.Component {
                 </div>
             )
         } else {
+            
             tags = this.props.tags.sort();
             // debugger
             tags = tags.map(tag => (
