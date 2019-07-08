@@ -4,7 +4,6 @@ import { merge } from 'lodash';
 
 const notebooksReducer = (state = {}, action) => {
     Object.freeze(state);
-    debugger
     switch (action.type) {
         case RECEIVE_NOTEBOOKS:
             const notebooks = {};

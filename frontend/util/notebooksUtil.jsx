@@ -29,7 +29,6 @@ export const createNotebook = notebook => {
 };
 
 export const updateNotebook = notebook => {
-    debugger
     return $.ajax({
         method: 'PATCH',
         url: `api/notebooks/${notebook.id}`,

@@ -28,7 +28,7 @@ export const createNote = (id, note) => {
 };
 
 export const updateNote = (id, note) => {
- 
+    debugger
     return $.ajax({
         method: 'PATCH',
         url: `api/notebooks/${id}/notes/${note.id}`,
