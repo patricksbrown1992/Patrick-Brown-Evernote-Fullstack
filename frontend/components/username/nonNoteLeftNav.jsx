@@ -15,8 +15,9 @@ class usernameFormLeft extends React.Component {
 
 
     updateShortcuts() {
-        this.props.getNotebooks(this.props.user).then(() => this.setState({ shortCutChecker: !this.state.shortCutChecker }));
-
+        this.props.getNotebooks(this.props.user).then(() => this.props.notebooks.forEach((notebook) => {
+            this.props.getNotes(notebook.id)
+        })).then(() => this.setState({ shortCutChecker: !this.state.shortCutChecker }));
     }
     updateSelected() {
         this.props.getNotebooks(this.props.user).then(() => this.setState({ selected: !this.state.selected }));
@@ -61,6 +62,8 @@ class usernameFormLeft extends React.Component {
         let notebooks;
         let caret;
         let shortCutCaret;
+        let allNotebooks;
+        let allNotes;
         if (this.state.selected) {
 
             caret = "fas fa-caret-down";
@@ -77,6 +80,27 @@ class usernameFormLeft extends React.Component {
 
         if (this.state.shortCutChecker) {
             shortCutCaret = "fas fa-caret-down";
+            allNotebooks = this.props.notebooks.map(notebook => {
+                if (notebook.shortcut) {
+                    return (
+                        <li key={notebook.id}>
+                            <div className="username-left-notebook-index"><i className="fas fa-book"></i><Link to={`/username/${notebook.id}`}>{notebook.name}</Link></div>
+                        </li>
+
+                    )
+
+                }
+            })
+
+            allNotes = this.props.notes.map(note => {
+                if (note.shortcut) {
+                    return (
+                        <li key={note.id}>
+                            <div className="username-left-notebook-index"><i className="fas fa-sticky-note"></i><Link to={`/username/${note.notebook_id}/notes/${note.id}`}>{note.title}</Link></div>
+                        </li>
+                    )
+                }
+            })
         } else {
             shortCutCaret = "fas fa-caret-right";
         }
@@ -94,6 +118,10 @@ class usernameFormLeft extends React.Component {
                     </form>
                     {/* <span onClick={this.handleSubmitNewNote(this.props.notebook)} className="new-note"><i className="fas fa-plus-circle fa-2x"></i><button type='submit'>New Note</button></span> */}
                     <li><i className={shortCutCaret} onClick={this.updateShortcuts}></i><i className="fas fa-star"></i>Shortcuts</li>
+                    <ul>
+                        {allNotebooks}
+                        {allNotes}
+                    </ul>
                     <li><Link to='/allnotes'><i className="fas fa-sticky-note"></i>All Notes</Link></li>
                     <li><i className={caret} onClick={this.updateSelected}></i><Link to='/notebooks'><i className="fas fa-book"></i>Notebooks</Link></li>
                     <ul>

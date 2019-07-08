@@ -93,7 +93,7 @@ class usernameFormLeft extends React.Component {
                 if(note.shortcut){
                     return (
                         <li key={note.id}>
-                            <div className="username-left-notebook-index"><i className="fas fa-book"></i><Link to={`/username/${note.notebook_id}/notes/${note.id}`}>{note.title}</Link></div>
+                            <div className="username-left-notebook-index"><i className="fas fa-sticky-note"></i><Link to={`/username/${note.notebook_id}/notes/${note.id}`}>{note.title}</Link></div>
                         </li>
                     )
                 }

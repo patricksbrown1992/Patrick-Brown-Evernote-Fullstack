@@ -9,7 +9,8 @@ import { clearNotes, getNotes } from '../../actions/noteAction';
 
 const msp = state => ({
     user: state.entities.user[state.session.id],
-    notebooks: Object.values(state.entities.notebooks)
+    notebooks: Object.values(state.entities.notebooks),
+    notes: Object.values(state.entities.notes)
 });
 
 const mdp = dispatch => ({
