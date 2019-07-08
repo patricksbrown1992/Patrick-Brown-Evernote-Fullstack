@@ -50,6 +50,7 @@ class NotebookDropDownForm extends React.Component {
                     <span onClick={this.handleSubmitEdit(this.props.notebook)}>
                         <button type='submit'>Edit Notebook Name</button>
                     </span>
+                    <br/>
                     <span onClick={this.handleSubmitShortcut(this.props.notebook)}>
                         <button type='submit'>Remove from Shortcuts</button>
                     </span>
@@ -71,6 +72,8 @@ class NotebookDropDownForm extends React.Component {
                     <span onClick={this.handleSubmitEdit(this.props.notebook)}>
                         <button type='submit'>Edit Notebook Name</button>
                     </span>
+                    
+                    <br/>
                     <span onClick={this.handleSubmitShortcut(this.props.notebook)}>
                         <button type='submits'>Add to Shortcuts</button>
                     </span>
