@@ -33,7 +33,7 @@ class TagIndexForm extends React.Component {
     sortTags(tags){
         let newTags = this.duplicateArray(tags)
         let sorted = false;
-        debugger
+        // debugger
         while(!sorted){
             sorted = true;
             for(let i = 0; i < newTags.length - 1; i++){
@@ -41,7 +41,10 @@ class TagIndexForm extends React.Component {
                 let next = newTags[i+1];
                 if (current.name > next.name){
                     sorted = false;
-                    current, next = next, current
+                    // var temp = newTags[i+1];
+                    // newTags[i+1] = newTags[i];
+                    // newTags[i] = temp;
+                    [newTags[i], newTags[i + 1]] = [newTags[i + 1], newTags[i]]
                 }
             }
         }
@@ -54,6 +57,7 @@ class TagIndexForm extends React.Component {
             let newObject = merge({}, array[i]);
             ans.push(newObject);
         }
+        // debugger
         return ans;
     }
 
@@ -80,9 +84,9 @@ class TagIndexForm extends React.Component {
                 </div>
             )
         } else {
-            
+            debugger
             tags = this.sortTags(this.props.tags);
-            // debugger
+            debugger
             tags = tags.map(tag => (
                 <li key={tag.id}>
                     <div className="tag-index-intial">{tag.name[0]}</div>
