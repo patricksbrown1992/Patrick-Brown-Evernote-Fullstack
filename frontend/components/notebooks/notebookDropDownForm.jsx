@@ -6,8 +6,20 @@ class NotebookDropDownForm extends React.Component {
         this.handleSubmitDelete = this.handleSubmitDelete.bind(this);
         this.handleSubmitEdit = this.handleSubmitEdit.bind(this);
         this.handleSubmitShortcut = this.handleSubmitShortcut.bind(this);
+        // this.handleRemoveNotebook = this.handleRemoveNotebook.bind(this);
     }
-  
+    
+
+    // handleRemoveNotebook(entity) {
+    //     return (e) => {
+    //         e.preventDefault();
+    //         const name = entity.name;
+    //         const user_id = entity.user_id;
+    //         const shortcut = !entity.shortcut;
+    //         const id = entity.id;
+    //         this.props.updateNotebook({ id: id, name: name, user_id: user_id, shortcut: shortcut })
+    //     };
+    // };
 
     handleSubmitDelete(entity) {
         // debugger

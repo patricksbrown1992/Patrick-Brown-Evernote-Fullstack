@@ -28,7 +28,6 @@ class NoteDropDownForm extends React.Component {
     handleSubmitShortcut(entity){
         return(e) => {
             e.preventDefault();
-            debugger
             let title = entity.title;
             let body = entity.body;
             let notebook_id = entity.notebook_id;

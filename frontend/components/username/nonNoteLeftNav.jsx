@@ -11,6 +11,8 @@ class usernameFormLeft extends React.Component {
         this.updateSelected = this.updateSelected.bind(this);
         this.handleLogOut = this.handleLogOut.bind(this);
         this.updateShortcuts = this.updateShortcuts.bind(this);
+        this.handleRemoveNotebook = this.handleRemoveNotebook.bind(this);
+        this.handleRemoveNote = this.handleRemoveNote.bind(this);
     }
 
 
@@ -50,6 +52,32 @@ class usernameFormLeft extends React.Component {
             this.props.noteSearch(this.state.body);
         }
     }
+
+    handleRemoveNotebook(entity){
+        return(e) => {
+            e.preventDefault();
+            const name = entity.name;
+            const user_id = entity.user_id;
+            const shortcut = !entity.shortcut;
+            const id = entity.id;
+            this.props.updateNotebook({ id: id, name: name, user_id: user_id, shortcut: shortcut })
+        };
+    };
+
+    handleRemoveNote(entity){
+        return(e) => {
+            e.preventDefault();
+            let title = entity.title;
+            let body = entity.body;
+            let notebook_id = entity.notebook_id;
+            let id = entity.notebook_id;
+            let id2 = entity.id;
+            let shortcut = !entity.shortcut;
+            let note = { title, body, notebook_id, id: id2, shortcut };
+            this.props.updateNote({ id, note })
+        }
+    }
+
     handleLogOut() {
         return (e) => {
             e.preventDefault();
@@ -84,7 +112,7 @@ class usernameFormLeft extends React.Component {
                 if (notebook.shortcut) {
                     return (
                         <li key={notebook.id}>
-                            <div className="username-left-notebook-index"><i className="fas fa-book"></i><Link to={`/username/${notebook.id}`}>{notebook.name}</Link></div>
+                            <div className="username-left-notebook-index"><i className="fas fa-book"></i><Link to={`/username/${notebook.id}`}>{notebook.name}</Link><i onClick={this.handleRemoveNotebook(notebook)} class="far fa-times-circle"></i></div>
                         </li>
 
                     )
@@ -96,7 +124,7 @@ class usernameFormLeft extends React.Component {
                 if (note.shortcut) {
                     return (
                         <li key={note.id}>
-                            <div className="username-left-notebook-index"><i className="fas fa-sticky-note"></i><Link to={`/username/${note.notebook_id}/notes/${note.id}`}>{note.title}</Link></div>
+                            <div className="username-left-notebook-index"><i className="fas fa-sticky-note"></i><Link to={`/username/${note.notebook_id}/notes/${note.id}`}>{note.title}</Link><i onClick={this.handleRemoveNote(note)}class="far fa-times-circle"></i></div>
                         </li>
                     )
                 }

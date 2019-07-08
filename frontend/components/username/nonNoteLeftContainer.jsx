@@ -2,8 +2,8 @@ import UsernameFormLeft from './nonNoteLeftNav';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/sessionActions';
 import { logOutModal } from '../../actions/modalActions';
-import { getNotebooks, clearNotebooks } from '../../actions/notebookActions';
-import { clearNotes, getNotes } from '../../actions/noteAction';
+import { getNotebooks, clearNotebooks, updateNotebook } from '../../actions/notebookActions';
+import { clearNotes, getNotes, updateNote } from '../../actions/noteAction';
 
 
 
@@ -19,7 +19,9 @@ const mdp = dispatch => ({
     clearNotebooks: () => dispatch(clearNotebooks()),
     clearNotes: () => dispatch(clearNotes()),
     getNotes: id => dispatch(getNotes(id)),
-    logOutModal: () => dispatch(logOutModal())
+    logOutModal: () => dispatch(logOutModal()),
+    updateNotebook: (id, notebook) => dispatch(updateNotebook(id, notebook)),
+    updateNote: (id, note) => dispatch(updateNote(id,note))
 
 });
 
