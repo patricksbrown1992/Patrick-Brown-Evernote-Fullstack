@@ -139,6 +139,7 @@ class NotebooksIndexForm extends React.Component {
         
         let notebooks;
         let caret;
+        let arrow;
         if (this.props.notebooks.length < 1) {
             return (
                 <div className='notebooks-index'>
@@ -195,6 +196,12 @@ class NotebooksIndexForm extends React.Component {
                     caret = "fas fa-caret-right";
                     // debugger
                 }
+                if(this.state.title){
+                    arrow = "fas fa-arrow-up"
+                } else {
+                    arrow = "fas fa-arrow-down"
+                }
+
                 return (
                    <div>
                         <li key={notebook.id} className={selectedNotebook} >
@@ -239,7 +246,7 @@ class NotebooksIndexForm extends React.Component {
                         </div>
                         <div className='index-of-notebooks'>
                             <div className='notebook-table-labs'>
-                                <h6 onClick={this.handleTitleClick}className="notebook-table-label-title">Title</h6>
+                                <h6 onClick={this.handleTitleClick} className="notebook-table-label-title">Title <i className={arrow}></i></h6>
                                 <h6 className="notebook-table-label-email">Create By</h6>
                                 <h6 className="notebook-table-label-time">Updated</h6>
                                 <h6 className="notebook-table-label-actions">Actions</h6>
