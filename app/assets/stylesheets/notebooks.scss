@@ -20,6 +20,9 @@
 .notebook-show h1 {
     font-weight: 400;
     font-family: sans-serif;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 .notebook-show ul {
     // width: 18%;

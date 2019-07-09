@@ -55,7 +55,7 @@ class NotebooksIndexForm extends React.Component {
 
     updateSelected(id) {
         // debugger
-        if(this.state.selected){
+        if(this.state.selected && this.state.selected === id){
             return () => {
                 this.props.clearNotes();
                 this.setState({ selected: false })
