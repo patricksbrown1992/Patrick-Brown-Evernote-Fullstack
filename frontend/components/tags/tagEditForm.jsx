@@ -18,13 +18,13 @@ class TagEditForm extends React.Component{
         e.preventDefault();
         const name = this.state.name;
         const user_id = Object.values(this.props.user)[0].id;
-
         const id = this.props.id;
         this.props.updateTag({ name, user_id, id }).then(() => this.props.closeModal());
     }
 
     render() {
         // debugger
+        // non-working button to prevent empty submissions
         if(this.state.name.length < 1){
             return (
                 <div className="tag-edit-modal">

@@ -3,7 +3,7 @@ import UsernameFormLeft from '../username/nonNoteLeftContainer';
 import { merge } from 'lodash';
 
 class TagIndexForm extends React.Component {
-    constructor(props) {
+    constructor(props){
         super(props);
         this.state = {tag: ''};
         this.handleSubmitNewTag = this.handleSubmitNewTag.bind(this);
@@ -36,14 +36,13 @@ class TagIndexForm extends React.Component {
         // debugger
         while(!sorted){
             sorted = true;
+            // bubble sort
             for(let i = 0; i < newTags.length - 1; i++){
                 let current = newTags[i];
                 let next = newTags[i+1];
                 if (current.name.toUpperCase() > next.name.toUpperCase()){
+                    // Swaps if first element is after second in alphabet
                     sorted = false;
-                    // var temp = newTags[i+1];
-                    // newTags[i+1] = newTags[i];
-                    // newTags[i] = temp;
                     [newTags[i], newTags[i + 1]] = [newTags[i + 1], newTags[i]]
                 }
             }
@@ -64,6 +63,7 @@ class TagIndexForm extends React.Component {
     }
 
     duplicateArray(array){
+        // deep dupes objects
         let ans = [];
         for(let i = 0; i < array.length; i++){
             let newObject = merge({}, array[i]);
@@ -83,6 +83,7 @@ class TagIndexForm extends React.Component {
 
 
     render() {
+        // first render or no tags
         let tags
         if (this.props.tags.length < 1) {
             return (
@@ -101,6 +102,7 @@ class TagIndexForm extends React.Component {
             // debugger
             tags = tags.map(tag => {
                 if(tag.duplicate){
+                    // if tag starts with same letter as one before it
                     return (
                         <li key={tag.id}>
                             {/* <div className="tag-index-intial">{tag.name[0]}</div> */}

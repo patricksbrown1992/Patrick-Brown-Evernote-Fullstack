@@ -25,6 +25,7 @@ class TagNewForm extends React.Component {
 
     render() {
         // debugger
+        // non-working button to prevent empty submissions
         if(this.state.name.length < 1){
             return (
                 <div className='new-tag-modal'>

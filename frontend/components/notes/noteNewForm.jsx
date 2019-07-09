@@ -32,6 +32,7 @@ class NoteNewForm extends React.Component {
        
     render(){
         if (this.state.title.length < 1 || this.state.body.length < 1){
+            // non-working button to prevent empty submissions
             return (
                 <div className='new-note-modal'>
                     <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
@@ -46,7 +47,7 @@ class NoteNewForm extends React.Component {
                         <input type="text" value={this.state.body} onChange={this.handleChange('body')} placeholder='Note Body' />
                     </span>
                     <br />
-                    <form onSubmit={this.handleSubmit}>
+                    <form>
                         <button className="invalid" type='submit'>Done</button>
 
                     </form>

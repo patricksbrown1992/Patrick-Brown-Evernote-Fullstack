@@ -23,6 +23,7 @@ class NotebookEditForm extends React.Component {
 
     render (){
         if (this.state.name.length < 1){
+            // non-working button to prevent empty submissions
             return (
                 <div className="notebook-edit-modal">
                     <div className="notebook-edit-top">

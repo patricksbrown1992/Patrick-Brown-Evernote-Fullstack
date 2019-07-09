@@ -27,6 +27,7 @@ class NotebookNewForm extends React.Component {
     
 
     render (){
+        // non-working button to prevent empty submissions
         if (this.state.name.length < 1){
             return (
                 <div className='new-notebook-modal'>
