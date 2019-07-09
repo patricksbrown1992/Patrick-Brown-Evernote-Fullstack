@@ -19,6 +19,7 @@ class NotebooksIndexForm extends React.Component {
         this.handleSort = this.handleSort.bind(this);
         this.duplicateArray = this.duplicateArray.bind(this);
         this.handleTitleClick = this.handleTitleClick.bind(this);
+        this.handleSortNotes = this.handleSortNotes.bind(this);
     }
 
 
@@ -50,8 +51,8 @@ class NotebooksIndexForm extends React.Component {
 
     handleSort(notebooks){
         // debugger
+        let newNotebooks = this.duplicateArray(notebooks);
         if(this.state.title === true){
-            let newNotebooks = this.duplicateArray(notebooks);
             let sorted = false;
             // debugger
             while (!sorted) {
@@ -72,7 +73,7 @@ class NotebooksIndexForm extends React.Component {
             // this.state.title = 'up';
         } else {
             
-            let newNotebooks = this.duplicateArray(notebooks);
+            
             let sorted = false;
             // debugger
             while (!sorted) {
@@ -89,6 +90,51 @@ class NotebooksIndexForm extends React.Component {
                 }
             }
             return newNotebooks;
+            // this.state.title = 'down';
+        }
+    }
+
+    handleSortNotes(notes){
+        let newNotes = this.duplicateArray(notes);
+        if (this.state.title === true) {
+            
+            let sorted = false;
+            // debugger
+            while (!sorted) {
+                sorted = true;
+                // bubble sort
+                for (let i = 0; i < newNotes.length - 1; i++) {
+                    let current = newNotes[i];
+                    let next = newNotes[i + 1];
+                    if (current.title.toUpperCase() < next.title.toUpperCase()) {
+                        // Swaps if first element is before the second in alphabet
+                        sorted = false;
+                        [newNotes[i], newNotes[i + 1]] = [newNotes[i + 1], newNotes[i]]
+                    }
+                }
+            }
+            return newNotes;
+
+            // this.state.title = 'up';
+        } else {
+
+            
+            let sorted = false;
+            // debugger
+            while (!sorted) {
+                sorted = true;
+                // bubble sort
+                for (let i = 0; i < newNotes.length - 1; i++) {
+                    let current = newNotes[i];
+                    let next = newNotes[i + 1];
+                    if (current.title.toUpperCase() > next.title.toUpperCase()) {
+                        // Swaps if first element is after the second in alphabet
+                        sorted = false;
+                        [newNotes[i], newNotes[i + 1]] = [newNotes[i + 1], newNotes[i]]
+                    }
+                }
+            }
+            return newNotes;
             // this.state.title = 'down';
         }
     }
@@ -177,7 +223,8 @@ class NotebooksIndexForm extends React.Component {
                 if(notebook.id === this.state.selected){
                     selectedNotebook = 'selectedNotebook';
                     caret = "fas fa-caret-down";
-                    notes = this.props.notes.map(note => (
+                    notes = this.handleSortNotes(this.props.notes)
+                    notes = notes.map(note => (
 
                         <li key={note.id} className="notebook-note-index-item">
                             <div className="notebook-index-note-title"><i className="fas fa-sticky-note"></i><Link to={`/username/${note.notebook_id}/notes/${note.id}`}>{note.title}</Link></div>
