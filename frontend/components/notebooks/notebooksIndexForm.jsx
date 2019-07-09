@@ -1,6 +1,7 @@
 import React from 'react';
 import UsernameFormLeft from '../username/nonNoteLeftContainer';
 // import { Link } from 'react-router-dom';
+import { merge } from 'lodash';
 import { Route, Link } from 'react-router-dom';
 // import NotebookShowForm from './notebookShowContainer2';
 
@@ -9,13 +10,17 @@ import styleDate from '../../util/styleDate';
 class NotebooksIndexForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { loaded: false, selected: false, body: ''};
+        this.state = { loaded: false, selected: false, body: '', title: false};
         this.updateSelected = this.updateSelected.bind(this);
         this.handleSubmitAdd = this.handleSubmitAdd.bind(this);
         this.handleSubmitDropDown = this.handleSubmitDropDown.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmitNoteDropDown = this.handleSubmitNoteDropDown.bind(this);
+        this.handleSort = this.handleSort.bind(this);
+        this.duplicateArray = this.duplicateArray.bind(this);
+        this.handleTitleClick = this.handleTitleClick.bind(this);
     }
+
 
     componentDidMount() {
         this.props.getNotebooks(this.props.user);
@@ -36,6 +41,67 @@ class NotebooksIndexForm extends React.Component {
             })) 
         }
        
+    }
+
+    handleTitleClick(){
+        this.setState({ title: !this.state.title }, () => this.handleSort(this.props.notebooks));
+    }
+    
+
+    handleSort(notebooks){
+        // debugger
+        if(this.state.title === true){
+            let newNotebooks = this.duplicateArray(notebooks);
+            let sorted = false;
+            // debugger
+            while (!sorted) {
+                sorted = true;
+                // bubble sort
+                for (let i = 0; i < newNotebooks.length - 1; i++) {
+                    let current = newNotebooks[i];
+                    let next = newNotebooks[i + 1];
+                    if (current.name.toUpperCase() < next.name.toUpperCase()) {
+                        // Swaps if first element is before the second in alphabet
+                        sorted = false;
+                        [newNotebooks[i], newNotebooks[i + 1]] = [newNotebooks[i + 1], newNotebooks[i]]
+                    }
+                }
+            }
+            return newNotebooks;
+
+            // this.state.title = 'up';
+        } else {
+            
+            let newNotebooks = this.duplicateArray(notebooks);
+            let sorted = false;
+            // debugger
+            while (!sorted) {
+                sorted = true;
+                // bubble sort
+                for (let i = 0; i < newNotebooks.length - 1; i++) {
+                    let current = newNotebooks[i];
+                    let next = newNotebooks[i + 1];
+                    if (current.name.toUpperCase() > next.name.toUpperCase()) {
+                        // Swaps if first element is after the second in alphabet
+                        sorted = false;
+                        [newNotebooks[i], newNotebooks[i + 1]] = [newNotebooks[i + 1], newNotebooks[i]]
+                    }
+                }
+            }
+            return newNotebooks;
+            // this.state.title = 'down';
+        }
+    }
+
+    duplicateArray(array){
+        // deep dupes objects
+        let ans = [];
+        for (let i = 0; i < array.length; i++) {
+            let newObject = merge({}, array[i]);
+            ans.push(newObject);
+        }
+        // debugger
+        return ans;
     }
 
     handleSubmitDropDown(entity) {
@@ -101,7 +167,9 @@ class NotebooksIndexForm extends React.Component {
 
             );
         } else {
-            notebooks = this.props.notebooks.map(notebook => {
+            notebooks = this.handleSort(this.props.notebooks);
+            // debugger
+            notebooks = notebooks.map(notebook => {
                 let selectedNotebook;
                 let notes;
                 
@@ -171,7 +239,7 @@ class NotebooksIndexForm extends React.Component {
                         </div>
                         <div className='index-of-notebooks'>
                             <div className='notebook-table-labs'>
-                                <h6 className="notebook-table-label-title">Title</h6>
+                                <h6 onClick={this.handleTitleClick}className="notebook-table-label-title">Title</h6>
                                 <h6 className="notebook-table-label-email">Create By</h6>
                                 <h6 className="notebook-table-label-time">Updated</h6>
                                 <h6 className="notebook-table-label-actions">Actions</h6>

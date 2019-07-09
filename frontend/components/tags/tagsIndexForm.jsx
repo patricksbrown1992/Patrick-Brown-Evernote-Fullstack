@@ -47,15 +47,15 @@ class TagIndexForm extends React.Component {
                 }
             }
 
-            for(let i = 0; i < newTags.length; i++){
-                if(i === 0){
-                    newTags[i].duplicate = false;
+        }
+        for(let i = 0; i < newTags.length; i++){
+            if(i === 0){
+                newTags[i].duplicate = false;
+            } else {
+                if (newTags[i].name[0].toUpperCase() == newTags[i-1].name[0].toUpperCase()){
+                    newTags[i].duplicate = true;
                 } else {
-                    if (newTags[i].name[0].toUpperCase() == newTags[i-1].name[0].toUpperCase()){
-                        newTags[i].duplicate = true;
-                    } else {
-                        newTags[i].duplicate = false;
-                    }
+                    newTags[i].duplicate = false;
                 }
             }
         }

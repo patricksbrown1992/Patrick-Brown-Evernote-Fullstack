@@ -109,6 +109,7 @@
 }
 .notebook-index-table-title a {
     color: #313131;
+
 }
 
 
@@ -358,4 +359,8 @@ button {
     height: 130px;
     border-bottom: 3px solid #333;
     margin-left: 30px;
+}
+
+.notebook-index-table-title a:hover{
+    text-decoration: underline;
 }
