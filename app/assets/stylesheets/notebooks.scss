@@ -331,6 +331,8 @@ button {
     display: inline-block;
     margin-left: 4%;
     color: #b3b3b3;
+    display: flex;
+    flex-direction: row;
 }
 
 .notebook-table-label-time:hover{

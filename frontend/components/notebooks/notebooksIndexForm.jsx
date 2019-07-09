@@ -20,6 +20,7 @@ class NotebooksIndexForm extends React.Component {
         this.duplicateArray = this.duplicateArray.bind(this);
         this.handleTitleClick = this.handleTitleClick.bind(this);
         this.handleSortNotes = this.handleSortNotes.bind(this);
+
     }
 
 
@@ -47,7 +48,6 @@ class NotebooksIndexForm extends React.Component {
     handleTitleClick(){
         this.setState({ title: !this.state.title }, () => this.handleSort(this.props.notebooks));
     }
-    
 
     handleSort(notebooks){
         // debugger

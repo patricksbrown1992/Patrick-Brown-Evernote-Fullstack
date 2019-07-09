@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     get 'users/verify', to: 'users#verify'
+    get 'notebooks/search', to: 'notebooks#search'
+    get 'notes/search', to: 'notes#search'
+    get 'tags/search', to: 'tags#search'
     resources :users, only: [:create] 
     resources :notebooks, only: [:index, :create, :destroy, :update]
     resources :taggings, only: [:index, :create, :destroy, :show, :update]

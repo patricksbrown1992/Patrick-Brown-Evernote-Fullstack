@@ -1,6 +1,17 @@
 class Api::NotebooksController < ApplicationController
     before_action :require_logged_in
 
+    def search
+        if params[:id] == ""
+            @notebooks = []
+        else
+            str = "%#{params[:id]}%"
+            @notebooks = Notebook.where("UPPER(notebooks.name) LIKE UPPER(:query)", query: str)
+            @notebooks = @notebooks.uniq
+        end
+        render @notebooks, status: 200
+
+    end
 
     def show
         @notebook = Notebook.find(params[:id])
