@@ -145,13 +145,13 @@ class usernameFormLeft extends React.Component {
                     </form>
                     <span onClick={this.handleSubmitNewNote(this.props.notebook)} className="new-note"><i className="fas fa-plus-circle fa-2x"></i><button type='submit'>New Note</button></span>
                     <li><i className={shortCutCaret} onClick={this.updateShortcuts}></i><i className="fas fa-star"></i>Shortcuts</li>
-                    <ul>
+                    <ul className="username-left-shortcuts-ul">
                         {allNotebooks}
                         {allNotes}
                     </ul>
                     <li><Link to='/allnotes'><i className="fas fa-sticky-note"></i>All Notes</Link></li>
                     <li><i className={caret} onClick={this.updateSelected}></i><Link to='/notebooks'><i className="fas fa-book"></i>Notebooks</Link></li>
-                    <ul>
+                    <ul className="username-left-ul">
                         {notebooks}
                     </ul>
                     {/* <li><i className="fas fa-user-friends"></i>Shared with Me</li> */}
