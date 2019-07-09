@@ -39,7 +39,7 @@ class TagIndexForm extends React.Component {
             for(let i = 0; i < newTags.length - 1; i++){
                 let current = newTags[i];
                 let next = newTags[i+1];
-                if (current.name > next.name){
+                if (current.name.toUpperCase() > next.name.toUpperCase()){
                     sorted = false;
                     // var temp = newTags[i+1];
                     // newTags[i+1] = newTags[i];
