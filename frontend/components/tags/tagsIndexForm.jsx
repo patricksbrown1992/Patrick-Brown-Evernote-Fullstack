@@ -47,6 +47,18 @@ class TagIndexForm extends React.Component {
                     [newTags[i], newTags[i + 1]] = [newTags[i + 1], newTags[i]]
                 }
             }
+
+            for(let i = 0; i < newTags.length; i++){
+                if(i === 0){
+                    newTags[i].duplicate = false;
+                } else {
+                    if (newTags[i].name[0].toUpperCase() == newTags[i-1].name[0].toUpperCase()){
+                        newTags[i].duplicate = true;
+                    } else {
+                        newTags[i].duplicate = false;
+                    }
+                }
+            }
         }
         return newTags;
     }
@@ -87,12 +99,23 @@ class TagIndexForm extends React.Component {
             // debugger
             tags = this.sortTags(this.props.tags);
             // debugger
-            tags = tags.map(tag => (
-                <li key={tag.id}>
-                    <div className="tag-index-intial">{tag.name[0]}</div>
-                    <div className="tag-name">{tag.name}<button onClick={this.handleSubmitDropDown(tag)} className='chevron-down-button'><i class="fas fa-chevron-down"></i></button></div>
-                </li>
-            ))
+            tags = tags.map(tag => {
+                if(tag.duplicate){
+                    return (
+                        <li key={tag.id}>
+                            {/* <div className="tag-index-intial">{tag.name[0]}</div> */}
+                            <div className="tag-name">{tag.name}<button onClick={this.handleSubmitDropDown(tag)} className='chevron-down-button'><i class="fas fa-chevron-down"></i></button></div>
+                        </li>
+                    )
+                } else {
+                    return (
+                    <li key={tag.id}>
+                        <div className="tag-index-intial">{tag.name[0].toUpperCase()}</div>
+                        <div className="tag-name">{tag.name}<button onClick={this.handleSubmitDropDown(tag)} className='chevron-down-button'><i class="fas fa-chevron-down"></i></button></div>
+                    </li>
+                )
+                }
+            })
 
             return (
                 <div className="tag-index">
