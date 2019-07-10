@@ -80,6 +80,7 @@ class NoteShowForm extends React.Component {
                 <br />
 
                 {/* <button onClick={this.handleAddTag()}>Add Study Tag</button> */}
+                <i onClick={this.handleSubmitNoteDropDown(note)} className="fas fa-ellipsis-h"></i>
             </div>
         );
 

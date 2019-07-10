@@ -7,6 +7,7 @@ class NotebookShowForm extends React.Component {
         super(props);
         this.state = { loaded: false };
         this.handleSubmit = this.handleSubmit.bind(this);
+       
     }
 
     componentDidMount() {
