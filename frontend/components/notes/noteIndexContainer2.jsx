@@ -5,7 +5,8 @@ import { getNotes, deleteNote, clearNotes } from '../../actions/noteAction';
 import { noteDropDown } from "../../actions/modalActions";
 
 const msp = (state) => ({
-    notes: Object.values(state.entities.notes)
+    notes: Object.values(state.entities.notes),
+    notebooks: Object.values(state.entities.notebooks)
 
 });
 

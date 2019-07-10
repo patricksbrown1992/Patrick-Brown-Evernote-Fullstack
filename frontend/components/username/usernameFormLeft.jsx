@@ -109,7 +109,7 @@ class usernameFormLeft extends React.Component {
                     return (
                         <li className="shortcut-notebook" key={notebook.id}>
                             <div className="username-left-notebook-index"><i className="fas fa-book"></i><Link to={`/username/${notebook.id}`}>{notebook.name}</Link></div>
-                            <i onClick={this.handleRemoveNotebook(notebook)} class="far fa-times-circle"></i>
+                            <i onClick={this.handleRemoveNotebook(notebook)} className="far fa-times-circle"></i>
                         </li>
 
                     )
@@ -122,7 +122,7 @@ class usernameFormLeft extends React.Component {
                     return (
                         <li className="shortcut-note" key={note.id}>
                             <div className="username-left-notebook-index"><i className="fas fa-sticky-note"></i><Link to={`/username/${note.notebook_id}/notes/${note.id}`}>{note.title}</Link></div>
-                            <i onClick={this.handleRemoveNote(note)} class="far fa-times-circle"></i>
+                            <i onClick={this.handleRemoveNote(note)} className="far fa-times-circle"></i>
                         </li>
                     )
                 }
