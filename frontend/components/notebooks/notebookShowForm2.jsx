@@ -6,7 +6,6 @@ class NotebookShowForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = { loaded: false };
-        this.handleSubmit = this.handleSubmit.bind(this);
         this.handleSubmitDropDown = this.handleSubmitDropDown.bind(this);
        
     }
@@ -24,18 +23,19 @@ class NotebookShowForm extends React.Component {
             this.props.notebookDropDown(entity)
         };
     }
+    
 
-    handleSubmit(e) {
+    // handleSubmit(e) {
       
-        e.preventDefault();
+    //     e.preventDefault();
         
 
-        // debugger
-        this.props.deleteNotebook(this.props.notebooks[this.props.match.params.notebook_id]).then(() => {
-        // debugger
-            return this.props.history.push('/notebooks');
-        });
-    }
+    //     // debugger
+    //     this.props.deleteNotebook().then(() => {
+    //     // debugger
+    //         return this.props.history.push('/notebooks');
+    //     });
+    // }
 
     render() {
         debugger
@@ -53,10 +53,7 @@ class NotebookShowForm extends React.Component {
                         <div className="notebook-show">
                             <div className='notebook-show-title'>
                                 <h1>{theNotebook.name}</h1>
-                                
-                                <form onSubmit={this.handleSubmit}>
-                                    <button type='submit'>Delete Notebook</button>
-                                </form>
+                                <i onClick={this.handleSubmitDropDown(this.props.notebooks[this.props.match.params.notebook_id])} className="fas fa-ellipsis-h"></i>
                             </div>
                             <NoteIndexContainer notebook={theNotebook} />
                         </div>
