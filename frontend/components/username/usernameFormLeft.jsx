@@ -144,7 +144,7 @@ class usernameFormLeft extends React.Component {
                         <input placeholder="Search all notes..." type="text"></input>
                     </form>
                     <span onClick={this.handleSubmitNewNote(this.props.notebook)} className="new-note"><i className="fas fa-plus-circle fa-2x"></i><button type='submit'>New Note</button></span>
-                    <li><i className={shortCutCaret} onClick={this.updateShortcuts}></i><i className="fas fa-star"></i>Shortcuts</li>
+                    <li  className="shortcuts-li" onClick={this.updateShortcuts}><i className={shortCutCaret}></i><i className="fas fa-star"></i>Shortcuts</li>
                     <ul className="username-left-shortcuts-ul">
                         {allNotebooks}
                         {allNotes}
