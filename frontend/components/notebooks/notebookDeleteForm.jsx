@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
 class NotebookDeleteForm extends React.Component {
     constructor(props) {
@@ -7,8 +8,12 @@ class NotebookDeleteForm extends React.Component {
     }
 
     handleSubmit(e) {
+        debugger
         e.preventDefault();
         this.props.deleteNotebook(this.props.notebook).then(() => this.props.closeModal());
+        // this.props.closeModal()
+        return this.props.history.push('/notebooks');
+        // return <Redirect to='/notebooks' />
     }
 
 
