@@ -88,13 +88,13 @@ class usernameFormLeft extends React.Component {
 
     render() {
         let notebooks;
-        let caret;
+        let leftcaret;
         let shortCutCaret;
         let allNotebooks;
         let allNotes;
         if (this.state.selected) {
 
-            caret = "fas fa-caret-down";
+            leftcaret = "fas fa-caret-down";
             notebooks = this.props.notebooks.map(notebook => (
                 <li key={notebook.id}>
                     <div className="username-left-notebook-index"><i className="fas fa-book"></i><Link to={`/username/${notebook.id}`}>{notebook.name}</Link></div>
@@ -103,7 +103,7 @@ class usernameFormLeft extends React.Component {
         } else {
 
             notebooks = '';
-            caret = "fas fa-caret-right";
+            leftcaret = "fas fa-caret-right";
         }
 
         if (this.state.shortCutChecker) {
@@ -153,7 +153,7 @@ class usernameFormLeft extends React.Component {
                         {allNotes}
                     </ul>
                     <li><Link to='/allnotes'><i className="fas fa-sticky-note"></i>All Notes</Link></li>
-                    <li><i className={caret} onClick={this.updateSelected}></i><Link to='/notebooks'><i className="fas fa-book"></i>Notebooks</Link></li>
+                    <li><i className={leftcaret} onClick={this.updateSelected}></i><Link to='/notebooks'><i className="fas fa-book"></i>Notebooks</Link></li>
                     <ul className="username-left-ul">
                         {notebooks}
                     </ul>

@@ -7,6 +7,7 @@ class NotebookShowForm extends React.Component {
         super(props);
         this.state = { loaded: false };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleSubmitDropDown = this.handleSubmitDropDown.bind(this);
        
     }
 
@@ -15,7 +16,13 @@ class NotebookShowForm extends React.Component {
         this.props.getNotebooks(this.props.user).then(() => this.setState({ loaded: true }));
         this.props.clearNotes();
         // this.props.clearNotes();
+    }
 
+    handleSubmitDropDown(entity) {
+        return (e) => {
+            e.preventDefault();
+            this.props.notebookDropDown(entity)
+        };
     }
 
     handleSubmit(e) {

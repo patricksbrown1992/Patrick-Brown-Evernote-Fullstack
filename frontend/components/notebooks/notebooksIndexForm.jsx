@@ -224,19 +224,18 @@ class NotebooksIndexForm extends React.Component {
                     selectedNotebook = 'selectedNotebook';
                     caret = "fas fa-caret-down";
                     notes = this.handleSortNotes(this.props.notes)
-                    notes = notes.map(note => (
-
-                        <li key={note.id} className="notebook-note-index-item">
-                            <div className="notebook-index-note-title"><i className="fas fa-sticky-note"></i><Link to={`/username/${note.notebook_id}/notes/${note.id}`}>{note.title}</Link></div>
-                            <div className="notebook-index-note-email"><h4>{this.props.user.email}</h4></div>
-                            <div className="notebook-index-note-time"><h4>{styleDate(note.updated_at)}</h4></div>
-                            {/* <div className="notebook-index-table-button"><button onClick={this.handleSubmitEdit(notebook)} type='submit'><i className="fas fa-ellipsis-h"></i>Rename Notebook</button></div> */}
-                            <div className="notebook-index-note-button"><i onClick={this.handleSubmitNoteDropDown(note)} className="fas fa-ellipsis-h"></i></div>
-                            {/* <i class="fas fa-caret-down"></i> */}
-
-
-                        </li>
-                    ));
+                    notes = notes.map(note => {
+                        if(note.notebook_id === notebook.id){
+                            <li key={note.id} className="notebook-note-index-item">
+                                <div className="notebook-index-note-title"><i className="fas fa-sticky-note"></i><Link to={`/username/${note.notebook_id}/notes/${note.id}`}>{note.title}</Link></div>
+                                <div className="notebook-index-note-email"><h4>{this.props.user.email}</h4></div>
+                                <div className="notebook-index-note-time"><h4>{styleDate(note.updated_at)}</h4></div>
+                                {/* <div className="notebook-index-table-button"><button onClick={this.handleSubmitEdit(notebook)} type='submit'><i className="fas fa-ellipsis-h"></i>Rename Notebook</button></div> */}
+                                <div className="notebook-index-note-button"><i onClick={this.handleSubmitNoteDropDown(note)} className="fas fa-ellipsis-h"></i></div>
+                                {/* <i class="fas fa-caret-down"></i> */}
+                            </li>
+                        }
+                    });
                 } else {
                     selectedNotebook = 'notebook-index-table';
                     notes = '';
