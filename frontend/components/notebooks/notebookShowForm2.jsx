@@ -11,8 +11,9 @@ class NotebookShowForm extends React.Component {
 
     componentDidMount() {
 
-        // this.props.getNotebooks(this.props.user).then(() => this.setState({ loaded: true })).then(() => this.props.clearNotes());
+        this.props.getNotebooks(this.props.user).then(() => this.setState({ loaded: true }));
         this.props.clearNotes();
+        // this.props.clearNotes();
 
     }
 
@@ -29,6 +30,7 @@ class NotebookShowForm extends React.Component {
     }
 
     render() {
+        debugger
         let theNotebook;
         theNotebook = this.props.notebooks[this.props.match.params.notebook_id];
             if (!theNotebook) {
