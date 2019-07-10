@@ -14,7 +14,7 @@ class NotebookShowForm extends React.Component {
     componentDidMount() {
 
         this.props.getNotebooks(this.props.user).then(() => this.setState({ loaded: true }));
-        this.props.clearNotes();
+        // this.props.clearNotes();
         // this.props.clearNotes();
     }
 

@@ -14,6 +14,15 @@ class NoteShowForm extends React.Component {
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+      
+        this.handleSubmitDropDown = this.handleSubmitDropDown.bind(this);
+    }
+
+    handleSubmitDropDown(entity) {
+        return (e) => {
+            e.preventDefault();
+            this.props.noteDropDown(entity)
+        };
     }
 
     componentWillReceiveProps(newProps) {
@@ -63,6 +72,7 @@ class NoteShowForm extends React.Component {
     }
 
     render() {
+        debugger
         if(this.state.change){
             return <Redirect to={`/username/${this.state.notebook_id}`} />
         }
@@ -80,7 +90,7 @@ class NoteShowForm extends React.Component {
                 <br />
 
                 {/* <button onClick={this.handleAddTag()}>Add Study Tag</button> */}
-                <i onClick={this.handleSubmitNoteDropDown(note)} className="fas fa-ellipsis-h"></i>
+                <i onClick={this.handleSubmitDropDown(note)} className="fas fa-ellipsis-h"></i>
             </div>
         );
 
