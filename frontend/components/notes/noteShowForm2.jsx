@@ -1,28 +1,37 @@
 import React from 'react';
 import ReactQuill from 'react-quill';
-
+import { Redirect } from 'react-router-dom';
 
 class NoteShowForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = this.props.note;
+        this.state = {
+            title: this.props.note.title,
+            body: this.props.note.body,
+            notebook_id: this.props.note.notebook_id,
+            id: this.props.note.id,
+            change: false,
+        }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentWillReceiveProps(newProps) {
-        // debugger
+        debugger
         if (newProps.note == undefined) {
-            return this.props.history.push(`/username/${this.state.notebook_id}`);
-        }
-        // debugger
-        if (newProps.note.id !== this.props.note.id) {
-            this.setState({
-                id: newProps.note.id,
-                title: newProps.note.title,
-                body: newProps.note.body,
-                notebook_id: newProps.note.notebook_id
-            });
+            this.setState({change: true})
+
+           
+        } else {
+
+            if (newProps.note.id !== this.props.note.id) {
+                this.setState({
+                    id: newProps.note.id,
+                    title: newProps.note.title,
+                    body: newProps.note.body,
+                    notebook_id: newProps.note.notebook_id
+                });
+            }
         }
     }
 
@@ -54,9 +63,11 @@ class NoteShowForm extends React.Component {
     }
 
     render() {
-
+        if(this.state.change){
+            return <Redirect to={`/username/${this.state.notebook_id}`} />
+        }
         let note = this.props.note;
-        // debugger
+        debugger
         return (
             <div className="right-nav">
 
