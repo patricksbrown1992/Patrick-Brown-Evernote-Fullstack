@@ -251,7 +251,7 @@ class NotebooksIndexForm extends React.Component {
                 return (
                    <div>
                         <li key={notebook.id} className={selectedNotebook} >
-                            <div className="notebook-index-table-title"> <i onClick={this.updateSelected(notebook.id)} className={caret}></i> <Link to={`/username/${notebook.id}`} ><i className="fas fa-book"></i>{notebook.name}</Link></div>
+                            <div className="notebook-index-table-title"> <i onClick={this.updateSelected(notebook.id)} className={caret}></i> <Link to={`/username/${notebook.id}`}><i className="fas fa-book"></i>{notebook.name}</Link></div>
                             <div className="notebook-index-table-email"><h4>{this.props.user.email}</h4></div>
                             <div className="notebook-index-table-time"><h4>{styleDate(notebook.updated_at)}</h4></div>
                             {/* <div className="notebook-index-table-button"><button onClick={this.handleSubmitEdit(notebook)} type='submit'><i className="fas fa-ellipsis-h"></i>Rename Notebook</button></div> */}

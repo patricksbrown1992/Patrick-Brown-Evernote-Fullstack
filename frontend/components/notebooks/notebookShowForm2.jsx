@@ -7,16 +7,34 @@ class NotebookShowForm extends React.Component {
         super(props);
         this.state = { loaded: false };
         this.handleSubmitDropDown = this.handleSubmitDropDown.bind(this);
+        // this.onMount = this.onMount.bind(this);
        
     }
 
     componentDidMount() {
-
+        debugger
+        this.props.clearNotes();
         this.props.getNotebooks(this.props.user).then(() => this.setState({ loaded: true }));
-        // this.props.clearNotes();
-        // this.props.clearNotes();
     }
 
+    componentDidUpdate(prevProps){
+        debugger
+        if (prevProps.match.params.notebook_id !== this.props.match.params.notebook_id){
+            this.props.clearNotes();
+            this.props.getNotebooks(this.props.user).then(() => this.props.getNotes(parseInt(this.props.match.params.notebook_id))).then( () => this.setState({ loaded: true }));
+            // this.props.getNotebooks(this.props.user).then(() => this.props.notebooks.forEach((notebook) => {
+            //     this.props.getNotes(notebook.id)
+            // }));
+        }
+    }
+    // componentWillReceiveProps(newProps){
+    //     debugger
+    //     this.setState({ loaded: false })
+    //     this.props.clearNotes()
+    //     this.props.getNotebooks(this.props.user).then(() => this.setState({ loaded: true }));
+    // }
+
+    
     handleSubmitDropDown(entity) {
         return (e) => {
             e.preventDefault();
@@ -38,10 +56,12 @@ class NotebookShowForm extends React.Component {
     // }
 
     render() {
+        // this.onMount();
         debugger
         let theNotebook;
         theNotebook = this.props.notebooks[this.props.match.params.notebook_id];
-            if (!theNotebook) {
+        
+            if (!this.state.loaded) {
                 return null;
             }
             return (
