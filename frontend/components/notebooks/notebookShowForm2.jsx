@@ -13,13 +13,13 @@ class NotebookShowForm extends React.Component {
     }
 
     componentDidMount() {
-        debugger
+        // debugger
         this.props.clearNotes();
         this.props.getNotebooks(this.props.user).then(() => this.setState({ loaded: true }));
     }
 
     componentDidUpdate(prevProps){
-        debugger
+        // debugger
         if (prevProps.match.params.notebook_id !== this.props.match.params.notebook_id){
             this.props.clearNotes();
             this.props.getNotebooks(this.props.user).then(() => this.props.getNotes(parseInt(this.props.match.params.notebook_id))).then( () => this.setState({ loaded: true }));

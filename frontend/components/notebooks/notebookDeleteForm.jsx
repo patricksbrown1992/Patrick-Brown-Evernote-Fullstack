@@ -8,7 +8,7 @@ class NotebookDeleteForm extends React.Component {
     }
 
     handleSubmit(e) {
-        debugger
+        // debugger
         e.preventDefault();
         this.props.deleteNotebook(this.props.notebook)
         .then( () => this.props.notes.forEach( (note) => {

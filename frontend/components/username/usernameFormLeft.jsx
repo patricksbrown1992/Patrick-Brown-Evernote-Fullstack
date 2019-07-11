@@ -12,7 +12,9 @@ class usernameFormLeft extends React.Component {
         this.updateShortcuts = this.updateShortcuts.bind(this);
         this.handleRemoveNotebook = this.handleRemoveNotebook.bind(this);
         this.handleRemoveNote = this.handleRemoveNote.bind(this);
+        this.handleClearSearch = this.handleClearSearch.bind(this);
     }
+
 
     updateSelected() {
         this.props.getNotebooks(this.props.user).then(() => this.setState({selected: !this.state.selected}));
@@ -79,6 +81,12 @@ class usernameFormLeft extends React.Component {
             this.props.logOutModal();
         }
     }
+    handleClearSearch(){
+        return(e) => {
+            e.preventDefault();
+            this.props.clearSearch()
+        }
+    }
 
 
     render() {
@@ -141,7 +149,7 @@ class usernameFormLeft extends React.Component {
                     
                     <li className = "user-email" onClick={this.handleLogOut()}className="user-email">{this.props.user.email}</li>
                     <form onSubmit={this.handleNoteSearch}>
-                        <input onChange={this.handleChange()}  value={this.state.search}placeholder="Search all notes..." type="text"></input>
+                        <input onChange={this.handleChange()} value={this.state.search} placeholder="Search all notes..." type="text" ><i onClick={this.handleClearSearch()} className="far fa-times-circle"></i></input>
                     </form>
                     <span onClick={this.handleSubmitNewNote(this.props.notebook)} className="new-note"><i className="fas fa-plus-circle fa-2x"></i><button type='submit'>New Note</button></span>
                     <li  className="shortcuts-li" onClick={this.updateShortcuts}><i className={shortCutCaret}></i><i className="fas fa-star"></i>Shortcuts</li>

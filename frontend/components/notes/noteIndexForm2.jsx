@@ -30,11 +30,11 @@ class NotesIndexForm extends React.Component {
         for(let i = 0; i < notes.length; i++){
             if (notes[i].notebook_id == parseInt(this.props.match.params.notebook_id)){
                 let newObject = merge({}, notes[i]);
-                debugger
+                // debugger
                 ans.push(newObject);
             }
         }
-        debugger
+        // debugger
         return ans;
     }
 

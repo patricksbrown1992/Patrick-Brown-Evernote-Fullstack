@@ -74,7 +74,7 @@ main {
     color: white;
     margin-left: 10px;
     outline: none;
-    width: 85%;
+    width: 75%;
     background-color: darkslategray;
     font-size: 14px;
 }
@@ -181,4 +181,22 @@ main {
 }
 .fa-ellipsis-h{
     cursor: pointer;
+}
+
+.search-circle{
+    color: white;
+    size: 24px;
+    
+}
+.hidden-circle{
+    display: none;
+    height: 0;
+    opacity: 0;
+}
+
+.left-search-input{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
 }
