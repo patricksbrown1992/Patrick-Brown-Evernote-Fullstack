@@ -39,10 +39,9 @@ class NotebooksIndexForm extends React.Component {
     
 
     handleChange() {
+        debugger
         return (e) => {
-            this.setState({ body: e.target.value }, () => this.props.notebooks.filter(notebook => {
-                notebook.name.includes(this.state.body)     
-            })) 
+            this.setState({ body: e.target.value })  
         }
     }
 
@@ -50,19 +49,9 @@ class NotebooksIndexForm extends React.Component {
         this.setState({ title: !this.state.title }, () => this.handleSort(this.props.notebooks));
     }
 
-    // onlyCorrectNotes(array, notebook_id){
-    //     let ans = [];
-    //     let notes = this.duplicateArray(array);
-    //     for(let i =0; i < notes.length; i++){
-    //         if(notes[i].notebook_id === notebook_id){
-    //             ans.push(notes[i])
-    //         }
-    //     }
-    //     return ans;
-    // }
+ 
 
     handleSort(notebooks){
-        // debugger
         let newNotebooks = this.duplicateArray(notebooks);
         if(this.state.title === true){
             let sorted = false;
@@ -164,7 +153,6 @@ class NotebooksIndexForm extends React.Component {
 
 
     updateSelected(id) {
-        debugger
         if((this.state.selected === 0 || this.state.selected) && this.state.selected === id){
             return (e) => {
                 e.preventDefault();
@@ -197,7 +185,7 @@ class NotebooksIndexForm extends React.Component {
                         <div className="notebook-index-top-div">
                             <div className="notebook-index-top">
                                 <h1>Notebooks</h1>
-                                <input placeholder='Find Notebooks...' type="text" onChange={this.handleChange} />
+                                <input placeholder='Find Notebooks...' type="text" value={this.state.body} onChange={this.handleChange()} />
                             </div>
                             <div className="notebook-index-header2">
 
@@ -216,6 +204,9 @@ class NotebooksIndexForm extends React.Component {
             );
         } else {
             notebooks = this.handleSort(this.props.notebooks);
+            notebooks = notebooks.filter(notebook => (
+                notebook.name.includes(this.state.body))
+            )   
             debugger
             notebooks = notebooks.map(notebook => {
                 let selectedNotebook;
@@ -228,7 +219,7 @@ class NotebooksIndexForm extends React.Component {
                     notes = this.handleSortNotes(this.props.notes);
                     notes = notes.map(note => {
                         if(note.notebook_id === notebook.id){
-                            debugger
+                            // debugger
                             return(
                             <li key={note.id} className="notebook-note-index-item">
                                 <div className="notebook-index-note-title"><i className="fas fa-sticky-note"></i><Link to={`/username/${note.notebook_id}/notes/${note.id}`}>{note.title}</Link></div>
@@ -245,7 +236,6 @@ class NotebooksIndexForm extends React.Component {
                     selectedNotebook = 'notebook-index-table';
                     notes = '';
                     caret = "fas fa-caret-right";
-                    // debugger
                 }
                 if(this.state.title){
                     arrow = "fas fa-arrow-up"
@@ -282,7 +272,7 @@ class NotebooksIndexForm extends React.Component {
                         <div className= "notebook-index-top-div">
                             <div className="notebook-index-top">
                                 <h1>Notebooks</h1>
-                                <input placeholder='Find Notebooks...' type="text" onChange={this.handleChange}/>
+                                <input placeholder='Find Notebooks...' value={this.state.body} type="text" onChange={this.handleChange()}/>
                             </div>
                             <div className="notebook-index-header2">
                             
