@@ -7,8 +7,8 @@ class AllNoteForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = { loaded: false }
-        this.handleSubmitDelete = this.handleSubmitDelete.bind(this);
         this.duplicateArray = this.duplicateArray.bind(this);
+        this.handleSubmitNoteDropDown = this.handleSubmitNoteDropDown.bind(this);
     }
 
     componentDidMount(){
@@ -20,12 +20,13 @@ class AllNoteForm extends React.Component {
         // .then( () => this.props.getNotes())
     }
 
-    handleSubmitDelete(note) {
+    handleSubmitNoteDropDown(entity) {
         return (e) => {
             e.preventDefault();
-            this.props.deleteNote(note);
+            this.props.noteDropDown(entity)
         };
     }
+
 
     duplicateArray(array) {
         // deep dupes objects
@@ -56,7 +57,7 @@ class AllNoteForm extends React.Component {
                     {styleDate(note.updated_at)}
                     <br />
 
-                    <button onClick={this.handleSubmitDelete(note)} type="submit">Delete Note</button>
+                    <i onClick={this.handleSubmitNoteDropDown(note)} className="fas fa-ellipsis-h"></i>
 
 
                 </li>
