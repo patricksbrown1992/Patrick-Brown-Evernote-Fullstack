@@ -29,6 +29,7 @@
     // height: 100%;
     grid-area: 2 / 1 / 3 / 2;
     border-right: 1px solid lightgray;
+    overflow: scroll;
     // min-width: 350px;
 }
 .notebook-show-title {
@@ -179,7 +180,7 @@ button {
     margin-top: 50px;
 }
 .notebooks-index-right {
-    
+    overflow: scroll;
     display: flex;
     height: 100%;
     flex-direction: column;
