@@ -8,7 +8,8 @@ import {withRouter} from 'react-router-dom';
 const msp = state => ({
     user: state.entities.user[state.session.id],
     notebooks: Object.values(state.entities.notebooks),
-    notes: Object.values(state.entities.notes)
+    notes: Object.values(state.entities.notes),
+    search: state.ui.search
 });
 
 const mdp = dispatch => ({

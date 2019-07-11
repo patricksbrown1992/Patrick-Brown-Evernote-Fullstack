@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 class usernameFormLeft extends React.Component {
     constructor(props) {
         super(props);
-        this.handleChange = this.handleChange.bind(this);s
+        this.handleChange = this.handleChange.bind(this);
         this.state = { body: '', selected: false, shortCutChecker: false, search: this.props.search};
         this.updateSelected = this.updateSelected.bind(this);
         this.handleLogOut = this.handleLogOut.bind(this);
@@ -134,6 +134,7 @@ class usernameFormLeft extends React.Component {
 
       
         return (
+            
 
             <div className="left-nav">
                 <ul>

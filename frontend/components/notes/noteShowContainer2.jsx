@@ -11,7 +11,8 @@ const msp = (state, ownProps) => {
 
         user: state.entities.user[state.session.id],
         notes: Object.values(state.entities.notes),
-        note: note
+        note: note,
+        search: state.ui.search
     }
 };
 

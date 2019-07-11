@@ -6,7 +6,8 @@ import { noteDropDown } from "../../actions/modalActions";
 
 const msp = (state) => ({
     notes: Object.values(state.entities.notes),
-    notebooks: Object.values(state.entities.notebooks)
+    notebooks: Object.values(state.entities.notebooks),
+    search: state.ui.search
 
 });
 

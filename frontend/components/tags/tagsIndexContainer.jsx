@@ -6,7 +6,8 @@ import { openAddTagModal, editTagModal, deleteTagModal, tagDropDown } from '../.
 
 const msp = state => ({
     user: state.entities.user[state.session.id],
-    tags: Object.values(state.entities.tags)
+    tags: Object.values(state.entities.tags),
+    search: state.ui.search
 });
 
 const mdp = dispatch => ({

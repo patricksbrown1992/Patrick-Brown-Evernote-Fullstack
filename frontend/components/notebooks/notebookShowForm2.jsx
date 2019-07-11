@@ -1,5 +1,6 @@
 import React from 'react';
 import NoteIndexContainer from '../notes/noteIndexContainer2';
+import {  Redirect } from 'react-router-dom';
 import LeftNav from '../username/usernameLeftContainer';
 
 class NotebookShowForm extends React.Component {
@@ -57,10 +58,13 @@ class NotebookShowForm extends React.Component {
 
     render() {
         // this.onMount();
-        debugger
-        let theNotebook;
-        theNotebook = this.props.notebooks[this.props.match.params.notebook_id];
-        
+        if (this.props.search.length > 0) {
+            return <Redirect to='/allnotes' />;
+        } else {
+  
+            let theNotebook;
+            theNotebook = this.props.notebooks[this.props.match.params.notebook_id];
+            
             if (!this.state.loaded) {
                 return null;
             }
@@ -86,6 +90,7 @@ class NotebookShowForm extends React.Component {
             )
         }
     }
+}
 
 
 

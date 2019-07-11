@@ -72,28 +72,30 @@ class NoteShowForm extends React.Component {
     }
 
     render() {
-        debugger
-        if(this.state.change){
-            return <Redirect to={`/username/${this.state.notebook_id}`} />
+        if (this.props.search.length > 0) {
+            return <Redirect to='/allnotes' />;
+        } else {
+            if(this.state.change){
+                return <Redirect to={`/username/${this.state.notebook_id}`} />
+            }
+            let note = this.props.note;
+    
+            return (
+                <div className="right-nav">
+
+                    <h1>{note.title}</h1>
+                    <br />
+                    <button onClick={this.handleSubmit()} type='submit'>Edit Body</button>
+                    <br />
+                    <br />
+                    <ReactQuill value={this.state.body} onChange={this.handleChange} />
+                    <br />
+
+                    {/* <button onClick={this.handleAddTag()}>Add Study Tag</button> */}
+                    <i onClick={this.handleSubmitDropDown(note)} className="fas fa-ellipsis-h"></i>
+                </div>
+            );
         }
-        let note = this.props.note;
-        debugger
-        return (
-            <div className="right-nav">
-
-                <h1>{note.title}</h1>
-                <br />
-                <button onClick={this.handleSubmit()} type='submit'>Edit Body</button>
-                <br />
-                <br />
-                <ReactQuill value={this.state.body} onChange={this.handleChange} />
-                <br />
-
-                {/* <button onClick={this.handleAddTag()}>Add Study Tag</button> */}
-                <i onClick={this.handleSubmitDropDown(note)} className="fas fa-ellipsis-h"></i>
-            </div>
-        );
-
     }
 
 }

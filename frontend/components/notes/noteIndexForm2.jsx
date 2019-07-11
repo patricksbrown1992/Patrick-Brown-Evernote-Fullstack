@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link, Route, withRouter } from 'react-router-dom';
+import { Link, Route, withRouter, Redirect } from 'react-router-dom';
 import NoteShowForm from '../notes/noteShowContainer2';
 import styleDate from '../../util/styleDate';
 import { merge } from 'lodash';
+
 
 class NotesIndexForm extends React.Component {
     constructor(props) {
@@ -55,52 +56,57 @@ class NotesIndexForm extends React.Component {
 
     render() {
         // debugger
-        
-        if (!this.state.loaded) {
-            
-            return null;
+        if(this.props.search.length > 0){
+            return <Redirect to='/allnotes'/>;
         } else {
-            let notes = this.onlyCorrectNotes(this.props.notes);
-
-            notes = notes.map(note => (
-                <li key={note.id} className="note-index-title" ><Link to={`/username/${this.props.notebook.id}/notes/${note.id}`} > <h1>{note.title}</h1> </Link>
-                    <Link to={`/username/${this.props.notebook.id}/notes/${note.id}`} > <h3>{note.body}</h3> </Link>
-                    
-
-                    Last updated:
-                    <br />
-                    {styleDate(note.updated_at)}
-                    <br />
-
-                    {/* <button onClick={this.handleSubmitDelete(note)} type="submit">Delete Note</button> */}
-                    <i onClick={this.handleSubmitNoteDropDown(note)} className="fas fa-ellipsis-h"></i>
-
-
-                </li>
-            ));
-
-            // let theNote;
-            // this.props.notes.forEach(note => {
-            //     debugger
-            //     if (note.id === parseInt(this.props.match.params.note_id)){
-            //         theNote = note;
-            //     }
-            // })
-
-            return (
-                <>
-                    {/* <div className="center-nav"> */}
-                    <ul >
-
-                        {notes}
-
-                    </ul>
-                    {/* <NoteShowForm note={theNote} /> */}
-                    <Route path={`${this.props.match.url}/notes/:note_id`} component={NoteShowForm} />
-                    {/* </div> */}
-                </>
-            )
+            
+            if (!this.state.loaded) {
+                
+                return null;
+            } else {
+                let notes = this.onlyCorrectNotes(this.props.notes);
+    
+                notes = notes.map(note => (
+                    <li key={note.id} className="note-index-title" ><Link to={`/username/${this.props.notebook.id}/notes/${note.id}`} > <h1>{note.title}</h1> </Link>
+                        <Link to={`/username/${this.props.notebook.id}/notes/${note.id}`} > <h3>{note.body}</h3> </Link>
+                        
+    
+                        Last updated:
+                        <br />
+                        {styleDate(note.updated_at)}
+                        <br />
+    
+                        {/* <button onClick={this.handleSubmitDelete(note)} type="submit">Delete Note</button> */}
+                        <i onClick={this.handleSubmitNoteDropDown(note)} className="fas fa-ellipsis-h"></i>
+    
+    
+                    </li>
+                ));
+    
+                // let theNote;
+                // this.props.notes.forEach(note => {
+                //     debugger
+                //     if (note.id === parseInt(this.props.match.params.note_id)){
+                //         theNote = note;
+                //     }
+                // })
+    
+                return (
+                    <>
+                        {/* <div className="center-nav"> */}
+                        <ul >
+    
+                            {notes}
+    
+                        </ul>
+                        {/* <NoteShowForm note={theNote} /> */}
+                        <Route path={`${this.props.match.url}/notes/:note_id`} component={NoteShowForm} />
+                        {/* </div> */}
+                    </>
+                )
+            }
         }
+        
     }
 }
 export default withRouter(NotesIndexForm);

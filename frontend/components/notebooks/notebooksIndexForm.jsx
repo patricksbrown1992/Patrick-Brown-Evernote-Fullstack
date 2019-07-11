@@ -1,8 +1,7 @@
 import React from 'react';
 import UsernameFormLeft from '../username/nonNoteLeftContainer';
-// import { Link } from 'react-router-dom';
 import { merge } from 'lodash';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 // import NotebookShowForm from './notebookShowContainer2';
 
 import styleDate from '../../util/styleDate';
@@ -170,135 +169,139 @@ class NotebooksIndexForm extends React.Component {
     }
 
     render() {
+        if (this.props.search.length > 0) {
+            return <Redirect to='/allnotes' />;
+        } else {
         
-        let notebooks;
-        let caret;
-        let arrow;
-        if (this.props.notebooks.length < 1) {
-            return (
-                <div className='notebooks-index'>
+            let notebooks;
+            let caret;
+            let arrow;
+            if (this.props.notebooks.length < 1) {
+                return (
+                    <div className='notebooks-index'>
 
-                    <UsernameFormLeft />
+                        <UsernameFormLeft />
 
-                    <div className='notebooks-index-right'>
-                        <div className="notebook-index-top-div">
-                            <div className="notebook-index-top">
-                                <h1>Notebooks</h1>
-                                <input placeholder='Find Notebooks...' type="text" value={this.state.body} onChange={this.handleChange()} />
+                        <div className='notebooks-index-right'>
+                            <div className="notebook-index-top-div">
+                                <div className="notebook-index-top">
+                                    <h1>Notebooks</h1>
+                                    <input placeholder='Find Notebooks...' type="text" value={this.state.body} onChange={this.handleChange()} />
+                                </div>
+                                <div className="notebook-index-header2">
+
+
+                                    <h3>My notebook list</h3>
+                                    <form onSubmit={this.handleSubmitAdd}>
+
+                                        <button className='new-notebook-button' type='submit'><i className="fas fa-book-medical"></i>New Notebook</button>
+                                    </form>
+                                </div>
+
                             </div>
-                            <div className="notebook-index-header2">
-
-
-                                <h3>My notebook list</h3>
-                                <form onSubmit={this.handleSubmitAdd}>
-
-                                    <button className='new-notebook-button' type='submit'><i className="fas fa-book-medical"></i>New Notebook</button>
-                                </form>
-                            </div>
-
                         </div>
                     </div>
-                </div>
 
-            );
-        } else {
-            notebooks = this.handleSort(this.props.notebooks);
-            notebooks = notebooks.filter(notebook => (
-                notebook.name.includes(this.state.body))
-            )   
-           
-            notebooks = notebooks.map(notebook => {
-                let selectedNotebook;
-                let notes;
-                
-                if(notebook.id === this.state.selected){
-                    selectedNotebook = 'selectedNotebook';
-                    caret = "fas fa-caret-down";
-                    // notes = this.onlyCorrectNotes(this.props.notes, notebook.id);
-                    notes = this.handleSortNotes(this.props.notes);
-                    notes = notes.map(note => {
-                        if(note.notebook_id === notebook.id){
-                        
-                            return(
-                            <li key={note.id} className="notebook-note-index-item">
-                                <div className="notebook-index-note-title"><i className="fas fa-sticky-note"></i><Link to={`/username/${note.notebook_id}/notes/${note.id}`}>{note.title}</Link></div>
-                                <div className="notebook-index-note-email"><h4>{this.props.user.email}</h4></div>
-                                <div className="notebook-index-note-time"><h4>{styleDate(note.updated_at)}</h4></div>
+                );
+            } else {
+                notebooks = this.handleSort(this.props.notebooks);
+                notebooks = notebooks.filter(notebook => (
+                    notebook.name.includes(this.state.body))
+                )   
+            
+                notebooks = notebooks.map(notebook => {
+                    let selectedNotebook;
+                    let notes;
+                    
+                    if(notebook.id === this.state.selected){
+                        selectedNotebook = 'selectedNotebook';
+                        caret = "fas fa-caret-down";
+                        // notes = this.onlyCorrectNotes(this.props.notes, notebook.id);
+                        notes = this.handleSortNotes(this.props.notes);
+                        notes = notes.map(note => {
+                            if(note.notebook_id === notebook.id){
+                            
+                                return(
+                                <li key={note.id} className="notebook-note-index-item">
+                                    <div className="notebook-index-note-title"><i className="fas fa-sticky-note"></i><Link to={`/username/${note.notebook_id}/notes/${note.id}`}>{note.title}</Link></div>
+                                    <div className="notebook-index-note-email"><h4>{this.props.user.email}</h4></div>
+                                    <div className="notebook-index-note-time"><h4>{styleDate(note.updated_at)}</h4></div>
+                                    {/* <div className="notebook-index-table-button"><button onClick={this.handleSubmitEdit(notebook)} type='submit'><i className="fas fa-ellipsis-h"></i>Rename Notebook</button></div> */}
+                                    <div className="notebook-index-note-button"><i onClick={this.handleSubmitNoteDropDown(note)} className="fas fa-ellipsis-h"></i></div>
+                                    {/* <i class="fas fa-caret-down"></i> */}
+                                </li>
+                                )
+                            }
+                        });
+                    } else {
+                        selectedNotebook = 'notebook-index-table';
+                        notes = '';
+                        caret = "fas fa-caret-right";
+                    }
+                    if(this.state.title){
+                        arrow = "fas fa-arrow-up"
+                    } else {
+                        arrow = "fas fa-arrow-down"
+                    }
+
+                    return (
+                    <div>
+                            <li key={notebook.id} className={selectedNotebook} >
+                                <div className="notebook-index-table-title"> <i onClick={this.updateSelected(notebook.id)} className={caret}></i> <Link to={`/username/${notebook.id}`}><i className="fas fa-book"></i>{notebook.name}</Link></div>
+                                <div className="notebook-index-table-email"><h4>{this.props.user.email}</h4></div>
+                                <div className="notebook-index-table-time"><h4>{styleDate(notebook.updated_at)}</h4></div>
                                 {/* <div className="notebook-index-table-button"><button onClick={this.handleSubmitEdit(notebook)} type='submit'><i className="fas fa-ellipsis-h"></i>Rename Notebook</button></div> */}
-                                <div className="notebook-index-note-button"><i onClick={this.handleSubmitNoteDropDown(note)} className="fas fa-ellipsis-h"></i></div>
+                                <div className="notebook-index-table-button"><i onClick={this.handleSubmitDropDown(notebook)} className="fas fa-ellipsis-h"></i></div>
                                 {/* <i class="fas fa-caret-down"></i> */}
+                            
                             </li>
-                            )
-                        }
-                    });
-                } else {
-                    selectedNotebook = 'notebook-index-table';
-                    notes = '';
-                    caret = "fas fa-caret-right";
-                }
-                if(this.state.title){
-                    arrow = "fas fa-arrow-up"
-                } else {
-                    arrow = "fas fa-arrow-down"
-                }
+                            <ul className="notebook-note-index">
+
+                                {notes}
+                            </ul>
+
+                    </div>
+                )})
 
                 return (
-                   <div>
-                        <li key={notebook.id} className={selectedNotebook} >
-                            <div className="notebook-index-table-title"> <i onClick={this.updateSelected(notebook.id)} className={caret}></i> <Link to={`/username/${notebook.id}`}><i className="fas fa-book"></i>{notebook.name}</Link></div>
-                            <div className="notebook-index-table-email"><h4>{this.props.user.email}</h4></div>
-                            <div className="notebook-index-table-time"><h4>{styleDate(notebook.updated_at)}</h4></div>
-                            {/* <div className="notebook-index-table-button"><button onClick={this.handleSubmitEdit(notebook)} type='submit'><i className="fas fa-ellipsis-h"></i>Rename Notebook</button></div> */}
-                            <div className="notebook-index-table-button"><i onClick={this.handleSubmitDropDown(notebook)} className="fas fa-ellipsis-h"></i></div>
-                            {/* <i class="fas fa-caret-down"></i> */}
-                        
-                        </li>
-                        <ul className="notebook-note-index">
 
-                            {notes}
-                        </ul>
+                    <div className='notebooks-index'>
 
-                   </div>
-            )})
+                        <UsernameFormLeft />
 
-            return (
+                        <div className='notebooks-index-right'>
+                            <div className= "notebook-index-top-div">
+                                <div className="notebook-index-top">
+                                    <h1>Notebooks</h1>
+                                    <input placeholder='Find Notebooks...' value={this.state.body} type="text" onChange={this.handleChange()}/>
+                                </div>
+                                <div className="notebook-index-header2">
+                                
+                                
+                                    <h3>My notebook list</h3>
+                                    <form onSubmit={this.handleSubmitAdd}>
 
-                <div className='notebooks-index'>
+                                        <button className='new-notebook-button' type='submit'><i className="fas fa-book-medical"></i>New Notebook</button>
+                                    </form>
+                                </div>
 
-                    <UsernameFormLeft />
-
-                    <div className='notebooks-index-right'>
-                        <div className= "notebook-index-top-div">
-                            <div className="notebook-index-top">
-                                <h1>Notebooks</h1>
-                                <input placeholder='Find Notebooks...' value={this.state.body} type="text" onChange={this.handleChange()}/>
                             </div>
-                            <div className="notebook-index-header2">
-                            
-                            
-                                <h3>My notebook list</h3>
-                                <form onSubmit={this.handleSubmitAdd}>
-
-                                    <button className='new-notebook-button' type='submit'><i className="fas fa-book-medical"></i>New Notebook</button>
-                                </form>
+                            <div className='index-of-notebooks'>
+                                <div className='notebook-table-labs'>
+                                    <h6 onClick={this.handleTitleClick} className="notebook-table-label-title">Title <i className={arrow}></i></h6>
+                                    <h6 className="notebook-table-label-email">Create By</h6>
+                                    <h6 className="notebook-table-label-time">Updated</h6>
+                                    <h6 className="notebook-table-label-actions">Actions</h6>
+                                </div>
+                                {/* <ul className='notebooks-index-list'>{notebooks}</ul> */}
+                                <ul>{notebooks}</ul>
                             </div>
+
 
                         </div>
-                        <div className='index-of-notebooks'>
-                            <div className='notebook-table-labs'>
-                                <h6 onClick={this.handleTitleClick} className="notebook-table-label-title">Title <i className={arrow}></i></h6>
-                                <h6 className="notebook-table-label-email">Create By</h6>
-                                <h6 className="notebook-table-label-time">Updated</h6>
-                                <h6 className="notebook-table-label-actions">Actions</h6>
-                            </div>
-                            {/* <ul className='notebooks-index-list'>{notebooks}</ul> */}
-                            <ul>{notebooks}</ul>
-                        </div>
-
-
                     </div>
-                </div>
-            );
+                );
+            }
         }
     }
 

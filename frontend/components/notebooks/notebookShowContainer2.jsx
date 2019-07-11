@@ -9,7 +9,8 @@ import { notebookDropDown } from "../../actions/modalActions";
 const msp = (state) => ({
     user: state.entities.user[state.session.id],
     notebooks: state.entities.notebooks,
-    notes: Object.values(state.entities.notes)
+    notes: Object.values(state.entities.notes),
+    search: state.ui.search
 
 });
 
