@@ -2,7 +2,7 @@ import React from 'react';
 import UsernameFormLeft from '../username/nonNoteLeftContainer';
 // import { Link } from 'react-router-dom';
 import { merge } from 'lodash';
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 // import NotebookShowForm from './notebookShowContainer2';
 
 import styleDate from '../../util/styleDate';
@@ -20,12 +20,15 @@ class NotebooksIndexForm extends React.Component {
         this.duplicateArray = this.duplicateArray.bind(this);
         this.handleTitleClick = this.handleTitleClick.bind(this);
         this.handleSortNotes = this.handleSortNotes.bind(this);
+        // this.onlyCorrectNotes = this.onlyCorrectNotes.bind(this);
 
     }
 
 
     componentDidMount() {
-        this.props.getNotebooks(this.props.user);
+        this.props.getNotebooks(this.props.user).then(() => this.props.notebooks.forEach((notebook) => {
+            this.props.getNotes(notebook.id)
+        }));
     }
 
     handleSubmitAdd(e) {
@@ -36,25 +39,33 @@ class NotebooksIndexForm extends React.Component {
     
 
     handleChange() {
-      
         return (e) => {
             this.setState({ body: e.target.value }, () => this.props.notebooks.filter(notebook => {
                 notebook.name.includes(this.state.body)     
             })) 
         }
-       
     }
 
     handleTitleClick(){
         this.setState({ title: !this.state.title }, () => this.handleSort(this.props.notebooks));
     }
 
+    // onlyCorrectNotes(array, notebook_id){
+    //     let ans = [];
+    //     let notes = this.duplicateArray(array);
+    //     for(let i =0; i < notes.length; i++){
+    //         if(notes[i].notebook_id === notebook_id){
+    //             ans.push(notes[i])
+    //         }
+    //     }
+    //     return ans;
+    // }
+
     handleSort(notebooks){
         // debugger
         let newNotebooks = this.duplicateArray(notebooks);
         if(this.state.title === true){
             let sorted = false;
-            // debugger
             while (!sorted) {
                 sorted = true;
                 // bubble sort
@@ -69,13 +80,8 @@ class NotebooksIndexForm extends React.Component {
                 }
             }
             return newNotebooks;
-
-            // this.state.title = 'up';
-        } else {
-            
-            
+        } else {            
             let sorted = false;
-            // debugger
             while (!sorted) {
                 sorted = true;
                 // bubble sort
@@ -90,52 +96,45 @@ class NotebooksIndexForm extends React.Component {
                 }
             }
             return newNotebooks;
-            // this.state.title = 'down';
         }
     }
 
     handleSortNotes(notes){
-        let newNotes = this.duplicateArray(notes);
-        if (this.state.title === true) {
-            
+        // let newNotes = this.duplicateArray(notes);
+        if (this.state.title === true) {      
             let sorted = false;
-            // debugger
             while (!sorted) {
                 sorted = true;
                 // bubble sort
-                for (let i = 0; i < newNotes.length - 1; i++) {
-                    let current = newNotes[i];
-                    let next = newNotes[i + 1];
+                for (let i = 0; i < notes.length - 1; i++) {
+                    let current = notes[i];
+                    let next = notes[i + 1];
                     if (current.title.toUpperCase() < next.title.toUpperCase()) {
                         // Swaps if first element is before the second in alphabet
                         sorted = false;
-                        [newNotes[i], newNotes[i + 1]] = [newNotes[i + 1], newNotes[i]]
+                        [notes[i], notes[i + 1]] = [notes[i + 1], notes[i]]
                     }
                 }
             }
-            return newNotes;
+            return notes;
 
-            // this.state.title = 'up';
         } else {
-
-            
             let sorted = false;
-            // debugger
             while (!sorted) {
                 sorted = true;
                 // bubble sort
-                for (let i = 0; i < newNotes.length - 1; i++) {
-                    let current = newNotes[i];
-                    let next = newNotes[i + 1];
+                for (let i = 0; i < notes.length - 1; i++) {
+                    let current = notes[i];
+                    let next = notes[i + 1];
                     if (current.title.toUpperCase() > next.title.toUpperCase()) {
                         // Swaps if first element is after the second in alphabet
                         sorted = false;
-                        [newNotes[i], newNotes[i + 1]] = [newNotes[i + 1], newNotes[i]]
+                        [notes[i], notes[i + 1]] = [notes[i + 1], notes[i]]
                     }
                 }
             }
-            return newNotes;
-            // this.state.title = 'down';
+            return notes;
+
         }
     }
 
@@ -146,7 +145,6 @@ class NotebooksIndexForm extends React.Component {
             let newObject = merge({}, array[i]);
             ans.push(newObject);
         }
-        // debugger
         return ans;
     }
 
@@ -166,20 +164,23 @@ class NotebooksIndexForm extends React.Component {
 
 
     updateSelected(id) {
-        // debugger
-        if(this.state.selected && this.state.selected === id){
-            return () => {
-                this.props.clearNotes();
+        debugger
+        if((this.state.selected === 0 || this.state.selected) && this.state.selected === id){
+            return (e) => {
+                e.preventDefault();
+                // this.props.clearNotes();
                 this.setState({ selected: false })
             };
         } else {
-            return () => {
-                this.props.clearNotes();
-                this.setState({ selected: id }, () => this.props.getNotes(this.state.selected));
+            return (e) => {
+                e.preventDefault();
+                // this.props.clearNotes();
+                // this.setState({ selected: id }, () => this.props.getNotes(this.state.selected));
+                this.setState({selected: id})
             };
         }
-
-        }
+    
+    }
 
     render() {
         
@@ -215,7 +216,7 @@ class NotebooksIndexForm extends React.Component {
             );
         } else {
             notebooks = this.handleSort(this.props.notebooks);
-            // debugger
+            debugger
             notebooks = notebooks.map(notebook => {
                 let selectedNotebook;
                 let notes;
@@ -223,9 +224,12 @@ class NotebooksIndexForm extends React.Component {
                 if(notebook.id === this.state.selected){
                     selectedNotebook = 'selectedNotebook';
                     caret = "fas fa-caret-down";
-                    notes = this.handleSortNotes(this.props.notes)
+                    // notes = this.onlyCorrectNotes(this.props.notes, notebook.id);
+                    notes = this.handleSortNotes(this.props.notes);
                     notes = notes.map(note => {
                         if(note.notebook_id === notebook.id){
+                            debugger
+                            return(
                             <li key={note.id} className="notebook-note-index-item">
                                 <div className="notebook-index-note-title"><i className="fas fa-sticky-note"></i><Link to={`/username/${note.notebook_id}/notes/${note.id}`}>{note.title}</Link></div>
                                 <div className="notebook-index-note-email"><h4>{this.props.user.email}</h4></div>
@@ -234,6 +238,7 @@ class NotebooksIndexForm extends React.Component {
                                 <div className="notebook-index-note-button"><i onClick={this.handleSubmitNoteDropDown(note)} className="fas fa-ellipsis-h"></i></div>
                                 {/* <i class="fas fa-caret-down"></i> */}
                             </li>
+                            )
                         }
                     });
                 } else {
