@@ -43,13 +43,13 @@ main {
 }
 
 .username-left-ul{
-    width: 220px;
-    margin-left: 20px;
+    width: 200px;
+    margin-left: 40px;
 }
 
 .username-left-shortcuts-ul {
-    width: 220px;
-    // margin-left: 20px;
+    width: 200px;
+    margin-left: 20px;
 }
 // .left-nav ul {
 //     width: 100%;
@@ -57,7 +57,7 @@ main {
 // }
 .left-nav li {
     color: #c8c8c8;
-    margin-left: 20px;
+    // margin-left: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -178,6 +178,7 @@ main {
 }
 .shortcuts-li{
     cursor: pointer;
+    margin-left: 20px
 }
 .fa-ellipsis-h{
     cursor: pointer;
@@ -198,5 +199,14 @@ main {
     display: flex;
     flex-direction: row;
     align-items: center;
+}
 
+.tags-li{
+    margin-left: 30px;
+}
+.all-notes-li{
+    margin-left: 33px;
+}
+.notebooks-li{
+    margin-left: 20px
 }

@@ -161,13 +161,13 @@ class usernameFormLeft extends React.Component {
                         {allNotebooks}
                         {allNotes}
                     </ul>
-                    <li><Link to='/allnotes'><i className="fas fa-sticky-note"></i>All Notes</Link></li>
-                    <li><i className={leftcaret} onClick={this.updateSelected}></i><Link to='/notebooks'><i className="fas fa-book"></i>Notebooks</Link></li>
+                    <li className="all-notes-li"><Link to='/allnotes'><i className="fas fa-sticky-note"></i>All Notes</Link></li>
+                    <li className='notebooks-li'><i className={leftcaret} onClick={this.updateSelected}></i><Link to='/notebooks'><i className="fas fa-book"></i>Notebooks</Link></li>
                     <ul className="username-left-ul">
                         {notebooks}
                     </ul>
                     {/* <li><i className="fas fa-user-friends"></i>Shared with Me</li> */}
-                    <li><Link to='/tags'><i className="fas fa-tag"></i>Tags</Link></li>
+                    <li className="tags-li"><Link to='/tags'><i className="fas fa-tag"></i>Tags</Link></li>
                     {/* <li><i className="fas fa-trash"></i>Trash</li> */}
                     {/* <i class="fas fa-caret-down"></i> */}
 
