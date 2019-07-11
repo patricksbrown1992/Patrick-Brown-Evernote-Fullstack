@@ -95,6 +95,12 @@ class usernameFormLeft extends React.Component {
         let shortCutCaret;
         let allNotebooks;
         let allNotes;
+        let searchCircle;
+        if (this.state.search.length > 0) {
+            searchCircle = 'search-circle far fa-times-circle'
+        } else {
+            searchCircle = 'hidden-circle'
+        }
         if(this.state.selected){
    
             caret = "fas fa-caret-down";
@@ -149,7 +155,7 @@ class usernameFormLeft extends React.Component {
                     
                     <li className = "user-email" onClick={this.handleLogOut()}className="user-email">{this.props.user.email}</li>
                     <form onSubmit={this.handleNoteSearch}>
-                        <input onChange={this.handleChange()} value={this.state.search} placeholder="Search all notes..." type="text" ><i onClick={this.handleClearSearch()} className="far fa-times-circle"></i></input>
+                        <div className="left-search-input"><input onChange={this.handleChange()} value={this.state.search} placeholder="Search all notes..." type="text" ></input><i onClick={this.handleClearSearch()} className={searchCircle} ></i></div>
                     </form>
                     <span onClick={this.handleSubmitNewNote(this.props.notebook)} className="new-note"><i className="fas fa-plus-circle fa-2x"></i><button type='submit'>New Note</button></span>
                     <li  className="shortcuts-li" onClick={this.updateShortcuts}><i className={shortCutCaret}></i><i className="fas fa-star"></i>Shortcuts</li>
