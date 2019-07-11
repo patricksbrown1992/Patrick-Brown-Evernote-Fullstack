@@ -5,9 +5,8 @@ import { Link } from 'react-router-dom';
 class usernameFormLeft extends React.Component {
     constructor(props) {
         super(props);
-        // this.handleSubmitLogOut = this.handleSubmitLogOut.bind(this);
-        // this.handleChange = this.handleChange.bind(this);
-        this.state = { body: '', selected: false, shortCutChecker: false };
+        this.handleChange = this.handleChange.bind(this);
+        this.state = { body: '', selected: false, shortCutChecker: false, search: this.props.search };
         this.updateSelected = this.updateSelected.bind(this);
         this.handleLogOut = this.handleLogOut.bind(this);
         this.updateShortcuts = this.updateShortcuts.bind(this);
@@ -21,30 +20,24 @@ class usernameFormLeft extends React.Component {
             this.props.getNotes(notebook.id)
         })).then(() => this.setState({ shortCutChecker: !this.state.shortCutChecker }));
     }
+
     updateSelected() {
         this.props.getNotebooks(this.props.user).then(() => this.setState({ selected: !this.state.selected }));
-
     }
 
 
 
-    // handleChange() {
-    //     return (e) => {
-    //         this.setState({ body: e.target.value });
-    //     }
-    // }
+    handleChange() {
+        return (e) => {
+            this.setState({ search: e.target.value }, () => this.props.receiveSearch(this.state.search));
+        }
+    }
 
     // handleSubmitLogOut(e) {
     //     e.preventDefault();
     //     this.props.logout();
     // }
 
-    // handleSubmitNewNote(entity) {
-    //     return (e) => {
-    //         e.preventDefault();
-    //         this.props.addNote(entity);
-    //     };
-    // }
 
     handleNoteSearch() {
         return (e) => {
@@ -144,7 +137,7 @@ class usernameFormLeft extends React.Component {
 
                     <li className="user-email" onClick={this.handleLogOut()} className="user-email">{this.props.user.email}</li>
                     <form onSubmit={this.handleNoteSearch}>
-                        <input placeholder="Search all notes..." type="text"></input>
+                        <input onChange={this.handleChange()} value={this.state.search} placeholder="Search all notes..." type="text"></input>
                     </form>
                     {/* <span onClick={this.handleSubmitNewNote(this.props.notebook)} className="new-note"><i className="fas fa-plus-circle fa-2x"></i><button type='submit'>New Note</button></span> */}
                     <li className="shortcuts-li" onClick={this.updateShortcuts}><i className={shortCutCaret}></i><i className="fas fa-star"></i>Shortcuts</li>

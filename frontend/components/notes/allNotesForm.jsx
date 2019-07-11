@@ -2,11 +2,13 @@ import React from 'react';
 import styleDate from '../../util/styleDate';
 import LeftNav from '../username/nonNoteLeftContainer';
 import { Link } from 'react-router-dom';
+import { merge } from 'lodash';
 class AllNoteForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = { loaded: false }
         this.handleSubmitDelete = this.handleSubmitDelete.bind(this);
+        this.duplicateArray = this.duplicateArray.bind(this);
     }
 
     componentDidMount(){
@@ -25,10 +27,25 @@ class AllNoteForm extends React.Component {
         };
     }
 
+    duplicateArray(array) {
+        // deep dupes objects
+        let ans = [];
+        for (let i = 0; i < array.length; i++) {
+            let newObject = merge({}, array[i]);
+            ans.push(newObject);
+        }
+        return ans;
+    }
+
+
     render() {
         let notes;
         if(this.props.notes.length > 0){
-            notes = this.props.notes.map(note => (
+            notes = this.duplicateArray(this.props.notes);
+            notes = notes.filter(note => (
+                note.title.includes(this.props.search))
+            )   
+            notes = notes.map(note => (
                 <li key={note.id} className="all-note-title"><Link to={`/username/${note.notebook_id}/notes/${note.id}`} > <h1>{note.title}</h1> </Link>
                   <Link to={`/username/${note.notebook_id}/notes/${note.id}`} > <h3>{note.body}</h3></Link>
                     

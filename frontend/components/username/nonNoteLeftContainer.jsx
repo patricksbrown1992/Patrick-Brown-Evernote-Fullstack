@@ -4,13 +4,15 @@ import { logout } from '../../actions/sessionActions';
 import { logOutModal } from '../../actions/modalActions';
 import { getNotebooks, clearNotebooks, updateNotebook } from '../../actions/notebookActions';
 import { clearNotes, getNotes, updateNote } from '../../actions/noteAction';
+import {receiveSearch, clearSearch} from '../../actions/searchActions';
 
 
 
 const msp = state => ({
     user: state.entities.user[state.session.id],
     notebooks: Object.values(state.entities.notebooks),
-    notes: Object.values(state.entities.notes)
+    notes: Object.values(state.entities.notes),
+    search: state.ui.search
 });
 
 const mdp = dispatch => ({
@@ -21,7 +23,9 @@ const mdp = dispatch => ({
     getNotes: id => dispatch(getNotes(id)),
     logOutModal: () => dispatch(logOutModal()),
     updateNotebook: (id, notebook) => dispatch(updateNotebook(id, notebook)),
-    updateNote: (id, note) => dispatch(updateNote(id,note))
+    updateNote: (id, note) => dispatch(updateNote(id,note)),
+    receiveSearch: search => dispatch(receiveSearch(search)),
+    clearSearch: () => dispatch(clearSearch())
 
 });
 
