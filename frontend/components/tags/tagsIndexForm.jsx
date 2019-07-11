@@ -99,6 +99,9 @@ class TagIndexForm extends React.Component {
         } else {
             // debugger
             tags = this.sortTags(this.props.tags);
+            tags = tags.filter(tags => (
+                tags.name.includes(this.state.tag))
+            )   
             // debugger
             tags = tags.map(tag => {
                 if(tag.duplicate){
@@ -126,7 +129,7 @@ class TagIndexForm extends React.Component {
                         <div className="tag-index-upper">
                             <div className="tag-index-header">
                                 <h1>Tags</h1>
-                                <input placeholder='Find Tags...' type="text" onChange={this.handleChange} />
+                                <input placeholder='Find Tags...' type="text" onChange={this.handleChange()} />
                             </div>
                             <div className="tag-index-add">
                                 <span onClick={this.handleSubmitNewTag(this.props.user)} className="new-tag"><button type='submit'><i className="fas fa-plus-circle"></i><p>New Note</p></button></span>

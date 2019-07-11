@@ -39,7 +39,6 @@ class NotebooksIndexForm extends React.Component {
     
 
     handleChange() {
-        debugger
         return (e) => {
             this.setState({ body: e.target.value })  
         }
@@ -207,7 +206,7 @@ class NotebooksIndexForm extends React.Component {
             notebooks = notebooks.filter(notebook => (
                 notebook.name.includes(this.state.body))
             )   
-            debugger
+           
             notebooks = notebooks.map(notebook => {
                 let selectedNotebook;
                 let notes;
@@ -219,7 +218,7 @@ class NotebooksIndexForm extends React.Component {
                     notes = this.handleSortNotes(this.props.notes);
                     notes = notes.map(note => {
                         if(note.notebook_id === notebook.id){
-                            // debugger
+                        
                             return(
                             <li key={note.id} className="notebook-note-index-item">
                                 <div className="notebook-index-note-title"><i className="fas fa-sticky-note"></i><Link to={`/username/${note.notebook_id}/notes/${note.id}`}>{note.title}</Link></div>
