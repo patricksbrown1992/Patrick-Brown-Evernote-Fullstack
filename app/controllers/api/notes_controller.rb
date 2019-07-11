@@ -1,17 +1,7 @@
 class Api::NotesController < ApplicationController
     before_action :require_logged_in
 
-    def search
-        if params[:id] == ""
-            @notes = []
-        else
-            str = "%#{params[:id]}%"
-            @notes = Note.where("UPPER(notes.title) LIKE UPPER(:query)", query: str)
-            @notes = @notes.uniq
-        end
-        render @notes, status: 200
-    end
-
+ 
 
 
     def show

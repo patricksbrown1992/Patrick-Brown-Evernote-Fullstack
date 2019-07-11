@@ -206,7 +206,7 @@ class NotebooksIndexForm extends React.Component {
             } else {
                 notebooks = this.handleSort(this.props.notebooks);
                 notebooks = notebooks.filter(notebook => (
-                    notebook.name.includes(this.state.body))
+                    notebook.name.toUpperCase().includes(this.state.body.toUpperCase()))
                 )   
             
                 notebooks = notebooks.map(notebook => {

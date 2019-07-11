@@ -1,16 +1,6 @@
 class Api::TagsController < ApplicationController
     before_action :require_logged_in
 
-    def search
-        if params[:id] == ""
-            @tags = []
-        else
-            str = "%#{params[:id]}%"
-            @tags = Tag.where("UPPER(tags.name) LIKE UPPER(:query)", query: str)
-            @tags = @tags.uniq
-        end
-        render @tags, status: 200
-    end
 
 
     def index
