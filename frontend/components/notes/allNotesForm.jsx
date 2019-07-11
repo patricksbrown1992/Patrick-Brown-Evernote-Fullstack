@@ -43,7 +43,7 @@ class AllNoteForm extends React.Component {
         if(this.props.notes.length > 0){
             notes = this.duplicateArray(this.props.notes);
             notes = notes.filter(note => (
-                note.title.includes(this.props.search))
+                note.title.toUpperCase().includes(this.props.search.toUpperCase()))
             )   
             notes = notes.map(note => (
                 <li key={note.id} className="all-note-title"><Link to={`/username/${note.notebook_id}/notes/${note.id}`} > <h1>{note.title}</h1> </Link>
