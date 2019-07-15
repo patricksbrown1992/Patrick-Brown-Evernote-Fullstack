@@ -40,26 +40,8 @@ class NoteShowForm extends React.Component {
                     notebook_id: newProps.note.notebook_id
                 });
             } 
-            // else if (newProps.note.body != this.props.note.body){
-
-            //     let title = this.state.title;
-            //     let body = this.state.body;
-            //     let notebook_id = this.state.notebook_id;
-            //     let id = this.state.id;
-            //     let note = { title, body, notebook_id, id };
-            //     this.props.updateNote({ id, note })
-            //     // .then(() => this.setState({
-            //     //     id: newProps.note.id,
-            //     //     title: newProps.note.title,
-            //     //     body: newProps.note.body,
-            //     //     notebook_id: newProps.note.notebook_id
-            //     // }));
-            // }
         }
     }
-
-
-
 
     handleChange(value) {
         let title = this.state.title;
@@ -67,27 +49,9 @@ class NoteShowForm extends React.Component {
         let notebook_id = this.state.notebook_id;
         let id = this.state.id;
         let note = { title, body, notebook_id, id };
-        debugger
         this.setState({ body: value }, () => this.props.updateNote({ id, note }));
-        // this.props.updateNote({ id, note }).then(() => this.setState({ body: value }));
     }
 
-    handleAddTag(){
-        
-    }
-
-    // autosave(){
-    //     return (e) => {
-    //         e.preventDefault();
-    //         let title = this.state.title;
-    //         let body = this.state.body;
-    //         let notebook_id = this.state.notebook_id;
-    //         let id = this.state.id;
-    //         let note = { title, body, notebook_id, id };
-    //         this.props.updateNote({ id, note })
-    //         // .then(() => this.setState({body: ''}));
-    //     };
-    // }
 
 
     handleSubmit() {
@@ -99,7 +63,6 @@ class NoteShowForm extends React.Component {
             let id = this.state.id;
             let note = { title, body, notebook_id, id };
             this.props.updateNote({ id, note })
-            // .then(() => this.setState({body: ''}));
         };
     }
 
