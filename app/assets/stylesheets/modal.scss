@@ -665,5 +665,44 @@
   font-size: 18px;
   font-family: sans-serif;
   font-weight: 500;
-  
+}
+
+.tag-search-modal{
+  height: 300px;
+  width: 260px;
+  background-color: white;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.tag-name-item{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-left: 15px; 
+  padding-top: 5px;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+.tag-name-item:hover{
+  background-color: whitesmoke;
+}
+
+.tag-search-modal input{
+  outline: none;
+  width: 170px;
+  margin-left: 25px;
+  height: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-family: sans-serif;
+  font-weight: 500;
+}
+
+.tag-search-modal ul {
+  overflow-y: scroll;
 }

@@ -8,18 +8,16 @@ class NotebookShowForm extends React.Component {
         super(props);
         this.state = { loaded: false };
         this.handleSubmitDropDown = this.handleSubmitDropDown.bind(this);
-        // this.onMount = this.onMount.bind(this);
+        this.handleTagModal = this.handleTagModal.bind(this);
        
     }
 
     componentDidMount() {
-        // debugger
         this.props.clearNotes();
         this.props.getNotebooks(this.props.user).then(() => this.setState({ loaded: true }));
     }
 
     componentDidUpdate(prevProps){
-        // debugger
         if (prevProps.match.params.notebook_id !== this.props.match.params.notebook_id){
             this.props.clearNotes();
             this.props.getNotebooks(this.props.user).then(() => this.props.getNotes(parseInt(this.props.match.params.notebook_id))).then( () => this.setState({ loaded: true }));
@@ -28,13 +26,6 @@ class NotebookShowForm extends React.Component {
             // }));
         }
     }
-    // componentWillReceiveProps(newProps){
-    //     debugger
-    //     this.setState({ loaded: false })
-    //     this.props.clearNotes()
-    //     this.props.getNotebooks(this.props.user).then(() => this.setState({ loaded: true }));
-    // }
-
     
     handleSubmitDropDown(entity) {
         return (e) => {
@@ -44,20 +35,14 @@ class NotebookShowForm extends React.Component {
     }
     
 
-    // handleSubmit(e) {
-      
-    //     e.preventDefault();
-        
-
-    //     // debugger
-    //     this.props.deleteNotebook().then(() => {
-    //     // debugger
-    //         return this.props.history.push('/notebooks');
-    //     });
-    // }
+    handleTagModal(){
+        return (e) => {
+            e.preventDefault();
+            this.props.tagSearchDropDown()
+        }
+    }
 
     render() {
-        // this.onMount();
         if (this.props.search.length > 0) {
             return <Redirect to='/allnotes' />;
         } else {
@@ -68,6 +53,7 @@ class NotebookShowForm extends React.Component {
             if (!this.state.loaded) {
                 return null;
             }
+            debugger
             return (
                 <>
                     <div className='username-form'>
@@ -77,7 +63,10 @@ class NotebookShowForm extends React.Component {
                         <div className="notebook-show">
                             <div className='notebook-show-title'>
                                 <h1>{theNotebook.name}</h1>
-                                <i onClick={this.handleSubmitDropDown(this.props.notebooks[this.props.match.params.notebook_id])} className="fas fa-ellipsis-h"></i>
+                                <div className="notebook-show-bottom">
+                                    <i onClick={this.handleTagModal()} className="fas fa-tag"></i>
+                                    <i onClick={this.handleSubmitDropDown(this.props.notebooks[this.props.match.params.notebook_id])} className="fas fa-ellipsis-h move-left"></i>
+                                </div>
                             </div>
                             <NoteIndexContainer notebook={theNotebook} />
                         </div>

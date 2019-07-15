@@ -110,3 +110,10 @@ export const tagDropDown = entity => {
         modal: 'tagDropDown'
     };
 };
+
+export const tagSearchDropDown = () => {
+    return {
+        type: OPEN_MODAL,
+        modal: 'tagSearch'
+    }
+}

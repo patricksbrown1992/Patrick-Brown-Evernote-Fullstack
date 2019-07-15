@@ -14,6 +14,7 @@ import NoteEditContainer from '../notes/noteEditContainer';
 import NoteDropDownContainer from '../notes/noteDropDownContainer';
 import LogoutContainer from '../username/logoutContainer';
 import TagDropDownContainer from '../tags/tagDropDownContainer';
+import TagSearch from '../tags/tagSearchContainer';
 
 function Modal({ modal, closeModal }) {
     // debugger
@@ -63,6 +64,10 @@ function Modal({ modal, closeModal }) {
         case 'tagDropDown':
             component = <TagDropDownContainer tag={modal.entity}/>;
             break;
+
+        case 'tagSearch':
+            component = <TagSearch /> ;
+            break
         default:
             return null;
     }

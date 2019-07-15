@@ -58,7 +58,7 @@
 .all-note-right{
     height: 100%;
     width: 18%;
-    overflow: scroll;
+    overflow-y: scroll;
     // min-width: 350px;
     border-right: 1px solid lightgray;
     background-color: #f8f8f8;
@@ -105,4 +105,6 @@
     background-color: #f2f2f2;
 }
 
-
+.ql-editor {
+    overflow-y: scroll;
+}

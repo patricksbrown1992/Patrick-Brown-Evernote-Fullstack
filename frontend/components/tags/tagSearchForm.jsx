@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
+import { merge } from 'lodash';
 
 class TagSearchForm extends React.Component {
     constructor(props) {
@@ -8,12 +9,23 @@ class TagSearchForm extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.duplicateArray = this.duplicateArray.bind(this);
         this.sortTags = this.sortTags.bind(this);
+        this.clickItem = this.clickItem.bind(this);
+    }
+
+    componentDidMount(){
+        this.props.getTags(this.props.user)
     }
 
     handleChange() {
         return (e) => {
             this.setState({ name: e.target.value });
         };
+    }
+
+    clickItem(){
+        return(e) => {
+            this.props.closeModal();
+        }
     }
 
     duplicateArray(array) {
@@ -44,16 +56,24 @@ class TagSearchForm extends React.Component {
                 }
             }
         }
+        return newTags;
     }
 
     render(){
+        let tags;
+        if(this.props.tags.length < 1){
+            return null;
+        }
         tags = this.sortTags(this.props.tags);
+        debugger
         tags = tags.filter(tag => (
             tag.name.toUpperCase().includes(this.state.name.toUpperCase()))
         )   
         tags = tags.map(tag => {
             return (
-                <li> </li>
+                <li key={tag.id}> 
+                    <div className="tag-name-item" onClick={this.clickItem()}>{tag.name}</div>
+                </li>
             )
         })
 
