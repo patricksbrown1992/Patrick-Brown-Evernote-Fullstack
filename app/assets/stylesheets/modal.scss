@@ -392,9 +392,7 @@
   border: 1px solid black;
   display: flex;
   flex-direction: column;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+  
 }
 
 .noteboook-delete-top {
@@ -425,6 +423,9 @@
   display: flex;
   justify-content: center;
   margin-left: 25px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .notebook-delete-modal form{

@@ -14,7 +14,6 @@ class NoteShowForm extends React.Component {
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-      
         this.handleSubmitDropDown = this.handleSubmitDropDown.bind(this);
     }
 
@@ -26,7 +25,7 @@ class NoteShowForm extends React.Component {
     }
 
     componentWillReceiveProps(newProps) {
-        debugger
+        // debugger
         if (newProps.note == undefined) {
             this.setState({change: true})
 
@@ -40,7 +39,21 @@ class NoteShowForm extends React.Component {
                     body: newProps.note.body,
                     notebook_id: newProps.note.notebook_id
                 });
-            }
+            } 
+            // else if (newProps.note.body != this.props.note.body){
+
+            //     let title = this.state.title;
+            //     let body = newProps.note.body;
+            //     let notebook_id = this.state.notebook_id;
+            //     let id = this.state.id;
+            //     let note = { title, body, notebook_id, id };
+            //     this.props.updateNote({ id, note }).then(() => this.setState({
+            //         id: newProps.note.id,
+            //         title: newProps.note.title,
+            //         body: newProps.note.body,
+            //         notebook_id: newProps.note.notebook_id
+            //     }));
+            // }
         }
     }
 
@@ -48,13 +61,31 @@ class NoteShowForm extends React.Component {
 
 
     handleChange(value) {
-        this.setState({ body: value });
+        // debugger
+        let title = this.state.title;
+        let body = this.state.body;
+        let notebook_id = this.state.notebook_id;
+        let id = this.state.id;
+        let note = { title, body, notebook_id, id };
+        this.setState({ body: value }, () => this.props.updateNote({ id, note }));
     }
 
     handleAddTag(){
         
     }
 
+    // autosave(){
+    //     return (e) => {
+    //         e.preventDefault();
+    //         let title = this.state.title;
+    //         let body = this.state.body;
+    //         let notebook_id = this.state.notebook_id;
+    //         let id = this.state.id;
+    //         let note = { title, body, notebook_id, id };
+    //         this.props.updateNote({ id, note })
+    //         // .then(() => this.setState({body: ''}));
+    //     };
+    // }
 
 
     handleSubmit() {
@@ -72,6 +103,7 @@ class NoteShowForm extends React.Component {
     }
 
     render() {
+        
         if (this.props.search.length > 0) {
             return <Redirect to='/allnotes' />;
         } else {
@@ -85,14 +117,15 @@ class NoteShowForm extends React.Component {
 
                     <h1>{note.title}</h1>
                     <br />
-                    <button onClick={this.handleSubmit()} type='submit'>Edit Body</button>
+                    <br/>
+                    {/* <button onClick={this.handleSubmit()} type='submit'>Edit Body</button> */}
                     <br />
                     <br />
                     <ReactQuill value={this.state.body} onChange={this.handleChange} />
                     <br />
 
                     {/* <button onClick={this.handleAddTag()}>Add Study Tag</button> */}
-                    <i onClick={this.handleSubmitDropDown(note)} className="fas fa-ellipsis-h"></i>
+                    {/* <i onClick={this.handleSubmitDropDown(note)} className="fas fa-ellipsis-h"></i> */}
                 </div>
             );
         }

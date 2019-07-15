@@ -103,8 +103,8 @@ class TagIndexForm extends React.Component {
             } else {
                 // debugger
                 tags = this.sortTags(this.props.tags);
-                tags = tags.filter(tags => (
-                    tags.name.toUpperCase().includes(this.state.tag.toUpperCase()))
+                tags = tags.filter(tag => (
+                    tag.name.toUpperCase().includes(this.state.tag.toUpperCase()))
                 )   
                 // debugger
                 tags = tags.map(tag => {

@@ -11,7 +11,7 @@
 
 class Tag < ApplicationRecord
 
-     belongs_to :user
+    belongs_to :user
 
     has_many :taggings,
         primary_key: :id,
