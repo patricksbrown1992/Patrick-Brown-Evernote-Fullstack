@@ -25,7 +25,7 @@ class NoteShowForm extends React.Component {
     }
 
     componentWillReceiveProps(newProps) {
-        // debugger
+        
         if (newProps.note == undefined) {
             this.setState({change: true})
 
@@ -43,16 +43,17 @@ class NoteShowForm extends React.Component {
             // else if (newProps.note.body != this.props.note.body){
 
             //     let title = this.state.title;
-            //     let body = newProps.note.body;
+            //     let body = this.state.body;
             //     let notebook_id = this.state.notebook_id;
             //     let id = this.state.id;
             //     let note = { title, body, notebook_id, id };
-            //     this.props.updateNote({ id, note }).then(() => this.setState({
-            //         id: newProps.note.id,
-            //         title: newProps.note.title,
-            //         body: newProps.note.body,
-            //         notebook_id: newProps.note.notebook_id
-            //     }));
+            //     this.props.updateNote({ id, note })
+            //     // .then(() => this.setState({
+            //     //     id: newProps.note.id,
+            //     //     title: newProps.note.title,
+            //     //     body: newProps.note.body,
+            //     //     notebook_id: newProps.note.notebook_id
+            //     // }));
             // }
         }
     }
@@ -61,13 +62,14 @@ class NoteShowForm extends React.Component {
 
 
     handleChange(value) {
-        // debugger
         let title = this.state.title;
-        let body = this.state.body;
+        let body = value
         let notebook_id = this.state.notebook_id;
         let id = this.state.id;
         let note = { title, body, notebook_id, id };
+        debugger
         this.setState({ body: value }, () => this.props.updateNote({ id, note }));
+        // this.props.updateNote({ id, note }).then(() => this.setState({ body: value }));
     }
 
     handleAddTag(){
@@ -89,7 +91,6 @@ class NoteShowForm extends React.Component {
 
 
     handleSubmit() {
-
         return (e) => {
             e.preventDefault();
             let title = this.state.title;
