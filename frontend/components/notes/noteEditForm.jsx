@@ -6,8 +6,8 @@ class NoteEditForm extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
     handleChange() {
-        // debugger
         return (e) => {
             this.setState({ name: e.target.value });
         };
@@ -15,7 +15,6 @@ class NoteEditForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // debugger
         let title = this.state.name;
         let body = this.props.note.body;
         let notebook_id = this.props.note.notebook_id;
@@ -27,7 +26,6 @@ class NoteEditForm extends React.Component {
 
     render() {
         if (this.state.name.length < 1){
-            // non-working button to prevent empty submissions
             return (
                 <div className="note-edit-modal">
                     <div className="note-edit-modal-top">
@@ -65,12 +63,9 @@ class NoteEditForm extends React.Component {
                     </form>
                 </div>
             )
-
         }
-
     }
 }
-
 
 
 export default NoteEditForm;

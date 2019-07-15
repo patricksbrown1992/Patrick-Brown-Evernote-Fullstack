@@ -68,7 +68,7 @@ class NotesIndexForm extends React.Component {
     
                 notes = notes.map(note => (
                     <li key={note.id} className="note-index-title" ><Link to={`/username/${this.props.notebook.id}/notes/${note.id}`} > <h1>{note.title}</h1> </Link>
-                        <Link to={`/username/${this.props.notebook.id}/notes/${note.id}`} > <h3>{note.body}</h3> </Link>
+                        <Link to={`/username/${this.props.notebook.id}/notes/${note.id}`} > <h3>{note.body.replace(/(<([^>]+)>)/ig, "")}</h3> </Link>
                         
     
                         Last updated:

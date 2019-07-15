@@ -136,7 +136,7 @@ class TagIndexForm extends React.Component {
                                     <input placeholder='Find Tags...' type="text" onChange={this.handleChange()} />
                                 </div>
                                 <div className="tag-index-add">
-                                    <span onClick={this.handleSubmitNewTag(this.props.user)} className="new-tag"><button type='submit'><i className="fas fa-plus-circle"></i><p>New Note</p></button></span>
+                                    <span onClick={this.handleSubmitNewTag(this.props.user)} className="new-tag"><button type='submit'><i className="fas fa-plus-circle"></i><p>New Tag</p></button></span>
                                 </div>
                             </div>
                             

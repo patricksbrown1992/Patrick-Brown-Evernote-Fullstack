@@ -201,6 +201,9 @@
   margin-right: 25px;
   font-size: 14px;
   line-height: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .new-notebook-modal{
@@ -389,7 +392,11 @@
   border: 1px solid black;
   display: flex;
   flex-direction: column;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
+
 .noteboook-delete-top {
   display: flex;
   flex-direction: row;
@@ -548,6 +555,9 @@
 
 .note-delete-modal h3 {
   margin-left: 25px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .tag-drop-down-modal{

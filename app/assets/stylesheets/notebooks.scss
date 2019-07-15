@@ -35,6 +35,8 @@
 .notebook-show-title {
     grid-area: 1 / 1/ 2/ 2;
     display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     // overflow: hidden
     // min-width: 350px;
     flex-direction: column;
