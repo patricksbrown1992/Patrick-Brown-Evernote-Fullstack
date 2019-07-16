@@ -71,9 +71,9 @@ class NotesIndexForm extends React.Component {
                         <Link to={`/username/${this.props.notebook.id}/notes/${note.id}`} > <h3>{note.body.replace(/(<([^>]+)>)/ig, "")}</h3> </Link>
                         
     
-                        Last updated:
+                        <h3>Last updated:</h3>
                         <br />
-                        {styleDate(note.updated_at)}
+                        <h3>{styleDate(note.updated_at)}</h3>
                         <br />
     
                         {/* <button onClick={this.handleSubmitDelete(note)} type="submit">Delete Note</button> */}

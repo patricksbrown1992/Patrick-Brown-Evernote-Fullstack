@@ -14,12 +14,14 @@
     margin-bottom: 2px;
     font-weight: 500;
     font-family: sans-serif;
-    overflow: hidden;
 }
 .note-index-title a {
     color: black;
     text-decoration: none;
     font-family: sans-serif;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .notebook-show ul li:hover {
@@ -34,10 +36,16 @@
     font-weight: 500;
     font-size: 20px;
     font-family: sans-serif;
+    margin-left: 2%;
 }
 
 .note-index-title h3 {
     color: #4d4d4d;
+    margin-left: 2%;
+}
+
+.note-index-title i {
+    margin-left: 2%;
 }
 .note-index-body{
     font-size: 13px;
