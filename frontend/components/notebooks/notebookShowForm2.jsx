@@ -53,7 +53,7 @@ class NotebookShowForm extends React.Component {
             if (!this.state.loaded) {
                 return null;
             }
-            debugger
+            // debugger
             return (
                 <>
                     <div className='username-form'>

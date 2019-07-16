@@ -68,7 +68,7 @@ class TagSearchForm extends React.Component {
             return null;
         }
         tags = this.sortTags(this.props.tags);
-        debugger
+        // debugger
         tags = tags.filter(tag => (
             tag.name.toUpperCase().includes(this.state.name.toUpperCase()))
         )   
