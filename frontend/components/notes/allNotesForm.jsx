@@ -48,7 +48,7 @@ class AllNoteForm extends React.Component {
             )   
             notes = notes.map(note => (
                 <li key={note.id} className="all-note-title"><Link to={`/username/${note.notebook_id}/notes/${note.id}`} > <h1>{note.title}</h1> </Link>
-                  <Link to={`/username/${note.notebook_id}/notes/${note.id}`} > <h3>{note.body}</h3></Link>
+                    <Link to={`/username/${note.notebook_id}/notes/${note.id}`} > <h3>{note.body.replace(/(<([^>]+)>)/ig, "")}</h3></Link>
                     
                     
 
