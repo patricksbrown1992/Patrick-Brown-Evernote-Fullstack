@@ -22,9 +22,7 @@ class User < ApplicationRecord
     has_many :notebooks
     has_many :tags
     
-    has_many :taggings,
-        through: :tags,
-        source: :taggings
+    has_many :taggings
 
     has_many :notes,
         through: :notebooks,

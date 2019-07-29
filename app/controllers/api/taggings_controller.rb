@@ -2,6 +2,8 @@ class Api::TaggingsController < ApplicationController
     before_action :require_logged_in
 
     def index
+        @user = Tagging.find(params[:user_id])
+        @user.taggings
         # @user = 
         # @taggengs = 
     end
@@ -45,6 +47,6 @@ class Api::TaggingsController < ApplicationController
     private
 
     def tagging_params
-        params.require(:tagging).permit(:note_id, :tag_id)
+        params.require(:tagging).permit(:note_id, :tag_id, :user_id)
     end
 end

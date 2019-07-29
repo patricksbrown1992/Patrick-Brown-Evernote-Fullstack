@@ -12,7 +12,7 @@ const receiveTaggings = taggings => {
 }
 
 const receiveTagging = tagging => {
-    debugger
+    // debugger
     return ({
         type: RECEIVE_TAGGING,
         tagging
@@ -26,7 +26,7 @@ const destroyTagging = tagging => ({
 
 
 export const createTagging = (tagging) => dispatch => {
-    debugger
+    // debugger
     return APIUtil.createTagging(tagging).then(tagging => dispatch(receiveTagging(tagging)));
 };
 

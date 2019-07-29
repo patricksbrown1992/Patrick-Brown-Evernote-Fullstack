@@ -13,5 +13,6 @@ class Tagging < ApplicationRecord
     validates_uniqueness_of :note_id, scope: [:tag_id]
     belongs_to :note
     belongs_to :tag
+    belongs_to :user
 
 end

@@ -27,10 +27,9 @@ class NoteTagAddForm extends React.Component {
             
             e.preventDefault();
             const tag_id = entity.id;
-            debugger
             const note_id = this.props.note;
-            const tagging = {note_id, tag_id};
-            debugger
+            const user_id = this.props.user.id;
+            const tagging = { note_id, tag_id, user_id};
             this.props.closeModal();
             this.props.createTagging(tagging);
             // entity.activated = !entity.activated;
@@ -76,7 +75,7 @@ class NoteTagAddForm extends React.Component {
             return null;
         }
         tags = this.sortTags(this.props.tags);
-        debugger
+        // debugger
         tags = tags.filter(tag => (
             tag.name.toUpperCase().includes(this.state.name.toUpperCase()))
         )
