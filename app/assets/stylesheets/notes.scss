@@ -4,6 +4,7 @@
     border-bottom: 1px solid #e6e6e6;
     display: block;
 }
+
 .note-index-title{
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -15,6 +16,7 @@
     font-weight: 500;
     font-family: sans-serif;
 }
+
 .note-index-title a {
     color: black;
     text-decoration: none;
@@ -27,9 +29,7 @@
 .notebook-show ul li:hover {
     background-color: #f2f2f2;
 }
-// .note-index-title button {
-//     margin-bottom: 5%
-// }
+
 
 .note-index-title h1{
     padding-top: 10%;
@@ -47,6 +47,7 @@
 .note-index-title i {
     margin-left: 2%;
 }
+
 .note-index-body{
     font-size: 13px;
     list-style: none;
@@ -61,13 +62,12 @@
     display: flex;
     height: 100%;
     width: 100%;
-
 }
+
 .all-note-right{
     height: 100%;
     width: 18%;
     overflow-y: scroll;
-    // min-width: 350px;
     border-right: 1px solid lightgray;
     background-color: #f8f8f8;
 }
@@ -83,6 +83,7 @@
     font-weight: 400;
     margin-top: 50px;
 }
+
 .all-note-nav{
     height: 100%;
     width: 100%;
@@ -102,6 +103,7 @@
     font-family: sans-serif;
     overflow: hidden;
 }
+
 .all-note-nav li a {
     color: black;
     cursor: pointer;

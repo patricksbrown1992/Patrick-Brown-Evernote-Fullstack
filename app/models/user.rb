@@ -21,6 +21,11 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
     has_many :notebooks
     has_many :tags
+    
+    has_many :taggings,
+        through: :tags,
+        source: :taggings
+
     has_many :notes,
         through: :notebooks,
         source: :notes

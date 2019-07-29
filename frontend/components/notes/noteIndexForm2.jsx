@@ -11,7 +11,6 @@ class NotesIndexForm extends React.Component {
         this.state = { loaded: false };
         this.handleSubmitNoteDropDown = this.handleSubmitNoteDropDown.bind(this);
         this.onlyCorrectNotes = this.onlyCorrectNotes.bind(this);
-        // this.handleSubmitDelete = this.handleSubmitDelete.bind(this);
     }
     componentDidMount() {
         this.props.getNotes(this.props.notebook.id).then(() => this.setState({ loaded: true }));
@@ -34,16 +33,9 @@ class NotesIndexForm extends React.Component {
                 ans.push(newObject);
             }
         }
-        // debugger
         return ans;
     }
 
-    // handleSubmitDelete(note) {
-    //     return (e) => {
-    //         e.preventDefault();
-    //         this.props.deleteNote(note);
-    //     };
-    // }
 
     handleSubmitNoteDropDown(entity) {
         return (e) => {
@@ -55,13 +47,11 @@ class NotesIndexForm extends React.Component {
 
 
     render() {
-        // debugger
         if(this.props.search.length > 0){
             return <Redirect to='/allnotes'/>;
         } else {
             
             if (!this.state.loaded) {
-                
                 return null;
             } else {
                 let notes = this.onlyCorrectNotes(this.props.notes);
@@ -70,9 +60,9 @@ class NotesIndexForm extends React.Component {
                     <li key={note.id} className="note-index-title" ><Link to={`/username/${this.props.notebook.id}/notes/${note.id}`} > <h1>{note.title}</h1> </Link>
                         <Link to={`/username/${this.props.notebook.id}/notes/${note.id}`} > <h3>{note.body.replace(/(<([^>]+)>)/ig, "")}</h3> </Link>
                         
-    
+                        <br/>
                         <h3>Last updated:</h3>
-                        <br />
+                      
                         <h3>{styleDate(note.updated_at)}</h3>
                         <br />
     
@@ -83,25 +73,12 @@ class NotesIndexForm extends React.Component {
                     </li>
                 ));
     
-                // let theNote;
-                // this.props.notes.forEach(note => {
-                //     debugger
-                //     if (note.id === parseInt(this.props.match.params.note_id)){
-                //         theNote = note;
-                //     }
-                // })
-    
                 return (
                     <>
-                        {/* <div className="center-nav"> */}
-                        <ul >
-    
+                        <ul>
                             {notes}
-    
                         </ul>
-                        {/* <NoteShowForm note={theNote} /> */}
                         <Route path={`${this.props.match.url}/notes/:note_id`} component={NoteShowForm} />
-                        {/* </div> */}
                     </>
                 )
             }

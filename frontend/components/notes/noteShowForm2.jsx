@@ -12,6 +12,7 @@ class NoteShowForm extends React.Component {
             id: this.props.note.id,
             change: false,
         }
+        
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleSubmitDropDown = this.handleSubmitDropDown.bind(this);
@@ -81,11 +82,8 @@ class NoteShowForm extends React.Component {
 
                     <h1>{note.title}</h1>
                     <br />
-                    <br/>
-                    {/* <button onClick={this.handleSubmit()} type='submit'>Edit Body</button> */}
                     <br />
-                    <br />
-                    <ReactQuill value={this.state.body} onChange={this.handleChange} />
+                    <ReactQuill value={this.state.body} onChange={this.handleChange} theme="snow" />
                     <br />
 
                     {/* <button onClick={this.handleAddTag()}>Add Study Tag</button> */}
