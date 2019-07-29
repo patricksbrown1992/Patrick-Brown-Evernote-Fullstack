@@ -47,10 +47,8 @@ class NoteShowForm extends React.Component {
 
     handleAddTag(e){
         e.preventDefault()
-        const tag_id = 9;
-        const note_id = this.props.note.id;
-        const tagging = {tag_id, note_id}
-        this.props.createTagging(tagging);
+        debugger
+        this.props.noteTagAddModal(this.props.match.params.note_id)
     }
 
     handleChange(value) {
@@ -92,7 +90,8 @@ class NoteShowForm extends React.Component {
                     <h1>{note.title}</h1>
                     <br />
                     <br />
-                    <button onClick={this.handleAddTag}>Add Study Tag</button>
+                    <button onClick={this.handleAddTag}>Add Tag</button>
+                    <br/>
                     <ReactQuill value={this.state.body} onChange={this.handleChange} theme="snow" />
                     <br />
                     <br/>

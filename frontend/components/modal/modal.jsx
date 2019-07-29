@@ -15,6 +15,7 @@ import NoteDropDownContainer from '../notes/noteDropDownContainer';
 import LogoutContainer from '../username/logoutContainer';
 import TagDropDownContainer from '../tags/tagDropDownContainer';
 import TagSearch from '../tags/tagSearchContainer';
+import NoteTagAddContainer from '../tags/noteTagAddContainer';
 
 function Modal({ modal, closeModal }) {
     // debugger
@@ -64,7 +65,9 @@ function Modal({ modal, closeModal }) {
         case 'tagDropDown':
             component = <TagDropDownContainer tag={modal.entity}/>;
             break;
-
+        case 'noteTagAdd':
+            component = < NoteTagAddContainer note = {modal.entity}/>
+            break;
         case 'tagSearch':
             component = <TagSearch /> ;
             break
