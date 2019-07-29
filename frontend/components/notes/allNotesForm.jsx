@@ -26,6 +26,9 @@ class AllNoteForm extends React.Component {
             this.props.noteDropDown(entity)
         };
     }
+    componentWillUnmount() {
+        this.props.removeTriage();
+    }
 
 
     duplicateArray(array) {

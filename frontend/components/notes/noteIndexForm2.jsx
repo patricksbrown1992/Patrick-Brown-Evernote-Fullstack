@@ -23,6 +23,9 @@ class NotesIndexForm extends React.Component {
     //     }
 
     // }
+    componentWillUnmount() {
+        this.props.removeTriage();
+    }
 
     onlyCorrectNotes(notes){
         let ans = [];

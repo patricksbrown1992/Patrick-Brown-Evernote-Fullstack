@@ -10,6 +10,6 @@ const uiReducer = combineReducers({
     modal: modalReducer,
     shortcut: ShortcutReducer,
     search: SearchReducer,
-    Triage: TagTriage
+    triage: TagTriage
 });
 export default uiReducer;

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 // import {getNotebooks} from '../../actions/notebookActions';
 import { getNotes, deleteNote, clearNotes } from '../../actions/noteAction';
 import { noteDropDown } from "../../actions/modalActions";
+import { removeTriage } from '../../actions/tagTriageAction'
 
 const msp = (state) => ({
     notes: Object.values(state.entities.notes),
@@ -18,6 +19,7 @@ const mdp = dispatch => ({
     deleteNote: note => dispatch(deleteNote(note)),
     clearNotes: () => dispatch(clearNotes()),
     noteDropDown: entity => dispatch(noteDropDown(entity)),
+    removeTriage: () => dispatch(removeTriage())
    
 
 });

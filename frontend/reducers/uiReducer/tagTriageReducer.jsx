@@ -14,3 +14,5 @@ const tagTriageReducer = (state = {}, action) => {
 
     }
 }
+
+export default tagTriageReducer;

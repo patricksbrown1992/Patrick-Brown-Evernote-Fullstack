@@ -21,13 +21,16 @@ class TagSearchForm extends React.Component {
             this.setState({ name: e.target.value });
         };
     }
+    
 
-    clickItem(entity){
+    clickItem(id){
         return(e) => {
             e.preventDefault();
             // entity.activated = !entity.activated;
             // this.props.closeModal();
-            return <Redirect to='/allnotes' />;
+            this.props.closeModal();
+            this.props.updateTriage(id)
+
         }
     }
 
@@ -75,7 +78,7 @@ class TagSearchForm extends React.Component {
         tags = tags.map(tag => {
             return (
                 <li key={tag.id}> 
-                    <div className="tag-name-item" onClick={this.clickItem(tag)}>{tag.name}</div>
+                    <div className="tag-name-item" onClick={this.clickItem(tag.id)}>{tag.name}</div>
                 </li>
             )
         })
