@@ -1,11 +1,11 @@
 export const RECEIVE_TRIAGE = 'RECEIVE_TRIAGE';
 export const REMOVE_TRIAGE = 'REMOVE_TRIAGE';
 
-export const receiveTriage = id => {
+export const receiveTriage = entity => {
 
     return {
         type: RECEIVE_TRIAGE,
-        id
+        entity
     }
 }
 

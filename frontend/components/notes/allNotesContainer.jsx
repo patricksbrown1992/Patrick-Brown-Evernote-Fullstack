@@ -9,7 +9,8 @@ const msp = state => ({
     user: state.entities.user[state.session.id],
     notebooks: Object.values(state.entities.notebooks),
     notes: Object.values(state.entities.notes),
-    search: state.ui.search
+    search: state.ui.search,
+    taggings: Object.values(state.ui.triage)
 });
 
 const mdp = dispatch => ({

@@ -13,7 +13,7 @@ const msp = state => ({
 const mdp = dispatch => ({
     closeModal: () => dispatch(closeModal()),
     getTags: user => dispatch(getTags(user)),
-    updateTriage: id => dispatch(receiveTriage(id))
+    updateTriage: entity => dispatch(receiveTriage(entity))
 
 })
 

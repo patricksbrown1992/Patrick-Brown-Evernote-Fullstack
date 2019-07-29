@@ -33,3 +33,7 @@ export const createTagging = (tagging) => dispatch => {
 export const deleteTagging = tagging => dispatch => (
     APIUtil.deleteTagging(tagging).then((tagging) => dispatch(destroyTagging(tagging)))
 );
+
+export const getTaggings = () => dispatch => {
+    return APIUtil.getTaggings().then(taggings => dispatch(receiveTaggings(taggings)))
+}

@@ -13,7 +13,7 @@ class NotesIndexForm extends React.Component {
         this.onlyCorrectNotes = this.onlyCorrectNotes.bind(this);
     }
     componentDidMount() {
-        this.props.getNotes(this.props.notebook.id).then(() => this.setState({ loaded: true }));
+        this.props.getNotes(this.props.notebook.id).then(() => this.props.getTaggings()).then(() => this.setState({ loaded: true }));
     }
 
     // componentDidUpdate(prevProps) {
@@ -75,7 +75,11 @@ class NotesIndexForm extends React.Component {
     
                     </li>
                 ));
-    
+                // if (this.props.taggings.length > 0){
+                //     notes = notes.filter(note => (
+                        
+                //     ))
+                // }
                 return (
                     <>
                         <ul>
