@@ -2,18 +2,21 @@ class Api::TaggingsController < ApplicationController
     before_action :require_logged_in
 
     def index
-        # something
+        # @user = 
+        # @taggengs = 
     end
 
     def show
-        @tag = Tag.find(params[:tag_id])
-        @note = Note.find(params[:note_id])
-        if @tag && @note
-            # something
+        @tagging = Tagging.find(params[:id])
+        if @tagging
+            render json: @tagging, status: 200
+        else
+            render json: @tagging.errors.full_messages, status: 404
         end
     end
 
     def create 
+        debugger
         @tagging = Tagging.new(tagging_params)
         if @tagging.save
             render json: @tagging, status: 200
@@ -23,15 +26,21 @@ class Api::TaggingsController < ApplicationController
     end
 
     def destroy
-        @tag = Tag.find(params[:tag_id])
-        @note = Note.find(params[:note_id])
-        if @tag && @note
-            # something
+        @tagging = Tagging.find(params[:id])
+        if @tagging.destroy
+            render json: @tagging, status: 200
+        else
+            render json: @tagging.errors.full_messages, status: 422
         end
     end
 
     def update
-        # something
+         @tagging = Tagging.find(params[:id])
+        if @tagging.update(tagging_params)
+            render json: @tagging, status: 200
+        else
+            render json: @tagging.errors.full_messages, status: 422
+        end
     end
 
     private

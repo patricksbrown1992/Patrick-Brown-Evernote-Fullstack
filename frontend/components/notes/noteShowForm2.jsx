@@ -16,6 +16,7 @@ class NoteShowForm extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleSubmitDropDown = this.handleSubmitDropDown.bind(this);
+        this.handleAddTag = this.handleAddTag.bind(this);
     }
 
     handleSubmitDropDown(entity) {
@@ -42,6 +43,14 @@ class NoteShowForm extends React.Component {
                 });
             } 
         }
+    }
+
+    handleAddTag(e){
+        e.preventDefault()
+        const tag_id = 9;
+        const note_id = this.props.note.id;
+        const tagging = {tag_id, note_id}
+        this.props.createTagging(tagging);
     }
 
     handleChange(value) {
@@ -83,10 +92,12 @@ class NoteShowForm extends React.Component {
                     <h1>{note.title}</h1>
                     <br />
                     <br />
+                    <button onClick={this.handleAddTag}>Add Study Tag</button>
                     <ReactQuill value={this.state.body} onChange={this.handleChange} theme="snow" />
                     <br />
-
-                    {/* <button onClick={this.handleAddTag()}>Add Study Tag</button> */}
+                    <br/>
+                    <br/>
+                    <br/>
                     {/* <i onClick={this.handleSubmitDropDown(note)} className="fas fa-ellipsis-h"></i> */}
                 </div>
             );

@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import noteShowForm from './noteShowForm2';
 import { updateNote, clearNotes } from '../../actions/noteAction';
 import { withRouter } from 'react-router-dom';
-
+import {createTagging} from '../../actions/taggingActions'
 
 const msp = (state, ownProps) => {
     const note = state.entities.notes[ownProps.match.params.note_id];
@@ -18,7 +18,8 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => ({
     updateNote: (id, note) => dispatch(updateNote(id, note)),
-    clearNotes: () => dispatch(clearNotes())
+    clearNotes: () => dispatch(clearNotes()),
+    createTagging: (tagging) => dispatch(createTagging(tagging))
 });
 
 export default withRouter(connect(msp, mdp)(noteShowForm));
