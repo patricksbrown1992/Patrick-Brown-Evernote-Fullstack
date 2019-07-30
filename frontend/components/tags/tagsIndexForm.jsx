@@ -18,6 +18,10 @@ class TagIndexForm extends React.Component {
         this.props.getTags(this.props.user);
     }
 
+    componentWillUnmount(){
+        this.props.clearTags();
+    }
+
     handleSubmitNewTag(entity) {
         return (e) => {
             e.preventDefault();
@@ -107,7 +111,7 @@ class TagIndexForm extends React.Component {
              
                 tags = this.sortTags(this.props.tags);
                 tags = tags.filter(tag => (
-                    tag.name.toUpperCase().includes(this.state.tag.toUpperCase())) && tag.user_id == this.props.user.id
+                    tag.name.toUpperCase().includes(this.state.tag.toUpperCase()))
                 )   
          
                 tags = tags.map(tag => {

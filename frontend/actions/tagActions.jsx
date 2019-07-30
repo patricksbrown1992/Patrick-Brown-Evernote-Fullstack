@@ -2,6 +2,7 @@ import * as APIUtil from '../util/tagUtil';
 export const RECEIVE_TAGS = 'RECEIVE_TAGS';
 export const RECEIVE_TAG = 'RECEIVE_TAG';
 export const DELETE_TAG = 'DELETE_TAG';
+export const CLEAR_TAGS = 'CLEAR_TAGS'
 
 const receiveTags = tags => {
     // debugger
@@ -10,6 +11,12 @@ const receiveTags = tags => {
         tags
     });
 };
+
+export const clearTags = () => {
+    return({
+        type: CLEAR_TAGS
+    })
+}
 
 const receiveTag = tag => {
     // debugger
