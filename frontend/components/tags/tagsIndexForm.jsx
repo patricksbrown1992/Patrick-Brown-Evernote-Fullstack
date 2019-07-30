@@ -38,7 +38,7 @@ class TagIndexForm extends React.Component {
     sortTags(tags){
         let newTags = this.duplicateArray(tags)
         let sorted = false;
-        // debugger
+        
         while(!sorted){
             sorted = true;
             // bubble sort
@@ -74,7 +74,7 @@ class TagIndexForm extends React.Component {
             let newObject = merge({}, array[i]);
             ans.push(newObject);
         }
-        // debugger
+        
         return ans;
     }
 

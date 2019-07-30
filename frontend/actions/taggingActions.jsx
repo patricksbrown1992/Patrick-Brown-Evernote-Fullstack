@@ -13,7 +13,7 @@ const receiveTaggings = taggings => {
 }
 
 const receiveTagging = tagging => {
-    // debugger
+
     return ({
         type: RECEIVE_TAGGING,
         tagging
@@ -31,7 +31,7 @@ export const clearTaggings = () => ({
 
 
 export const createTagging = (tagging) => dispatch => {
-    // debugger
+
     return APIUtil.createTagging(tagging).then(tagging => dispatch(receiveTagging(tagging)));
 };
 

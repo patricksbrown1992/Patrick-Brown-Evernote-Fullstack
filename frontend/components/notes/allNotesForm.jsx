@@ -12,7 +12,7 @@ class AllNoteForm extends React.Component {
     }
 
     componentDidMount(){
-        // debugger
+        
         this.props.clearNotebooks();
         this.props.getNotebooks(this.props.user).then( () => this.props.notebooks.forEach( (notebook) => {
             this.props.getNotes(notebook.id)

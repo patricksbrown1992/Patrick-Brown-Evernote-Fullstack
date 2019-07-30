@@ -17,7 +17,7 @@ export const getNote = (notebook, note) => {
 };
 
 export const createNote = (id, note) => {
-    // debugger
+    
     return $.ajax({
         method: 'POST',
         url: `api/notebooks/${id}/notes`,
@@ -28,7 +28,7 @@ export const createNote = (id, note) => {
 };
 
 export const updateNote = (id, note) => {
-    // debugger
+    
     return $.ajax({
         method: 'PATCH',
         url: `api/notebooks/${id}/notes/${note.id}`,
@@ -40,7 +40,7 @@ export const updateNote = (id, note) => {
 
 
 export const deleteNote = (note) => {
-    // debugger
+    
     return $.ajax({
         method: 'DELETE',
         url: `api/notebooks/${note.notebook_id}/notes/${note.id}`,

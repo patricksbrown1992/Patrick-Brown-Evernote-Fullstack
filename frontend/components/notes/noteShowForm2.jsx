@@ -47,7 +47,7 @@ class NoteShowForm extends React.Component {
 
     handleAddTag(e){
         e.preventDefault()
-        // debugger
+
         this.props.noteTagAddModal(this.props.match.params.note_id)
     }
 

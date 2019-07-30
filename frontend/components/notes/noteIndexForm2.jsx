@@ -14,13 +14,13 @@ class NotesIndexForm extends React.Component {
         this.triageNotes = this.triageNotes.bind(this);
     }
     componentDidMount() {
-        // debugger
+       
         this.props.clearTaggings();
         this.props.getNotes(this.props.notebook.id).then(() => this.props.getTaggings(this.props.user)).then(() => this.setState({ loaded: true }));
     }
 
     // componentDidUpdate(prevProps) {
-    //     debugger
+
     //     if(prevProps.notes.length !== this.props.notes.length || prevProps.match.params.notebook_id !== this.props.match.params.notebook_id){
     //         this.onlyCorrectNotes(this.props.notes)
     //     }
@@ -35,7 +35,7 @@ class NotesIndexForm extends React.Component {
         for(let i = 0; i < notes.length; i++){
             if (notes[i].notebook_id == parseInt(this.props.match.params.notebook_id)){
                 let newObject = merge({}, notes[i]);
-                // debugger
+               
                 ans.push(newObject);
             }
         }
@@ -55,12 +55,12 @@ class NotesIndexForm extends React.Component {
         let triage = this.props.triage[0];
         for(let i = 0; i < notes.length; i++){
             let note = notes[i];
-            // debugger
+           
             for(let j = 0; j < this.props.taggings.length; j++){
                 let tagging = this.props.taggings[j];
                 if(note.id == tagging.note_id && tagging.tag_id === triage.id){
                     let newObject = merge({}, note);
-                    // debugger
+                   
                     ans.push(newObject);
                 }
             }
@@ -78,7 +78,7 @@ class NotesIndexForm extends React.Component {
             if (!this.state.loaded) {
                 return null;
             } else {
-                // debugger
+               
                 let notes = this.onlyCorrectNotes(this.props.notes);
                 if(this.props.triage.length > 0){
                     notes = this.triageNotes(notes);

@@ -46,14 +46,14 @@ class NoteTagAddForm extends React.Component {
             let newObject = merge({}, array[i]);
             ans.push(newObject);
         }
-        // debugger
+        
         return ans;
     }
 
     sortTags(tags) {
         let newTags = this.duplicateArray(tags)
         let sorted = false;
-        // debugger
+        
         while (!sorted) {
             sorted = true;
             // bubble sort
@@ -72,12 +72,12 @@ class NoteTagAddForm extends React.Component {
 
     render() {
         let tags;
-        // debugger
+        
         if (this.props.tags.length < 1) {
             return null;
         }
         tags = this.sortTags(this.props.tags);
-        // debugger
+        
         tags = tags.filter(tag => (
             tag.name.toUpperCase().includes(this.state.name.toUpperCase()))
         )

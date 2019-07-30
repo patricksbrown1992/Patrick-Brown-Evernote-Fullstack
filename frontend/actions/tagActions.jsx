@@ -5,7 +5,6 @@ export const DELETE_TAG = 'DELETE_TAG';
 export const CLEAR_TAGS = 'CLEAR_TAGS'
 
 const receiveTags = tags => {
-    // debugger
     return ({
         type: RECEIVE_TAGS,
         tags
@@ -19,7 +18,7 @@ export const clearTags = () => {
 }
 
 const receiveTag = tag => {
-    // debugger
+
     return ({
         type: RECEIVE_TAG,
         tag

@@ -9,7 +9,7 @@ class TagDropDownForm extends React.Component {
     }
 
     handleSubmitEditTag(entity){
-        // debugger
+        
         return (e) => {
             e.preventDefault();
             this.props.editTagModal(entity);
@@ -18,7 +18,7 @@ class TagDropDownForm extends React.Component {
 
 
     handleSubmitDeleteTag(entity){
-        // debugger
+        
         return (e) => {
             e.preventDefault();
             this.props.deleteTagModal(entity);

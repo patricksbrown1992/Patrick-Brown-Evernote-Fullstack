@@ -4,8 +4,7 @@ class Api::TagsController < ApplicationController
 
 
     def index
-    #    @user = User.find(params[:user_id])
-        # debugger
+
         @tags = current_user.tags
         render json: @tags, status: 200
 

@@ -8,7 +8,7 @@ class LogoutForm extends React.Component {
     }
 
     handleSubmitLogOut(e) {
-        // debugger
+        
         e.preventDefault();
         this.props.logout();
         this.props.closeModal();
@@ -16,7 +16,7 @@ class LogoutForm extends React.Component {
 
 
     render(){
-        // debugger
+        
         return(
 
             <div className="logout-modal">

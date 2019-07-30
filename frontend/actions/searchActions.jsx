@@ -2,7 +2,7 @@ export const RECEIVE_SEARCH = 'RECEIVE_SEARCH';
 export const CLEAR_SEARCH = 'CLEAR_SEARCH';
 
 export const receiveSearch = search => {
-    // debugger
+    
     return ({
         type: RECEIVE_SEARCH,
         search

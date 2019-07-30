@@ -10,7 +10,7 @@ class NoteDropDownForm extends React.Component {
 
 
     handleSubmitDelete(entity) {
-        // debugger
+
         return (e) => {
             e.preventDefault();
             this.props.noteDelete(entity);
@@ -18,7 +18,7 @@ class NoteDropDownForm extends React.Component {
     }
 
     handleSubmitEdit(entity) {
-        // debugger
+
         return (e) => {
             e.preventDefault();
             this.props.noteEdit(entity)
@@ -43,7 +43,7 @@ class NoteDropDownForm extends React.Component {
     }
 
     render() {
-        // debugger
+
         if(this.props.note.shortcut){
             return (
                 <div className='note-drop-down-modal'>

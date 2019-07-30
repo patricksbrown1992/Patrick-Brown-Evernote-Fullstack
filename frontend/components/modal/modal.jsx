@@ -18,18 +18,18 @@ import TagSearch from '../tags/tagSearchContainer';
 import NoteTagAddContainer from '../tags/noteTagAddContainer';
 
 function Modal({ modal, closeModal }) {
-    // debugger
+
     if (!modal.type) {
         return null;
     }
     let component;
     switch (modal.type) {
         case 'add':
-            // debugger
+  
             component = <NotebookNewForm />;
             break;
         case 'edit':
-            // debugger
+
             component = <NotebookEditForm id={modal.entity.id} />;
             break;
         case 'addNote':

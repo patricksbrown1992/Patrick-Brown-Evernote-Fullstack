@@ -12,7 +12,7 @@ const taggingsReducer = (state = {}, action) => {
         case CLEAR_TAGGINGS:
             return {};
         case RECEIVE_TAGGINGS:
-            // debugger
+            
             const taggings = {};
             action.taggings.forEach((tagging) => {
                 taggings[tagging.id] = tagging;

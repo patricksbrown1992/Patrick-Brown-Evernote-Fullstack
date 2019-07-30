@@ -9,14 +9,14 @@ class NotebookDropDownForm extends React.Component {
     }
     
     handleSubmitDelete(entity) {
-        // debugger
+
         return (e) => {
             e.preventDefault();
             this.props.notebookDelete(entity);
         };
     };
     handleSubmitEdit(entity) {
-        // debugger
+
         return (e) => {
             e.preventDefault();
             this.props.editModal(entity);
