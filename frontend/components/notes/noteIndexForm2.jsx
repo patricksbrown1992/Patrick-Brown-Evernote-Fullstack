@@ -11,9 +11,10 @@ class NotesIndexForm extends React.Component {
         this.state = { loaded: false };
         this.handleSubmitNoteDropDown = this.handleSubmitNoteDropDown.bind(this);
         this.onlyCorrectNotes = this.onlyCorrectNotes.bind(this);
+        this.triageNotes = this.triageNotes.bind(this);
     }
     componentDidMount() {
-        debugger
+        // debugger
         this.props.clearTaggings();
         this.props.getNotes(this.props.notebook.id).then(() => this.props.getTaggings(this.props.user)).then(() => this.setState({ loaded: true }));
     }
@@ -49,6 +50,26 @@ class NotesIndexForm extends React.Component {
         };
     }
 
+    triageNotes(notes){
+        let ans = [];
+        for(let m = 0; m < this.props.triage.length; m++){
+            let triage = this.props.triage[m];
+            for(let i = 0; i < notes.length; i++){
+                let note = notes[i];
+                // debugger
+                for(let j = 0; j < this.props.taggings.length; j++){
+                    let tagging = this.props.taggings[j];
+                    if(note.id == tagging.note_id && tagging.tag_id === triage.id){
+                        let newObject = merge({}, note);
+                        // debugger
+                        ans.push(newObject);
+                    }
+                }
+            }
+        }
+        return ans;
+    }
+
 
 
     render() {
@@ -59,8 +80,11 @@ class NotesIndexForm extends React.Component {
             if (!this.state.loaded) {
                 return null;
             } else {
+                // debugger
                 let notes = this.onlyCorrectNotes(this.props.notes);
-    
+                if(this.props.triage.length > 0){
+                    notes = this.triageNotes(notes);
+                }
                 notes = notes.map(note => (
                     <li key={note.id} className="note-index-title" ><Link to={`/username/${this.props.notebook.id}/notes/${note.id}`} > <h1>{note.title}</h1> </Link>
                         <Link to={`/username/${this.props.notebook.id}/notes/${note.id}`} > <h3>{note.body.replace(/(<([^>]+)>)/ig, "")}</h3> </Link>
