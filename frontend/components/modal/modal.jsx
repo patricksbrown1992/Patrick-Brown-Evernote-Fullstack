@@ -16,6 +16,7 @@ import LogoutContainer from '../username/logoutContainer';
 import TagDropDownContainer from '../tags/tagDropDownContainer';
 import TagSearch from '../tags/tagSearchContainer';
 import NoteTagAddContainer from '../tags/noteTagAddContainer';
+import TagAllDeleteContainer from '../tags/tagAllDeleteContainer'
 
 function Modal({ modal, closeModal }) {
 
@@ -70,6 +71,9 @@ function Modal({ modal, closeModal }) {
             break;
         case 'tagSearch':
             component = <TagSearch /> ;
+            break
+        case 'tagAllDelete':
+            component = <TagAllDeleteContainer tag={modal.entity}/>
             break
         default:
             return null;

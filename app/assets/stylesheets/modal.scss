@@ -711,3 +711,45 @@
 .tag-search-modal ul {
   overflow-y: scroll;
 }
+
+.tag-all-delete-modal{
+  height: 300px;
+  width: 500px;
+  background-color: white;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+.tag-all-delete-modal button {
+
+  color: white;
+   background-color: tomato;
+   outline: none;
+   width: 75px;
+   height: 45px;
+   border-radius: 4px;
+   font-weight: 400;
+   margin-top: 50px;
+   margin-left: 400px; 
+   padding: 10px 15px 10px 15px;
+   font-size: 14px;
+}
+
+.tag-all-delete-modal h3, input, form, span{
+  display: flex;
+  justify-content: center;
+}
+
+.tag-all-delete-modal h3 {
+  font-family: sans-serif;
+  word-wrap: break-word;
+  margin-bottom: 35px;
+  font-weight: 500;
+  margin-left: 25px;
+  margin-right: 25px;
+  font-size: 14px;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

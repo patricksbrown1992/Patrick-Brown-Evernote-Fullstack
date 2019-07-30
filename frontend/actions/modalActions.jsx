@@ -125,3 +125,11 @@ export const noteTagAdd = (entity) => {
         modal: 'noteTagAdd'
     }
 }
+
+export const tagAllDelete = entity => {
+    return {
+        type: OPEN_MODAL,
+        entity,
+        modal: 'tagAllDelete'
+    }
+}

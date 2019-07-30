@@ -15,7 +15,7 @@ class TagIndexForm extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getTags(this.props.user);
+        this.props.getTags(this.props.user).then(() => this.props.getTaggings(this.props.user));
     }
 
     componentWillUnmount(){

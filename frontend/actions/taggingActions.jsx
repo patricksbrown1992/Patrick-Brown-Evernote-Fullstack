@@ -35,9 +35,10 @@ export const createTagging = (tagging) => dispatch => {
     return APIUtil.createTagging(tagging).then(tagging => dispatch(receiveTagging(tagging)));
 };
 
-export const deleteTagging = tagging => dispatch => (
-    APIUtil.deleteTagging(tagging).then((tagging) => dispatch(destroyTagging(tagging)))
-);
+export const deleteTagging = id => dispatch => {
+    debugger
+    return APIUtil.deleteTagging(id).then((tagging) => dispatch(destroyTagging(tagging)))
+};
 
 export const getTaggings = (user) => dispatch => {
     return APIUtil.getTaggings(user).then(taggings => dispatch(receiveTaggings(taggings)))
