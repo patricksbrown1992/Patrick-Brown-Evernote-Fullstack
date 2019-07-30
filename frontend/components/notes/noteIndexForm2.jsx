@@ -52,18 +52,16 @@ class NotesIndexForm extends React.Component {
 
     triageNotes(notes){
         let ans = [];
-        for(let m = 0; m < this.props.triage.length; m++){
-            let triage = this.props.triage[m];
-            for(let i = 0; i < notes.length; i++){
-                let note = notes[i];
-                // debugger
-                for(let j = 0; j < this.props.taggings.length; j++){
-                    let tagging = this.props.taggings[j];
-                    if(note.id == tagging.note_id && tagging.tag_id === triage.id){
-                        let newObject = merge({}, note);
-                        // debugger
-                        ans.push(newObject);
-                    }
+        let triage = this.props.triage[0];
+        for(let i = 0; i < notes.length; i++){
+            let note = notes[i];
+            // debugger
+            for(let j = 0; j < this.props.taggings.length; j++){
+                let tagging = this.props.taggings[j];
+                if(note.id == tagging.note_id && tagging.tag_id === triage.id){
+                    let newObject = merge({}, note);
+                    // debugger
+                    ans.push(newObject);
                 }
             }
         }

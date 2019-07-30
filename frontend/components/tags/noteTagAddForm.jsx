@@ -31,6 +31,7 @@ class NoteTagAddForm extends React.Component {
             const user_id = this.props.user.id;
             const tagging = { note_id, tag_id, user_id};
             this.props.closeModal();
+            this.props.clearTaggings();
             this.props.createTagging(tagging);
             // entity.activated = !entity.activated;
             // this.props.closeModal();

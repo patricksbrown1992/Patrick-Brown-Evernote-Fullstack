@@ -29,6 +29,7 @@ class TagSearchForm extends React.Component {
             // entity.activated = !entity.activated;
             // this.props.closeModal();
             this.props.closeModal();
+            this.props.removeTriage();
             this.props.updateTriage(entity)
 
         }
