@@ -87,7 +87,7 @@ class NoteShowForm extends React.Component {
             if (this.props.tags.length < 1) {
                 showtagbutton = ''
             } else {
-                showtagbutton = <button onClick={this.handleAddTag}>Add Tag</button>
+                showtagbutton = <button className='add-tag-on-note-button' onClick={this.handleAddTag}>Add Tag</button>
             }
             return (
                 <div className="right-nav">
