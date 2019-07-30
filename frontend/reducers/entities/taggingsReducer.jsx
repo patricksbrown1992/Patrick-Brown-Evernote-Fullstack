@@ -1,5 +1,5 @@
 import { merge } from 'lodash';
-import { RECEIVE_TAGGINGS, RECEIVE_TAGGING, DELETE_TAGGING } from '../../actions/taggingActions';
+import { RECEIVE_TAGGINGS, CLEAR_TAGGINGS, RECEIVE_TAGGING, DELETE_TAGGING } from '../../actions/taggingActions';
 const taggingsReducer = (state = {}, action) => {
     Object.freeze(state);
     switch(action.type){
@@ -9,6 +9,16 @@ const taggingsReducer = (state = {}, action) => {
             const newState = merge({}, state);
             delete newState[action.tagging.id];
             return newState;
+        case CLEAR_TAGGINGS:
+            return {};
+        case RECEIVE_TAGGINGS:
+            debugger
+            const taggings = {};
+            action.taggings.forEach((tagging) => {
+                taggings[tagging.id] = tagging;
+            });
+
+            return merge({}, state, taggings);  
         default:
             return state;
     }

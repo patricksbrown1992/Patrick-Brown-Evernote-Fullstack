@@ -1,4 +1,5 @@
 export const getTaggings = () => {
+    debugger
     return $.ajax({
         method: 'GET',
         url: 'api/taggings', 

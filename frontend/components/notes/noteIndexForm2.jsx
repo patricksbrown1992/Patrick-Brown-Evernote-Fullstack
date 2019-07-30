@@ -13,7 +13,8 @@ class NotesIndexForm extends React.Component {
         this.onlyCorrectNotes = this.onlyCorrectNotes.bind(this);
     }
     componentDidMount() {
-        this.props.getNotes(this.props.notebook.id).then(() => this.props.getTaggings()).then(() => this.setState({ loaded: true }));
+        this.props.clearTaggings();
+        this.props.getNotes(this.props.notebook.id).then(() => this.setState({ loaded: true }));
     }
 
     // componentDidUpdate(prevProps) {

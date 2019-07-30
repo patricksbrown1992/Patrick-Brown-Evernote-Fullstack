@@ -2,6 +2,7 @@ import * as APIUtil from '../util/taggingUtil';
 export const RECEIVE_TAGGINGS = 'RECEIVE_TAGGINGS';
 export const RECEIVE_TAGGING = 'RECEIVE_TAGGING';
 export const DELETE_TAGGING = 'DELETE_TAGGING';
+export const CLEAR_TAGGINGS = 'CLEAR_TAGGINGS';
 
 const receiveTaggings = taggings => {
 
@@ -23,6 +24,10 @@ const destroyTagging = tagging => ({
     type: DELETE_TAGGING,
     tagging
 });
+
+export const clearTaggings = () => ({
+    type: CLEAR_TAGGINGS
+})
 
 
 export const createTagging = (tagging) => dispatch => {
