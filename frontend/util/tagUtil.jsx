@@ -1,5 +1,5 @@
 export const getTags = (user) => {
-    debugger
+    // debugger
     return $.ajax({
         method: 'GET',
         url: '/api/tags',

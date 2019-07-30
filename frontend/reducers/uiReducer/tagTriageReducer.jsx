@@ -6,7 +6,7 @@ const tagTriageReducer = (state = {}, action) => {
 
     switch(action.type){
         case RECEIVE_TRIAGE:
-            debugger 
+            // debugger 
            return merge({}, state, { [action.entity.id]: action.entity });
         case REMOVE_TRIAGE:
             return {}
