@@ -46,6 +46,7 @@ class TagDropDownForm extends React.Component {
                     <span onClick={this.handleSubmitEditTag(this.props.tag)}>
                         <button >Rename Tag...</button>
                     </span>
+                    <br/>
                     <span onClick={this.handleDeleteAll(this.props.tag)}>
                         <button>Remove tag from all notes...</button>
                     </span>
