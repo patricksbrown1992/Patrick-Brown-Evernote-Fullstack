@@ -37,7 +37,7 @@ html {
     font-size: 200px;
 }
 .features-div {
-    /* // padding-right: 7%; */
+
     margin-left: -15%;
     width: 45%;
     height: 70%;
@@ -66,7 +66,7 @@ html {
     color: #00a82d;
     padding: 3.5% 6.5%;
     font-size: 16px;
-    /* // font-size: 25%; */
+
     font-weight: bold;
 }
 
@@ -74,7 +74,7 @@ html {
     font-size: 390%;
     font-weight: bold;
     margin-top: 23%;
-    /* // line-height: 72px; */
+
     line-height: 115%;
     margin-bottom: 4.5%;
     font-family: Soleil_Medium,Helvetica,Arial,sans-serif;
@@ -83,7 +83,7 @@ html {
 .splash-left h2 {
     font-family: Soleil_Light,Helvetica,Arial,sans-serif;
     font-size: 135%;
-    /* // line-height: 40px; */
+
     line-height: 190%;
     margin-bottom: 8%;
     font-weight: 100;
@@ -116,7 +116,7 @@ html {
     display: flex;
     margin-top: 2%;
     justify-content: space-around;
-    /* // align-items: center; */
+
   
     width: 18%;
  }
@@ -126,7 +126,7 @@ html {
 .splash-nav-left{
     display: flex;
     align-items: center;
-    /* // padding-left: 10%; */
+
 }
 
 .splash-nav-left img {
@@ -141,10 +141,9 @@ html {
 
  .signup-button a {
     display: flex;
-    /* // margin-top: -30px; */
+
     margin-bottom: 30px;
-    /* // border: 1px solid orange;
-    // margin-right: 15px; */
+
 
 
     align-items: center;
@@ -164,8 +163,7 @@ html {
     padding-right: 13%;
     width: 11%;
     font-family: 'PT Sans', sans-serif;
-    /* // border: 1px solid red;
-    // height: 95%; */
+
     height: 95%;
     display:flex;
     align-items: center;
@@ -185,7 +183,7 @@ html {
     text-decoration: none;
     padding-bottom: 20%;
     display: flex;
-    /* // width: 50px; */
+
     width: 100%;
     padding-top: 20%;
     border-radius: 4px;
@@ -200,7 +198,7 @@ html {
     font-family: Soleil,Helvetica,Arial,sans-serif;
  }
  .login-button {
-    /* // margin-top: 11%; */
+
     padding-bottom: 30px;
     margin-left: 6%;
  
@@ -210,10 +208,7 @@ html {
     background-image: image-url('homepage-hero-desktop.png');
     z-index: 2;
     height: 395px;
-    /* // height: 42.8%;
-    // height: 61.5%;
-    // width: 34.62%;
-    // width: 52%; */
+
     width: 665px;
     margin-top: 5.5%;
     margin-left: 2.6%;

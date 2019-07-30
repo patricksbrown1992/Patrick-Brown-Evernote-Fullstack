@@ -70,7 +70,7 @@ main {
     font-size: 14px;
 }
 .new-note {
-    /* // margin-bottom: 25px; */
+
     justify-content: start;
     cursor: pointer;
     height: 20%;
@@ -103,8 +103,7 @@ main {
 .center-nav {
     display: flex;
     height: 100%;
-/* //    border: 1px solid orange;
-    // background-color: whitesmoke; */
+
     width: 100%;
     flex-direction: row;
 }
@@ -116,7 +115,7 @@ main {
     display: flex;
     grid-area: 1 / 2/ 3/ 3;
     flex-direction: column;
-    /* // width: 69.5%; */
+
     height: 100%;
     margin-left: 3%;
 }

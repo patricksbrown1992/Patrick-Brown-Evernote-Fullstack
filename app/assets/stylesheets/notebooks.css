@@ -25,25 +25,23 @@
     overflow: hidden;
 }
 .notebook-show ul {
-    /* // width: 18%;
-    // height: 100%; */
+
     grid-area: 2 / 1 / 3 / 2;
     border-right: 1px solid lightgray;
     overflow-y: scroll;
-    /* // min-width: 350px; */
+
 }
 .notebook-show-title {
     grid-area: 1 / 1/ 2/ 2;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    /* // overflow: hidden
-    // min-width: 350px; */
+
     flex-direction: column;
 }
 .notebook-show-title form {
     display: flex;
-    /* // justify-content: left; */
+
     padding-top: 13%;
 }
 .notebook-show-title button {
@@ -54,7 +52,7 @@
 }
 
 .notebooks-index-list li {
-    /* // background-color: whitesmoke; */
+
     display: flex;
     justify-content: space-around;
 }
@@ -191,7 +189,7 @@ button {
     display: flex;
     
     justify-content: space-between;
-    /* // align-items: end; */
+
     height: 50%;
 }
 .notebook-index-header2 input{
@@ -205,26 +203,24 @@ button {
 .notebook-index-header2 h3{
     margin-top: 35px;
     font-size: 15px;
-    /* // color: darkslategrey; */
+
     font-size: 500;
 }
 
 .notebooks-index-right h1 {
     margin-top: 1.5%;
-    /* // margin-left: 1.5%; */
+
     font-size: 20px;
     font-weight: 400;
     font-family: sans-serif;
 }
 
 .notebooks-index-right h3 {
-    /* // margin-top: 2.5%;
-    // margin-bottom: 1%;
-    // margin-left: 1.5%; */
+
     font-size: 15px;
     font-family: sans-serif;
     font-weight: 500;
-    /* // padding-bottom: 1%; */
+
 }
 
  .new-notebook-button{
@@ -300,7 +296,7 @@ button {
     color: #b3b3b3;
     display:flex;
     flex-direction: row;
-    /* // overflow: hidden; */
+
 }
 .notebook-table-label-title:hover{
     text-decoration: underline;
