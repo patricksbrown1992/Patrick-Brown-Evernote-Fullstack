@@ -95,7 +95,6 @@ class NoteShowForm extends React.Component {
                     <h1>{note.title}</h1>
                     <br />
                     <br />
-                    {/* <button onClick={this.handleAddTag}>Add Tag</button> */}
                     {showtagbutton}
                     <br/>
                     <ReactQuill value={this.state.body} onChange={this.handleChange} theme="snow" />
