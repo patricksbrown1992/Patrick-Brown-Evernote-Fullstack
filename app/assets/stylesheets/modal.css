@@ -464,6 +464,7 @@
   font-weight: 700;
   padding-top: 5px;
   padding-bottom: 5px;
+  background-color: #fff;
 }
 
 .notebook-drop-down-modal button:hover {
@@ -499,6 +500,7 @@
   font-weight: 700;
   padding-top: 5px;
   padding-bottom: 5px;
+  background-color: #fff;
 }
 
 .note-drop-down-modal button:hover {
@@ -590,6 +592,7 @@
   font-weight: 500;
   padding-top: 1.5%;
   padding-bottom: 1.5%;
+  background-color: #fff;
 }
 .tag-drop-down-buttons button:hover{
   background-color: whitesmoke;
@@ -609,6 +612,7 @@
   padding-bottom: 3%;
   font-weight: 600;
   font-size: 14px;
+  background-color: #fff;
 
 }
 .logout-modal button:hover {

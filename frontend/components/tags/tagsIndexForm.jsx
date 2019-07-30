@@ -93,10 +93,13 @@ class TagIndexForm extends React.Component {
                 return (
                     <div className="tag-index">
                         <UsernameFormLeft />
-                        <div className="tag-index-header">
-                            <h1>Tags</h1>
-                            <span onClick={this.handleSubmitNewTag(this.props.user)} className="new-tag"><i className="fas fa-plus-circle"></i><button type='submit'><p>New Tag</p></button></span>
-                            
+                        <div className="tag-index-right">
+                            <div className="tag-index-upper">
+                                <div className="tag-index-header">
+                                    <h1>Tags</h1>
+                                    <span onClick={this.handleSubmitNewTag(this.props.user)} className="new-tag"><i className="fas fa-plus-circle"></i><button type='submit'><p>New Tag</p></button></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 )
