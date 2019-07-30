@@ -2,10 +2,9 @@ class Api::TaggingsController < ApplicationController
     # before_action :require_logged_in
 
     def index
-        @user = Tagging.find(params[:user_id])
-        @user.taggings
-        # @user = 
-        # @taggengs = 
+        @user = User.find(params[:user_id])
+        @taggings = @user.taggings
+        render json: @taggings, status: 200
     end
 
     def show

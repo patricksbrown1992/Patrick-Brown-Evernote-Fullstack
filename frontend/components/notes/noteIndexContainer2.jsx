@@ -11,7 +11,8 @@ const msp = (state) => ({
     user: state.entities.user[state.session.id], 
     notebooks: Object.values(state.entities.notebooks),
     search: state.ui.search,
-    taggings: Object.values(state.ui.triage)
+    taggings: Object.values(state.ui.triage),
+
 
 });
 
@@ -22,7 +23,7 @@ const mdp = dispatch => ({
     clearNotes: () => dispatch(clearNotes()),
     noteDropDown: entity => dispatch(noteDropDown(entity)),
     removeTriage: () => dispatch(removeTriage()),
-    getTaggings: () => dispatch(getTaggings()),
+    getTaggings: (user) => dispatch(getTaggings(user)),
     clearTaggings: () => dispatch(clearTaggings())
    
 

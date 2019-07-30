@@ -1,8 +1,11 @@
-export const getTaggings = () => {
-    // debugger
+export const getTaggings = (user) => {
+    debugger
     return $.ajax({
         method: 'GET',
         url: 'api/taggings', 
+        data: {
+            user_id: user.id
+        }
 
     })
 }
