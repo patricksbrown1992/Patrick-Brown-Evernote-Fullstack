@@ -10,7 +10,7 @@ const msp = state => ({
     user: state.entities.user[state.session.id],
     tags: Object.values(state.entities.tags),
     notes: Object.values(state.entities.notes),
-    taggings: Object.values(state.entities.tagging)
+    taggings: Object.values(state.entities.taggings)
 });
 
 const mdp = dispatch => ({

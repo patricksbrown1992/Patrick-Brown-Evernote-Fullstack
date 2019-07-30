@@ -72,6 +72,7 @@ class NoteTagAddForm extends React.Component {
 
     render() {
         let tags;
+        debugger
         if (this.props.tags.length < 1) {
             return null;
         }
