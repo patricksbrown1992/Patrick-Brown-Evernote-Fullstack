@@ -1,12 +1,13 @@
 class Api::TagsController < ApplicationController
-    before_action :require_logged_in
+    # before_action :require_logged_in
 
 
 
     def index
-       @user = User.find(params[:user_id])
-       @tags = @user.tags
-       render json: @tags, status: 200
+    #    @user = User.find(params[:user_id])
+        debugger
+        @tags = current_user.tags
+        render json: @tags, status: 200
 
     end
 

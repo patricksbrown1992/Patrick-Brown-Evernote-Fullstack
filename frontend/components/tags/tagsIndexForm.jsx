@@ -104,12 +104,12 @@ class TagIndexForm extends React.Component {
                     </div>
                 )
             } else {
-                // debugger
+             
                 tags = this.sortTags(this.props.tags);
                 tags = tags.filter(tag => (
                     tag.name.toUpperCase().includes(this.state.tag.toUpperCase()))
                 )   
-                // debugger
+         
                 tags = tags.map(tag => {
                     if(tag.duplicate){
                         // if tag starts with same letter as one before it
