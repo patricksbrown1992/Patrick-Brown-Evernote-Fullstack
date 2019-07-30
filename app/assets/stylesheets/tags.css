@@ -20,7 +20,7 @@
     height: 50%;
     
     justify-content: space-between;
-    // margin-bottom: 35px;
+    /* // margin-bottom: 35px; */
 }
 .tag-index-header h1 {
     margin-top: 30px;
@@ -35,7 +35,7 @@
     height: 25px;
     margin-top: 30px;
     margin-right: 30px;
-    // border-radius: 3%;
+    /* // border-radius: 3%; */
     outline: none;
     font-weight: 400;
     padding: 5px 5px 5px 11px;
@@ -65,9 +65,11 @@
     width: 100%;
     font-size: 14px;
     min-height: 27px;
+    background-color: #fff;
 }
 .chevron-down-button{
     border: none;
+    background-color: #fff;
 }
 .tag-index-add{
     display: flex;
