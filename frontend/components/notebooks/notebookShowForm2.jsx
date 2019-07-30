@@ -14,7 +14,11 @@ class NotebookShowForm extends React.Component {
 
     componentDidMount() {
         this.props.clearNotes();
-        this.props.getNotebooks(this.props.user).then(() => this.setState({ loaded: true }));
+        this.props.getNotebooks(this.props.user).then( () => this.props.getTags(this.props.user)).then(() => this.setState({ loaded: true }));
+    }
+
+    componentWillUnmount(){
+        this.props.clearTags()
     }
 
     componentDidUpdate(prevProps){
@@ -48,10 +52,17 @@ class NotebookShowForm extends React.Component {
         } else {
   
             let theNotebook;
+            let showtagbutton;
             theNotebook = this.props.notebooks[this.props.match.params.notebook_id];
             
             if (!this.state.loaded) {
                 return null;
+            }
+
+            if (this.props.tags.length < 1){
+                showtagbutton = ''
+            } else {
+                showtagbutton = "fas fa-tag"
             }
             // debugger
             return (
@@ -64,7 +75,7 @@ class NotebookShowForm extends React.Component {
                             <div className='notebook-show-title'>
                                 <h1>{theNotebook.name}</h1>
                                 <div className="notebook-show-bottom">
-                                    <i onClick={this.handleTagModal()} className="fas fa-tag"></i>
+                                    <i onClick={this.handleTagModal()} className={showtagbutton}></i>
                                     <i onClick={this.handleSubmitDropDown(this.props.notebooks[this.props.match.params.notebook_id])} className="fas fa-ellipsis-h move-left"></i>
                                 </div>
                             </div>

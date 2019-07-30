@@ -83,14 +83,20 @@ class NoteShowForm extends React.Component {
                 return <Redirect to={`/username/${this.state.notebook_id}`} />
             }
             let note = this.props.note;
-    
+            let showtagbutton;
+            if (this.props.tags.length < 1) {
+                showtagbutton = ''
+            } else {
+                showtagbutton = <button onClick={this.handleAddTag}>Add Tag</button>
+            }
             return (
                 <div className="right-nav">
 
                     <h1>{note.title}</h1>
                     <br />
                     <br />
-                    <button onClick={this.handleAddTag}>Add Tag</button>
+                    {/* <button onClick={this.handleAddTag}>Add Tag</button> */}
+                    {showtagbutton}
                     <br/>
                     <ReactQuill value={this.state.body} onChange={this.handleChange} theme="snow" />
                     <br />

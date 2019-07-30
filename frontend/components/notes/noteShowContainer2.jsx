@@ -15,7 +15,8 @@ const msp = (state, ownProps) => {
         notes: Object.values(state.entities.notes),
         note: note,
         search: state.ui.search,
-        taggings: Object.values(state.entities.taggings)
+        taggings: Object.values(state.entities.taggings),
+        tags: Object.values(state.entities.tags)
     }
 };
 
