@@ -50,6 +50,10 @@ class User < ApplicationRecord
         self.session_token
     end
 
+    def user_tags
+        tags.all
+    end
+
     private 
 
     def ensure_session_token
