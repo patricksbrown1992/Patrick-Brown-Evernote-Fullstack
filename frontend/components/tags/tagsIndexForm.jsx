@@ -134,14 +134,14 @@ class TagIndexForm extends React.Component {
                             return (
                                 <li key={tag.id}>
                                     {/* <div className="tag-index-intial">{tag.name[0]}</div> */}
-                                    <div className="tag-name"> <button onClick={this.handleTagClickTriage(tag)}>{tag.name}</button><button onClick={this.handleSubmitDropDown(tag)} className='chevron-down-button'><i className="fas fa-chevron-down"></i></button></div>
+                                    <div className="tag-name"> <button className = "tag-triage-redirect-button" onClick={this.handleTagClickTriage(tag)}>{tag.name}</button><button onClick={this.handleSubmitDropDown(tag)} className='chevron-down-button'><i className="fas fa-chevron-down"></i></button></div>
                                 </li>
                             )
                         } else {
                             return (
                             <li key={tag.id}>
                                 <div className="tag-index-intial">{tag.name[0].toUpperCase()}</div>
-                                <div className="tag-name"><button onClick={this.handleTagClickTriage(tag)}>{tag.name}</button><button onClick={this.handleSubmitDropDown(tag)} className='chevron-down-button'><i className="fas fa-chevron-down"></i></button></div>
+                                <div className="tag-name"><button className="tag-triage-redirect-button" onClick={this.handleTagClickTriage(tag)}>{tag.name}</button><button onClick={this.handleSubmitDropDown(tag)} className='chevron-down-button'><i className="fas fa-chevron-down"></i></button></div>
                             </li>
                         )
                         }
