@@ -1,6 +1,6 @@
 import React from 'react';
 import UsernameFormLeft from '../username/nonNoteLeftContainer';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import { merge } from 'lodash';
 
 class TagIndexForm extends React.Component {
@@ -12,6 +12,8 @@ class TagIndexForm extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.sortTags = this.sortTags.bind(this);
         this.duplicateArray = this.duplicateArray.bind(this);
+        this.handleTagClickTriage = this.handleTagClickTriage.bind(this);
+      
     }
 
     componentDidMount() {
@@ -21,6 +23,14 @@ class TagIndexForm extends React.Component {
     componentWillUnmount(){
         this.props.clearTags();
     }
+
+    handleTagClickTriage(entity){
+        return (e) => {
+            e.preventDefault()
+            this.props.receiveTriage(entity);
+        }
+    }
+
 
     handleSubmitNewTag(entity) {
         return (e) => {
@@ -92,70 +102,75 @@ class TagIndexForm extends React.Component {
         if (this.props.search.length > 0) {
             return <Redirect to='/allnotes' />;
         } else {
-            let tags
-            if (this.props.tags.length < 1) {
-                return (
-                    <div className="tag-index">
-                        <UsernameFormLeft />
-                        <div className="tag-index-right">
-                            <div className="tag-index-upper">
-                                <div className="tag-index-header">
-                                    <h1>Tags</h1>
-                                    <span onClick={this.handleSubmitNewTag(this.props.user)} className="new-tag"><i className="fas fa-plus-circle"></i><button type='submit'><p>New Tag</p></button></span>
+
+            if(this.props.triage.length > 0){
+                return <Redirect to='/allnotes' />
+            } else {
+                let tags
+                if (this.props.tags.length < 1) {
+                    return (
+                        <div className="tag-index">
+                            <UsernameFormLeft />
+                            <div className="tag-index-right">
+                                <div className="tag-index-upper">
+                                    <div className="tag-index-header">
+                                        <h1>Tags</h1>
+                                        <span onClick={this.handleSubmitNewTag(this.props.user)} className="new-tag"><i className="fas fa-plus-circle"></i><button type='submit'><p>New Tag</p></button></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                )
-            } else {
+                    )
+                } else {
+                 
+                    tags = this.sortTags(this.props.tags);
+                    tags = tags.filter(tag => (
+                        tag.name.toUpperCase().includes(this.state.tag.toUpperCase()))
+                    )   
              
-                tags = this.sortTags(this.props.tags);
-                tags = tags.filter(tag => (
-                    tag.name.toUpperCase().includes(this.state.tag.toUpperCase()))
-                )   
-         
-                tags = tags.map(tag => {
-                    if(tag.duplicate){
-                        // if tag starts with same letter as one before it
-                        return (
+                    tags = tags.map(tag => {
+                        if(tag.duplicate){
+                            // if tag starts with same letter as one before it
+                            return (
+                                <li key={tag.id}>
+                                    {/* <div className="tag-index-intial">{tag.name[0]}</div> */}
+                                    <div className="tag-name"> <button onClick={this.handleTagClickTriage(tag)}>{tag.name}</button><button onClick={this.handleSubmitDropDown(tag)} className='chevron-down-button'><i className="fas fa-chevron-down"></i></button></div>
+                                </li>
+                            )
+                        } else {
+                            return (
                             <li key={tag.id}>
-                                {/* <div className="tag-index-intial">{tag.name[0]}</div> */}
-                                <div className="tag-name">{tag.name}<button onClick={this.handleSubmitDropDown(tag)} className='chevron-down-button'><i className="fas fa-chevron-down"></i></button></div>
+                                <div className="tag-index-intial">{tag.name[0].toUpperCase()}</div>
+                                <div className="tag-name"><button onClick={this.handleTagClickTriage(tag)}>{tag.name}</button><button onClick={this.handleSubmitDropDown(tag)} className='chevron-down-button'><i className="fas fa-chevron-down"></i></button></div>
                             </li>
                         )
-                    } else {
-                        return (
-                        <li key={tag.id}>
-                            <div className="tag-index-intial">{tag.name[0].toUpperCase()}</div>
-                            <div className="tag-name">{tag.name}<button onClick={this.handleSubmitDropDown(tag)} className='chevron-down-button'><i className="fas fa-chevron-down"></i></button></div>
-                        </li>
-                    )
-                    }
-                })
-
-                return (
-                    <div className="tag-index">
-                        <UsernameFormLeft />
-                        <div className="tag-index-right">
-                            <div className="tag-index-upper">
-                                <div className="tag-index-header">
-                                    <h1>Tags</h1>
-                                    <input placeholder='Find Tags...' type="text" onChange={this.handleChange()} />
+                        }
+                    })
+    
+                    return (
+                        <div className="tag-index">
+                            <UsernameFormLeft />
+                            <div className="tag-index-right">
+                                <div className="tag-index-upper">
+                                    <div className="tag-index-header">
+                                        <h1>Tags</h1>
+                                        <input placeholder='Find Tags...' type="text" onChange={this.handleChange()} />
+                                    </div>
+                                    <div className="tag-index-add">
+                                        <span onClick={this.handleSubmitNewTag(this.props.user)} className="new-tag"><button type='submit'><i className="fas fa-plus-circle"></i><p>New Tag</p></button></span>
+                                    </div>
                                 </div>
-                                <div className="tag-index-add">
-                                    <span onClick={this.handleSubmitNewTag(this.props.user)} className="new-tag"><button type='submit'><i className="fas fa-plus-circle"></i><p>New Tag</p></button></span>
+                                
+                                
+                                <div className="tag-index-list">
+                                    <ul>{tags}</ul>
                                 </div>
-                            </div>
-                            
-                            
-                            <div className="tag-index-list">
-                                <ul>{tags}</ul>
                             </div>
                         </div>
-                    </div>
-                )
-            }
-        }      
+                    )
+                }
+            }      
+        }
     }
 }
 

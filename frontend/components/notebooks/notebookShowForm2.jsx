@@ -19,7 +19,8 @@ class NotebookShowForm extends React.Component {
     }
 
     componentWillUnmount(){
-        this.props.clearTags()
+        this.props.clearTags();
+        this.props.removeTriage();
     }
 
     componentDidUpdate(prevProps){
@@ -88,7 +89,9 @@ class NotebookShowForm extends React.Component {
                             <div className='notebook-show-title'>
                                 <h1>{theNotebook.name}</h1>
                                 <div className="notebook-show-icons">
-                                    {theTag}
+                                    <div className='tag-triage-div'>
+                                        {theTag}
+                                    </div>
                                     <div className="notebook-show-bottom">
                                         <i onClick={this.handleTagModal()} className={showtagbutton}></i>
                                         <i onClick={this.handleSubmitDropDown(this.props.notebooks[this.props.match.params.notebook_id])} className="fas fa-ellipsis-h move-left"></i>
