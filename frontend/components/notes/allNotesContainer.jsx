@@ -10,7 +10,8 @@ const msp = state => ({
     notebooks: Object.values(state.entities.notebooks),
     notes: Object.values(state.entities.notes),
     search: state.ui.search,
-    taggings: Object.values(state.ui.triage)
+    taggings: Object.values(state.entities.taggings),
+    triage: Object.values(state.ui.triage)
 });
 
 const mdp = dispatch => ({

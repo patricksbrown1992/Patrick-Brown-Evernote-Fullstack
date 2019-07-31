@@ -9,6 +9,7 @@ class AllNoteForm extends React.Component {
         this.state = { loaded: false }
         this.duplicateArray = this.duplicateArray.bind(this);
         this.handleSubmitNoteDropDown = this.handleSubmitNoteDropDown.bind(this);
+        this.triageNotes = this.triageNotes.bind(this);
     }
 
     componentDidMount(){
@@ -41,6 +42,24 @@ class AllNoteForm extends React.Component {
         return ans;
     }
 
+    triageNotes(notes) {
+        let ans = [];
+        let triage = this.props.triage[0];
+        for (let i = 0; i < notes.length; i++) {
+            let note = notes[i];
+
+            for (let j = 0; j < this.props.taggings.length; j++) {
+                let tagging = this.props.taggings[j];
+                if (note.id == tagging.note_id && tagging.tag_id === triage.id) {
+                    let newObject = merge({}, note);
+
+                    ans.push(newObject);
+                }
+            }
+        }
+        return ans;
+    }
+
 
     render() {
         let notes;
@@ -48,7 +67,10 @@ class AllNoteForm extends React.Component {
             notes = this.duplicateArray(this.props.notes);
             notes = notes.filter(note => (
                 note.title.toUpperCase().includes(this.props.search.toUpperCase()))
-            )   
+            ) 
+            if (this.props.triage.length > 0) {
+                notes = this.triageNotes(notes);
+            }
             notes = notes.map(note => (
                 <li key={note.id} className="all-note-title"><Link to={`/username/${note.notebook_id}/notes/${note.id}`} > <h1>{note.title}</h1> </Link>
                     <Link to={`/username/${note.notebook_id}/notes/${note.id}`} > <h3>{note.body.replace(/(<([^>]+)>)/ig, "")}</h3></Link>
@@ -73,7 +95,7 @@ class AllNoteForm extends React.Component {
                     <div className="all-note-right">
                         <div className ="all-note-title">
                             <h1>All Notes</h1>
-                            <h3>{this.props.notes.length} notes</h3>
+                            <h3>{notes.length} notes</h3>
                         </div>
                         <div className = "all-note-nav">
                             {notes}
