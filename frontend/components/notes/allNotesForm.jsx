@@ -42,6 +42,7 @@ class AllNoteForm extends React.Component {
         };
     }
     componentWillUnmount() {
+
         this.props.removeTriage();
     }
 

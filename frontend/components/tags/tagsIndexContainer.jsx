@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { getTags, clearTags} from '../../actions/tagActions';
 import { openAddTagModal, editTagModal, deleteTagModal, tagDropDown } from '../../actions/modalActions';
 import {getTaggings} from '../../actions/taggingActions';
-import { receiveTriage} from '../../actions/tagTriageAction';
+import { receiveTriage, removeTriage} from '../../actions/tagTriageAction';
 
 
 const msp = state => ({
@@ -21,7 +21,8 @@ const mdp = dispatch => ({
     tagDropDown: entity => dispatch(tagDropDown(entity)),
     clearTags: () => dispatch(clearTags()),
     getTaggings: (user) => dispatch(getTaggings(user)),
-    receiveTriage: (entity) => dispatch(receiveTriage(entity))
+    receiveTriage: (entity) => dispatch(receiveTriage(entity)),
+    removeTriage: () => dispatch(removeTriage())
 });
 
 export default connect(msp, mdp)(TagsIndexForm);

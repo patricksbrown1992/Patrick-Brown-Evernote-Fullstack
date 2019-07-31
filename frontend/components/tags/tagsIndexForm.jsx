@@ -6,7 +6,7 @@ import { merge } from 'lodash';
 class TagIndexForm extends React.Component {
     constructor(props){
         super(props);
-        this.state = {tag: ''};
+        this.state = {tag: '', selected: false};
         this.handleSubmitNewTag = this.handleSubmitNewTag.bind(this);
         this.handleSubmitDropDown = this.handleSubmitDropDown.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -17,6 +17,7 @@ class TagIndexForm extends React.Component {
     }
 
     componentDidMount() {
+        this.props.removeTriage();
         this.props.getTags(this.props.user).then(() => this.props.getTaggings(this.props.user));
     }
 
@@ -27,7 +28,7 @@ class TagIndexForm extends React.Component {
     handleTagClickTriage(entity){
         return (e) => {
             e.preventDefault()
-            this.props.receiveTriage(entity);
+            this.setState({ selected: entity }, () => this.props.receiveTriage(entity)) 
         }
     }
 
@@ -103,7 +104,7 @@ class TagIndexForm extends React.Component {
             return <Redirect to='/allnotes' />;
         } else {
 
-            if(this.props.triage.length > 0){
+            if (this.state.selected){
                 return <Redirect to='/allnotes' />
             } else {
                 let tags
