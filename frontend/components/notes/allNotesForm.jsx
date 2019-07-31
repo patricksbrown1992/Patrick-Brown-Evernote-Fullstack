@@ -10,6 +10,8 @@ class AllNoteForm extends React.Component {
         this.duplicateArray = this.duplicateArray.bind(this);
         this.handleSubmitNoteDropDown = this.handleSubmitNoteDropDown.bind(this);
         this.triageNotes = this.triageNotes.bind(this);
+        this.handleTagModal = this.handleTagModal.bind(this);
+        this.handleRemoveTriage = this.handleRemoveTriage.bind(this);
     }
 
     componentDidMount(){
@@ -17,8 +19,20 @@ class AllNoteForm extends React.Component {
         this.props.clearNotebooks();
         this.props.getNotebooks(this.props.user).then( () => this.props.notebooks.forEach( (notebook) => {
             this.props.getNotes(notebook.id)
-        }) );
+        }) ).then( () => this.props.getTaggings(this.props.user)).then( () => this.props.getTags(this.props.user)) ;
         // .then( () => this.props.getNotes())
+    }
+
+    handleTagModal() {
+        return (e) => {
+            e.preventDefault();
+            this.props.tagSearchDropDown()
+        }
+    }
+
+    handleRemoveTriage(e) {
+        e.preventDefault();
+        this.props.removeTriage()
     }
 
     handleSubmitNoteDropDown(entity) {
@@ -63,6 +77,8 @@ class AllNoteForm extends React.Component {
 
     render() {
         let notes;
+        let theTag;
+        let showtagbutton;
         if(this.props.notes.length > 0){
             notes = this.duplicateArray(this.props.notes);
             notes = notes.filter(note => (
@@ -70,6 +86,12 @@ class AllNoteForm extends React.Component {
             ) 
             if (this.props.triage.length > 0) {
                 notes = this.triageNotes(notes);
+            }
+
+            if (this.props.tags.length < 1) {
+                showtagbutton = ''
+            } else {
+                showtagbutton = "fas fa-tag"
             }
             notes = notes.map(note => (
                 <li key={note.id} className="all-note-title"><Link to={`/username/${note.notebook_id}/notes/${note.id}`} > <h1>{note.title}</h1> </Link>
@@ -87,6 +109,15 @@ class AllNoteForm extends React.Component {
 
                 </li>
             ));
+
+            if (this.props.triage.length > 0) {
+                theTag = <button onClick={this.handleRemoveTriage} className="tag-triage-name">{this.props.triage[0].name} x</button>
+            } else {
+                theTag = ''
+            }
+
+            
+
             return (
     
     
@@ -96,6 +127,14 @@ class AllNoteForm extends React.Component {
                         <div className ="all-note-title">
                             <h1>All Notes</h1>
                             <h3>{notes.length} notes</h3>
+                            <div className="notebook-show-icons">
+                                <div className='tag-triage-div'>
+                                    {theTag}
+                                </div>
+                                <div className="notebook-show-bottom">
+                                    <i onClick={this.handleTagModal()} className={showtagbutton}></i>
+                                </div>
+                            </div>
                         </div>
                         <div className = "all-note-nav">
                             {notes}

@@ -2,8 +2,10 @@ import AllNotesForm from './allNotesForm';
 import { connect } from 'react-redux';
 import { getNotebooks, clearNotebooks } from '../../actions/notebookActions';
 import { getNotes, clearNotes, deleteNote } from '../../actions/noteAction';
-import { noteDropDown } from "../../actions/modalActions";
+import { noteDropDown, tagSearchDropDown } from "../../actions/modalActions";
 import {removeTriage } from '../../actions/tagTriageAction'
+import {getTags} from '../../actions/tagActions';
+import {getTaggings} from '../../actions/taggingActions';
 
 const msp = state => ({
     user: state.entities.user[state.session.id],
@@ -11,7 +13,8 @@ const msp = state => ({
     notes: Object.values(state.entities.notes),
     search: state.ui.search,
     taggings: Object.values(state.entities.taggings),
-    triage: Object.values(state.ui.triage)
+    triage: Object.values(state.ui.triage),
+    tags: Object.values(state.entities.tags)
 });
 
 const mdp = dispatch => ({
@@ -22,6 +25,10 @@ const mdp = dispatch => ({
     deleteNote: note => dispatch(deleteNote(note)),
     noteDropDown: entity => dispatch(noteDropDown(entity)),
     removeTriage: () => dispatch(removeTriage()),
+    getTags: (user) => dispatch(getTags(user)),
+    getTaggings: (user) => dispatch(getTaggings(user)),
+    tagSearchDropDown: () => dispatch(tagSearchDropDown())
+
 
 });
 
