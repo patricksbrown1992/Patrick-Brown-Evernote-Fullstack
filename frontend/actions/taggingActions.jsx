@@ -36,7 +36,6 @@ export const createTagging = (tagging) => dispatch => {
 };
 
 export const deleteTagging = id => dispatch => {
-    // debugger
     return APIUtil.deleteTagging(id).then((tagging) => dispatch(destroyTagging(tagging)))
 };
 

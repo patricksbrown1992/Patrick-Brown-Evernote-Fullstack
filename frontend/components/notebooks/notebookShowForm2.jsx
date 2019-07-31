@@ -9,6 +9,7 @@ class NotebookShowForm extends React.Component {
         this.state = { loaded: false };
         this.handleSubmitDropDown = this.handleSubmitDropDown.bind(this);
         this.handleTagModal = this.handleTagModal.bind(this);
+        this.handleRemoveTriage = this.handleRemoveTriage.bind(this);
        
     }
 
@@ -46,6 +47,11 @@ class NotebookShowForm extends React.Component {
         }
     }
 
+    handleRemoveTriage(e){
+        e.preventDefault();
+        this.props.removeTriage()
+    }
+
     render() {
         if (this.props.search.length > 0) {
             return <Redirect to='/allnotes' />;
@@ -53,6 +59,7 @@ class NotebookShowForm extends React.Component {
   
             let theNotebook;
             let showtagbutton;
+            let theTag;
             theNotebook = this.props.notebooks[this.props.match.params.notebook_id];
             
             if (!this.state.loaded) {
@@ -64,6 +71,12 @@ class NotebookShowForm extends React.Component {
             } else {
                 showtagbutton = "fas fa-tag"
             }
+
+            if (this.props.triage.length > 0){
+                theTag = <button onClick={this.handleRemoveTriage} className="tag-triage-name">{this.props.triage[0].name} x</button>
+            } else {
+                theTag = ''
+            }
             
             return (
                 <>
@@ -74,9 +87,12 @@ class NotebookShowForm extends React.Component {
                         <div className="notebook-show">
                             <div className='notebook-show-title'>
                                 <h1>{theNotebook.name}</h1>
-                                <div className="notebook-show-bottom">
-                                    <i onClick={this.handleTagModal()} className={showtagbutton}></i>
-                                    <i onClick={this.handleSubmitDropDown(this.props.notebooks[this.props.match.params.notebook_id])} className="fas fa-ellipsis-h move-left"></i>
+                                <div className="notebook-show-icons">
+                                    {theTag}
+                                    <div className="notebook-show-bottom">
+                                        <i onClick={this.handleTagModal()} className={showtagbutton}></i>
+                                        <i onClick={this.handleSubmitDropDown(this.props.notebooks[this.props.match.params.notebook_id])} className="fas fa-ellipsis-h move-left"></i>
+                                    </div>
                                 </div>
                             </div>
                             <NoteIndexContainer notebook={theNotebook} />

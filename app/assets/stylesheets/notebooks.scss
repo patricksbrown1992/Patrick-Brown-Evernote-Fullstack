@@ -44,12 +44,12 @@
 
     padding-top: 13%;
 }
-.notebook-show-title button {
-    width: 110px;
-    height: 25px;
-    background-color: lightcoral;
-    color: white;
-}
+// .notebook-show-title button {
+//     width: 110px;
+//     height: 25px;
+//     // background-color: lightcoral;
+//     color: white;
+// }
 
 .notebooks-index-list li {
 
@@ -354,8 +354,15 @@ button {
     flex-direction: row;
     justify-content: flex-end;
     margin-right: 5%;
+    
 }
 
 .move-left{
     margin-left: 5%;
+}
+
+.notebook-show-icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }

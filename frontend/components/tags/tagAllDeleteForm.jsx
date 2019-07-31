@@ -19,7 +19,6 @@ class TagAllDeleteForm extends React.Component {
         this.props.closeModal();
         for(let i = 0; i < this.props.taggings.length; i++){
             let tagging = this.props.taggings[i];
-            // debugger
             if(tagging.tag_id == this.props.tag.id){
                 this.props.deleteTagging(tagging.id)
             }

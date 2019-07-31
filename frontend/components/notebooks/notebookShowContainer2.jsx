@@ -6,13 +6,15 @@ import {getNotes} from '../../actions/noteAction';
 import { withRouter } from 'react-router-dom';
 import { notebookDropDown, tagSearchDropDown } from "../../actions/modalActions";
 import {getTags, clearTags} from '../../actions/tagActions'
+import { removeTriage} from '../../actions/tagTriageAction';
 
 const msp = (state) => ({
     user: state.entities.user[state.session.id],
     notebooks: state.entities.notebooks,
     notes: Object.values(state.entities.notes),
     tags: Object.values(state.entities.tags),
-    search: state.ui.search
+    search: state.ui.search,
+    triage: Object.values(state.ui.triage)
 
 });
 
@@ -23,7 +25,9 @@ const mdp = dispatch => ({
     notebookDropDown: notebook => dispatch(notebookDropDown(notebook)),
     tagSearchDropDown: () => dispatch(tagSearchDropDown()),
     getTags: (user) => dispatch(getTags(user)),
-    clearTags: () => dispatch(clearTags())
+    clearTags: () => dispatch(clearTags()),
+    removeTriage: () => dispatch(removeTriage())
+
 
 });
 

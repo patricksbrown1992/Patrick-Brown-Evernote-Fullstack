@@ -84,3 +84,14 @@
     border-bottom: 3px solid black;
 }
 
+.tag-triage-name{
+    color: #fff;
+    background-color: #00a82d;
+    border: none;
+    width: 100px;
+    padding: 10px 15px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+}
