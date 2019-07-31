@@ -126,7 +126,7 @@ class AllNoteForm extends React.Component {
                     <div className="all-note-right">
                         <div className ="all-note-title">
                             <h1>All Notes</h1>
-                            <h3>{notes.length} notes</h3>
+                            <h3 className="all-notes-length">{notes.length} notes</h3>
                             <div className="notebook-show-icons">
                                 <div className='tag-triage-div'>
                                     {theTag}
