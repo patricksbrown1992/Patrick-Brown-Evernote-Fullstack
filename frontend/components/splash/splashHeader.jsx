@@ -11,9 +11,9 @@ const splashHeader = () => (
         </div>
         <div className="features-div">
             <ul>
-                <a href="https://patricksbrown1992.github.io/profile-site/">Patrick's Portfolio</a>
-                <a href="https://www.linkedin.com/in/patricksbrown1992/">Patrick's LinkedIn</a>
-                <a href="https://github.com/patricksbrown1992">Patrick's Github</a>
+                <a href="https://patricksbrown1992.github.io/profile-site/">Portfolio</a>
+                <a href="https://www.linkedin.com/in/patricksbrown1992/">LinkedIn</a>
+                <a href="https://github.com/patricksbrown1992">Github</a>
 
             </ul>
         </div>
