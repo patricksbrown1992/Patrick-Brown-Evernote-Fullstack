@@ -97,9 +97,10 @@
 }
 
 .notebook-index-table-title {
-    display: inline-block;
-    margin-left: 4.55%;
-    width: 150px;
+    display: flex;
+    width: 15%;
+    flex-direction: row;
+    justify-content: center;
 
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -107,7 +108,7 @@
 }
 .notebook-index-table-title a {
     color: #313131;
-
+    width: 45%;
 }
 
 
@@ -127,21 +128,27 @@
 
 
 .notebook-index-table-email {
-    display: inline-block;
-    margin-left: 30.5%;
+    display: flex;
+    flex-direction: row;
+    width: 45%;
+    justify-content: center;
 }
 
 .notebook-index-table-time {
-    display: inline-block;
-    margin-left: 1%;
-    width: 150px;
+    display: flex;
+    flex-direction: row;
+    width: 15%;
+    justify-content: center;
 
 }
 .fa-caret-right{
     cursor: pointer;
 }
 .notebook-index-table-button {
-    margin-left: 30%;
+    display: flex;
+    flex-direction: row;
+    width: 25%;
+    justify-content: center;
     cursor: pointer;
 }
 
@@ -252,9 +259,10 @@ button {
     height: 40px;
 }
 .notebook-index-note-title {
-    display: inline-block;
-    margin-left: 7.5%;
-    width: 150px;
+    display: flex;
+    width: 15%;
+    flex-direction: row;
+    justify-content: center;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -268,18 +276,24 @@ button {
 }
 
 .notebook-index-note-email {
-    display: inline-block;
-    margin-left: 27.5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 45%;
 }
 
 .notebook-index-note-time{
-    display: inline-block;
-    margin-left: 1%;
-    width: 150px;
+    display: flex;
+    flex-direction: row;
+    width: 15%;
+    justify-content: center;
 }
 
 .notebook-index-note-button{
-    margin-left: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 25%;
     cursor: pointer;
 }
 
@@ -290,9 +304,9 @@ button {
 
 
 .notebook-table-label-title {
-    display: inline-block;
-    margin-left: 4.55%;
-    width: 2.5%;
+    width: 15%;
+
+    justify-content: center;
     color: #b3b3b3;
     display:flex;
     flex-direction: row;
@@ -304,8 +318,11 @@ button {
 }
 
 .notebook-table-label-email{
-    display: inline-block;
-    margin-left: 38%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    // margin-left: 38%;
+    width: 45%;
     color: #b3b3b3;
 }
 
@@ -313,16 +330,21 @@ button {
     margin-right: 8px;
 }
 .notebook-table-label-time{
-    display: inline-block;
-    margin-left: 4%;
+    // margin-left: 4%;
     color: #b3b3b3;
+    width: 15%;
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 .notebook-table-label-actions{
-    margin-left: 35%;
+    // margin-left: 35%;
     color: #b3b3b3;
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .notebook-index-top{
