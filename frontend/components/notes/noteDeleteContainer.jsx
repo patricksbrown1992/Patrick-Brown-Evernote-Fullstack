@@ -1,7 +1,7 @@
-// import noteDeleteForm from './noteDeleteForm'
+
 import NoteDeleteForm from './noteDeleteForm';
 import { connect } from 'react-redux';
-// import {getNotebooks} from '../../actions/notebookActions';
+ 
 import { deleteNote } from '../../actions/noteAction';
 import { closeModal } from '../../actions/modalActions';
 

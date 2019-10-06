@@ -18,7 +18,7 @@ class NotebookDeleteForm extends React.Component {
         }))
         .then( () => this.props.closeModal());
         // this.props.closeModal()
-        return this.props.history.push('/notebooks');
+        
         // return <Redirect to='/notebooks' />
     }
   
