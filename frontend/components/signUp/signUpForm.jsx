@@ -18,14 +18,14 @@ class SignUpForm extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-
-        if(e.currentTarget.children[0].classList.value === "sign-up-continue"){
+        if (e.currentTarget.className === 'sign-up-continue-form'){
 
             this.props.signup(this.state);
             this.setState({ email: '', password: '' });
             this.props.clearErrors();
             
         } else {
+
             const email = 'admin@admin.com';
             const password = '123456';
             const person = { email, password };
@@ -75,10 +75,10 @@ class SignUpForm extends React.Component {
                                     {errors}
                                     <br/>
                                 </ul>
-                            <form onSubmit={this.handleSubmit}>
+                        <form className='sign-up-continue-form' onSubmit={this.handleSubmit}>
                                     <div className='sign-up-continue'>
 
-                                        <button type='submit'>Continue</button>
+                                        <button  type='submit'>Continue</button>
                                     </div>
                             </form>
                             </div>  
