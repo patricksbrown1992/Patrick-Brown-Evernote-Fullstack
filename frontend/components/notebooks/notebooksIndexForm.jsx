@@ -2,7 +2,7 @@ import React from 'react';
 import UsernameFormLeft from '../username/nonNoteLeftContainer';
 import { merge } from 'lodash';
 import { Link, Redirect } from 'react-router-dom';
-// import NotebookShowForm from './notebookShowContainer2';
+
 
 import styleDate from '../../util/styleDate';
 
@@ -188,7 +188,7 @@ class NotebooksIndexForm extends React.Component {
                                     <h1>Notebooks</h1>
                                     <input placeholder='Find Notebooks...' type="text" value={this.state.body} onChange={this.handleChange()} />
                                 </div>
-                                <div className="notebook-index-header2">
+                                <div className="notebook-index-header">
 
 
                                     <h3>My notebook list</h3>
@@ -275,7 +275,7 @@ class NotebooksIndexForm extends React.Component {
                                     <h1>Notebooks</h1>
                                     <input placeholder='Find Notebooks...' value={this.state.body} type="text" onChange={this.handleChange()}/>
                                 </div>
-                                <div className="notebook-index-header2">
+                                <div className="notebook-index-header">
                                 
                                 
                                     <h3>My notebook list</h3>

@@ -1,5 +1,5 @@
 import React from 'react';
-import NoteIndexContainer from '../notes/noteIndexContainer2';
+import NoteIndexContainer from '../notes/noteIndexContainer';
 import {  Redirect } from 'react-router-dom';
 import LeftNav from '../username/usernameLeftContainer';
 

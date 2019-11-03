@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Route, withRouter, Redirect } from 'react-router-dom';
-import NoteShowForm from '../notes/noteShowContainer2';
+import NoteShowForm from '../notes/noteShowContainer';
 import styleDate from '../../util/styleDate';
 import { merge } from 'lodash';
 

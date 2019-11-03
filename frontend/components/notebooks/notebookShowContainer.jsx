@@ -1,4 +1,4 @@
-import NotebookShowForm2 from './notebookShowForm2';
+import NotebookShowForm2 from './notebookShowForm';
 import { connect } from 'react-redux';
 import { getNotebooks} from '../../actions/notebookActions';
 import { clearNotes } from '../../actions/noteAction';

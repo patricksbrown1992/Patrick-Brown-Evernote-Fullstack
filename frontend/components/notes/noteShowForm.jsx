@@ -89,6 +89,23 @@ class NoteShowForm extends React.Component {
             } else {
                 showtagbutton = <button className='add-tag-on-note-button' onClick={this.handleAddTag}>Add Tag</button>
             }
+
+            let modules = {
+                toolbar: [
+                    [{ 'header': [1, 2, 3, false] }],
+                    ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+                    [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
+                    ['link', 'image'],
+                    ['clean']
+                ],
+            };
+
+            let formats = [
+                'header',
+                'bold', 'italic', 'underline', 'list', 'bullet', 
+                'indent', 'strike', 'blockquote',
+                'link', 'image'
+            ];
             return (
                 <div className="right-nav">
 
@@ -97,7 +114,7 @@ class NoteShowForm extends React.Component {
                     <br />
                     {showtagbutton}
                     <br/>
-                    <ReactQuill value={this.state.body} onChange={this.handleChange} theme="snow" />
+                    <ReactQuill className={'react-quill-element'} value={this.state.body} formats={formats} modules={modules} onChange={this.handleChange} theme="snow" />
                     <br />
                     <br/>
                     <br/>

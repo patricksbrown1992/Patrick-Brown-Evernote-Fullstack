@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import noteShowForm from './noteShowForm2';
+import noteShowForm from './noteShowForm';
 import { updateNote, clearNotes } from '../../actions/noteAction';
 import { withRouter } from 'react-router-dom';
 // import {createTagging} from '../../actions/taggingActions'

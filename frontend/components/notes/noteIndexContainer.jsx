@@ -1,4 +1,4 @@
-import notesIndexForm from './noteIndexForm2';
+import notesIndexForm from './noteIndexForm';
 import { connect } from 'react-redux';
 // import {getNotebooks} from '../../actions/notebookActions';
 import { getNotes, deleteNote, clearNotes } from '../../actions/noteAction';
