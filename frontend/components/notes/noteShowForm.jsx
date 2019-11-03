@@ -93,10 +93,9 @@ class NoteShowForm extends React.Component {
             let modules = {
                 toolbar: [
                     [{ 'header': [1, 2, 3, false] }],
-                    ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+                    ['bold', 'italic', 'underline', 'strike'],
                     [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
-                    ['link', 'image'],
-                    ['clean']
+                    ['image']
                 ],
             };
 
@@ -107,20 +106,27 @@ class NoteShowForm extends React.Component {
                 'link', 'image'
             ];
             return (
-                <div className="right-nav">
 
-                    <h1>{note.title}</h1>
-                    <br />
-                    <br />
-                    {showtagbutton}
-                    <br/>
-                    <ReactQuill className={'react-quill-element'} value={this.state.body} formats={formats} modules={modules} onChange={this.handleChange} theme="snow" />
-                    <br />
-                    <br/>
-                    <br/>
-                    <br/>
-                    {/* <i onClick={this.handleSubmitDropDown(note)} className="fas fa-ellipsis-h"></i> */}
-                </div>
+                <>
+                
+                    <div className="right-nav">
+                        <div className='note-title-top'>
+                            <h1>{note.title}</h1>
+                            {showtagbutton}
+
+                        </div>
+                    </div>
+                    <ReactQuill className={'react-quill-element'} 
+                    value={this.state.body} 
+                    formats={formats} 
+                    modules={modules} 
+                    onChange={this.handleChange} 
+                    theme="snow" />
+
+
+                </>
+                    
+ 
             );
         }
     }

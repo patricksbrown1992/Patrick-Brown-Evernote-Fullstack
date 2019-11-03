@@ -44,12 +44,7 @@
 
     padding-top: 13%;
 }
-// .notebook-show-title button {
-//     width: 110px;
-//     height: 25px;
-//     // background-color: lightcoral;
-//     color: white;
-// }
+
 
 .notebooks-index-list li {
 
@@ -388,4 +383,17 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+.ql-editor {
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.ql-editor strong {
+    font-weight: bold;
+}
+
+.ql-editor em {
+    font-style: italic;
 }
