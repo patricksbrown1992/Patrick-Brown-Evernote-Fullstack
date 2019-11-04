@@ -92,7 +92,7 @@ class NoteShowForm extends React.Component {
 
             let modules = {
                 toolbar: [
-                    [{ 'header': [1, 2, 3, false] }],
+                    [{ 'header': [1, 3, false] }],
                     ['bold', 'italic', 'underline', 'strike'],
                     [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
                     ['image']

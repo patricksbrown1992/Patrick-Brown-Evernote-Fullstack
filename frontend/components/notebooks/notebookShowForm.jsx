@@ -57,7 +57,7 @@ class NotebookShowForm extends React.Component {
         if (this.props.search.length > 0) {
             return <Redirect to='/allnotes' />;
         } else {
-  
+            
             let theNotebook;
             let showtagbutton;
             let theTag;
@@ -78,7 +78,9 @@ class NotebookShowForm extends React.Component {
             } else {
                 theTag = ''
             }
-            
+            if (!theNotebook){
+                return <Redirect to='/notebooks' />;
+            }
             return (
                 <>
                     <div className='username-form'>
