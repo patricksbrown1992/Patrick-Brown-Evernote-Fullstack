@@ -1,3 +1,4 @@
+@import './variables';
 .splash-form {
     width: 100%;
     height: 100%;
@@ -18,7 +19,7 @@ html {
 }
 .splash-body {
     background-image: image-url('background-green.png');
-    background-color: #00a82d;
+    background-color: $other_green;
     width: 100%;
     height: 100%;
     display: flex;
@@ -64,7 +65,7 @@ html {
 .splash-left a {
     background-color: white;
     text-decoration: none;
-    color: #00a82d;
+    color: $other_green;
     padding: 3.5% 6.5%;
     font-size: 16px;
 
@@ -108,8 +109,8 @@ html {
  }
  
  .login-button a:hover {
-    border: 2px solid limegreen;
-    color: limegreen;
+    border: 2px solid $lgreen;
+    color: $lgreen;
     cursor: pointer;
  }
 
@@ -150,12 +151,12 @@ html {
     align-items: center;
     text-decoration: none;
     font-family: Soleil,Helvetica,Arial,sans-serif;
-    color: #21a72c;
+    color: $light_green;
  }
  
 
   .signup-button a:hover {
-      color: limegreen;
+      color: $lgreen;
       cursor: pointer;
   }
  
@@ -180,7 +181,7 @@ html {
 }
 
 .login-button a {
-    color: #21a72c;
+    color: $light_green;
     text-decoration: none;
     padding-bottom: 20%;
     display: flex;
@@ -189,7 +190,7 @@ html {
     padding-top: 20%;
     border-radius: 4px;
     
-    border: 2px solid #00a82d;
+    border: 2px solid $other_green;
     padding-right: 55%;
     padding-left: 55%;
 

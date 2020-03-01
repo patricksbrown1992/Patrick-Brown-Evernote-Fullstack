@@ -125,6 +125,8 @@ class NotebooksIndexForm extends React.Component {
         }
     }
 
+    
+
     duplicateArray(array){
         // deep dupes objects
         let ans = [];

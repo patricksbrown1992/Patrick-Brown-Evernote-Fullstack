@@ -15,7 +15,7 @@ class Api::NotebooksController < ApplicationController
 
         @user = User.find(params[:user_id])
 
-        @notebooks = @user.notebooks
+        @notebooks = @user.notebooks.includes(:notes, :tags)
         render json: @notebooks, status: 200
     end
 

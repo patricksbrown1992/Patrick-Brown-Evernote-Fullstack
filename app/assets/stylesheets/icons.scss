@@ -1,5 +1,7 @@
+@import './variables';
+
 .fa-plus-circle {
-    color: forestgreen;
+    color: $fgreen;
     margin-right: 1%;
     margin-left: 10%
 }

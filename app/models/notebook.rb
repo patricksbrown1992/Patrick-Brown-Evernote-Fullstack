@@ -14,6 +14,9 @@ class Notebook < ApplicationRecord
     belongs_to :user
     
     has_many :notes
+    has_many :tags,
+        through: :notes,
+        source: :tags
 
 
 end

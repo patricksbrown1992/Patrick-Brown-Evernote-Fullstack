@@ -1,3 +1,4 @@
+@import './variables';
 .notebooks-index-main {
     display: flex;
     height: 100%;
@@ -229,7 +230,7 @@ button {
    font-weight: 500;
     line-height: 24px;
     font-size: 14px;
-    color: #00a82d;
+    color: $other_green;
     padding: 0;
     vertical-align: middle;
     cursor: pointer;

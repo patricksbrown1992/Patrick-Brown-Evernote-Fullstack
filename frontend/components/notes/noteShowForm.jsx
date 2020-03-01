@@ -17,6 +17,7 @@ class NoteShowForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleSubmitDropDown = this.handleSubmitDropDown.bind(this);
         this.handleAddTag = this.handleAddTag.bind(this);
+        this.handleMouseOut = this.handleMouseOut.bind(this)
     }
 
     handleSubmitDropDown(entity) {
@@ -26,20 +27,20 @@ class NoteShowForm extends React.Component {
         };
     }
 
-    componentWillReceiveProps(newProps) {
-        
-        if (newProps.note == undefined) {
+    componentDidUpdate(prevProps, prevState, snapshot) {
+  
+        if (prevProps.note == undefined) {
             this.setState({change: true})
 
            
         } else {
 
-            if (newProps.note.id !== this.props.note.id) {
+            if (prevProps.note.id !== this.props.note.id) {
                 this.setState({
-                    id: newProps.note.id,
-                    title: newProps.note.title,
-                    body: newProps.note.body,
-                    notebook_id: newProps.note.notebook_id
+                    id: this.props.note.id,
+                    title: this.props.note.title,
+                    body: this.props.note.body,
+                    notebook_id: this.props.note.notebook_id
                 });
             } 
         }
@@ -52,12 +53,14 @@ class NoteShowForm extends React.Component {
     }
 
     handleChange(value) {
-        let title = this.state.title;
-        let body = value
-        let notebook_id = this.state.notebook_id;
-        let id = this.state.id;
-        let note = { title, body, notebook_id, id };
-        this.setState({ body: value }, () => this.props.updateNote({ id, note }));
+        // let title = this.state.title;
+        // let body = value
+        // let notebook_id = this.state.notebook_id;
+        // let id = this.state.id;
+        // let note = { title, body, notebook_id, id };
+        this.setState({ body: value });
+            // , () => this.props.updateNote({ id, note })
+           
     }
 
 
@@ -72,6 +75,17 @@ class NoteShowForm extends React.Component {
             let note = { title, body, notebook_id, id };
             this.props.updateNote({ id, note })
         };
+    }
+
+    
+    handleMouseOut(){
+        let title = this.state.title;
+        let body = this.state.body;
+        let notebook_id = this.state.notebook_id;
+        let id = this.state.id;
+        let note = { title, body, notebook_id, id };
+        this.props.updateNote({ id, note })
+        
     }
 
     render() {
@@ -89,6 +103,7 @@ class NoteShowForm extends React.Component {
             } else {
                 showtagbutton = <button className='add-tag-on-note-button' onClick={this.handleAddTag}>Add Tag</button>
             }
+            
 
             let modules = {
                 toolbar: [
@@ -116,13 +131,21 @@ class NoteShowForm extends React.Component {
 
                         </div>
                     </div>
-                    <ReactQuill className={'react-quill-element'} 
-                    value={this.state.body} 
-                    formats={formats} 
-                    modules={modules} 
-                    onChange={this.handleChange} 
-                    theme="snow" />
-
+       
+                    <div className='quill-container' onMouseLeave={this.handleMouseOut}>
+                        <ReactQuill className={'react-quill-element'} 
+                        
+                        value={this.state.body} 
+                        formats={formats} 
+                        modules={modules} 
+                        onChange={this.handleChange} 
+                        theme="snow" 
+                        />
+               
+                    </div>
+                        
+                
+                    
 
                 </>
                     

@@ -1,3 +1,4 @@
+@import './variables';
 .outerdiv {
     display:flex;
     justify-content: center;
@@ -90,12 +91,12 @@
   .log-in-form .enter-username button:hover {
     color: honeydew;
     cursor: pointer;
-    background-color: forestgreen;
+    background-color: $fgreen;
     outline: none;
   }
 
 .enter-username button {
-    background-color: limegreen;
+    background-color: $lgreen;
     width: 350px;
     line-height: 475%;
     border-radius: 12px;
@@ -119,12 +120,12 @@
 
 
  .redirect-to-login-signup a {
-     color: limegreen;
+     color: $lgreen;
      text-decoration: none;
      margin-bottom: -200px;
  }
  .redirect-to-login-signup a:hover {
-    color: forestgreen;
+    color: $fgreen;
     cursor: pointer;
  }
 .log-in-password-hide {

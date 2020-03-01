@@ -20,6 +20,7 @@ class Api::NotesController < ApplicationController
         
         @notebook = Notebook.find(params[:notebook_id])
         @notes = @notebook.notes
+        # .includes(:tags)
         render json: @notes, status: 200
     end
     

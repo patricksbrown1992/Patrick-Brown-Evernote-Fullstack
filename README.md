@@ -27,5 +27,5 @@ User-experience- Components are clearly and logically labelled to create and eas
 Users can update rich text edited notes
 ![edit](/app/assets/images/edit-note.png)
 ## Future
-Add tags. Better quill. The note body stays up when you click on it and can edit it in there. Clears and renders new note body when new one is clicked. Drop downs. Errors. Handle refreshes better
+Better errors. Handle refreshes better
 
