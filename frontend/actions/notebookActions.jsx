@@ -44,9 +44,10 @@ export const clearNotebooks = () => {
     }
 }
 
-export const getNotebooks = (user) => dispatch => (
-    APIUtil.getNotebooks(user).then(notebooks => (dispatch(receiveNotebooks(notebooks))))
-);
+export const getNotebooks = (user) => dispatch => {
+
+    return APIUtil.getNotebooks(user).then(notebooks => (dispatch(receiveNotebooks(notebooks))))
+};
 
 export const getNotebook = (id) => dispatch => (
     APIUtil.getNotebook(id).then(notebook => (dispatch(receiveNotebook(notebook))))

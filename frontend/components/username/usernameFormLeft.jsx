@@ -90,6 +90,7 @@ class usernameFormLeft extends React.Component {
 
 
     render() {
+        
         let notebooks;
         let caret;
         let shortCutCaret;
@@ -146,7 +147,7 @@ class usernameFormLeft extends React.Component {
             shortCutCaret = "fas fa-caret-right";
         }
 
-      
+       
         return (
             
 
@@ -170,7 +171,7 @@ class usernameFormLeft extends React.Component {
                     </ul>
                     {/* <li><i className="fas fa-user-friends"></i>Shared with Me</li> */}
                     <li className="tags-li"><Link to='/tags'><i className="fas fa-tag"></i>Tags</Link></li>
-                    <li className='notebooks-li'><a href="https://patricksbrown1992.github.io/profile-site/" target="_blank">Portfolio</a></li>
+                    <li className='notebooks-li'><a href="https://patricksbrown1992.github.io/portfolio/" target="_blank">Portfolio</a></li>
                     <li className='notebooks-li'><a href="https://www.linkedin.com/in/patricksbrown1992/" target="_blank">LinkedIn</a></li>
                     <li className='notebooks-li'><a href="https://github.com/patricksbrown1992" target="_blank">Github</a></li>
                     {/* <li><i className="fas fa-trash"></i>Trash</li> */}

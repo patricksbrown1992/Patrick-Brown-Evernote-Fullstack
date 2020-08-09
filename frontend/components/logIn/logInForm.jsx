@@ -11,6 +11,10 @@ class LogInForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    // componentWillUnmount(){
+    //     this.props.clearErrors();
+    // }
+
     handleChange(field) {
 
         return (e) => {

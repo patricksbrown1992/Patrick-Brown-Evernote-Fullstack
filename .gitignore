@@ -11,9 +11,11 @@ bundle.js
 bundle.js.map
 bundle.js 2.map
 bundle.js 3.map
+.bundle.js*
 .byebug_history
 .DS_Store
 npm-debug.log
+bundle.js*
 
 # Ignore all logfiles and tempfiles.
 /log/*
