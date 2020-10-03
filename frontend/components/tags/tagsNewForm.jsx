@@ -1,71 +1,45 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-class TagNewForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { name: '' };
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
 
-    handleChange() {
+const TagNewForm = (props) => {
 
-        return (e) => {
-            this.setState({ name: e.target.value });
-        };
-    }
+        const [nameOfTag, updateName] = useState(() => {
+            '';
+        })
 
-    handleSubmit(e) {
-        e.preventDefault();
-        const name = this.state.name;
-        const user_id = Object.values(this.props.user)[0].id;
+        debugger
 
-        this.props.createTag({ name, user_id }).then(() => this.props.closeModal());
-    }
-
-    render() {
-    
-        // non-working button to prevent empty submissions
-        if(this.state.name.length < 1){
-            return (
-                <div className='new-tag-modal'>
-                    <div className="tag-new-modal-top">
-                        <h1>Create New Tag</h1>
-                        <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
-                    </div>
-                    <h3>Name</h3>
-                    <span>
-
-                        <input type="text" value={this.state.name} onChange={this.handleChange()} placeholder='Tag name' />
-                    </span>
-                    <form >
-                        <button className="invalid" type='submit'>Done</button>
-                    </form>
-
-                </div>
-            )
-        } else {
-            return (
-                <div className='new-tag-modal'>
-                    <div className="tag-new-modal-top">
-                        <h1>Create New Tag</h1>
-                        <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
-                    </div>
-                    <h3>Name</h3>
-                    <span>
-
-                        <input type="text" value={this.state.name} onChange={this.handleChange()} placeholder='Notebook name' />
-                    </span>
-                    <form onSubmit={this.handleSubmit}>
-                        <button className="valid" type='submit'>Done</button>
-                    </form>
-
-                </div>
-            )
+        function handleSubmit(e) {
+            e.preventDefault();
+            const name = nameOfTag;
+            const user_id = Object.values(props.user)[0].id;
+            props.createTag({ name, user_id }).then(() => props.closeModal());
         }
 
+        function handleChange(e){
+            e.preventDefault();
+            updateName(e.target.value);
+        }
+       
         
-    }
+        
+        return (
+            <div className='new-tag-modal'>
+                <div className="tag-new-modal-top">
+                    <h1>Create New Tag</h1>
+                    <i onClick={props.closeModal} className="fas fa-times fa-2x"></i>
+                </div>
+                <h3>Name</h3>
+                <span>
+
+                    <input type="text" value={nameOfTag} onChange={handleChange} placeholder='Tag name' />
+                </span>
+                {nameOfTag ? <button onClick={handleSubmit} className='valid' >Done</button> : ''}
+
+            </div>
+        )
+    
 }
+
 
 export default TagNewForm;
