@@ -1,104 +1,103 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 
-class SignUpForm extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {email: '', password: ''};
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
-     
-    handleChange(field) {
-        
-        return (e) => {
-            this.setState({[field]: e.target.value});
-        };
+
+
+const SignUpForm = (props) => {
+
+    const [email, updateEmail] = useState(() => {
+        return '';
+    })
+
+    const [password, updatePassword] = useState(() => {
+        return '';
+    })
+
+    function handleChangePassword(e) {
+        e.preventDefault();
+        updatePassword(e.target.value)
     }
 
-    // componentWillUnmount(){
-    //     this.props.clearErrors();
-    // }
+    function handleChangeEmail(e) {
+        e.preventDefault();
+        updateEmail(e.target.value)
+    }
 
-    handleSubmit(e){
+
+    function handleSubmit(e){
         e.preventDefault();
         if (e.currentTarget.className === 'sign-up-continue-form'){
 
-            this.props.signup(this.state);
-            this.setState({ email: '', password: '' });
-            this.props.clearErrors();
+            props.signup({email, password});
+            updateEmail('');
+            updatePassword('')
+            props.clearErrors();
             
         } else {
 
-            const email = 'admin@admin.com';
-            const password = '123456';
-            const person = { email, password };
-            this.props.login(person);
-            this.setState({ email: '', password: '' });
-            this.props.clearErrors();
+            const newEmail = 'admin@admin.com';
+            const newPassword = '123456';
+            const person = { email: newEmail, password: newPassword };
+            props.login(person);
+            updateEmail('');
+            updatePassword('')
+            props.clearErrors();
         }
         
     }
- 
-    render(){
-    
-        let errors;
-        if (this.props.errors.length > 0) {
-          
-            errors = this.props.errors.map((error, idx) => {
-                return <li key={idx}>{error}</li>
-            });
-        } 
-      
-        return (
+
+
+
+    return (
             
-                <div className = 'outerdiv'>
-                    <div className='sign-up-form'>
-                    
-                            <div className ="sign-up-top">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Evernote_Icon.png/220px-Evernote_Icon.png" alt="" />
-                                <h1 className='log-in-evernote'>NeverNote</h1>
-                                <h3>Remember everything important.</h3>
+        <div className = 'outerdiv'>
+            <div className='sign-up-form'>
+            
+                <div className ="sign-up-top">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Evernote_Icon.png/220px-Evernote_Icon.png" alt="" />
+                    <h1 className='log-in-evernote'>NeverNote</h1>
+                    <h3>Remember everything important.</h3>
 
-                            </div>
-                            
-                            <div className="sign-up-middle">
-                                 <form onSubmit={this.handleSubmit}>
-                                    <div className="demo-button">
-                                        <button type='submit'>Demo for Free</button>
-                                    </div>
-                                 </form>
-                                <br/>
-                                <div className="sign-up-inputs">
+                </div>
+                
+                    <div className="sign-up-middle">
+                        <form onSubmit={handleSubmit}>
+                        <div className="demo-button">
+                            <button type='submit'>Demo for Free</button>
+                        </div>
+                        </form>
+                        <br/>
+                        <div className="sign-up-inputs">
 
-                                <input className="sign-up-email" type="text" value={this.state.email} placeholder='Email' onChange={this.handleChange('email')} />
-                                <input className = "sign-up-password" type="password" placeholder='Password' value={this.state.password} onChange={this.handleChange('password')}/>
-                                </div>
-                                <ul>
-                                    <br/>
-                                    {errors}
-                                    <br/>
-                                </ul>
-                        <form className='sign-up-continue-form' onSubmit={this.handleSubmit}>
-                                    <div className='sign-up-continue'>
+                        <input className="sign-up-email" type="text" value={email} placeholder='Email' onChange={handleChangeEmail} />
+                        <input className = "sign-up-password" type="password" placeholder='Password' value={password} onChange={handleChangePassword}/>
+                        </div>
+                        <ul>
+                            <br/>
+                            {props.errors.length ? props.errors.map((error, idx) => {
+                                return <li key={idx}>{error}</li>
+                            }) : ''}
+                            <br/>
+                        </ul>
+                    <form className='sign-up-continue-form' onSubmit={handleSubmit}>
+                        <div className='sign-up-continue'>
 
-                                        <button  type='submit'>Continue</button>
-                                    </div>
-                            </form>
-                            </div>  
-                            <div className="sign-up-bottom">
-                                <p>By creating an account, you are agreeing to our Terms of Service and Privacy Policy.</p>
-                                <h3>Already have an account?</h3>
-                                <div className='redirect-to-login-signup'>
-                                    <Link to='/login'>Sign In</Link>
-                                </div>
-                            </div>
-                    
+                            <button  type='submit'>Continue</button>
+                        </div>
+                    </form>
+                </div>  
+                <div className="sign-up-bottom">
+                    <p>By creating an account, you are agreeing to our Terms of Service and Privacy Policy.</p>
+                    <h3>Already have an account?</h3>
+                    <div className='redirect-to-login-signup'>
+                        <Link to='/login'>Sign In</Link>
                     </div>
                 </div>
-            
-        );
-    };
-};
+        
+            </div>
+        </div>
+    
+    );
+}
 
 export default SignUpForm;
