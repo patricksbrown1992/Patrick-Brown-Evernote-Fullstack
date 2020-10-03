@@ -1,70 +1,47 @@
-import React from 'react';
-class NoteEditForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { name: '' };
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+import React, {useState} from 'react';
+const NoteEditForm = (props) => {
+  
+    const [newName, updateName] = useState(() => {
+        return '';
+    })
+
+    function handleChange(e) {
+        e.preventDefault()
+        updateName(e.target.value);
     }
 
-    handleChange() {
-        return (e) => {
-            this.setState({ name: e.target.value });
-        };
-    }
-
-    handleSubmit(e) {
+    function handleSubmit(e) {
         e.preventDefault();
-        let title = this.state.name;
-        let body = this.props.note.body;
-        let notebook_id = this.props.note.notebook_id;
-        let id = this.props.note.notebook_id;
-        let id2 = this.props.note.id;
-        let note = { title, body, notebook_id, id: id2 };
-        this.props.updateNote({id, note}).then(() => this.props.closeModal());
+        const title = newName
+        const body = props.note.body;
+        const notebook_id = props.note.notebook_id;
+        const id = props.note.notebook_id;
+        const id2 = props.note.id;
+        const note = { title, body, notebook_id, id: id2 };
+        props.updateNote({id, note}).then(() => props.closeModal());
     }
 
-    render() {
-        if (this.state.name.length < 1){
-            return (
-                <div className="note-edit-modal">
-                    <div className="note-edit-modal-top">
-                        <h1>Rename note</h1>
-                        <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
-                        
-                    </div>
-                    <h3>Title</h3>
-                    <span>
-
-                        <input type="text" value={this.state.name} onChange={this.handleChange()} />
-                    </span>
-
-                    <form>
-                        <button className="invalid" type='submit'>Done</button>
-                    </form>
-                </div>
-            )
-        } else {
-            return (
-                <div className="note-edit-modal">
-                    <div className="note-edit-modal-top">
-                        <h1>Rename note</h1>
-                        <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
-
-                    </div>
-                    <h3>Title</h3>
-                    <span>
     
-                        <input type="text" value={this.state.name} onChange={this.handleChange()} />
-                    </span>
+    return (
+        <div className="note-edit-modal">
+            <div className="note-edit-modal-top">
+                <h1>Rename note</h1>
+                <i onClick={props.closeModal} className="fas fa-times fa-2x"></i>
+
+            </div>
+            <h3>Title</h3>
+            <span>
+
+                <input type="text" value={newName} onChange={handleChange} />
+            </span>
+
+            
+            {newName ? <button onClick={handleSubmit} className="valid" type='submit'>Done</button> : ''}
+            
+        </div>
+    )
+        
     
-                    <form onSubmit={this.handleSubmit}>
-                        <button className="valid" type='submit'>Done</button>
-                    </form>
-                </div>
-            )
-        }
-    }
 }
 
 
