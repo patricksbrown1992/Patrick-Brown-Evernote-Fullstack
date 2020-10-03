@@ -23,7 +23,7 @@ const NotebookDropDownForm = (props) => {
         props.updateNotebook({id: id, name: name, user_id: user_id, shortcut: shortcut})
         
     };
-
+        
     
         return(
             
@@ -43,7 +43,7 @@ const NotebookDropDownForm = (props) => {
                 
                 <br/>
 
-                <button onClick={handleSubmitShortcut} type='submit'>{props.notebook.shortcut ? Remove from Shortcuts : Add to Shortcuts}</button>
+                <button onClick={handleSubmitShortcut} type='submit'>{props.notebook.shortcut ? 'Remove from Shortcuts' : 'Add to Shortcuts'}</button>
         
                 <br />
             </div>

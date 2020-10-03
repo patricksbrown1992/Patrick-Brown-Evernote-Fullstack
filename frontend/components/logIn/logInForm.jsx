@@ -11,9 +11,7 @@ class LogInForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    // componentWillUnmount(){
-    //     this.props.clearErrors();
-    // }
+  
 
     handleChange(field) {
 
@@ -38,7 +36,7 @@ class LogInForm extends React.Component {
         let passwordClass;
         let buttonText;
         let errors;
-        // let changeHeight;
+       
         if (this.props.errors.length > 0) {
 
             errors = this.props.errors.map((error, idx) => {
@@ -48,9 +46,9 @@ class LogInForm extends React.Component {
         if (this.props.verified != true) {
             passwordClass = 'log-in-password-hide';
             buttonText = 'Continue';
-            // changeHeight = 'log-in-form'
+          
         } else {
-            // changeHeight= 'log-in-form-2'
+         
             passwordClass = 'log-in-password-show';
             buttonText = 'Sign in';
         }

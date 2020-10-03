@@ -5,7 +5,7 @@ class Api::NotebooksController < ApplicationController
     def show
         @notebook = Notebook.find(params[:id])
         if @notebook
-            render json: @notebook, status: 200
+            render json: @notebook.includes(:notes), status: 200
         else
             render json: @notebook.errors.full_messages, status: 404
         end
