@@ -50,7 +50,7 @@ const NoteNewForm = (props) => {
             </span>
             <br/>
             
-            {body.length && title.length ? <button onSubmit={handleSubmit} className="valid" type='submit'>Done</button> : ''}
+            {body.length && title.length ? <button onClick={handleSubmit} className="valid" type='submit'>Done</button> : ''}
 
            
 
