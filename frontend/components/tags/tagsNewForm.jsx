@@ -7,7 +7,7 @@ const TagNewForm = (props) => {
             '';
         })
 
-        debugger
+      
 
         function handleSubmit(e) {
             e.preventDefault();
