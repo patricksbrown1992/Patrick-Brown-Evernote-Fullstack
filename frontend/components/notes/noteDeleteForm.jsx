@@ -18,9 +18,9 @@ const NoteDeleteForm = (props) =>  {
             </div>
             <h3>Are you sure you want to delete the "{props.note.title}" note?</h3>
 
-            <form onSubmit={handleSubmitDelete}>
-                <button type='submit'>Delete</button>
-            </form>
+            
+            <button onClick={handleSubmitDelete}>Delete</button>
+           
         </div>
     )
     
