@@ -15,9 +15,9 @@ const TagDeleteForm = (props) => {
             </div>
             <h3>Are you sure you want to delete the "{props.tag.name}" tag? This tag will be removed from all notes.</h3>
             
-            <form onSubmit={handleSubmit}>
-                <button type='submit'>Delete</button>
-            </form>
+            
+            <button onClick = {handleSubmit} >Delete</button>
+           
         </div>
     )
     
