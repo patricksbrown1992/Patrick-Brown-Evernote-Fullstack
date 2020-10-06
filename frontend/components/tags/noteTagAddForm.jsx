@@ -1,44 +1,39 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { merge } from 'lodash';
 
-class NoteTagAddForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { name: '' };
-        this.handleChange = this.handleChange.bind(this);
-        this.duplicateArray = this.duplicateArray.bind(this);
-        this.sortTags = this.sortTags.bind(this);
-        this.clickItem = this.clickItem.bind(this);
+const NoteTagAddForm = props =>  {
+   
+
+    const [newTag, updateTag] = useState(()=> {
+        return '';
+    })
+
+    useEffect(()=> {
+        props.getTags(props.user)
+    }, []);
+
+    
+
+    function handleChange(e) {
+        e.preventDefault()
+        updateTag(e.target.value );
     }
 
-    componentDidMount() {
-        this.props.getTags(this.props.user)
-    }
-
-    handleChange() {
-        return (e) => {
-            this.setState({ name: e.target.value });
-        };
-    }
-
-    clickItem(entity) {
+    function clickItem(entity) {
         return (e) => {
             
             e.preventDefault();
             const tag_id = entity.id;
-            const note_id = this.props.note;
-            const user_id = this.props.user.id;
+            const note_id = props.note;
+            const user_id = props.user.id;
             const tagging = { note_id, tag_id, user_id};
-            this.props.closeModal();
-            this.props.createTagging(tagging);
-            // entity.activated = !entity.activated;
-            // this.props.closeModal();
-            // return <Redirect to='/allnotes' />;
+            props.closeModal();
+            props.createTagging(tagging);
         }
     }
 
-    duplicateArray(array) {
+    function duplicateArray(array) {
         // deep dupes objects
         let ans = [];
         for (let i = 0; i < array.length; i++) {
@@ -49,8 +44,8 @@ class NoteTagAddForm extends React.Component {
         return ans;
     }
 
-    sortTags(tags) {
-        let newTags = this.duplicateArray(tags)
+    function sortTags(tags) {
+        let newTags = duplicateArray(tags)
         let sorted = false;
         
         while (!sorted) {
@@ -69,37 +64,36 @@ class NoteTagAddForm extends React.Component {
         return newTags;
     }
 
-    render() {
-        let tags;
+  
+       
         
-        if (this.props.tags.length < 1) {
-            return null;
-        }
-        tags = this.sortTags(this.props.tags);
+        if (props.tags.length < 1) return null;
+    
+        let tags = sortTags(props.tags);
         
         tags = tags.filter(tag => (
-            tag.name.toUpperCase().includes(this.state.name.toUpperCase()))
+            tag.name.toUpperCase().includes(state.name.toUpperCase()))
         )
         tags = tags.map(tag => {
             return (
                 <li key={tag.id}>
-                    <div className="tag-name-item" onClick={this.clickItem(tag)}>{tag.name}</div>
+                    <div className="tag-name-item" onClick={clickItem(tag)}>{tag.name}</div>
                 </li>
             )
         })
 
 
-        return (
-            <div className="tag-search-modal">
-                <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
-                <input type="text" value={this.state.name} onChange={this.handleChange()} placeholder='Add a tag' />
-                <ul>{tags}</ul>
-            </div>
-        )
+    return (
+        <div className="tag-search-modal">
+            <i onClick={props.closeModal} className="fas fa-times fa-2x"></i>
+            <input type="text" value={newTag} onChange={handleChange} placeholder='Add a tag' />
+            <ul>{tags}</ul>
+        </div>
+    )
 
 
 
-    }
+    
 
 
 
