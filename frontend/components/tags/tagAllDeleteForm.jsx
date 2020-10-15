@@ -1,47 +1,44 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { merge } from 'lodash';
 
 
 
-class TagAllDeleteForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
+const TagAllDeleteForm = (props) =>   {
+    
 
-    componentDidMount(){
-        this.props.getTaggings(this.props.user)
-    }
+    
+    useEffect(() => {
+        props.getTaggings(props.user)
+    }, [])
 
-
-    handleSubmit(e) {
+    function handleSubmit(e) {
         e.preventDefault();
-        this.props.closeModal();
-        for(let i = 0; i < this.props.taggings.length; i++){
-            let tagging = this.props.taggings[i];
-            if(tagging.tag_id == this.props.tag.id){
-                this.props.deleteTagging(tagging.id)
+        props.closeModal();
+        for(let i = 0; i < props.taggings.length; i++){
+            let tagging = props.taggings[i];
+            if(tagging.tag_id == props.tag.id){
+                props.deleteTagging(tagging.id)
             }
         }
 
     }
 
-    render() {
+  
 
-        return (
-            <div className="tag-all-delete-modal">
-                <div className="tag-delete-modal-top">
-                    <h1>Remove Tag?</h1>
-                    <i onClick={this.props.closeModal} className="fas fa-times fa-2x"></i>
-                </div>
-                <h3>Are you sure you want to remove the "{this.props.tag.name}" tag from all notes? </h3>
-
-                <form onSubmit={this.handleSubmit}>
-                    <button type='submit'>Remove</button>
-                </form>
+    return (
+        <div className="tag-all-delete-modal">
+            <div className="tag-delete-modal-top">
+                <h1>Remove Tag?</h1>
+                <i onClick={props.closeModal} className="fas fa-times fa-2x"></i>
             </div>
-        )
-    }
+            <h3>Are you sure you want to remove the "{props.tag.name}" tag from all notes? </h3>
+
+            
+            <button onClick={handleSubmit}>Remove</button>
+           
+        </div>
+    )
+    
 }
 
 export default TagAllDeleteForm;

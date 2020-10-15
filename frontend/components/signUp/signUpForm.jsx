@@ -62,9 +62,9 @@ const SignUpForm = (props) => {
                 
                     <div className="sign-up-middle">
                         <form onSubmit={handleSubmit}>
-                        <div className="demo-button">
-                            <button type='submit'>Demo for Free</button>
-                        </div>
+                            <div className="demo-button">
+                                <button type='submit'>Demo for Free</button>
+                            </div>
                         </form>
                         <br/>
                         <div className="sign-up-inputs">
