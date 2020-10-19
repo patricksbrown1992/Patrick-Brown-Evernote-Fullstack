@@ -1,33 +1,33 @@
-import notesIndexForm from './noteIndexForm';
-import { connect } from 'react-redux';
+import notesIndexForm from "./noteIndexForm";
+import { connect } from "react-redux";
 // import {getNotebooks} from '../../actions/notebookActions';
-import { getNotes, deleteNote, clearNotes } from '../../actions/noteAction';
+import { getNotes, deleteNote, clearNotes } from "../../actions/noteAction";
 import { noteDropDown } from "../../actions/modalActions";
-import { removeTriage } from '../../actions/tagTriageAction'
-import { getTaggings, deleteTagging, clearTaggings } from '../../actions/taggingActions';
+import { removeTriage } from "../../actions/tagTriageAction";
+import {
+  getTaggings,
+  deleteTagging,
+  clearTaggings,
+} from "../../actions/taggingActions";
 
 const msp = (state) => ({
-    notes: Object.values(state.entities.notes),
-    user: state.entities.user[state.session.id], 
-    notebooks: Object.values(state.entities.notebooks),
-    search: state.ui.search,
-    taggings: Object.values(state.entities.taggings),
-    triage: Object.values(state.ui.triage)
-
-
+  notes: Object.values(state.entities.notes),
+  user: state.entities.user[state.session.id],
+  notebooks: Object.values(state.entities.notebooks),
+  search: state.ui.search,
+  taggings: Object.values(state.entities.taggings),
+  triage: Object.values(state.ui.triage),
 });
 
-const mdp = dispatch => ({
-    getNotebooks: user => dispatch(getNotebooks(user)),
-    getNotes: id => dispatch(getNotes(id)),
-    deleteNote: note => dispatch(deleteNote(note)),
-    clearNotes: () => dispatch(clearNotes()),
-    noteDropDown: entity => dispatch(noteDropDown(entity)),
-    removeTriage: () => dispatch(removeTriage()),
-    getTaggings: (user) => dispatch(getTaggings(user)),
-    clearTaggings: () => dispatch(clearTaggings())
-   
-
+const mdp = (dispatch) => ({
+  getNotebooks: (user) => dispatch(getNotebooks(user)),
+  getNotes: (id) => dispatch(getNotes(id)),
+  deleteNote: (note) => dispatch(deleteNote(note)),
+  clearNotes: () => dispatch(clearNotes()),
+  noteDropDown: (entity) => dispatch(noteDropDown(entity)),
+  removeTriage: () => dispatch(removeTriage()),
+  getTaggings: (user) => dispatch(getTaggings(user)),
+  clearTaggings: () => dispatch(clearTaggings()),
 });
 
 export default connect(msp, mdp)(notesIndexForm);
