@@ -1,235 +1,229 @@
-@import './variables';
+@import "./variables";
 body {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 .fa-times-circle {
-    cursor: pointer;
-    margin-right: 10px;
+  cursor: pointer;
+  margin-right: 10px;
 }
 .fa-caret-down {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 .fa-caret-right {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 .user-email {
-    overflow: hidden;
-    margin-left: 20px;
+  overflow: hidden;
+  margin-left: 20px;
 }
 main {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 .username-form {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
 }
-
 
 .left-nav {
-    display: flex;
-    flex-direction: column;
-    background-color: #1a1a1a;
-    height: 100%;
-    width: 240px;
+  display: flex;
+  flex-direction: column;
+  background-color: #1a1a1a;
+  height: 100%;
+  width: 240px;
 }
 
-.username-left-ul{
-    width: 200px;
-    margin-left: 40px;
+.username-left-ul {
+  width: 200px;
+  margin-left: 40px;
 }
 
 .username-left-shortcuts-ul {
-    width: 200px;
-    margin-left: 20px;
+  width: 200px;
+  margin-left: 20px;
 }
 
 .left-nav li {
-    color: #c8c8c8;
-    padding-top: 10px;
-    padding-bottom: 10px;
+  color: #c8c8c8;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .left-nav a {
-    text-decoration: none;
-    color: #c8c8c8;
+  text-decoration: none;
+  color: #c8c8c8;
 }
 .left-nav input {
-    background-color: rgb(8, 8, 8);
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding-bottom: 5px;
-    padding-top: 5px;
-    color: white;
-    margin-left: 10px;
-    outline: none;
-    width: 75%;
-    background-color: darkslategray;
-    font-size: 14px;
+  background-color: rgb(8, 8, 8);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  color: white;
+  margin-left: 10px;
+  outline: none;
+  width: 75%;
+  background-color: darkslategray;
+  font-size: 14px;
 }
 .new-note {
-
-    justify-content: start;
-    cursor: pointer;
-    height: 20%;
-    display: flex;
-    align-items: center;
+  justify-content: start;
+  cursor: pointer;
+  height: 20%;
+  display: flex;
+  align-items: center;
 }
 .left-nav span {
-    display:flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
-.new-note button{
-    border: none;
-    color: white;
-    height: 100%;
-    font-size: 85%;
-    background-color: #1a1a1a;
-    outline: none;
+.new-note button {
+  border: none;
+  color: white;
+  height: 100%;
+  font-size: 85%;
+  background-color: #1a1a1a;
+  outline: none;
 }
 .left-nav li:hover {
-    background-color: darkslategrey;
+  background-color: darkslategrey;
 }
-.username-left-notebook-index{
-    margin-left: 10px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 200px;
+.username-left-notebook-index {
+  margin-left: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 200px;
 }
 
 .center-nav {
-    display: flex;
-    height: 100%;
+  display: flex;
+  height: 100%;
 
-    width: 100%;
-    flex-direction: row;
+  width: 100%;
+  flex-direction: row;
 }
 
-.quill{
-    display: flex;
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-    padding: 0px 28px;
-    // height: 50%;
+.quill {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  padding: 0px 28px;
+  // height: 50%;
 }
 .right-nav {
-    display: flex;
-    grid-area: 1 / 2/ 2/ 2;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100%;
-    // margin-left: 3%;
-    width: 80%;
+  display: flex;
+  grid-area: 1 / 2/ 2/ 2;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  // margin-left: 3%;
+  width: 80%;
 }
 
-
 .note-title-top button {
-    width: 20%;
-    outline: none;
-    background-color: #fff;
-    border: none;
-    font-size: 14px;
-    color: $fgreen;
-    margin-left: 30px;
+  width: 20%;
+  outline: none;
+  background-color: #fff;
+  border: none;
+  font-size: 14px;
+  color: $fgreen;
+  margin-left: 30px;
 }
 
 .note-title-top {
-
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
 }
 
 .note-title-top h1 {
-    margin-left: 30px;
-    font-size: 20px;
-    width: 20%;
-    text-align: center;
-    padding-bottom: 15px;
-
+  margin-left: 30px;
+  font-size: 20px;
+  width: 20%;
+  text-align: center;
+  padding-bottom: 15px;
 }
 .notebook-title {
-    margin-top: 14%;
-    font-size: 20px;
-    margin-left: 6%;
+  margin-top: 14%;
+  font-size: 20px;
+  margin-left: 6%;
 }
 
-.user-email:hover{
-    color: white;
-    cursor: pointer;
+.user-email:hover {
+  color: white;
+  cursor: pointer;
 }
 
 .shortcut-notebook {
-    display: flex;
-    flex-direction: row;
-    margin-left: 20px;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+  width: 100%;
 }
 
 .shortcut-note {
-    display: flex;
-    flex-direction: row;
-    margin-left: 20px;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+  width: 100%;
 }
 
 .username-left-notebook-index a {
-    width: 200px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+  width: 200px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-.fa-sticky-note{
-    margin-right: 8px;
+.fa-sticky-note {
+  margin-right: 8px;
 }
-.shortcuts-li{
-    cursor: pointer;
-    margin-left: 20px
+.shortcuts-li {
+  cursor: pointer;
+  margin-left: 20px;
 }
-.fa-ellipsis-h{
-    cursor: pointer;
-}
-
-.search-circle{
-    color: white;
-    size: 24px;
-    
-}
-.hidden-circle{
-    display: none;
-    height: 0;
-    opacity: 0;
+.fa-ellipsis-h {
+  cursor: pointer;
 }
 
-.left-search-input{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.search-circle {
+  color: white;
+  size: 24px;
+}
+.hidden-circle {
+  display: none;
+  height: 0;
+  opacity: 0;
 }
 
-.tags-li{
-    margin-left: 30px;
-}
-.all-notes-li{
-    margin-left: 33px;
-}
-.notebooks-li{
-    margin-left: 20px
+.left-search-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.fa-tag{
-    cursor: pointer;
+.tags-li {
+  margin-left: 30px;
+}
+.all-notes-li {
+  margin-left: 33px;
+}
+.notebooks-li {
+  margin-left: 20px;
+}
+
+.fa-tag {
+  cursor: pointer;
 }
 
 .react-quill-element {
-    width: 85%;
+  width: 85%;
 }

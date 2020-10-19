@@ -1,144 +1,128 @@
-@import './variables';
+@import "./variables";
 .outerdiv {
-    display:flex;
-    justify-content: center;
-    background-image: image-url('background-for-login-signup.png');
-    background-color: mintcream;
-    z-index: 1;
-    height: 100%;
-    width: 100%;
-    background-size: 20% 20%;
+  display: flex;
+  justify-content: center;
+  background-image: image-url("background-for-login-signup.png");
+  background-color: mintcream;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  background-size: 20% 20%;
 }
-
-
 
 .log-in-form {
-    display: flex;
-    margin-top: 25px;
-    flex-direction: column;
-    align-items: center;
-    width: 515px;
-    background-color: white;
-    height: 630px;
-    z-index: 2;
+  display: flex;
+  margin-top: 25px;
+  flex-direction: column;
+  align-items: center;
+  width: 515px;
+  background-color: white;
+  height: 630px;
+  z-index: 2;
 }
 
-
-
-
 .log-in-top {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    height: 160px;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  height: 160px;
 }
 
 .log-in-middle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    width: 75%;
-    height: 240px;
-
+  width: 75%;
+  height: 240px;
 }
 
 .log-in-bottom {
- 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    align-items: center;
-    height: 120px;
-    padding-top: 25px;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  align-items: center;
+  height: 120px;
+  padding-top: 25px;
 }
-
 
 .log-in-evernote {
-    font-weight: bold;
-    font-size: 40px;
+  font-weight: bold;
+  font-size: 40px;
 }
-
 
 .log-in-form img {
-    width: 100px;
-    height: 100px;
-
+  width: 100px;
+  height: 100px;
 }
 
- .log-in-form li {
-    list-style: none;
-    color: red;
-    font-family: sans-serif;
- }
+.log-in-form li {
+  list-style: none;
+  color: red;
+  font-family: sans-serif;
+}
 
-  .log-in-form .enter-username button:hover {
-    color: honeydew;
-    cursor: pointer;
-    background-color: $fgreen;
-    outline: none;
-  }
+.log-in-form .enter-username button:hover {
+  color: honeydew;
+  cursor: pointer;
+  background-color: $fgreen;
+  outline: none;
+}
 
 .enter-username button {
-    background-color: $lgreen;
-    width: 350px;
-    line-height: 475%;
-    border-radius: 12px;
-    color: honeydew;
-    outline: none;
+  background-color: $lgreen;
+  width: 350px;
+  line-height: 475%;
+  border-radius: 12px;
+  color: honeydew;
+  outline: none;
 }
 
-  .log-in-email-input {
-  
-    // margin-bottom: 1%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-left: 5%;
-    padding-right: 5%;
-    outline: none;
-    width: 315px;
-    height: 40px;
-    border-radius: 10px;
-    border: 1px solid #e6e6e6;
-    font-size: 16px;
+.log-in-email-input {
+  // margin-bottom: 1%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 5%;
+  padding-right: 5%;
+  outline: none;
+  width: 315px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #e6e6e6;
+  font-size: 16px;
+}
 
-  }
-
-
- .redirect-to-login-signup a {
-     color: $lgreen;
-     text-decoration: none;
-    //  margin-bottom: -200px;
- }
- .redirect-to-login-signup a:hover {
-    color: $fgreen;
-    cursor: pointer;
- }
+.redirect-to-login-signup a {
+  color: $lgreen;
+  text-decoration: none;
+  //  margin-bottom: -200px;
+}
+.redirect-to-login-signup a:hover {
+  color: $fgreen;
+  cursor: pointer;
+}
 .log-in-password-hide {
-    
-    height: 0;
-    opacity: 0;
-    transition: height 1s ease;
+  height: 0;
+  opacity: 0;
+  transition: height 1s ease;
 }
 
 .log-in-password-show {
-    transition: height 1s, opacity 1s;
-    opacity: 100;
+  transition: height 1s, opacity 1s;
+  opacity: 100;
 
-    // margin-bottom: 6px;
-    border-radius: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    outline: none;
-    width: 315px;
-    height: 40px;
-    border-radius: 10px;
-    border: 1px solid #e6e6e6;
-    font-size: 16px;
+  // margin-bottom: 6px;
+  border-radius: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  outline: none;
+  width: 315px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #e6e6e6;
+  font-size: 16px;
 }

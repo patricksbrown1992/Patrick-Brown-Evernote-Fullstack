@@ -1,4 +1,4 @@
-@import './variables';
+@import "./variables";
 
 .modal-background {
   position: fixed;
@@ -22,13 +22,17 @@
   justify-content: center;
 }
 
-.new-note-modal{
+.new-note-modal {
   height: 300px;
   width: 550px;
   background-color: white;
   border: 1px solid black;
 }
-.new-note-modal h1, h5, input, form, span{
+.new-note-modal h1,
+h5,
+input,
+form,
+span {
   display: flex;
   justify-content: column;
 }
@@ -88,9 +92,8 @@
   font-weight: 500;
   font-family: sans-serif;
   margin-left: 25px;
-  
 }
-.tag-edit-modal h3{
+.tag-edit-modal h3 {
   color: gray;
   font-family: sans-serif;
   font-size: 12px;
@@ -103,10 +106,13 @@
   margin-right: 25px;
 }
 
-.tag-edit-modal h5, h3, input, form, span{
+.tag-edit-modal h5,
+h3,
+input,
+form,
+span {
   display: flex;
   flex-direction: column;
-
 }
 .tag-edit-modal input {
   outline: none;
@@ -120,7 +126,6 @@
   font-size: 18px;
   font-family: sans-serif;
   font-weight: 500;
-
 }
 
 .tag-edit-modal span {
@@ -131,8 +136,7 @@
   margin-left: 25px;
 }
 
-
-.invalid{
+.invalid {
   color: white;
   background-color: #dcdfe3;
   width: 65px;
@@ -143,10 +147,9 @@
   font-size: 14px;
   font-weight: 400;
   padding: 10px 15px 10px 15px;
-  margin-left: 400px; 
-
+  margin-left: 400px;
 }
-.valid{
+.valid {
   color: white;
   background-color: $fgreen;
   outline: none;
@@ -154,7 +157,7 @@
   height: 45px;
   border-radius: 4px;
   font-weight: 400;
-  margin-left: 400px; 
+  margin-left: 400px;
   padding: 10px 15px 10px 15px;
   font-size: 14px;
 }
@@ -165,7 +168,7 @@
   background-color: white;
   border: 1px solid black;
 }
-.tag-delete-modal-top{
+.tag-delete-modal-top {
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
@@ -191,12 +194,15 @@
   height: 45px;
   border-radius: 4px;
   font-weight: 400;
-  margin-left: 450px; 
+  margin-left: 450px;
   padding: 10px 15px 10px 15px;
   font-size: 14px;
 }
 
-.tag-delete-modal h3, input, form, span{
+.tag-delete-modal h3,
+input,
+form,
+span {
   display: flex;
   justify-content: center;
 }
@@ -215,13 +221,13 @@
   overflow: hidden;
 }
 
-.new-notebook-modal{
+.new-notebook-modal {
   height: 350px;
   width: 550px;
   background-color: white;
   border: 1px solid black;
 }
-.new-notebook-modal-top{
+.new-notebook-modal-top {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -243,21 +249,20 @@
   margin-right: 25px;
 }
 
-
-.new-tag-modal{
+.new-tag-modal {
   height: 260px;
   width: 500px;
   background-color: white;
   border: 1px solid black;
 }
-.tag-new-modal-top{
+.tag-new-modal-top {
   display: flex;
   width: 100%;
   justify-content: space-between;
   margin-top: 30px;
   margin-bottom: 10px;
 }
-.tag-new-modal-top h1{
+.tag-new-modal-top h1 {
   font-size: 18px;
   margin: 0;
   word-wrap: break-word;
@@ -265,11 +270,13 @@
   font-family: sans-serif;
   margin-left: 25px;
 }
-.tag-new-modal-top i{
+.tag-new-modal-top i {
   margin-right: 25px;
 }
 
-.new-tag-modal h1, input, span{
+.new-tag-modal h1,
+input,
+span {
   display: flex;
   flex-direction: column;
 }
@@ -303,7 +310,10 @@
   margin-left: 15px;
 }
 
-.new-notebook-modal  h5, h3, input, span{
+.new-notebook-modal h5,
+h3,
+input,
+span {
   display: flex;
   flex-direction: column;
 }
@@ -321,7 +331,7 @@
   margin-bottom: 25px;
 }
 
-.new-notebook-modal h3{
+.new-notebook-modal h3 {
   margin-left: 25px;
   margin-bottom: 25px;
 }
@@ -339,7 +349,6 @@
   font-size: 100%;
 }
 .new-notebook-modal h5 {
-
   color: gray;
 }
 
@@ -347,7 +356,7 @@
   margin-left: 65px;
 }
 
-.notebook-edit-modal{
+.notebook-edit-modal {
   height: 260px;
   width: 530px;
   background-color: white;
@@ -357,13 +366,13 @@
 }
 
 .notebook-edit-top {
-  display:flex;
+  display: flex;
   flex-direction: row;
   margin-bottom: 30px;
   justify-content: space-between;
   margin-top: 30px;
 }
-.notebook-edit-top h1{
+.notebook-edit-top h1 {
   margin-left: 25px;
   font-size: 18px;
   margin: 0;
@@ -375,7 +384,10 @@
   margin-right: 25px;
 }
 
-.notebook-edit-modal h3, input, form, span{
+.notebook-edit-modal h3,
+input,
+form,
+span {
   display: flex;
   justify-content: center;
 }
@@ -398,21 +410,18 @@
   margin-bottom: 25px;
 }
 
-.notebook-edit-modal form{
+.notebook-edit-modal form {
   margin-top: 20px;
   margin-left: 55px;
-
 }
 
-
-.notebook-delete-modal{
+.notebook-delete-modal {
   height: 200px;
   width: 500px;
   background-color: white;
   border: 1px solid black;
   display: flex;
   flex-direction: column;
-  
 }
 
 .noteboook-delete-top {
@@ -439,7 +448,7 @@
   margin-top: 30px;
 }
 
-.notebook-delete-modal h3{
+.notebook-delete-modal h3 {
   display: flex;
   justify-content: center;
   margin-left: 25px;
@@ -448,22 +457,21 @@
   overflow: hidden;
 }
 
-.notebook-delete-modal form{
+.notebook-delete-modal form {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   margin-right: 25px;
 }
 
-
-.notebook-drop-down-modal{
+.notebook-drop-down-modal {
   height: 180px;
   width: 230px;
   background-color: white;
   border: 1px solid black;
 }
 
-.notebook-drop-down-modal p{
+.notebook-drop-down-modal p {
   display: flex;
   justify-content: center;
   text-overflow: ellipsis;
@@ -492,8 +500,7 @@
   background-color: whitesmoke;
 }
 
-
-.note-drop-down-modal{
+.note-drop-down-modal {
   height: 180px;
   width: 230px;
   background-color: white;
@@ -537,7 +544,7 @@
   flex-direction: column;
 }
 
-.note-delete-modal-top{
+.note-delete-modal-top {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -545,7 +552,7 @@
   margin-bottom: 40px;
 }
 
-.note-delete-modal-top h1{
+.note-delete-modal-top h1 {
   font-size: 18px;
   margin: 0;
   word-wrap: break-word;
@@ -558,7 +565,7 @@
   margin-right: 25px;
 }
 
-.note-delete-modal button{
+.note-delete-modal button {
   color: white;
   background-color: tomato;
   outline: none;
@@ -566,12 +573,15 @@
   height: 45px;
   border-radius: 4px;
   font-weight: 400;
-  margin-left: 400px; 
+  margin-left: 400px;
   padding: 10px 15px 10px 15px;
   font-size: 14px;
 }
 
-.note-delete-modal h3, input, form, span{
+.note-delete-modal h3,
+input,
+form,
+span {
   display: flex;
   justify-content: center;
 }
@@ -588,29 +598,28 @@
   margin-left: 20px;
 }
 
-.tag-drop-down-modal{
+.tag-drop-down-modal {
   height: 205px;
   width: 340px;
   background-color: white;
   border: 1px solid black;
 }
 
-.tag-drop-down-modal span{
+.tag-drop-down-modal span {
   height: 10%;
   width: 100%;
 }
 
-.tag-drop-down-modal span:hover{
+.tag-drop-down-modal span:hover {
   background-color: whitesmoke;
 }
 
-.tag-drop-down-buttons{
+.tag-drop-down-buttons {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  
 }
-.tag-drop-down-buttons button{
+.tag-drop-down-buttons button {
   outline: none;
   border: none;
   font-size: 14px;
@@ -619,16 +628,15 @@
   padding-bottom: 1.5%;
   background-color: #fff;
 }
-.tag-drop-down-buttons button:hover{
+.tag-drop-down-buttons button:hover {
   background-color: whitesmoke;
 }
 
-.logout-modal{
+.logout-modal {
   height: 160px;
   width: 340px;
   background-color: white;
   border: 1px solid black;
-
 }
 .logout-modal button {
   border: none;
@@ -638,13 +646,12 @@
   font-weight: 600;
   font-size: 14px;
   background-color: #fff;
-
 }
 .logout-modal button:hover {
   background-color: whitesmoke;
 }
 
-.note-edit-modal{
+.note-edit-modal {
   height: 300px;
   width: 550px;
   background-color: white;
@@ -660,7 +667,7 @@
   margin-bottom: 40px;
 }
 
-.note-edit-modal-top h1{
+.note-edit-modal-top h1 {
   font-size: 25px;
   margin: 0;
   word-wrap: break-word;
@@ -673,7 +680,7 @@
   margin-right: 25px;
 }
 
-.note-edit-modal h3{
+.note-edit-modal h3 {
   color: gray;
   font-family: sans-serif;
   font-size: 15px;
@@ -684,7 +691,7 @@
 .note-edit-modal span {
   margin-bottom: 70px;
 }
-.note-edit-modal input{
+.note-edit-modal input {
   outline: none;
   width: 460px;
   margin-left: 25px;
@@ -697,11 +704,11 @@
   font-weight: 500;
 }
 
-.note-edit-modal form{
+.note-edit-modal form {
   margin-left: 70px;
 }
 
-.tag-search-modal{
+.tag-search-modal {
   height: 300px;
   width: 260px;
   background-color: white;
@@ -710,20 +717,20 @@
   flex-direction: column;
 }
 
-.tag-name-item{
+.tag-name-item {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  padding-left: 15px; 
+  padding-left: 15px;
   padding-top: 5px;
   padding-bottom: 5px;
   cursor: pointer;
 }
-.tag-name-item:hover{
+.tag-name-item:hover {
   background-color: whitesmoke;
 }
 
-.tag-search-modal input{
+.tag-search-modal input {
   outline: none;
   width: 170px;
   margin-left: 25px;
@@ -741,7 +748,7 @@
   overflow-y: scroll;
 }
 
-.tag-all-delete-modal{
+.tag-all-delete-modal {
   height: 250px;
   width: 500px;
   background-color: white;
@@ -750,21 +757,23 @@
   flex-direction: column;
 }
 .tag-all-delete-modal button {
-
   color: white;
-   background-color: tomato;
-   outline: none;
-   width: 75px;
-   height: 45px;
-   border-radius: 4px;
-   font-weight: 400;
-   margin-top: 50px;
-   margin-left: 400px; 
-   padding: 10px 15px 10px 15px;
-   font-size: 14px;
+  background-color: tomato;
+  outline: none;
+  width: 75px;
+  height: 45px;
+  border-radius: 4px;
+  font-weight: 400;
+  margin-top: 50px;
+  margin-left: 400px;
+  padding: 10px 15px 10px 15px;
+  font-size: 14px;
 }
 
-.tag-all-delete-modal h3, input, form, span{
+.tag-all-delete-modal h3,
+input,
+form,
+span {
   display: flex;
   justify-content: center;
 }

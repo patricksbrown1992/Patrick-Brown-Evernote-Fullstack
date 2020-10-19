@@ -1,138 +1,126 @@
-@import './variables';
+@import "./variables";
 .outerdiv {
-    display:flex;
-    justify-content: center;
-    background-image: image-url('background-for-login-signup.png');
-    
-    background-color: mintcream;
-    background-size: 20% 20%;
-    z-index: 1;
+  display: flex;
+  justify-content: center;
+  background-image: image-url("background-for-login-signup.png");
 
+  background-color: mintcream;
+  background-size: 20% 20%;
+  z-index: 1;
 }
+
 .sign-up-form {
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2%;
+  background-color: white;
 
-    z-index: 3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 2%;
-    background-color: white;
+  width: 515px;
 
-    width: 515px;
+  height: 630px;
 
-    height: 630px;
-   
-  
-    border: 1px solid white;
+  border: 1px solid white;
 }
-
 
 .sign-up-middle li {
-    color: red;
-    font-family: sans-serif;
-    font-size: 14px;
+  color: red;
+  font-family: sans-serif;
+  font-size: 14px;
 }
 .sign-up-top {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    padding-top: 25px;
-    padding-bottom: 25px;
-    height: 160px;
-
+  padding-top: 25px;
+  padding-bottom: 25px;
+  height: 160px;
 }
 .sign-up-top img {
-    width: 100px;
-    height: 100px;
-    
+  width: 100px;
+  height: 100px;
 }
-
 
 .sign-up-middle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 290px;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 290px;
 }
 .sign-up-bottom {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    height: 100px;
-    padding-top: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+  padding-top: 25px;
 }
 
 .sign-up-form p {
- 
-    font-size: 12px;
-    text-align: center;
+  font-size: 12px;
+  text-align: center;
 }
 
-.sign-up-inputs{
-    width: 100%;
+.sign-up-inputs {
+  width: 100%;
 }
 
 .sign-up-continue button:hover {
-    color: honeydew;
-    cursor: pointer;
-    background-color: $fgreen;
-    outline: none;
-  }
-
+  color: honeydew;
+  cursor: pointer;
+  background-color: $fgreen;
+  outline: none;
+}
 
 .sign-up-email {
-    width: 95%;
-    height: 40px;
-    margin-bottom: 1.5%;
-    border-radius: 10px;
-    font-size: 16px;
-    outline: none;
-    border: 1px solid #e6e6e6;
-   
+  width: 95%;
+  height: 40px;
+  margin-bottom: 1.5%;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+  border: 1px solid #e6e6e6;
 }
 .sign-up-password {
-    width: 95%;
-    height: 40px;
-    border-radius: 10px;
-    outline: none;
-    border: 1px solid #e6e6e6;
-    font-size: 16px;
+  width: 95%;
+  height: 40px;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid #e6e6e6;
+  font-size: 16px;
 }
 
 .sign-up-continue {
-    margin-top: 2%;
-    margin-bottom: 2px;
+  margin-top: 2%;
+  margin-bottom: 2px;
 }
 
-.demo-button button{
-    width: 320px;
-    line-height: 45px;
-    border-radius: 12px;
-    color: black;
-    border: 1px solid black;
-    outline: none;
-    font-size: 16px;
-    cursor: pointer;
-    outline: none;
+.demo-button button {
+  width: 320px;
+  line-height: 45px;
+  border-radius: 12px;
+  color: black;
+  border: 1px solid black;
+  outline: none;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
 }
- .sign-up-continue button {
-    background-color: $lgreen;
-    width: 320px;
-    line-height: 45px;
-    border-radius: 12px;
-    color: honeydew;
-    font-size: 16px;
-    outline: none;
-    
+.sign-up-continue button {
+  background-color: $lgreen;
+  width: 320px;
+  line-height: 45px;
+  border-radius: 12px;
+  color: honeydew;
+  font-size: 16px;
+  outline: none;
 }
-
 
 .redirect-to-login-signup {
-    display: flex;
-    margin-top: 10px; 
-    margin-bottom: 10px;
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
