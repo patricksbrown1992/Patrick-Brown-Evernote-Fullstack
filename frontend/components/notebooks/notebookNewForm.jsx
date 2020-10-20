@@ -28,19 +28,19 @@ const NotebookNewForm = (props) => {
         be private or shared.
       </h3>
       <h5>Name</h5>
-      <span>
-        <input
-          type="text"
-          value={newName}
-          onChange={handleChange}
-          placeholder="Notebook name"
-        />
-      </span>
+
+      <input
+        type="text"
+        value={newName}
+        onChange={handleChange}
+        placeholder="Notebook name"
+      />
+
       <br />
       <br />
 
       {newName ? (
-        <button onClick={handleSubmit} className="valid" type="submit">
+        <button onClick={handleSubmit} className="valid">
           Done
         </button>
       ) : (

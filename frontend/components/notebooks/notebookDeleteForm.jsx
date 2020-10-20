@@ -26,9 +26,7 @@ const NotebookDeleteForm = (props) => {
         Are you sure you want to delete the "{props.notebook.name}" notebook?
       </h3>
 
-      <button onClick={handleSubmit} type="submit">
-        Delete
-      </button>
+      <button onClick={handleSubmit}>Delete</button>
     </div>
   );
 };
