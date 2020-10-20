@@ -12,9 +12,7 @@ const LogoutForm = (props) => {
       <i onClick={props.closeModal} className="fas fa-times fa-2x"></i>
       <br />
       <br />
-      <button onClick={handleSubmitLogOut} type="submit">
-        Sign Out {props.user.email}
-      </button>
+      <button onClick={handleSubmitLogOut}>Sign Out {props.user.email}</button>
     </div>
   );
 };

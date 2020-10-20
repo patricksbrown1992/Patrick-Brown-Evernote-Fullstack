@@ -25,12 +25,11 @@ const TagEditForm = (props) => {
         <i onClick={props.closeModal} className="fas fa-times fa-2x"></i>
       </div>
       <h3>Name</h3>
-      <span>
-        <input type="text" value={nameOfTag} onChange={handleChange} />
-      </span>
+
+      <input type="text" value={nameOfTag} onChange={handleChange} />
 
       {nameOfTag ? (
-        <button onClick={handleSubmit} className="valid" type="submit">
+        <button onClick={handleSubmit} className="valid">
           Done
         </button>
       ) : (

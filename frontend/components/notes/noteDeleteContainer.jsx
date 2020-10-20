@@ -1,6 +1,6 @@
 import NoteDeleteForm from "./noteDeleteForm";
 import { connect } from "react-redux";
-
+import { withRouter } from "react-router-dom";
 import { deleteNote } from "../../actions/noteAction";
 import { closeModal } from "../../actions/modalActions";
 
@@ -13,4 +13,4 @@ const mdp = (dispatch) => ({
   closeModal: () => dispatch(closeModal()),
 });
 
-export default connect(msp, mdp)(NoteDeleteForm);
+export default withRouter(connect(msp, mdp)(NoteDeleteForm));

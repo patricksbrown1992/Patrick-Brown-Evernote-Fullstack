@@ -22,7 +22,7 @@ const TagDropDownForm = (props) => {
       <div className="tag-drop-down-buttons">
         <br />
         <span onClick={handleSubmitDeleteTag}>
-          <button type="submit">Delete Tag...</button>
+          <button>Delete Tag...</button>
         </span>
         <br />
         <span onClick={handleSubmitEditTag}>

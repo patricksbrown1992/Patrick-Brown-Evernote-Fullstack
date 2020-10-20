@@ -30,15 +30,11 @@ const NoteDropDownForm = (props) => {
       <br />
       <p>{props.note.title}</p>
       <br />
-      <button onClick={handleSubmitDelete} type="submit">
-        Delete Note
-      </button>
+      <button onClick={handleSubmitDelete}>Delete Note</button>
       <br />
-      <button onClick={handleSubmitEdit} type="submit">
-        Edit Note Title
-      </button>
+      <button onClick={handleSubmitEdit}>Edit Note Title</button>
       <br />
-      <button onClick={handleSubmitShortcut} type="submits">
+      <button onClick={handleSubmitShortcut}>
         {props.note.shortcut ? "Remove From Shortcuts" : "Add to Shortcuts"}
       </button>
       <br />

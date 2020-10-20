@@ -7,12 +7,12 @@ import { noteTagAdd } from "../../actions/modalActions";
 
 const msp = (state, ownProps) => {
   const note = state.entities.notes[ownProps.match.params.note_id];
-
   return {
     user: state.entities.user[state.session.id],
-    notes: Object.values(state.entities.notes),
+    notes: state.entities.notes,
     note: note,
     search: state.ui.search,
+    notebooks: state.entities.notebooks,
     taggings: Object.values(state.entities.taggings),
     tags: Object.values(state.entities.tags),
   };

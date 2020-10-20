@@ -24,14 +24,14 @@ const TagNewForm = (props) => {
         <i onClick={props.closeModal} className="fas fa-times fa-2x"></i>
       </div>
       <h3>Name</h3>
-      <span>
-        <input
-          type="text"
-          value={nameOfTag}
-          onChange={handleChange}
-          placeholder="Tag name"
-        />
-      </span>
+
+      <input
+        type="text"
+        value={nameOfTag}
+        onChange={handleChange}
+        placeholder="Tag name"
+      />
+
       {nameOfTag ? (
         <button onClick={handleSubmit} className="valid">
           Done
