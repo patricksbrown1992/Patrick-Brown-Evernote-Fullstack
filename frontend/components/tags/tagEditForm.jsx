@@ -5,12 +5,7 @@ const TagEditForm = (props) => {
     return "";
   });
 
-  function handleChange(e) {
-    e.preventDefault();
-    updateName(e.target.value);
-  }
-
-  function handleSubmit(e) {
+  function handleClick(e) {
     e.preventDefault();
     const name = nameOfTag;
     const user_id = Object.values(props.user)[0].id;
@@ -26,10 +21,14 @@ const TagEditForm = (props) => {
       </div>
       <h3>Name</h3>
 
-      <input type="text" value={nameOfTag} onChange={handleChange} />
+      <input
+        type="text"
+        value={nameOfTag}
+        onChange={(e) => updateName(e.target.value)}
+      />
 
       {nameOfTag ? (
-        <button onClick={handleSubmit} className="valid">
+        <button onClick={handleClick} className="valid">
           Done
         </button>
       ) : (

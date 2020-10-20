@@ -2,7 +2,7 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 
 const NotebookDeleteForm = (props) => {
-  function handleSubmit(e) {
+  function handleClick(e) {
     e.preventDefault();
     props
       .deleteNotebook(props.notebook)
@@ -26,7 +26,7 @@ const NotebookDeleteForm = (props) => {
         Are you sure you want to delete the "{props.notebook.name}" notebook?
       </h3>
 
-      <button onClick={handleSubmit}>Delete</button>
+      <button onClick={handleClick}>Delete</button>
     </div>
   );
 };

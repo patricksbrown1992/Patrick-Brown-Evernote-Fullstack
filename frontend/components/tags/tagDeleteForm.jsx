@@ -1,7 +1,7 @@
 import React from "react";
 
 const TagDeleteForm = (props) => {
-  function handleSubmit(e) {
+  function handleClick(e) {
     e.preventDefault();
     props.deleteTag(props.tag).then(() => props.closeModal());
   }
@@ -17,7 +17,7 @@ const TagDeleteForm = (props) => {
         will be removed from all notes.
       </h3>
 
-      <button onClick={handleSubmit}>Delete</button>
+      <button onClick={handleClick}>Delete</button>
     </div>
   );
 };

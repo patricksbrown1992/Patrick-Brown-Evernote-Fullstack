@@ -9,17 +9,7 @@ const NoteNewForm = (props) => {
     return "";
   });
 
-  function handleChangeBody(e) {
-    e.preventDefault();
-    updateBody(e.target.value);
-  }
-
-  function handleChangeTitle(e) {
-    e.preventDefault();
-    updateTitle(e.target.value);
-  }
-
-  function handleSubmit(e) {
+  function handleClick(e) {
     e.preventDefault();
     const notebook_id = props.id;
     const id = props.id;
@@ -34,27 +24,25 @@ const NoteNewForm = (props) => {
       <h1>Create new Note</h1>
 
       <h5>Title</h5>
-      <span>
-        <input
-          type="text"
-          value={title}
-          onChange={handleChangeTitle}
-          placeholder="Note Title"
-        />
-      </span>
+
+      <input
+        type="text"
+        value={title}
+        onChange={(e) => updateTitle(e.target.value)}
+        placeholder="Note Title"
+      />
+
       <h5>Body</h5>
-      <span>
-        <input
-          type="text"
-          value={body}
-          onChange={handleChangeBody}
-          placeholder="Note Body"
-        />
-      </span>
-      <br />
+
+      <input
+        type="text"
+        value={body}
+        onChange={(e) => updateBody(e.target.value)}
+        placeholder="Note Body"
+      />
 
       {body.length && title.length ? (
-        <button onClick={handleSubmit} className="valid" type="submit">
+        <button onClick={handleClick} className="valid">
           Done
         </button>
       ) : (

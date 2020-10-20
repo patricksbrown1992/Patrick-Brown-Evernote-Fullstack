@@ -10,16 +10,6 @@ const LogInForm = (props) => {
     return "";
   });
 
-  function handleChangeEmail(e) {
-    e.preventDefault();
-    updateEmail(e.target.value);
-  }
-
-  function handleChangePassword(e) {
-    e.preventDefault();
-    updatePassword(e.target.value);
-  }
-
   function handleSubmit(e) {
     e.preventDefault();
     if (props.verified === false) {
@@ -46,7 +36,7 @@ const LogInForm = (props) => {
             placeholder="Email address"
             type="text"
             value={email}
-            onChange={handleChangeEmail}
+            onChange={(e) => updateEmail(e.target.value)}
           />
           <input
             className={
@@ -55,16 +45,14 @@ const LogInForm = (props) => {
             type="password"
             placeholder="Password"
             value={password}
-            onChange={handleChangePassword}
+            onChange={(e) => updatePassword(e.target.value)}
           />
-          <br />
 
           {props.errors
             ? props.errors.map((error, idx) => {
                 return <li key={idx}>{error}</li>;
               })
             : ""}
-          <br />
 
           <button onClick={handleSubmit} type="submit">
             {props.verified ? "Sign in" : "Continue"}

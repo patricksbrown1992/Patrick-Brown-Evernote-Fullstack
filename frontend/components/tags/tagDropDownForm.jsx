@@ -1,12 +1,12 @@
 import React from "react";
 
 const TagDropDownForm = (props) => {
-  function handleSubmitEditTag(e) {
+  function handleClickEditTag(e) {
     e.preventDefault();
     props.editTagModal(props.tag);
   }
 
-  function handleSubmitDeleteTag(e) {
+  function handleClickDeleteTag(e) {
     e.preventDefault();
     props.deleteTagModal(props.tag);
   }
@@ -20,18 +20,9 @@ const TagDropDownForm = (props) => {
     <div className="tag-drop-down-modal">
       <i onClick={props.closeModal} className="fas fa-times fa-2x"></i>
       <div className="tag-drop-down-buttons">
-        <br />
-        <span onClick={handleSubmitDeleteTag}>
-          <button>Delete Tag...</button>
-        </span>
-        <br />
-        <span onClick={handleSubmitEditTag}>
-          <button>Rename Tag...</button>
-        </span>
-        <br />
-        <span onClick={handleDeleteAll}>
-          <button>Remove tag from all notes...</button>
-        </span>
+        <button onClick={handleClickDeleteTag}>Delete Tag...</button>
+        <button onClick={handleClickEditTag}>Rename Tag...</button>
+        <button onClick={handleDeleteAll}>Remove tag from all notes...</button>
       </div>
     </div>
   );

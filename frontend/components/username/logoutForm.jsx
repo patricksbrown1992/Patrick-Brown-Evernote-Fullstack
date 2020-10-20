@@ -1,7 +1,7 @@
 import React from "react";
 
 const LogoutForm = (props) => {
-  function handleSubmitLogOut(e) {
+  function handleClickLogOut(e) {
     e.preventDefault();
     props.logout();
     props.closeModal();
@@ -10,9 +10,7 @@ const LogoutForm = (props) => {
   return (
     <div className="logout-modal">
       <i onClick={props.closeModal} className="fas fa-times fa-2x"></i>
-      <br />
-      <br />
-      <button onClick={handleSubmitLogOut}>Sign Out {props.user.email}</button>
+      <button onClick={handleClickLogOut}>Sign Out {props.user.email}</button>
     </div>
   );
 };

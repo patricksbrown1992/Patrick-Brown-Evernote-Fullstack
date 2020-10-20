@@ -5,12 +5,7 @@ const NotebookEditForm = (props) => {
     return "";
   });
 
-  function handleChange(e) {
-    e.preventDefault();
-    updateName(e.target.value);
-  }
-
-  function handleSubmit(e) {
+  function handleClick(e) {
     e.preventDefault();
     const name = newName;
     const user_id = props.user.id;
@@ -26,10 +21,14 @@ const NotebookEditForm = (props) => {
       </div>
       <h3>Name</h3>
 
-      <input type="text" value={newName} onChange={handleChange} />
+      <input
+        type="text"
+        value={newName}
+        onChange={(e) => updateName(e.target.value)}
+      />
 
       {newName ? (
-        <button onClick={handleSubmit} className="valid">
+        <button onClick={handleClick} className="valid">
           Done
         </button>
       ) : (

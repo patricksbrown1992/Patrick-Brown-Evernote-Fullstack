@@ -1,17 +1,17 @@
 import React from "react";
 
 const NoteDropDownForm = (props) => {
-  function handleSubmitDelete(e) {
+  function handleClickDelete(e) {
     e.preventDefault();
     props.noteDelete(props.note);
   }
 
-  function handleSubmitEdit(e) {
+  function handleClickEdit(e) {
     e.preventDefault();
     props.noteEdit(props.note);
   }
 
-  function handleSubmitShortcut(e) {
+  function handleClickShortcut(e) {
     e.preventDefault();
     const title = props.note.title;
     const body = props.note.body;
@@ -27,17 +27,12 @@ const NoteDropDownForm = (props) => {
   return (
     <div className="note-drop-down-modal">
       <i onClick={props.closeModal} className="fas fa-times fa-2x"></i>
-      <br />
       <p>{props.note.title}</p>
-      <br />
-      <button onClick={handleSubmitDelete}>Delete Note</button>
-      <br />
-      <button onClick={handleSubmitEdit}>Edit Note Title</button>
-      <br />
-      <button onClick={handleSubmitShortcut}>
+      <button onClick={handleClickDelete}>Delete Note</button>
+      <button onClick={handleClickEdit}>Edit Note Title</button>
+      <button onClick={handleClickShortcut}>
         {props.note.shortcut ? "Remove From Shortcuts" : "Add to Shortcuts"}
       </button>
-      <br />
     </div>
   );
 };

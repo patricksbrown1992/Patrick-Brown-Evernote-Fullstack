@@ -6,7 +6,7 @@ const TagAllDeleteForm = (props) => {
     props.getTaggings(props.user);
   }, []);
 
-  function handleSubmit(e) {
+  function handleClick(e) {
     e.preventDefault();
     props.closeModal();
     for (let i = 0; i < props.taggings.length; i++) {
@@ -28,7 +28,7 @@ const TagAllDeleteForm = (props) => {
         notes?{" "}
       </h3>
 
-      <button onClick={handleSubmit}>Remove</button>
+      <button onClick={handleClick}>Remove</button>
     </div>
   );
 };

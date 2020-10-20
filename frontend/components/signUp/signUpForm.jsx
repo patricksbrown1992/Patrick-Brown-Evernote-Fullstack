@@ -10,16 +10,6 @@ const SignUpForm = (props) => {
     return "";
   });
 
-  function handleChangePassword(e) {
-    e.preventDefault();
-    updatePassword(e.target.value);
-  }
-
-  function handleChangeEmail(e) {
-    e.preventDefault();
-    updateEmail(e.target.value);
-  }
-
   function handleSubmit(e) {
     e.preventDefault();
     if (e.currentTarget.className === "sign-up-continue-form") {
@@ -53,31 +43,28 @@ const SignUpForm = (props) => {
               <button type="submit">Demo for Free</button>
             </div>
           </form>
-          <br />
           <div className="sign-up-inputs">
             <input
               className="sign-up-email"
               type="text"
               value={email}
               placeholder="Email"
-              onChange={handleChangeEmail}
+              onChange={(e) => updateEmail(e.target.value)}
             />
             <input
               className="sign-up-password"
               type="password"
               placeholder="Password"
               value={password}
-              onChange={handleChangePassword}
+              onChange={(e) => updatePassword(e.target.value)}
             />
           </div>
           <ul>
-            <br />
             {props.errors.length
               ? props.errors.map((error, idx) => {
                   return <li key={idx}>{error}</li>;
                 })
               : ""}
-            <br />
           </ul>
           <form className="sign-up-continue-form" onSubmit={handleSubmit}>
             <div className="sign-up-continue">

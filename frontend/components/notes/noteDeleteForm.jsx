@@ -1,7 +1,7 @@
 import React from "react";
 
 const NoteDeleteForm = (props) => {
-  function handleSubmitDelete(e) {
+  function handleClickDelete(e) {
     e.preventDefault();
     props.deleteNote(props.note).then(() => props.closeModal());
   }
@@ -14,7 +14,7 @@ const NoteDeleteForm = (props) => {
       </div>
       <h3>Are you sure you want to delete the "{props.note.title}" note?</h3>
 
-      <button onClick={handleSubmitDelete}>Delete</button>
+      <button onClick={handleClickDelete}>Delete</button>
     </div>
   );
 };

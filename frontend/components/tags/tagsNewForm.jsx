@@ -5,16 +5,11 @@ const TagNewForm = (props) => {
     "";
   });
 
-  function handleSubmit(e) {
+  function handleClick(e) {
     e.preventDefault();
     const name = nameOfTag;
     const user_id = Object.values(props.user)[0].id;
     props.createTag({ name, user_id }).then(() => props.closeModal());
-  }
-
-  function handleChange(e) {
-    e.preventDefault();
-    updateName(e.target.value);
   }
 
   return (
@@ -28,12 +23,12 @@ const TagNewForm = (props) => {
       <input
         type="text"
         value={nameOfTag}
-        onChange={handleChange}
+        onChange={(e) => updateName(e.target.value)}
         placeholder="Tag name"
       />
 
       {nameOfTag ? (
-        <button onClick={handleSubmit} className="valid">
+        <button onClick={handleClick} className="valid">
           Done
         </button>
       ) : (
