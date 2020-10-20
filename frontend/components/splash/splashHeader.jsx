@@ -5,10 +5,7 @@ import { Link } from "react-router-dom";
 const splashHeader = () => (
   <div className="splash-nav">
     <div className="splash-nav-left">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Evernote_Icon.png/220px-Evernote_Icon.png"
-        alt=""
-      />
+      <img src={window.logo} alt="Evernote logo" />
       <h1 className="title">NeverNote</h1>
     </div>
     <div className="features-div">
@@ -34,8 +31,6 @@ const splashHeader = () => (
       <nav className="signup-button">
         <Link to="/signup">Sign up</Link>
       </nav>
-
-      <p className="or">or</p>
 
       <nav className="login-button">
         <Link to="/login">Log in</Link>

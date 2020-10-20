@@ -42,10 +42,7 @@ const SignUpForm = (props) => {
     <div className="outerdiv">
       <div className="sign-up-form">
         <div className="sign-up-top">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Evernote_Icon.png/220px-Evernote_Icon.png"
-            alt=""
-          />
+          <img src={window.logo} alt="Evernote logo" />
           <h1 className="log-in-evernote">NeverNote</h1>
           <h3>Remember everything important.</h3>
         </div>
