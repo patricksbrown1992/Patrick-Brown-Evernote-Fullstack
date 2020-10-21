@@ -166,6 +166,7 @@ button {
   font-size: 20px;
   font-weight: 400;
   margin-top: 50px;
+  margin-left: 8px;
 }
 .notebooks-index-right {
   overflow-y: scroll;
@@ -354,6 +355,10 @@ button {
   // justify-content: space-between;
   align-items: center;
   margin-right: 5%;
+}
+
+.notebook-show-bottom .fa-tag {
+  margin-right: 5px;
 }
 
 .move-left {

@@ -63,6 +63,7 @@
 .log-in-form li {
   list-style: none;
   color: red;
+  margin: 5px 0 5px 0;
   font-family: sans-serif;
 }
 
@@ -73,7 +74,7 @@
   outline: none;
 }
 
-.enter-username button {
+.log-in-button {
   background-color: $lgreen;
   width: 350px;
   line-height: 475%;
@@ -114,8 +115,7 @@
 .log-in-password-show {
   transition: height 1s, opacity 1s;
   opacity: 100;
-
-  // margin-bottom: 6px;
+  margin-bottom: 5px;
   border-radius: 10px;
   padding-left: 20px;
   padding-right: 20px;

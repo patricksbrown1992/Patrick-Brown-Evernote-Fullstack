@@ -66,6 +66,7 @@ span {
   font-size: 18px;
   font-family: sans-serif;
   font-weight: 500;
+  border: 1px solid black;
 }
 .new-note-modal form {
   margin-left: 60px;
@@ -481,12 +482,6 @@ span {
   overflow: hidden;
 }
 
-.notebook-drop-down-modal span {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
 .notebook-drop-down-modal button {
   outline: none;
   border: none;
@@ -495,6 +490,7 @@ span {
   padding-top: 5px;
   padding-bottom: 5px;
   background-color: #fff;
+  margin: 5px 0;
 }
 
 .notebook-drop-down-modal button:hover {
@@ -516,11 +512,6 @@ span {
   white-space: nowrap;
   overflow: hidden;
 }
-.note-drop-down-modal span {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
 
 .note-drop-down-modal button {
   outline: none;
@@ -530,6 +521,7 @@ span {
   padding-top: 5px;
   padding-bottom: 5px;
   background-color: #fff;
+  margin: 5px 0;
 }
 
 .note-drop-down-modal button:hover {
@@ -629,6 +621,7 @@ span {
   padding-top: 1.5%;
   padding-bottom: 1.5%;
   background-color: #fff;
+  margin: 5px 0;
 }
 .tag-drop-down-buttons button:hover {
   background-color: whitesmoke;
