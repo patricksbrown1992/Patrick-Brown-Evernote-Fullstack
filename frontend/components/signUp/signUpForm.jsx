@@ -73,10 +73,6 @@ const SignUpForm = (props) => {
           </form>
         </div>
         <div className="sign-up-bottom">
-          <p>
-            By creating an account, you are agreeing to our Terms of Service and
-            Privacy Policy.
-          </p>
           <h3>Already have an account?</h3>
           <div className="redirect-to-login-signup">
             <Link to="/login">Sign In</Link>

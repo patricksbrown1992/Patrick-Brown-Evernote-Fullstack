@@ -16,7 +16,7 @@ const sessionErrorsReducer = (state = [], action) => {
     case RECEIVE_USER:
       return merge([], state, []);
     case CLEAR_ERRORS:
-      return {};
+      return [];
     case CHECK_EMAIL:
       return merge([], state, []);
 
