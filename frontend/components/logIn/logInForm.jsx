@@ -48,18 +48,21 @@ const LogInForm = (props) => {
             onChange={(e) => updatePassword(e.target.value)}
           />
 
-          {props.errors
+          {props.errors.length
             ? props.errors.map((error, idx) => {
                 return <li key={idx}>{error}</li>;
               })
             : ""}
 
-          <button onClick={handleSubmit} type="submit">
+          <button
+            className="log-in-button"
+            onClick={handleSubmit}
+            type="submit"
+          >
             {props.verified ? "Sign in" : "Continue"}
           </button>
         </div>
         <div className="log-in-bottom">
-          <h3>Remember me for 30 days</h3>
           <h3>Don't have an account?</h3>
           <div className="redirect-to-login-signup">
             <Link to="/signup">Create account</Link>
