@@ -9,6 +9,7 @@ import {
 } from "../../actions/notebookActions";
 import { clearNotes, getNotes, updateNote } from "../../actions/noteAction";
 import { receiveSearch, clearSearch } from "../../actions/searchActions";
+import { withRouter } from "react-router-dom";
 
 const msp = (state) => ({
   user: state.entities.user[state.session.id],
@@ -30,4 +31,4 @@ const mdp = (dispatch) => ({
   clearSearch: () => dispatch(clearSearch()),
 });
 
-export default connect(msp, mdp)(UsernameFormLeft);
+export default withRouter(connect(msp, mdp)(UsernameFormLeft));
