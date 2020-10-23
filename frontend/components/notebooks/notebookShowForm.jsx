@@ -1,118 +1,102 @@
-import React from 'react';
-import NoteIndexContainer from '../notes/noteIndexContainer';
-import {  Redirect } from 'react-router-dom';
-import LeftNav from '../username/usernameLeftContainer';
+import React, { useEffect, useState } from "react";
+import NoteIndexContainer from "../notes/noteIndexContainer";
+import { Redirect } from "react-router-dom";
+import LeftNav from "../username/usernameLeftContainer";
+import { withRouter } from "react-router-dom";
 
-class NotebookShowForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { loaded: false };
-        this.handleSubmitDropDown = this.handleSubmitDropDown.bind(this);
-        this.handleTagModal = this.handleTagModal.bind(this);
-        this.handleRemoveTriage = this.handleRemoveTriage.bind(this);
-       
-    }
+const NotebookShowForm = (props) => {
+  const [loaded, updateLoaded] = useState(() => {
+    return false;
+  });
 
-    componentDidMount() {
-        this.props.clearNotes();
-        this.props.getNotebooks(this.props.user).then( () => this.props.getTags(this.props.user)).then(() => this.setState({ loaded: true }));
-    }
+  useEffect(() => {
+    props.clearNotes();
+    props
+      .getNotebooks(props.user)
+      .then(() => props.getTags(props.user))
+      .then(() => updateLoaded(true));
 
-    componentWillUnmount(){
-        this.props.clearTags();
-        this.props.removeTriage();
-    }
+    return () => {
+      props.clearTags();
+      props.removeTriage();
+    };
+  }, []);
 
-    componentDidUpdate(prevProps){
-        if (prevProps.match.params.notebook_id !== this.props.match.params.notebook_id){
-            this.props.clearNotes();
-            this.props.getNotebooks(this.props.user).then(() => this.props.getNotes(parseInt(this.props.match.params.notebook_id))).then( () => this.setState({ loaded: true }));
-            // this.props.getNotebooks(this.props.user).then(() => this.props.notebooks.forEach((notebook) => {
-            //     this.props.getNotes(notebook.id)
-            // }));
-        }
-    }
-    
-    handleSubmitDropDown(entity) {
-        return (e) => {
-            e.preventDefault();
-            this.props.notebookDropDown(entity)
-        };
-    }
-    
+  // useEffect(() => {
+  //     props.clearNotes();
+  //     props.getNotebooks(props.user).then(() => props.notebooks.forEach((notebook) => {
+  //         props.getNotes(notebook.id)
+  //     }));
+  // }, props.match.params.notebook_id)
 
-    handleTagModal(){
-        return (e) => {
-            e.preventDefault();
-            this.props.tagSearchDropDown()
-        }
-    }
+  function handleClickDropDown(e) {
+    e.preventDefault();
+    props.notebookDropDown(props.notebooks[props.match.params.notebook_id]);
+  }
 
-    handleRemoveTriage(e){
-        e.preventDefault();
-        this.props.removeTriage()
-    }
+  function handleTagModal(e) {
+    e.preventDefault();
+    props.tagSearchDropDown();
+  }
 
-    render() {
-        if (this.props.search.length > 0) {
-            return <Redirect to='/allnotes' />;
-        } else {
-            
-            let theNotebook;
-            let showtagbutton;
-            let theTag;
-            theNotebook = this.props.notebooks[this.props.match.params.notebook_id];
-            
-            if (!this.state.loaded) {
-                return null;
-            }
+  function handleRemoveTriage(e) {
+    e.preventDefault();
+    props.removeTriage();
+  }
 
-            if (this.props.tags.length < 1){
-                showtagbutton = ''
-            } else {
-                showtagbutton = "fas fa-tag"
-            }
+  {
+    if (props.search.length > 0) return <Redirect to="/allnotes" />;
+  }
+  {
+    if (!loaded) return null;
+  }
 
-            if (this.props.triage.length > 0){
-                theTag = <button onClick={this.handleRemoveTriage} className="tag-triage-name">{this.props.triage[0].name} x</button>
-            } else {
-                theTag = ''
-            }
-            if (!theNotebook){
-                return <Redirect to='/notebooks' />;
-            }
-            return (
-                <>
-                    <div className='username-form'>
+  {
+    if (!props.notebooks[props.match.params.notebook_id])
+      return <Redirect to="/notebooks" />;
+  }
 
-                        <LeftNav notebook={theNotebook} />
+  return (
+    <>
+      <div className="username-form">
+        <LeftNav notebook={props.notebooks[props.match.params.notebook_id]} />
 
-                        <div className="notebook-show">
-                            <div className='notebook-show-title'>
-                                <h1>{theNotebook.name}</h1>
-                                <div className="notebook-show-icons">
-                                    <div className='tag-triage-div'>
-                                        {theTag}
-                                    </div>
-                                    <div className="notebook-show-bottom">
-                                        <i onClick={this.handleTagModal()} className={showtagbutton}></i>
-                                        <i onClick={this.handleSubmitDropDown(this.props.notebooks[this.props.match.params.notebook_id])} className="fas fa-ellipsis-h move-left"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <NoteIndexContainer notebook={theNotebook} />
-                        </div>
+        <div className="notebook-show">
+          <div className="notebook-show-title">
+            <h1>{props.notebooks[props.match.params.notebook_id].name}</h1>
+            <div className="notebook-show-icons">
+              <div className="tag-triage-div">
+                {props.triage.length ? (
+                  <button
+                    onClick={handleRemoveTriage}
+                    className="tag-triage-name"
+                  >
+                    {props.triage[0].name} x
+                  </button>
+                ) : (
+                  ""
+                )}
+              </div>
+              <div className="notebook-show-bottom">
+                <i
+                  onClick={handleTagModal}
+                  className={props.tags.length ? "fas fa-tag" : ""}
+                ></i>
+                <i
+                  onClick={handleClickDropDown}
+                  className="fas fa-ellipsis-h move-left"
+                ></i>
+              </div>
+            </div>
+          </div>
+          <NoteIndexContainer
+            notebook_id={props.match.params.notebook_id}
+            notebook={props.notebooks[props.match.params.notebook_id]}
+          />
+        </div>
+      </div>
+    </>
+  );
+};
 
-
-
-                    </div>
-                </>
-
-            )
-        }
-    }
-}
-
-
-
-export default NotebookShowForm;
+export default withRouter(NotebookShowForm);
