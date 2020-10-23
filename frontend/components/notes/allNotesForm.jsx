@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styleDate from "../../util/styleDate";
-import LeftNav from "../username/nonNoteLeftContainer";
+// import LeftNav from "../username/nonNoteLeftContainer";
+import LeftNav from "../username/usernameLeftContainer";
 import { Link } from "react-router-dom";
 import { merge } from "lodash";
 const AllNoteForm = (props) => {
@@ -33,7 +34,7 @@ const AllNoteForm = (props) => {
     props.removeTriage();
   }
 
-  function handleSubmitNoteDropDown(entity) {
+  function handleClickNoteDropDown(entity) {
     return (e) => {
       e.preventDefault();
       props.noteDropDown(entity);
@@ -86,12 +87,12 @@ const AllNoteForm = (props) => {
         {" "}
         <h3>{note.body.replace(/(<([^>]+)>)/gi, "")}</h3>
       </Link>
-      Last updated:
-      <br />
-      {styleDate(note.updated_at)}
-      <br />
+      <h3>Last updated:</h3>
+
+      <h3>{styleDate(note.updated_at)}</h3>
+
       <i
-        onClick={handleSubmitNoteDropDown(note)}
+        onClick={handleClickNoteDropDown(note)}
         className="fas fa-ellipsis-h"
       ></i>
     </li>
@@ -100,41 +101,35 @@ const AllNoteForm = (props) => {
   return (
     <div className="all-note-page">
       <LeftNav />
-      {notes.length ? (
-        <div className="all-note-right">
-          <div className="all-note-title">
-            <h1>All Notes</h1>
 
-            <h3 className="all-notes-length">{notes.length} notes</h3>
-            <div className="notebook-show-icons">
-              <div className="tag-triage-div">
-                {props.triage.length ? (
-                  <button
-                    onClick={handleRemoveTriage}
-                    className="tag-triage-name"
-                  >
-                    {props.triage[0].name} x
-                  </button>
-                ) : (
-                  ""
-                )}
-              </div>
-              <div className="notebook-show-bottom">
-                <i
-                  onClick={handleTagModal}
-                  className={props.tags.length ? "fas fa-tag" : ""}
-                ></i>
-              </div>
+      <div className="all-note-right">
+        <div className="all-note-title">
+          <h1>{notes.length ? "All Notes" : "No Notes"}</h1>
+
+          <h3 className="all-notes-length">{notes.length} notes</h3>
+          <div className="notebook-show-icons">
+            <div className="tag-triage-div">
+              {props.triage.length ? (
+                <button
+                  onClick={handleRemoveTriage}
+                  className="tag-triage-name"
+                >
+                  {props.triage[0].name} x
+                </button>
+              ) : (
+                ""
+              )}
+            </div>
+            <div className="notebook-show-bottom">
+              <i
+                onClick={handleTagModal}
+                className={props.tags.length ? "fas fa-tag" : ""}
+              ></i>
             </div>
           </div>
-          <div className="all-note-nav">{notes}</div>
         </div>
-      ) : (
-        <div className="all-note-right">
-          {" "}
-          <h1>No Notes</h1>{" "}
-        </div>
-      )}
+        <div className="all-note-nav">{notes}</div>
+      </div>
     </div>
   );
 };
