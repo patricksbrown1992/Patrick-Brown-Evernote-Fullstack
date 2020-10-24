@@ -18,10 +18,10 @@ const NotebookDropDownForm = (props) => {
     const id = props.notebook.id;
     props.closeModal();
     props.updateNotebook({
-      id: id,
-      name: name,
-      user_id: user_id,
-      shortcut: shortcut,
+      id,
+      name,
+      user_id,
+      shortcut,
     });
   }
 

@@ -22,45 +22,24 @@ const NoteTagAddForm = (props) => {
       props.createTagging(tagging);
     };
   }
-
-  function duplicateArray(array) {
-    // deep dupes objects
-    let ans = [];
-    for (let i = 0; i < array.length; i++) {
-      let newObject = merge({}, array[i]);
-      ans.push(newObject);
+  function comparison(a, b) {
+    const aUpperName = a.name.toUpperCase();
+    const bUpperName = b.name.toUpperCase();
+    let comparison = 0;
+    if (aUpperName > bUpperName) {
+      comparison = 1;
+    } else if (aUpperName < bUpperName) {
+      comparison = -1;
     }
-
-    return ans;
-  }
-
-  function sortTags(tags) {
-    let newTags = duplicateArray(tags);
-    let sorted = false;
-
-    while (!sorted) {
-      sorted = true;
-      // bubble sort
-      for (let i = 0; i < newTags.length - 1; i++) {
-        let current = newTags[i];
-        let next = newTags[i + 1];
-        if (current.name.toUpperCase() > next.name.toUpperCase()) {
-          // Swaps if first element is after second in alphabet
-          sorted = false;
-          [newTags[i], newTags[i + 1]] = [newTags[i + 1], newTags[i]];
-        }
-      }
-    }
-    return newTags;
+    return comparison;
   }
 
   if (props.tags.length < 1) return null;
 
-  let tags = sortTags(props.tags);
-
-  tags = tags.filter((tag) =>
+  let tags = props.tags.filter((tag) =>
     tag.name.toUpperCase().includes(newTag.toUpperCase())
   );
+  tags = tags.sort(comparison);
   tags = tags.map((tag) => {
     return (
       <li key={tag.id}>

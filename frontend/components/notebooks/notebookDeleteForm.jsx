@@ -8,7 +8,7 @@ const NotebookDeleteForm = (props) => {
       .deleteNotebook(props.notebook)
       .then(() =>
         props.notes.forEach((note) => {
-          if (note.notebook_id == props.notebook.id) {
+          if (note.notebook_id === props.notebook.id) {
             props.deleteNote(note);
           }
         })
