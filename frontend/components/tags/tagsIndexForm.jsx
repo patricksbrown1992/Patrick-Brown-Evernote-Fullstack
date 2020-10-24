@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import UsernameFormLeft from "../username/nonNoteLeftContainer";
 import UsernameFormLeft from "../username/usernameLeftContainer";
 import { Redirect, Link } from "react-router-dom";
 import { merge } from "lodash";
@@ -34,23 +33,21 @@ const TagIndexForm = (props) => {
     props.addTag(props.user);
   }
 
-  function sortTags(tags) {
-    let newTags = duplicateArray(tags);
-    let sorted = false;
-
-    while (!sorted) {
-      sorted = true;
-      // bubble sort
-      for (let i = 0; i < newTags.length - 1; i++) {
-        let current = newTags[i];
-        let next = newTags[i + 1];
-        if (current.name.toUpperCase() > next.name.toUpperCase()) {
-          // Swaps if first element is after second in alphabet
-          sorted = false;
-          [newTags[i], newTags[i + 1]] = [newTags[i + 1], newTags[i]];
-        }
-      }
+  function comparison(a, b) {
+    const aUpperName = a.name.toUpperCase();
+    const bUpperName = b.name.toUpperCase();
+    let comparison = 0;
+    if (aUpperName > bUpperName) {
+      comparison = 1;
+    } else if (aUpperName < bUpperName) {
+      comparison = -1;
     }
+    return comparison;
+  }
+
+  function sortTags(tags) {
+    let newTags = tags.map((tag) => tag);
+    newTags = newTags.sort(comparison);
     for (let i = 0; i < newTags.length; i++) {
       if (i === 0) {
         newTags[i].duplicate = false;
@@ -68,17 +65,6 @@ const TagIndexForm = (props) => {
     return newTags;
   }
 
-  function duplicateArray(array) {
-    // deep dupes objects
-    let ans = [];
-    for (let i = 0; i < array.length; i++) {
-      let newObject = merge({}, array[i]);
-      ans.push(newObject);
-    }
-
-    return ans;
-  }
-
   function handleClickDropDown(entity) {
     return (e) => {
       e.preventDefault();
@@ -91,10 +77,11 @@ const TagIndexForm = (props) => {
 
   if (selected) return <Redirect to="/allnotes" />;
 
-  let tags = sortTags(props.tags);
-  tags = tags.filter((tag) =>
+  let tags = props.tags.filter((tag) =>
     tag.name.toUpperCase().includes(search.toUpperCase())
   );
+
+  tags = sortTags(tags);
 
   tags = tags.map((tag) => {
     if (tag.duplicate) {
@@ -103,7 +90,6 @@ const TagIndexForm = (props) => {
         <li key={tag.id}>
           {/* <div className="tag-index-intial">{tag.name[0]}</div> */}
           <div className="tag-name">
-            {" "}
             <button
               className="tag-triage-redirect-button"
               onClick={handleTagClickTriage(tag)}
