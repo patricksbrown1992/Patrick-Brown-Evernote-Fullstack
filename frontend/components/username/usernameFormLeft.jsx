@@ -41,10 +41,10 @@ const usernameFormLeft = (props) => {
       const shortcut = !entity.shortcut;
       const id = entity.id;
       props.updateNotebook({
-        id: id,
-        name: name,
-        user_id: user_id,
-        shortcut: shortcut,
+        id,
+        name,
+        user_id,
+        shortcut,
       });
     };
   }
@@ -63,13 +63,13 @@ const usernameFormLeft = (props) => {
   function handleRemoveNote(entity) {
     return (e) => {
       e.preventDefault();
-      let title = entity.title;
-      let body = entity.body;
-      let notebook_id = entity.notebook_id;
-      let id = entity.notebook_id;
-      let id2 = entity.id;
-      let shortcut = !entity.shortcut;
-      let note = { title, body, notebook_id, id: id2, shortcut };
+      const title = entity.title;
+      const body = entity.body;
+      const notebook_id = entity.notebook_id;
+      const id = entity.notebook_id;
+      const id2 = entity.id;
+      const shortcut = !entity.shortcut;
+      const note = { title, body, notebook_id, id: id2, shortcut };
       props.updateNote({ id, note });
     };
   }
@@ -90,73 +90,6 @@ const usernameFormLeft = (props) => {
     props.addNote(props.notebook);
   }
 
-  let notebooks;
-  let caret;
-  let shortCutCaret;
-  let allNotebooks;
-  let allNotes;
-  let searchCircle;
-  if (search) {
-    searchCircle = "search-circle far fa-times-circle";
-  } else {
-    searchCircle = "hidden-circle";
-  }
-  if (selected) {
-    caret = "fas fa-caret-down";
-    notebooks = props.notebooks.map((notebook) => (
-      <li key={notebook.id}>
-        <div className="username-left-notebook-index">
-          <i className="fas fa-book"></i>
-          <Link to={`/username/${notebook.id}`}>{notebook.name}</Link>
-        </div>
-      </li>
-    ));
-  } else {
-    notebooks = "";
-    caret = "fas fa-caret-right";
-  }
-
-  if (shortCutChecker) {
-    shortCutCaret = "fas fa-caret-down";
-    allNotebooks = props.notebooks.map((notebook) => {
-      if (notebook.shortcut) {
-        return (
-          <li className="shortcut-notebook" key={notebook.id}>
-            <div className="username-left-notebook-index">
-              <i className="fas fa-book"></i>
-              <Link to={`/username/${notebook.id}`}>{notebook.name}</Link>
-            </div>
-            <i
-              onClick={handleRemoveNotebook(notebook)}
-              className="far fa-times-circle"
-            ></i>
-          </li>
-        );
-      }
-    });
-
-    allNotes = props.notes.map((note) => {
-      if (note.shortcut) {
-        return (
-          <li className="shortcut-note" key={note.id}>
-            <div className="username-left-notebook-index">
-              <i className="fas fa-sticky-note"></i>
-              <Link to={`/username/${note.notebook_id}/notes/${note.id}`}>
-                {note.title}
-              </Link>
-            </div>
-            <i
-              onClick={handleRemoveNote(note)}
-              className="far fa-times-circle"
-            ></i>
-          </li>
-        );
-      }
-    });
-  } else {
-    shortCutCaret = "fas fa-caret-right";
-  }
-
   return (
     <div className="left-nav">
       <ul>
@@ -175,7 +108,12 @@ const usernameFormLeft = (props) => {
               placeholder="Search all notes..."
               type="text"
             ></input>
-            <i onClick={handleClearSearch} className={searchCircle}></i>
+            <i
+              onClick={handleClearSearch}
+              className={
+                search ? "search-circle far fa-times-circle" : "hidden-circle"
+              }
+            ></i>
           </div>
         </form>
         {props.match.params.notebook_id || props.match.params.note_id ? (
@@ -188,12 +126,56 @@ const usernameFormLeft = (props) => {
         )}
 
         <li className="shortcuts-li" onClick={updateShortcuts}>
-          <i className={shortCutCaret}></i>
+          <i
+            className={
+              shortCutChecker ? "fas fa-caret-down" : "fas fa-caret-right"
+            }
+          ></i>
           <i className="fas fa-star"></i>Shortcuts
         </li>
         <ul className="username-left-shortcuts-ul">
-          {allNotebooks}
-          {allNotes}
+          {shortCutChecker
+            ? props.notebooks.map((notebook) => {
+                if (notebook.shortcut) {
+                  return (
+                    <li className="shortcut-notebook" key={notebook.id}>
+                      <div className="username-left-notebook-index">
+                        <i className="fas fa-book"></i>
+                        <Link to={`/username/${notebook.id}`}>
+                          {notebook.name}
+                        </Link>
+                      </div>
+                      <i
+                        onClick={handleRemoveNotebook(notebook)}
+                        className="far fa-times-circle"
+                      ></i>
+                    </li>
+                  );
+                }
+              })
+            : ""}
+          {shortCutChecker
+            ? props.notes.map((note) => {
+                if (note.shortcut) {
+                  return (
+                    <li className="shortcut-note" key={note.id}>
+                      <div className="username-left-notebook-index">
+                        <i className="fas fa-sticky-note"></i>
+                        <Link
+                          to={`/username/${note.notebook_id}/notes/${note.id}`}
+                        >
+                          {note.title}
+                        </Link>
+                      </div>
+                      <i
+                        onClick={handleRemoveNote(note)}
+                        className="far fa-times-circle"
+                      ></i>
+                    </li>
+                  );
+                }
+              })
+            : ""}
         </ul>
         <li className="all-notes-li">
           <Link to="/allnotes">
@@ -201,12 +183,26 @@ const usernameFormLeft = (props) => {
           </Link>
         </li>
         <li className="notebooks-li">
-          <i className={caret} onClick={changeSelected}></i>
+          <i
+            className={selected ? "fas fa-caret-down" : "fas fa-caret-right"}
+            onClick={changeSelected}
+          ></i>
           <Link to="/notebooks">
             <i className="fas fa-book"></i>Notebooks
           </Link>
         </li>
-        <ul className="username-left-ul">{notebooks}</ul>
+        <ul className="username-left-ul">
+          {selected
+            ? props.notebooks.map((notebook) => (
+                <li key={notebook.id}>
+                  <div className="username-left-notebook-index">
+                    <i className="fas fa-book"></i>
+                    <Link to={`/username/${notebook.id}`}>{notebook.name}</Link>
+                  </div>
+                </li>
+              ))
+            : ""}
+        </ul>
         {/* <li><i className="fas fa-user-friends"></i>Shared with Me</li> */}
         <li className="tags-li">
           <Link to="/tags">
