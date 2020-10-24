@@ -1,14 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styleDate from "../../util/styleDate";
-// import LeftNav from "../username/nonNoteLeftContainer";
 import LeftNav from "../username/usernameLeftContainer";
 import { Link } from "react-router-dom";
 import { merge } from "lodash";
 const AllNoteForm = (props) => {
-  const [loaded, updateLoaded] = useState(() => {
-    return false;
-  });
-
   useEffect(() => {
     props.clearNotebooks();
     props
@@ -20,8 +15,6 @@ const AllNoteForm = (props) => {
       })
       .then(() => props.getTaggings(props.user))
       .then(() => props.getTags(props.user));
-
-    // return props.removeTriage();
   }, []);
 
   function handleTagModal(e) {
@@ -41,19 +34,9 @@ const AllNoteForm = (props) => {
     };
   }
 
-  function duplicateArray(array) {
-    // deep dupes objects
-    let ans = [];
-    for (let i = 0; i < array.length; i++) {
-      let newObject = merge({}, array[i]);
-      ans.push(newObject);
-    }
-    return ans;
-  }
-
   function triageNotes(notes) {
-    let ans = [];
-    let triage = props.triage[0];
+    const ans = [];
+    const triage = props.triage[0];
     for (let i = 0; i < notes.length; i++) {
       let note = notes[i];
 
@@ -69,10 +52,10 @@ const AllNoteForm = (props) => {
     return ans;
   }
 
-  let notes = duplicateArray(props.notes);
-  notes = notes.filter((note) =>
+  let notes = props.notes.filter((note) =>
     note.title.toUpperCase().includes(props.search.toUpperCase())
   );
+
   if (props.triage.length > 0) {
     notes = triageNotes(notes);
   }
@@ -80,11 +63,9 @@ const AllNoteForm = (props) => {
   notes = notes.map((note) => (
     <li key={note.id} className="all-note-title">
       <Link to={`/username/${note.notebook_id}/notes/${note.id}`}>
-        {" "}
-        <h1>{note.title}</h1>{" "}
+        <h1>{note.title}</h1>
       </Link>
       <Link to={`/username/${note.notebook_id}/notes/${note.id}`}>
-        {" "}
         <h3>{note.body.replace(/(<([^>]+)>)/gi, "")}</h3>
       </Link>
       <h3>Last updated:</h3>
