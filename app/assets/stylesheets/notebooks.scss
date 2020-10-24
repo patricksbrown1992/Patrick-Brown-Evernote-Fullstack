@@ -55,6 +55,27 @@
   text-decoration: underline;
 }
 
+tr {
+  width: calc(100vw - 300px);
+}
+
+tr td {
+  max-width: calc((100vw - 300px) / 4);
+  min-width: calc((100vw - 300px) / 4);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 10px;
+}
+
+tr td a {
+  margin-left: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 .notebook-index-table {
   display: flex;
   height: 40px;
