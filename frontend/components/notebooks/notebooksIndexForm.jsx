@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import UsernameFormLeft from "../username/nonNoteLeftContainer";
 import UsernameFormLeft from "../username/usernameLeftContainer";
 import { merge } from "lodash";
 import { Link, Redirect } from "react-router-dom";
@@ -33,57 +32,16 @@ const NotebooksIndexForm = (props) => {
     handleSort(props.notebooks);
   }
 
-  function handleSort(notebooks) {
-    let newNotebooks = duplicateArray(notebooks);
-    if (title === true) {
-      let sorted = false;
-      while (!sorted) {
-        sorted = true;
-        // bubble sort
-        for (let i = 0; i < newNotebooks.length - 1; i++) {
-          let current = newNotebooks[i];
-          let next = newNotebooks[i + 1];
-          if (current.name.toUpperCase() < next.name.toUpperCase()) {
-            // Swaps if first element is before the second in alphabet
-            sorted = false;
-            [newNotebooks[i], newNotebooks[i + 1]] = [
-              newNotebooks[i + 1],
-              newNotebooks[i],
-            ];
-          }
-        }
-      }
-      return newNotebooks;
-    } else {
-      let sorted = false;
-      while (!sorted) {
-        sorted = true;
-        // bubble sort
-        for (let i = 0; i < newNotebooks.length - 1; i++) {
-          let current = newNotebooks[i];
-          let next = newNotebooks[i + 1];
-          if (current.name.toUpperCase() > next.name.toUpperCase()) {
-            // Swaps if first element is after the second in alphabet
-            sorted = false;
-            [newNotebooks[i], newNotebooks[i + 1]] = [
-              newNotebooks[i + 1],
-              newNotebooks[i],
-            ];
-          }
-        }
-      }
-      return newNotebooks;
+  function comparison(a, b) {
+    const aUpperName = a.name.toUpperCase();
+    const bUpperName = b.name.toUpperCase();
+    let comparison = 0;
+    if (aUpperName > bUpperName) {
+      comparison = title ? -1 : 1;
+    } else if (aUpperName < bUpperName) {
+      comparison = title ? 1 : -1;
     }
-  }
-
-  function duplicateArray(array) {
-    // deep dupes objects
-    let ans = [];
-    for (let i = 0; i < array.length; i++) {
-      let newObject = merge({}, array[i]);
-      ans.push(newObject);
-    }
-    return ans;
+    return comparison;
   }
 
   function handleClickDropDown(entity) {
@@ -106,14 +64,14 @@ const NotebooksIndexForm = (props) => {
       };
     }
   }
-  if (props.search.length > 0) return <Redirect to="/allnotes" />;
-  let notebooks;
-  let arrow;
 
-  notebooks = handleSort(props.notebooks);
-  notebooks = notebooks.filter((notebook) =>
+  if (props.search.length > 0) return <Redirect to="/allnotes" />;
+
+  let notebooks = props.notebooks.filter((notebook) =>
     notebook.name.toUpperCase().includes(body.toUpperCase())
   );
+
+  notebooks = notebooks.sort(comparison);
 
   notebooks = notebooks.map((notebook) => {
     return (
@@ -132,11 +90,6 @@ const NotebooksIndexForm = (props) => {
       </tr>
     );
   });
-  if (title) {
-    arrow = "fas fa-arrow-up";
-  } else {
-    arrow = "fas fa-arrow-down";
-  }
 
   return (
     <div className="notebooks-index">
@@ -164,7 +117,10 @@ const NotebooksIndexForm = (props) => {
         <table>
           <tr style={{ marginBottom: "15px" }}>
             <th style={{ cursor: "pointer" }} onClick={handleTitleClick}>
-              Title <i className={arrow}></i>
+              Title{" "}
+              <i
+                className={title ? "fas fa-arrow-up" : "fas fa-arrow-down"}
+              ></i>
             </th>
             <th>Create By</th>
             <th>Updated</th>
