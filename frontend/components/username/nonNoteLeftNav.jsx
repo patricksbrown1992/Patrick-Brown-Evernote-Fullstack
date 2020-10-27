@@ -64,13 +64,13 @@ const usernameFormLeft = (props) => {
   function handleRemoveNote(entity) {
     return (e) => {
       e.preventDefault();
-      let title = entity.title;
-      let body = entity.body;
-      let notebook_id = entity.notebook_id;
-      let id = entity.notebook_id;
-      let id2 = entity.id;
-      let shortcut = !entity.shortcut;
-      let note = { title, body, notebook_id, id: id2, shortcut };
+      const title = entity.title;
+      const body = entity.body;
+      const notebook_id = entity.notebook_id;
+      const id = entity.notebook_id;
+      const id2 = entity.id;
+      const shortcut = !entity.shortcut;
+      const note = { title, body, notebook_id, id: id2, shortcut };
       props.updateNote({ id, note });
     };
   }
@@ -192,7 +192,7 @@ const usernameFormLeft = (props) => {
           </Link>
         </li>
         <ul className="username-left-ul">{notebooks}</ul>
-        {/* <li><i className="fas fa-user-friends"></i>Shared with Me</li> */}
+
         <li className="tags-li">
           <Link to="/tags">
             <i className="fas fa-tag"></i>Tags
@@ -219,8 +219,6 @@ const usernameFormLeft = (props) => {
             Github
           </a>
         </li>
-        {/* <li><i className="fas fa-trash"></i>Trash</li> */}
-        {/* <i class="fas fa-caret-down"></i> */}
       </ul>
     </div>
   );
