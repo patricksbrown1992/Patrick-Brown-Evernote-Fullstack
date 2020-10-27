@@ -17,8 +17,6 @@ const App = () => (
     <Modal />
     <Switch>
       <ProtectedRoute exact path="/notebooks" component={NotebooksIndexForm} />
-
-      {/* <ProtectedRoute path='/username/:notebook_id/notes/:note_id' component={NotebookShowForm2} /> */}
       <ProtectedRoute exact path="/allnotes" component={AllNotesContainer} />
       <ProtectedRoute
         path="/username/:notebook_id"

@@ -22,13 +22,6 @@ const NotebookShowForm = (props) => {
     };
   }, []);
 
-  // useEffect(() => {
-  //     props.clearNotes();
-  //     props.getNotebooks(props.user).then(() => props.notebooks.forEach((notebook) => {
-  //         props.getNotes(notebook.id)
-  //     }));
-  // }, props.match.params.notebook_id)
-
   function handleClickDropDown(e) {
     e.preventDefault();
     props.notebookDropDown(props.notebooks[props.match.params.notebook_id]);
