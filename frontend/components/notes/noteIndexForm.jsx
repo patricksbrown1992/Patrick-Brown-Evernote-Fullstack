@@ -22,7 +22,7 @@ const NotesIndexForm = (props) => {
   }, []);
 
   function onlyCorrectNotes(notes) {
-    let ans = [];
+    const ans = [];
     for (let i = 0; i < notes.length; i++) {
       if (notes[i].notebook_id == parseInt(props.match.params.notebook_id)) {
         let newObject = merge({}, notes[i]);
@@ -41,8 +41,8 @@ const NotesIndexForm = (props) => {
   }
 
   function triageNotes(notes) {
-    let ans = [];
-    let triage = props.triage[0];
+    const ans = [];
+    const triage = props.triage[0];
     for (let i = 0; i < notes.length; i++) {
       let note = notes[i];
 
@@ -69,12 +69,10 @@ const NotesIndexForm = (props) => {
   notes = notes.map((note) => (
     <li key={note.id} className="note-index-title">
       <Link to={`/username/${props.notebook.id}/notes/${note.id}`}>
-        {" "}
-        <h1>{note.title}</h1>{" "}
+        <h1>{note.title}</h1>
       </Link>
       <Link to={`/username/${props.notebook.id}/notes/${note.id}`}>
-        {" "}
-        <h3>{note.body.replace(/(<([^>]+)>)/gi, "")}</h3>{" "}
+        <h3>{note.body.replace(/(<([^>]+)>)/gi, "")}</h3>
       </Link>
       <h3>Last updated:</h3>
       <h3>{styleDate(note.updated_at)}</h3>

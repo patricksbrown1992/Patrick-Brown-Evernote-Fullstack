@@ -53,7 +53,7 @@ const TagIndexForm = (props) => {
         newTags[i].duplicate = false;
       } else {
         if (
-          newTags[i].name[0].toUpperCase() ==
+          newTags[i].name[0].toUpperCase() ===
           newTags[i - 1].name[0].toUpperCase()
         ) {
           newTags[i].duplicate = true;
@@ -88,7 +88,6 @@ const TagIndexForm = (props) => {
       // if tag starts with same letter as one before it
       return (
         <li key={tag.id}>
-          {/* <div className="tag-index-intial">{tag.name[0]}</div> */}
           <div className="tag-name">
             <button
               className="tag-triage-redirect-button"

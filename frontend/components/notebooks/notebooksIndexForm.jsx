@@ -117,7 +117,7 @@ const NotebooksIndexForm = (props) => {
         <table>
           <tr style={{ marginBottom: "15px" }}>
             <th style={{ cursor: "pointer" }} onClick={handleTitleClick}>
-              Title{" "}
+              Title
               <i
                 className={title ? "fas fa-arrow-up" : "fas fa-arrow-down"}
               ></i>

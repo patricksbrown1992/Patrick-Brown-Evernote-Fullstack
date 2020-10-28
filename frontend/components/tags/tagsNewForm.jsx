@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 
 const TagNewForm = (props) => {
-  const [nameOfTag, updateName] = useState(() => {
-    "";
+  const [name, updateName] = useState(() => {
+    return "";
   });
 
   function handleClick(e) {
     e.preventDefault();
-    const name = nameOfTag;
     const user_id = Object.values(props.user)[0].id;
     props.createTag({ name, user_id }).then(() => props.closeModal());
   }
@@ -22,12 +21,12 @@ const TagNewForm = (props) => {
 
       <input
         type="text"
-        value={nameOfTag}
+        value={name}
         onChange={(e) => updateName(e.target.value)}
         placeholder="Tag name"
       />
 
-      {nameOfTag ? (
+      {name ? (
         <button onClick={handleClick} className="valid">
           Done
         </button>

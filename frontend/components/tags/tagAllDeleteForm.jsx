@@ -11,7 +11,7 @@ const TagAllDeleteForm = (props) => {
     props.closeModal();
     for (let i = 0; i < props.taggings.length; i++) {
       let tagging = props.taggings[i];
-      if (tagging.tag_id == props.tag.id) {
+      if (tagging.tag_id === props.tag.id) {
         props.deleteTagging(tagging.id);
       }
     }
@@ -25,7 +25,7 @@ const TagAllDeleteForm = (props) => {
       </div>
       <h3>
         Are you sure you want to remove the "{props.tag.name}" tag from all
-        notes?{" "}
+        notes?
       </h3>
 
       <button onClick={handleClick}>Remove</button>
