@@ -211,14 +211,6 @@ const usernameFormLeft = (props) => {
         </li>
         <li className="notebooks-li">
           <a
-            href="https://patricksbrown1992.github.io/portfolio/"
-            target="_blank"
-          >
-            Portfolio
-          </a>
-        </li>
-        <li className="notebooks-li">
-          <a
             href="https://www.linkedin.com/in/patricksbrown1992/"
             target="_blank"
           >
